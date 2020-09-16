@@ -1,7 +1,7 @@
-Ez a repository a Git egylet csapat munkáját tartalmazza. 
-Csapattagok: 
-•	Adorján András Bálint
-•	Kisszölgyémi Áron
-•	Nátz Kornél 
-Leírás: 
-A programban 2 karakter harcol egymás ellen, ennek a két karakternek a nevét, életerejét és sebzését argumentumként kell átadni a játék indításakor (példa: Maple 150 10 Sally 45 30). A játék körönként kiírja a játék aktuális állását, egészen addig, amíg az egyik karakternek el nem fogy az életereje, ekkor a játék gyõztest hirdet. 
+Ez a repository a Git egylet csapat munkÃ¡jÃ¡t tartalmazza. 
+##Csapattagok: 
+â€¢	AdorjÃ¡n AndrÃ¡s BÃ¡lint
+â€¢	KisszÃ¶lgyÃ©mi Ãron
+â€¢	NÃ¡tz KornÃ©l 
+LeÃ­rÃ¡s: 
+A programban 2 karakter harcol egymÃ¡s ellen, ennek a kÃ©t karakternek a nevÃ©t, Ã©leterejÃ©t Ã©s sebzÃ©sÃ©t argumentumkÃ©nt kell Ã¡tadni a jÃ¡tÃ©k indÃ­tÃ¡sakor (pÃ©lda: Maple 150 10 Sally 45 30). A jÃ¡tÃ©k kÃ¶rÃ¶nkÃ©nt kiÃ­rja a jÃ¡tÃ©k aktuÃ¡lis Ã¡llÃ¡sÃ¡t, egÃ©szen addig, amÃ­g az egyik karakternek el nem fogy az Ã©letereje, ekkor a jÃ¡tÃ©k gyÅ‘ztest hirdet. 
