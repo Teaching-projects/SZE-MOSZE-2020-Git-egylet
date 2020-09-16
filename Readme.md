@@ -1,5 +1,5 @@
-Ez a repository a Git egylet csapat munkáját tartalmazza. 
-##Csapattagok: 
+Ez a repository a Git egylet csapat munkáját tartalmazza.  
+Csapattagok: 
 •	Adorján András Bálint
 •	Kisszölgyémi Áron
 •	Nátz Kornél 
