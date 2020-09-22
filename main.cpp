@@ -23,10 +23,15 @@ int main(int argc, char* argv[]) {
         player1.status();
         player2.status();
         if (!player1.isAlive()) {
-            std::cout << argv[1] << " died. " << argv[4] << " wins." << std::endl;
+            std::cout << argv[1]<< " died. " << argv[4] << " wins." << std::endl;
             break;
         }
 
     }
-    delete player1, player2;
+    
+
+
+
+
+
 }

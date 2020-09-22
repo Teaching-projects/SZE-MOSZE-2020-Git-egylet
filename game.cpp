@@ -25,12 +25,12 @@ void character::setDMG(int dmg) {
 }
 
 
-void character::status() {
+void character::status() const {
     std::cout << this->characterName << ": " << "HP: " << this->characterHP << " DMG: " << this->characterDMG << std::endl;
 }
 
 
-void character::attack(character& target) {
+void character::attack(character& target)  {
     std::cout << this->characterName << " -> " << target.characterName << std::endl;
     if (target.characterHP < this->characterDMG) {
         target.characterHP = 0;
@@ -43,14 +43,9 @@ void character::attack(character& target) {
 
 
 
-bool character::isAlive() {
-    if (this->characterHP> 0) {
-        return true;
-    }
-    else {
-        return false;
-    }
-    
+bool character::isAlive() const {
+     return this->characterHP > 0;
 }
+
 
 
