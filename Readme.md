@@ -14,8 +14,8 @@ Leírás:
 A programban 2 karakter harcol egymás ellen, ennek a két karakternek a nevét, életerejét és sebzését argumentumként kell átadni a játék indításakor (példa: Maple 150 10 Sally 45 30). A játék körönként kiírja a játék aktuális állását, egészen addig, amíg az egyik karakternek el nem fogy az életereje, ekkor a játék győztest hirdet.  
   
 Fájlok:  
-*	**functions.h**: Class meghatározása.  
-*	**game.cpp**: A játék levezényléséhez használt függvények definiálása.  
+*	**Character.h**: Class meghatározása.  
+*	**Character.cpp**: A játék levezényléséhez használt függvények definiálása.  
 *	**main.cpp**: Objektumok létrehozása, függvények használata, a játék végeztével az objektumok törlése.  
   
 Az adatok kezelésére a "character" osztályt használjuk.  
@@ -30,6 +30,3 @@ Függvények:
 *	**isAlive**:  
 		Megvizsgálja az objektum HP-ját, ha nagyobb mint 0, true értékkel tér vissza, azaz az objektum életben van.  
 		Használat: X.isAlive()  
-*	**status**:  
-		Kiírja az objektum nevét, aktuális HP-ját, és DMG-ét.  
-		Használat: X.status()  
