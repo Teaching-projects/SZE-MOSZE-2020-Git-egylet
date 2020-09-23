@@ -17,7 +17,7 @@ int character::getDMG() const
     return characterDMG;
 }
 
-void character::attack(character& target)  {
+void character::attack(character& target) const  {
     std::cout << this->characterName << " -> " << target.characterName << std::endl;
 
     if (target.characterHP < this->characterDMG) {
