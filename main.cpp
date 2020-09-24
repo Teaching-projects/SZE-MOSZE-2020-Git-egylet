@@ -16,14 +16,14 @@ int main(int argc, char* argv[]) {
                 player1.attack(player2);
                 std::cout << player1 << player2 << std::endl;
                 if (!player2.isAlive()) {
-                    std::cout << player2.getName() << " died. " << player1.getName() << " wins." << std::endl;
+                    std::cout << player1.getName() << " Wins. " << "Remaining HP: " << player1.getHP() << std::endl;
                     break;
                 }
 
                 player2.attack(player1);
                 std::cout << player1 << player2 << std::endl;
                 if (!player1.isAlive()) {
-                    std::cout << player1.getName() << " died. " << player2.getName() << " wins." << std::endl;
+                    std::cout << player2.getName() << " Wins. " << "Remaining HP: " << player2.getHP() << std::endl;
                     break;
                 }
             }
