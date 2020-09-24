@@ -4,4 +4,3 @@ Sally wins. Remaining HP: 300.
 Sally wins. Remaining HP: 200.
 Maple wins. Remaining HP: 400.
 Maple wins. Remaining HP: 150.
-
