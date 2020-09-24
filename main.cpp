@@ -4,26 +4,38 @@
 
 
 int main(int argc, char* argv[]) {
-    character player1(argv[1], std::stoi(argv[2]), std::stoi(argv[3]));
-    character player2(argv[4], std::stoi(argv[5]), std::stoi(argv[6]));
+    try {
+        if (argc == 3) {
 
-    std::cout << player1 << player2 << std::endl;
-    while (player1.isAlive() && player2.isAlive()) {
+            character player1 = character(character::parseUnit(argv[1]));
+            character player2 = character(character::parseUnit(argv[2]));
 
-        player1.attack(player2);
-        std::cout << player1 << player2 << std::endl;
-        if (!player2.isAlive()) {
-            std::cout << player2.getName() << " died. " << player1.getName() << " wins." << std::endl;
-            break;
+            std::cout << player1 << player2 << std::endl;
+            while (player1.isAlive() && player2.isAlive()) {
+
+                player1.attack(player2);
+                std::cout << player1 << player2 << std::endl;
+                if (!player2.isAlive()) {
+                    std::cout << player2.getName() << " died. " << player1.getName() << " wins." << std::endl;
+                    break;
+                }
+
+                player2.attack(player1);
+                std::cout << player1 << player2 << std::endl;
+                if (!player1.isAlive()) {
+                    std::cout << player1.getName() << " died. " << player2.getName() << " wins." << std::endl;
+                    break;
+                }
+            }
+        }
+        else {
+            std::cout << "Inappropriate command line inputs. Game will now close." << std::endl;
         }
 
-        player2.attack(player1);
-        std::cout << player1 << player2 << std::endl;
-        if (!player1.isAlive()) {
-            std::cout << player1.getName() << " died. " << player2.getName() << " wins." << std::endl;
-            break;
-        }
-
+    }
+    catch(std::exception & e) {
+        std::cout << "Inappropriate command line inputs, or the file does not exist,please try again" << std::endl;
+            
     }
     return 0;
 }
