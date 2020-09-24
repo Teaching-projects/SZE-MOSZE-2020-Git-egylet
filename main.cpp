@@ -28,11 +28,13 @@ int main(int argc, char* argv[]) {
         }
         else {
             std::cout << "Inappropriate command line inputs. Game will now close." << std::endl;
+            std::cout << "Input should look like: 'A.json B.json'" << std::endl;
         }
 
     }
     catch(std::exception & e) {
         std::cout << "Inappropriate command line inputs, or the file does not exist,please try again" << std::endl;
+        std::cout << "Input should look like: 'A.json B.json'" << std::endl;
             
     }
     return 0;

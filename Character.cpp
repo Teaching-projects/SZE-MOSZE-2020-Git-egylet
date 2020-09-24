@@ -40,7 +40,7 @@ character  character::parseUnit(const std::string& name) {
 	std::string cname;
 	std::ifstream file;
 	file.open(name);
-	if (file.fail()) std::cout << "XD";
+	if (file.fail()) throw "it does not exist";
 	else
 	{
 		std::string separator = " : ";
