@@ -19,7 +19,6 @@ int character::getDMG() const
 }
 
 void character::attack(character& target) const  {
-    std::cout << this->characterName << " -> " << target.characterName << std::endl;
 
     if (target.characterHP < this->characterDMG) {
         target.characterHP = 0;

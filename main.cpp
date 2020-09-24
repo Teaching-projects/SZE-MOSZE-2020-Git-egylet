@@ -10,18 +10,16 @@ int main(int argc, char* argv[]) {
             character player1 = character(character::parseUnit(argv[1]));
             character player2 = character(character::parseUnit(argv[2]));
 
-            std::cout << player1 << player2 << std::endl;
+           
             while (player1.isAlive() && player2.isAlive()) {
 
                 player1.attack(player2);
-                std::cout << player1 << player2 << std::endl;
                 if (!player2.isAlive()) {
                     std::cout << player1.getName() << " Wins. " << "Remaining HP: " << player1.getHP() << std::endl;
                     break;
                 }
 
                 player2.attack(player1);
-                std::cout << player1 << player2 << std::endl;
                 if (!player1.isAlive()) {
                     std::cout << player2.getName() << " Wins. " << "Remaining HP: " << player2.getHP() << std::endl;
                     break;
