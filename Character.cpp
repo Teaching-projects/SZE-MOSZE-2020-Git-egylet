@@ -60,6 +60,6 @@ character  character::parseUnit(const std::string& name) {
 			
 		}
 		file.close();
-		return character(cname, stoi(chp), stoi(cdmg));
+		return  character(cname, stoi(chp), stoi(cdmg));
 	}
 }
