@@ -8,6 +8,7 @@ class character
 public:
    
     character(const std::string, const int, const int);
+    static character parseUnit(const std::string& name);
     std::string getName() const;
     int getHP() const;
     int getDMG() const;
