@@ -1,36 +1,42 @@
-#include "functions.h"
+#include "Character.h"
 #include <iostream>
 
 
 
 int main(int argc, char* argv[]) {
-    character A(argv[1], std::stoi(argv[2]), std::stoi(argv[3]));
-    character B(argv[4], std::stoi(argv[5]), std::stoi(argv[6]));
+    try {
+        if (argc == 3) {
 
-    A.status();
-    B.status();
-    while (A.isAlive() && B.isAlive()) {
+           character player1 = character::parseUnit(argv[1]);
+           character player2 = character::parseUnit(argv[2]);
 
-        A.attack(B);
-        A.status();
-        B.status();
-        if (!B.isAlive()) {
-            std::cout << argv[4] << " died. " << argv[1] << " wins." << std::endl;
-            break;
+           
+            while (player1.isAlive() && player2.isAlive()) {
+
+                player1.attack(player2);
+                if (!player2.isAlive()) {
+                    std::cout << player1.getName() << " wins. " << "Remaining HP: " << player1.getHP() <<"."<< std::endl;
+                    break;
+                }
+
+                player2.attack(player1);
+                if (!player1.isAlive()) {
+                    std::cout << player2.getName() << " wins. " << "Remaining HP: " << player2.getHP() <<"."<< std::endl;
+                    break;
+                }
+            }
         }
-
-        B.attack(A);
-        A.status();
-        B.status();
-        if (!A.isAlive()) {
-            std::cout << argv[1] << " died. " << argv[4] << " wins." << std::endl;
-            break;
+        else {
+            std::cout << "Inappropriate command line inputs. Game will now close." << std::endl;
+            std::cout << "Input should look like: 'A.json B.json'" << std::endl;
+            return 1;
         }
 
     }
-    
-
-
-
-
+    catch(std::exception & e) {
+        std::cout << "Inappropriate command line inputs, or the file does not exist,please try again" << std::endl;
+        std::cout << "Input should look like: 'A.json B.json'" << std::endl;
+        return 1;
+    }
+    return 0;
 }
