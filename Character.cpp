@@ -3,7 +3,7 @@
 #include <fstream>
 #include "Character.h"
 
-character::character(std::string name, int HP, int DMG) : characterName(name), characterHP(HP), characterDMG(DMG) {}
+character::character(std::string name, int HP, int DMG, double ACD) : characterName(name), characterHP(HP), characterDMG(DMG), characterACD(ACD) {}
 
 std::string character::getName() const
 {
@@ -16,6 +16,10 @@ int character::getHP() const
 int character::getDMG() const
 {
     return characterDMG;
+}
+double character::getACD() const
+{
+    return characterACD;
 }
 
 void character::attack(character& target) const  {
@@ -33,7 +37,7 @@ bool character::isAlive() const {
 }
 
 std::ostream& operator<<(std::ostream& os, const character& obj) {
-    return os << obj.getName() << ": HP: " << obj.getHP() << " DMG: " << obj.getDMG() << std::endl;
+    return os << obj.getName() << ": HP: " << obj.getHP() << " DMG: " << obj.getDMG() << " ACD: " << obj.getACD() << std::endl;
 }
 
 character  character::parseUnit(const std::string& name) {
@@ -44,7 +48,7 @@ character  character::parseUnit(const std::string& name) {
 	else
 	{
 		std::string separator = " : ";
-		std::string chp, cdmg, row, part;
+		std::string chp, cdmg, cacd, row, part;
 		while (std::getline(file, row)) {
 			if (row.find("name") != std::string::npos) {
 				cname = row.substr(row.find(separator) + 1);
@@ -57,9 +61,11 @@ character  character::parseUnit(const std::string& name) {
 			else if (row.find("dmg") != std::string::npos) {
 				cdmg = row.substr(row.find(separator) + 3);
 			}
-			
+			else if (row.find("acd") != std::string::npos) {
+				cacd = row.substr(row.find(separator) + 3);
+			}			
 		}
 		file.close();
-		return  character(cname, stoi(chp), stoi(cdmg));
+		return  character(cname, stoi(chp), stoi(cdmg), stoi(cacd));
 	}
 }
