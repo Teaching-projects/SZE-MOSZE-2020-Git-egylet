@@ -13,8 +13,8 @@ public:
     int getHP() const;
     int getDMG() const;
 	double getACD() const;
-    void attack( character& target) const ;
     bool isAlive() const ;
+    void attack(character& player1, character& player2);
     friend std::ostream& operator<<(std::ostream& os, const character& obj);
    
 
@@ -23,7 +23,7 @@ private:
      int characterHP;
      const int characterDMG;
 	 const double characterACD;
-	 //void hit();
+	 void hit(character& target);
      
 };
 
