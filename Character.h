@@ -14,7 +14,7 @@ public:
     int getDMG() const;
 	double getACD() const;
     bool isAlive() const ;
-    void attack(character& player1, character& player2);
+    std::string attack(character& player1, character& player2);
     friend std::ostream& operator<<(std::ostream& os, const character& obj);
    
 

@@ -31,41 +31,51 @@ void character::hit(character& target) {
 	if (target.characterHP < 0) target.characterHP = 0;
 }
 
-void character::attack(character& player1, character& player2){
+std::string makeResults(std::string Name, int HP) {
+	std::string results = "";
+	results += Name; 
+	results += " wins. Remaining HP: ";
+	results += std::to_string(HP); 
+	results += ".";
+	return results;
+}
+
+std::string character::attack(character& player1, character& player2){
 	double time1 = 0;
 	double time2 = 0;
 	while (player1.isAlive() && player2.isAlive()) {
 		if (time1 < time2) {
 			player1.hit(player2);
 			if (!player2.isAlive()) {
-				std::cout << player1.getName() << " wins. " << "Remaining HP: " << player1.getHP() <<"."<< std::endl;
-				break;
+				std::string result = makeResults(player1.getName(), player1.getHP());
+				return result;
 			}
 			time1 += player1.characterACD;
 		}
 		else if (time1 > time2) {
 			player2.hit(player1);
 			if (!player1.isAlive()) {
-				std::cout << player2.getName() << " wins. " << "Remaining HP: " << player2.getHP() <<"."<< std::endl;
-				break;
+				std::string result = makeResults(player2.getName(), player2.getHP());
+				return result;
 			}
 			time2 += player2.characterACD;
 		}
 		else {
 			player1.hit(player2);
 			if (!player2.isAlive()) {
-				std::cout << player1.getName() << " wins. " << "Remaining HP: " << player1.getHP() <<"."<< std::endl;
-				break;
+				std::string result = makeResults(player1.getName(), player1.getHP());
+				return result;
 			}
 			time1 += player1.characterACD;
 			player2.hit(player1);
 			if (!player1.isAlive()) {
-				std::cout << player2.getName() << " wins. " << "Remaining HP: " << player2.getHP() <<"."<< std::endl;
-				break;
+				std::string result = makeResults(player2.getName(), player2.getHP());
+				return result;
 			}
 			time2 += player2.characterACD;
 		}
 	}
+	return 0;
 }
 
 std::ostream& operator<<(std::ostream& os, const character& obj) {

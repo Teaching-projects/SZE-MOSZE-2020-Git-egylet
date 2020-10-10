@@ -7,10 +7,11 @@ int main(int argc, char* argv[]) {
     try {
         if (argc == 3) {
 
-           character player1 = character::parseUnit(argv[1]);
-           character player2 = character::parseUnit(argv[2]);
+			character player1 = character::parseUnit(argv[1]);
+			character player2 = character::parseUnit(argv[2]);
 
-           player1.attack(player1, player2);
+            std::string winner = player1.attack(player1, player2);
+			std::cout << winner << std::endl;
         }
         else {
             std::cout << "Inappropriate command line inputs. Game will now close." << std::endl;
