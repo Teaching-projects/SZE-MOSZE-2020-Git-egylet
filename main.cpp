@@ -1,14 +1,13 @@
 #include "Character.h"
 #include <iostream>
-
-
+#include <fstream>
 
 int main(int argc, char* argv[]) {
     try {
         if (argc == 3) {
 
-           character player1 = character::parseUnit(argv[1]);
-           character player2 = character::parseUnit(argv[2]);
+            character player1 = character::parseUnit(argv[1]);
+            character player2 = character::parseUnit(argv[2]);
 
            
             while (player1.isAlive() && player2.isAlive()) {
