@@ -2,6 +2,7 @@
 #include <string>
 #include <fstream>
 #include "Character.h"
+#include "JsonParser.h"
 
 character::character(std::string name, int HP, int DMG) : characterName(name), characterHP(HP), characterDMG(DMG) {}
 
@@ -36,30 +37,19 @@ std::ostream& operator<<(std::ostream& os, const character& obj) {
     return os << obj.getName() << ": HP: " << obj.getHP() << " DMG: " << obj.getDMG() << std::endl;
 }
 
-character  character::parseUnit(const std::string& name) {
-	std::string cname;
+character character::parseUnit(const std::string& name) {
 	std::ifstream file;
 	file.open(name);
+
 	if (file.fail()) throw "it does not exist";
 	else
 	{
-		std::string separator = " : ";
-		std::string chp, cdmg, row, part;
-		while (std::getline(file, row)) {
-			if (row.find("name") != std::string::npos) {
-				cname = row.substr(row.find(separator) + 1);
-				cname = cname.substr(cname.find('"') + 1, cname.find_last_of('"') - 3);
-			}
-			else if (row.find("hp") != std::string::npos) {
-				part = row.substr(row.find(separator) + 3);
-				chp = part.substr(0, part.find(","));
-			}
-			else if (row.find("dmg") != std::string::npos) {
-				cdmg = row.substr(row.find(separator) + 3);
-			}
-			
+		parser parser;
+		std::map<std::string, std::string> values = parser.jsonParser(file);
+		if (values.find("name") != values.end() && values.find("hp") != values.end() && values.find("dmg") != values.end()) {
+			file.close();
+			return character(values["name"], stoi(values["hp"]), stoi(values["dmg"]));
 		}
-		file.close();
-		return  character(cname, stoi(chp), stoi(cdmg));
+		else throw "incorrect values";
 	}
 }
