@@ -37,12 +37,12 @@ public:
 
 private:
      
-		const std::string characterName;	///< The character's name
-		int characterHP;	///< The character's HP
-		const int characterDMG;	///< The character's DMG
-		const double characterACD;	///< The character's ACD
-	
-		void character::hit(character& target);	///< This takes one hit
+	const std::string characterName;	///< The character's name
+	int characterHP;	///< The character's HP
+	const int characterDMG;	///< The character's DMG
+	const double characterACD;	///< The character's ACD
+
+	void hit(character& target);	///< This takes one hit
      
 };
 

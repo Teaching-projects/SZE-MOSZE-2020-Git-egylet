@@ -30,7 +30,7 @@ void character::hit(character& target /** This is a player parameter*/) {
 	if (target.characterHP < 0) target.characterHP = 0; ///< Restores HP to 0 if HP decreases below 0
 }
 
-std::string makeResults(std::string Name /** This is a string parameter*/, int HP /** This is an int parameter*/) {
+std::string character::makeResults(std::string Name /** This is a string parameter*/, int HP /** This is an int parameter*/) {
 	std::string results = "";	///< This makes a new empty string: results
 	results += Name; 	///< This add the Name to results string
 	results += " wins. Remaining HP: ";	///< This add filling text to results string
