@@ -41,15 +41,11 @@ Character Character::parseUnit(const std::string& name) {
 	std::ifstream file;
 	file.open(name);
 
-	if (file.fail()) throw "it does not exist";
-	else
-	{
-		parser parser;
-		std::map<std::string, std::string> values = parser.jsonParser(file);
-		if (values.find("name") != values.end() && values.find("hp") != values.end() && values.find("dmg") != values.end()) {
-			file.close();
-			return Character(values["name"], stoi(values["hp"]), stoi(values["dmg"]));
-		}
-		else throw "incorrect values";
+	parser parser;
+	std::map<std::string, std::string> values = parser.jsonParser(file);
+	if (values.find("name") != values.end() && values.find("hp") != values.end() && values.find("dmg") != values.end()) {
+		file.close();
+		return Character(values["name"], stoi(values["hp"]), stoi(values["dmg"]));
 	}
+	else throw "incorrect values";
 }
