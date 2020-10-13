@@ -41,7 +41,7 @@ Character Character::parseUnit(const std::string& name) {
 	std::ifstream file;
 	file.open(name);
 
-	parser parser;
+	Parser parser;
 	std::map<std::string, std::string> values = parser.jsonParser(file);
 	if (values.find("name") != values.end() && values.find("hp") != values.end() && values.find("dmg") != values.end()) {
 		file.close();
