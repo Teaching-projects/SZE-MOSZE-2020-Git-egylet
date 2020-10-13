@@ -9,5 +9,5 @@ jobs:
     build: 
         runs-on: ubuntu-latest
         steps: 
-            - uses: actions/chechout@v2
+            - uses: actions/checkout@v2
             - run: g++ -std=c++11 *.cpp -o main -w
