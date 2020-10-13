@@ -4,22 +4,22 @@
 #include "Character.h"
 #include "JsonParser.h"
 
-character::character(std::string name, int HP, int DMG) : characterName(name), characterHP(HP), characterDMG(DMG) {}
+Character::Character(std::string name, int HP, int DMG) : characterName(name), characterHP(HP), characterDMG(DMG) {}
 
-std::string character::getName() const
+std::string Character::getName() const
 {
     return characterName;
 }
-int character::getHP() const
+int Character::getHP() const
 {
     return characterHP;
 }
-int character::getDMG() const
+int Character::getDMG() const
 {
     return characterDMG;
 }
 
-void character::attack(character& target) const  {
+void Character::attack(Character& target) const  {
 
     if (target.characterHP < this->characterDMG) {
         target.characterHP = 0;
@@ -29,15 +29,15 @@ void character::attack(character& target) const  {
     }
 }
 
-bool character::isAlive() const {
+bool Character::isAlive() const {
      return this->characterHP > 0;
 }
 
-std::ostream& operator<<(std::ostream& os, const character& obj) {
+std::ostream& operator<<(std::ostream& os, const Character& obj) {
     return os << obj.getName() << ": HP: " << obj.getHP() << " DMG: " << obj.getDMG() << std::endl;
 }
 
-character character::parseUnit(const std::string& name) {
+Character Character::parseUnit(const std::string& name) {
 	std::ifstream file;
 	file.open(name);
 
@@ -48,7 +48,7 @@ character character::parseUnit(const std::string& name) {
 		std::map<std::string, std::string> values = parser.jsonParser(file);
 		if (values.find("name") != values.end() && values.find("hp") != values.end() && values.find("dmg") != values.end()) {
 			file.close();
-			return character(values["name"], stoi(values["hp"]), stoi(values["dmg"]));
+			return Character(values["name"], stoi(values["hp"]), stoi(values["dmg"]));
 		}
 		else throw "incorrect values";
 	}
