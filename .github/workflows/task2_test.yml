@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: g++ -std=c++17 *.cpp
-      - run: ./task2.sh
-      - run: diff native_output.txt units/good_output.txt
+      - name: Build the program
+        run: g++ -std=c++17 *.cpp
+      - name: Run task2 shell script
+        run: ./task2.sh
+      - name: Compare native_output.txt with units/good_output.txt
+        run: diff native_output.txt units/good_output.txt
