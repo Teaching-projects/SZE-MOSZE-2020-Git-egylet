@@ -1,0 +1,25 @@
+name: Static code analysis
+
+on:
+  push
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install cppcheck and valgrind
+        run: sudo apt install -y cppcheck && sudo apt install -y valgrind 
+      - name: Running code analysis with cppcheck
+        run: cppcheck *.cpp --enable=all --output-file=cppcheck_expected_output.txt && chmod +x check_for_warning.sh && ./check_for_warning.sh && chmod +x check_for_error.sh && ./check_for_error.sh
+      - name: Upload Cppcheck result 
+        uses: actions/upload-artifact@v2  
+        with:
+          name: cppcheck_expected_output
+          path: cppcheck_expected_output.txt
+      - name: build
+        run: g++ -Wall -Werror -Wextra -std=c++17 *.cpp -o a.out
+      - name: Valgrind check
+        run: valgrind --error-exitcode=1 ./a.out units/Kakarott.json units/Sally.json
+      - name: In-out tests
+        run: chmod +x test.sh && ./task2_test.yml
