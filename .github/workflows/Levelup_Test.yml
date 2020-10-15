@@ -20,6 +20,6 @@ jobs:
       - name: build
         run: g++ -Wall -Werror -Wextra -std=c++17 *.cpp 
       - name: Valgrind check
-        run: valgrind --error-exitcode=1 ./a.out units/unit_test_1.json units/unit_test_2.json units/unit_test_3.json
+        run: valgrind --error-exitcode=1 ./a.out units/unit_test_1.json units/unit_test_2.json 
       - name: In-out tests
         run: chmod +x task2.sh && ./task2.sh
