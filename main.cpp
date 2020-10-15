@@ -1,41 +1,35 @@
 #include "Character.h"
 #include <iostream>
 
-
-
 int main(int argc, char* argv[]) {
     try {
         if (argc == 3) {
+			/**
+			\brief The case of normal input.
+			*/
 
-           character player1 = character::parseUnit(argv[1]);
-           character player2 = character::parseUnit(argv[2]);
+			character player1 = character::parseUnit(argv[1] /** [in] first player's .json file*/);		///< Making the first player by the data from the .json file
+			character player2 = character::parseUnit(argv[2] /** [in] second player's .json file*/);	///< Making the second player by the data from the .json file
 
-           
-            while (player1.isAlive() && player2.isAlive()) {
-
-                player1.attack(player2);
-                if (!player2.isAlive()) {
-                    std::cout << player1.getName() << " wins. " << "Remaining HP: " << player1.getHP() <<"."<< std::endl;
-                    break;
-                }
-
-                player2.attack(player1);
-                if (!player1.isAlive()) {
-                    std::cout << player2.getName() << " wins. " << "Remaining HP: " << player2.getHP() <<"."<< std::endl;
-                    break;
-                }
-            }
+            std::string winner = player1.attack(player1 /** the player from the first .json file*/, player2 /** the player from the second .json file*/);	///< Calculating the results
+			std::cout << winner << std::endl;	///< Write out the results on the screen
         }
         else {
-            std::cout << "Inappropriate command line inputs. Game will now close." << std::endl;
-            std::cout << "Input should look like: 'A.json B.json'" << std::endl;
+			/**
+			\brief The case of wrong input.
+			*/
+            std::cout << "Inappropriate command line inputs. Game will now close." << std::endl;	///< Write out the problem on the screen
+            std::cout << "Input should look like: 'A.json B.json'" << std::endl;	///< Write out the correct input form on the screen
             return 1;
         }
 
     }
     catch(std::exception & e) {
-        std::cout << "Inappropriate command line inputs, or the file does not exist,please try again" << std::endl;
-        std::cout << "Input should look like: 'A.json B.json'" << std::endl;
+		/**
+		\brief The case of wrong input or missing file(s).
+		*/
+        std::cout << "Inappropriate command line inputs, or the file does not exist,please try again" << std::endl;	///< Write out the problem on the screen
+        std::cout << "Input should look like: 'A.json B.json'" << std::endl;	///< Write out the correct input form on the screen
         return 1;
     }
     return 0;
