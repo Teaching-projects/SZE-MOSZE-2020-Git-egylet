@@ -3,22 +3,25 @@
 #include <fstream>
 #include "Character.h"
 
-character::character(std::string name, int HP, int DMG) : characterName(name), characterHP(HP), characterDMG(DMG) {}
+Character::Character(std::string name, int hp, int dmg) : characterName(name), characterHP(hp), characterDMG(dmg)
+{	
 
-std::string character::getName() const
+}
+
+std::string Character::getName() const
 {
     return characterName;
 }
-int character::getHP() const
+int Character::getHP() const
 {
     return characterHP;
 }
-int character::getDMG() const
+int Character::getDMG() const
 {
     return characterDMG;
 }
 
-void character::attack(character& target) const  {
+void Character::attack(Character& target) const  {
 
     if (target.characterHP < this->characterDMG) {
         target.characterHP = 0;
@@ -28,15 +31,15 @@ void character::attack(character& target) const  {
     }
 }
 
-bool character::isAlive() const {
+bool Character::isAlive() const {
      return this->characterHP > 0;
 }
 
-std::ostream& operator<<(std::ostream& os, const character& obj) {
+std::ostream& operator<<(std::ostream& os, const Character& obj) {
     return os << obj.getName() << ": HP: " << obj.getHP() << " DMG: " << obj.getDMG() << std::endl;
 }
 
-character  character::parseUnit(const std::string& name) {
+Character  Character::parseUnit(const std::string& name) {
 	std::string cname;
 	std::ifstream file;
 	file.open(name);
@@ -60,6 +63,7 @@ character  character::parseUnit(const std::string& name) {
 			
 		}
 		file.close();
-		return  character(cname, stoi(chp), stoi(cdmg));
+		return  Character(cname, stoi(chp), stoi(cdmg));
 	}
 }
+
