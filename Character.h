@@ -7,7 +7,7 @@ class Character
 protected:
     const std::string characterName;
     int characterHP;
-    const int characterDMG;
+    int characterDMG;
 
 
 public:
