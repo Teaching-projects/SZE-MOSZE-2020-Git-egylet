@@ -1,5 +1,6 @@
 {
   "name" : "Enigma",
   "hp" : 3000,
-  "dmg" : 1w3
+  "dmg" : 1w3,
+  "acd" : 5.0
 }
