@@ -94,9 +94,9 @@ Character Character::parseUnit(const std::string& name) {
 
 	Parser parser;
 	std::map<std::string, std::string> values = parser.jsonParser(file);
-	if (values.find("name") != values.end() && values.find("hp") != values.end() && values.find("dmg") != values.end()) {
+	if (values.find("name") != values.end() && values.find("hp") != values.end() && values.find("dmg") != values.end() && values.find("acd") != values.end() && ) {
 		file.close();
-		return Character(values["name"], stoi(values["hp"]), stoi(values["dmg"]));
+		return Character(values["name"], stoi(values["hp"]), stoi(values["dmg"]), stoi(values["acd"]));
 	}
 	else throw "incorrect values";
 }
