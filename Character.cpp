@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <map>
 #include "Character.h"
 #include "JsonParser.h"
 
