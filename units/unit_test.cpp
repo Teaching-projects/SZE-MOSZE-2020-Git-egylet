@@ -2,11 +2,10 @@
 #include <gtest/gtest.h>
 
 TEST(JsonParser, istream) {
-	Parser parser;
 	std::ifstream file;
 	file.open("unit_test_1.json");
 	
-	std::map<std::string, std::string> actual = parser.jsonParser(file);
+	std::map<std::string, std::string> actual = Parser::jsonParser(file);
 	std::map<std::string, std::string> whichis
 	{
 		{"name", "Kakarott"},
@@ -23,7 +22,6 @@ TEST(JsonParser, istream) {
 }
 
 TEST(JsonParser, string) {
-	Parser parser;
 	std::string filename = "unit_test_2.json";
 	std::ifstream file;
 	file.open(filename);
@@ -41,7 +39,7 @@ TEST(JsonParser, string) {
 		content += line;
 	}
 	
-	std::map<std::string, std::string> actual = parser.jsonParser(content);
+	std::map<std::string, std::string> actual = Parser::jsonParser(content);
 	for (auto entry : actual)
 	{
 		ASSERT_EQ(whichis[entry.first], entry.second);
@@ -50,10 +48,9 @@ TEST(JsonParser, string) {
 
 
 TEST(JsonParser, filename) {
-	Parser parser;
 	std::string filename = "unit_test_3.json";
 	
-	std::map<std::string, std::string> actual = parser.jsonParser(filename);
+	std::map<std::string, std::string> actual = Parser::jsonParser(filename);
 	std::map<std::string, std::string> whichis
 	{
 		{"name", "Maple"},
@@ -65,6 +62,25 @@ TEST(JsonParser, filename) {
 	{
 		ASSERT_EQ(whichis[entry.first], entry.second);
 	}
+}
+
+TEST(JsonParser, errorfile) {
+	std::ifstream file;
+	file.open("error/unit_test_error.json");
+	std::map<std::string, std::string> actual = Parser::jsonParser(file);
+	std::map<std::string, std::string> whichis
+	{
+		{"name", "Enigma"},
+		{"hp", "3000"},
+		{"dmg", "300"}
+	};
+	
+	for (auto entry : actual)
+	{
+		ASSERT_EQ(whichis[entry.first], entry.second);
+	}
+	
+	file.close();
 }
 
 int main(int argc, char** argv) {
