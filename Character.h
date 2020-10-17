@@ -18,6 +18,7 @@ Created on: 2020/10/11 12:39
 #define CHARACTER_H
 #include <string>
 #include <iostream>
+
 class Character
 {
     
