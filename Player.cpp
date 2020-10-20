@@ -1,6 +1,6 @@
 #include "Player.h"
 #include "Character.h"
-#include <math.h>
+#include <cmath>
 #include <fstream>
 
 
@@ -14,20 +14,24 @@ void Player::levelup() {
 
 
 
-void Player::attack(Character* enemy) 
+void Player::attack(Player& enemy) 
 {
-    int enemyHP = enemy->getHP();
+    int enemyHP = enemy.getHP();
     int XpToAdd= 0;
 
     if (enemyHP < characterDMG)
     {
+		enemy.characterHP = 0;
 		XpToAdd = enemyHP;
+		
     }
     else
     {
+		
 		XpToAdd = characterDMG;
     }
-
+	enemy.characterHP -= characterDMG;
+	
 	XP += XpToAdd;
 
     if (XP >= 100)

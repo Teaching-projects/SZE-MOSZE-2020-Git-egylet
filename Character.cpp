@@ -3,7 +3,7 @@
 #include <fstream>
 #include "Character.h"
 
-Character::Character(std::string name, int hp, int dmg) : characterName(name), characterHP(hp), characterDMG(dmg)
+Character::Character(const std::string name, int hp, int dmg) : characterName(name), characterHP(hp), characterDMG(dmg)
 {	
 
 }
