@@ -16,13 +16,12 @@ void Player::levelup() {
 
 void Player::attack(Player& enemy) 
 {
-    int enemyHP = enemy.getHP();
     int XpToAdd= 0;
 
-    if (enemyHP < characterDMG)
+    if (enemy.getHP() < characterDMG)
     {
 		enemy.characterHP = 0;
-		XpToAdd = enemyHP;
+		XpToAdd = enemy.getHP();
 		
     }
     else
