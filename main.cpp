@@ -8,8 +8,8 @@ int main(int argc, char* argv[]) {
     try {
         if (argc == 3) {
 
-            Character player1 = Player::parseUnit(argv[1]);
-            Character player2 = Player::parseUnit(argv[2]);
+            Player player1 = Player::parseUnit(argv[1]);
+            Character player2 = Character::parseUnit(argv[2]);
           
            
             while (player1.isAlive() && player2.isAlive()) {

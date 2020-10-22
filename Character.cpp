@@ -21,14 +21,16 @@ int Character::getDMG() const
     return characterDMG;
 }
 
-void Character::attack(Character& target) const  {
-
-    if (target.characterHP < this->characterDMG) {
-        target.characterHP = 0;
-    }
-    else {
-        target.characterHP -= this->characterDMG;
-    }
+void Character::getDamage(Character* target)
+{
+	characterHP = (getHP() - target->getDMG());
+	if (characterHP < 0)
+	{
+		characterHP = 0;
+	}
+}
+void Character::attack(Character& target)  {
+	target.getDamage(this);
 }
 
 bool Character::isAlive() const {

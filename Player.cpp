@@ -6,21 +6,24 @@
 
 void Player::levelup() {
 	level++;
-	maxHP = round(maxHP * 1.1);
-	characterDMG = round(characterDMG * 1.1);
+	maxHP *= 1.1;
+	maxHP = round(maxHP);
+	characterDMG *= 1.1;
 	characterHP = maxHP;
+	std::cout << "level:" << level << std::endl;
+
 	
 }
 
 
 
-void Player::attack(Player& enemy) 
+void Player::attack(Character& enemy) 
 {
     int XpToAdd= 0;
-
+	
     if (enemy.getHP() < characterDMG)
     {
-		enemy.characterHP = 0;
+		
 		XpToAdd = enemy.getHP();
 		
     }
@@ -29,8 +32,8 @@ void Player::attack(Player& enemy)
 		
 		XpToAdd = characterDMG;
     }
-	enemy.characterHP -= characterDMG;
-	
+
+	enemy.getDamage(this);
 	XP += XpToAdd;
 
     if (XP >= 100)
@@ -39,6 +42,7 @@ void Player::attack(Player& enemy)
         for (int i = 0; i < LvlToAdd; i++)
         {
             levelup();
+			std::cout << "Level Up!" << std::endl;
         }
         XP -= LvlToAdd * 100;
     }

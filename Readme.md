@@ -48,3 +48,7 @@ Actions - Workflow:
 		A kimeneteket ideiglenesen kiírja egy native_output.txt fájlba.  
 *	**Compare native_output.txt with units/good_output.txt**:  
 		Összehasonlítja a test által generált kimeneteket a good_output.txt-ben előre definiált kimenetekkel.  
+
+---
+
+GitHub Pages Dokumentáció: https://teaching-projects.github.io/SZE-MOSZE-2020-Git-egylet/index.html  

@@ -17,8 +17,9 @@ public:
     std::string getName() const;
     int getHP() const;
     int getDMG() const;
-    void attack( Character& target) const ;
+    void attack( Character& target)  ;
     bool isAlive() const ;
+    void getDamage(Character*);
     friend std::ostream& operator<<(std::ostream& os, const Character& obj);
    
 
