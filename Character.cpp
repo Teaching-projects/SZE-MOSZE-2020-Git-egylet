@@ -40,11 +40,11 @@ std::string Character::makeResults(std::string Name /** This is a string paramet
 	return results;	///< \return This is the completed string
 }
 
-std::string Character::attack(Character& player1 /** This is a player parameter*/, Character& player2 /** This is a player parameter*/){
+std::string Character::attack(Character& player1 /** This is a player parameter*/, Character& player2 /** This is a player parameter*/) {
 	double time1 = 0;	///< First player's time counter
 	double time2 = 0;	///< Second player's time counter
 	while (player1.isAlive() && player2.isAlive()) {
-		
+
 		///Player1 is the next
 		if (time1 /**First player's time counter*/ < time2 /**Second player's time counter*/) {
 			player1.hit(player2 /**This is a player parameter*/);
@@ -54,7 +54,7 @@ std::string Character::attack(Character& player1 /** This is a player parameter*
 			}
 			time1 += player1.characterACD;	///< Increases first player's time counter with first player's ACD
 		}
-		
+
 		///Player2 is the next
 		else if (time1 /**First player's time counter*/ > time2 /**Second player's time counter*/) {
 			player2.hit(player1 /**This is a player parameter*/);
@@ -64,7 +64,7 @@ std::string Character::attack(Character& player1 /** This is a player parameter*
 			}
 			time2 += player2.characterACD;	///< Increases second player's time counter with first player's ACD
 		}
-		
+
 		///Both players hits at the same time, the first is who started the attack
 		else {
 			player1.hit(player2 /**This is a player parameter*/);

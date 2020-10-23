@@ -1,6 +1,6 @@
-Sally wins. Remaining HP: 1500.
-Maple wins. Remaining HP: 800.
-Sally wins. Remaining HP: 1500.
-Sally wins. Remaining HP: 800.
-Maple wins. Remaining HP: 800.
-Sally wins. Remaining HP: 800.
+Kakarott wins. Remaining HP: 639.
+Kakarott wins. Remaining HP: 772.
+Sally wins. Remaining HP: 605.
+Sally wins. Remaining HP: 804.
+Maple wins. Remaining HP: 931.
+Maple wins. Remaining HP: 1361.

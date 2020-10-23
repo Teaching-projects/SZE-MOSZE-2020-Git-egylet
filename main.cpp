@@ -1,4 +1,5 @@
 #include "Character.h"
+#include "Player.h"
 #include <iostream>
 #include <fstream>
 
@@ -8,8 +9,8 @@ int main(int argc, char* argv[]) {
 			/**
 			\brief The case of normal input.
 			*/
-			      Character player1 = Character::parseUnit(argv[1] /** [in] first player's .json file*/);		///< Making the first player by the data from the .json file
-			      Character player2 = Character::parseUnit(argv[2] /** [in] second player's .json file*/);	///< Making the second player by the data from the .json file
+            Player player1 = Player::parseUnit(argv[1] /** [in] first player's .json file*/);		///< Making the first player by the data from the .json file
+            Character player2 = Character::parseUnit(argv[2] /** [in] second player's .json file*/);	///< Making the second player by the data from the .json file
 
             std::string winner = player1.attack(player1 /** the player from the first .json file*/, player2 /** the player from the second .json file*/);	///< Calculating the results
 			      std::cout << winner << std::endl;	///< Write out the results on the screen
