@@ -2,4 +2,5 @@
   "name" : "Kakarott",
   "hp" : 300,
   "dmg" : 150,
+  "acd" : 5.5
 }
