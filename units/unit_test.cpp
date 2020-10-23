@@ -9,8 +9,8 @@ TEST(JsonParser, istream) {
 	std::map<std::string, std::string> whichis
 	{
 		{"name", "Kakarott"},
-		{"hp", "3000"},
-		{"dmg", "400"},
+		{"hp", "300"},
+		{"dmg", "150"},
 		{"acd", "5.5"}
 	};
 	
@@ -31,8 +31,8 @@ TEST(JsonParser, string) {
 	std::map<std::string, std::string> whichis
 	{
 		{"name", "Sally"},
-		{"hp", "3500"},
-		{"dmg", "350"},
+		{"hp", "500"},
+		{"dmg", "250"},
 		{"acd", "3.5"}
 	};
 	
@@ -56,8 +56,8 @@ TEST(JsonParser, filename) {
 	std::map<std::string, std::string> whichis
 	{
 		{"name", "Maple"},
-		{"hp", "4000"},
-		{"dmg", "300"},
+		{"hp", "700"},
+		{"dmg", "100"},
 		{"acd", "4.5"}
 	};
 	
