@@ -28,14 +28,14 @@ std::map <std::string, std::string> Parser::jsonParserFileName(std::string filen
 	std::ifstream file;
 	file.open(filename);
 
-	if (!file.fail()) 
-	{
-		std::map <std::string, std::string> values = jsonParser(file);
-		return values;
-		
-		file.close();
-	}
-	else throw "it does not exist";
+    if (file.fail()) throw "it does not exist";
+    else
+    {
+        std::map <std::string, std::string> values = jsonParser(file);
+        return values;
+
+        file.close();
+    }
 }
 
 std::map <std::string, std::string> Parser::jsonParser(std::string fileNameOrString) {
