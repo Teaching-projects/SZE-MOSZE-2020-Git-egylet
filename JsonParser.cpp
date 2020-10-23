@@ -32,9 +32,11 @@ std::map <std::string, std::string> Parser::jsonParserFileName(std::string filen
     else
     {
         std::map <std::string, std::string> values = jsonParser(file);
+        file.close();
+
         return values;
     }
-    file.close();
+    
 }
 
 std::map <std::string, std::string> Parser::jsonParser(std::string fileNameOrString) {
