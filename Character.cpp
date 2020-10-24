@@ -2,27 +2,28 @@
 #include <string>
 #include <fstream>
 #include "Character.h"
+#include "JsonParser.h"
 
 Character::Character(std::string name /** This is a string parameter*/, int HP /** This is an int parameter*/, int DMG /** This is an int parameter*/, double ACD /** This is a double parameter*/) : characterName(name), characterHP(HP), characterDMG(DMG), characterACD(ACD) {}
 
 std::string Character::getName(/** Here is no parameter*/) const {
-	return characterName;
+    return characterName;
 }
 
 int Character::getHP(/** Here is no parameter*/) const {
-	return characterHP;
+    return characterHP;
 }
 
 int Character::getDMG(/** Here is no parameter*/) const {
-	return characterDMG;
+    return characterDMG;
 }
 
 double Character::getACD(/** Here is no parameter*/) const {
-	return characterACD;
+    return characterACD;
 }
 
 bool Character::isAlive(/** Here is no parameter*/) const {
-	return this->characterHP > 0;
+     return this->characterHP > 0;
 }
 
 void Character::hit(Character& target /** This is a player parameter*/) {
@@ -84,42 +85,18 @@ std::string Character::attack(Character& player1 /** This is a player parameter*
 }
 
 std::ostream& operator<<(std::ostream& os, const Character& obj) {
-	return os << obj.getName(/** Here is no parameter*/) << ": HP: " << obj.getHP(/** Here is no parameter*/) << " DMG: " << obj.getDMG(/** Here is no parameter*/) << " ACD: " << obj.getACD(/** Here is no parameter*/) << std::endl;
+    return os << obj.getName(/** Here is no parameter*/) << ": HP: " << obj.getHP(/** Here is no parameter*/) << " DMG: " << obj.getDMG(/** Here is no parameter*/) << " ACD: " << obj.getACD(/** Here is no parameter*/) << std::endl;
 }
 
-Character  Character::parseUnit(const std::string& name) {
-	std::string cname;
+Character Character::parseUnit(const std::string& name) {
 	std::ifstream file;
 	file.open(name);
-	if (file.fail(/** Here is no parameter*/)) throw "it does not exist";	///< Error sign
-	else
-	{
-		std::string separator = " : ";
-		std::string chp, cdmg, cacd, row, part;
-		while (std::getline(file, row)) {
-			///Finding and reading in name
-			if (row.find("name") != std::string::npos) {
-				cname = row.substr(row.find(separator) + 1);
-				cname = cname.substr(cname.find('"') + 1, cname.find_last_of('"') - 3);
-			}
 
-			///Finding and reading in hp
-			else if (row.find("hp") != std::string::npos) {
-				part = row.substr(row.find(separator) + 3);
-				chp = part.substr(0, part.find(","));
-			}
-
-			///Finding and reading in dmg
-			else if (row.find("dmg") != std::string::npos) {
-				cdmg = row.substr(row.find(separator) + 3);
-			}
-
-			///Finding and reading in acd
-			else if (row.find("acd") != std::string::npos) {
-				cacd = row.substr(row.find(separator) + 3);
-			}
-		}
-		file.close(/** Here is no parameter*/);
-		return  Character(cname, stoi(chp), stoi(cdmg), stoi(cacd));
+	Parser parser;
+	std::map<std::string, std::string> values = parser.jsonParser(file);
+	if (values.find("name") != values.end() && values.find("hp") != values.end() && values.find("dmg") != values.end() && values.find("acd") != values.end()) {
+		file.close();
+		return Character(values["name"], stoi(values["hp"]), stoi(values["dmg"]), stoi(values["acd"]));
 	}
+	else throw "incorrect values";
 }
