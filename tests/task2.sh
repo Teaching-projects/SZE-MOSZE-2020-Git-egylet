@@ -11,7 +11,7 @@ do
 	do
 		if [ $i != $j ]
 		then
-			./a.out $i $j >> ../native_output.txt
+			./a.out $i $j >> native_output.txt
 		fi
 	done
 done
