@@ -11,7 +11,7 @@ jobs:
       - name: Update gcc/g++ version manually
         run: sudo apt-get install gcc-8 g++-8
       - name: Build the program
-		run: g++ -std=c++17 *.cpp
+        run: g++ -std=c++17 *.cpp
       - name: Run task2 shell script
         run: ./task2.sh
       - name: Compare native_output.txt with units/good_output.txt
