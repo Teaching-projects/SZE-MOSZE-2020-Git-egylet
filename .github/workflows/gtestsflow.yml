@@ -13,6 +13,6 @@ jobs:
       - name: Run gtests shell script
         run: chmod +x tests/gtests.sh && ./tests/gtests.sh
       - name: Run runTests
-        run: chmod +x tests/runTests && ./tests/runTests >> gtests_output.txt
+        run: ./tests/runTests >> tests/gtests_output.txt
       - name: Compare tests/gtests_output.txt with tests/gtests_good_output.txt
         run: diff tests/gtests_output.txt tests/gtests_good_output.txt
