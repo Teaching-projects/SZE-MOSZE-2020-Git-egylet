@@ -1,37 +1,38 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "Character.h"
+#include <vector>
+#include "Monster.h"
 #include "JSON.h"
 
-Character::Character(std::string name /** This is a string parameter*/, int HP /** This is an int parameter*/, int DMG /** This is an int parameter*/, double ACD /** This is a double parameter*/) : characterName(name), characterHP(HP), characterDMG(DMG), characterACD(ACD) {}
+Monster::Monster(std::string name /** This is a string parameter*/, int HP /** This is an int parameter*/, int DMG /** This is an int parameter*/, double ACD /** This is a double parameter*/) : characterName(name), characterHP(HP), characterDMG(DMG), characterACD(ACD) {}
 
-std::string Character::getName(/** Here is no parameter*/) const {
+std::string Monster::getName(/** Here is no parameter*/) const {
     return characterName;
 }
 
-int Character::getHP(/** Here is no parameter*/) const {
+int Monster::getHP(/** Here is no parameter*/) const {
     return characterHP;
 }
 
-int Character::getDMG(/** Here is no parameter*/) const {
+int Monster::getDMG(/** Here is no parameter*/) const {
     return characterDMG;
 }
 
-double Character::getACD(/** Here is no parameter*/) const {
+double Monster::getACD(/** Here is no parameter*/) const {
     return characterACD;
 }
 
-bool Character::isAlive(/** Here is no parameter*/) const {
+bool Monster::isAlive(/** Here is no parameter*/) const {
      return this->characterHP > 0;
 }
 
-void Character::hit(Character& target /** This is a player parameter*/) {
+void Monster::hit(Monster& target /** This is a player parameter*/) {
 	target.characterHP -= this->characterDMG; ///< Takes one hit
 	if (target.characterHP < 0) target.characterHP = 0; ///< Restores HP to 0 if HP decreases below 0
 }
 
-std::string Character::makeResults(std::string Name /** This is a string parameter*/, int HP /** This is an int parameter*/) {
+std::string Monster::makeResults(std::string Name /** This is a string parameter*/, int HP /** This is an int parameter*/) {
 	std::string results = "";	///< This makes a new empty string: results
 	results += Name; 	///< This add the Name to results string
 	results += " wins. Remaining HP: ";	///< This add filling text to results string
@@ -40,7 +41,7 @@ std::string Character::makeResults(std::string Name /** This is a string paramet
 	return results;	///< \return This is the completed string
 }
 
-std::string Character::attack(Character& player1 /** This is a player parameter*/, Character& player2 /** This is a player parameter*/) {
+std::string Monster::attack(Monster& player1 /** This is a player parameter*/, Monster& player2 /** This is a player parameter*/) {
 	double time1 = 0;	///< First player's time counter
 	double time2 = 0;	///< Second player's time counter
 	while (player1.isAlive() && player2.isAlive()) {
@@ -84,19 +85,27 @@ std::string Character::attack(Character& player1 /** This is a player parameter*
 	return 0;
 }
 
-std::ostream& operator<<(std::ostream& os, const Character& obj) {
+std::ostream& operator<<(std::ostream& os, const Monster& obj) {
     return os << obj.getName(/** Here is no parameter*/) << ": HP: " << obj.getHP(/** Here is no parameter*/) << " DMG: " << obj.getDMG(/** Here is no parameter*/) << " ACD: " << obj.getACD(/** Here is no parameter*/) << std::endl;
 }
 
-Character Character::parseUnit(const std::string& name) {
-	std::ifstream file;
-	file.open(name);
+Monster Monster::parse(const std::string& name) {
+	JSON values = JSON::jsonParser(name);
+	
+	const std::vector<std::string> find{"name", "hp", "dmg", "acd"};
+    for (int i = 0; i < find.size(); i++)
+    {
+        if (!values.count(find[i]))
+        {
+            throw std::invalid_argument("JSON error: " + name + "-> " + find[i]);
+        }
+    }
 
-	Parser parser;
-	std::map<std::string, std::string> values = parser.jsonParser(file);
-	if (values.find("name") != values.end() && values.find("hp") != values.end() && values.find("dmg") != values.end() && values.find("acd") != values.end()) {
-		file.close();
-		return Character(values["name"], stoi(values["hp"]), stoi(values["dmg"]), stoi(values["acd"]));
-	}
-	else throw "incorrect values";
+    return Monster
+		(
+        values.get<std::string>("name"),
+        values.get<int>("hp"),
+        values.get<int>("dmg"),
+        values.get<float>("acd")
+        );
 }

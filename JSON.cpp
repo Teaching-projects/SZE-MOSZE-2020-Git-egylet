@@ -1,6 +1,6 @@
 #include "JSON.h"
 
-std::map <std::string, std::string> Parser::jsonParser(std::istream& file) {
+JSON JSON::jsonParser(std::istream& file) {
     std::string content, line;
 
     while (std::getline(file, line))
@@ -11,9 +11,9 @@ std::map <std::string, std::string> Parser::jsonParser(std::istream& file) {
     return jsonParser(content);
 }
 
-std::map <std::string, std::string> Parser::jsonParserString(std::string str) {
+JSON JSON::parseFromString(std::string str) {
     std::regex reg("\\s*\"([\\w]*)\"\\s*:\\s*\"?([\\w\\.]*)\"?\\s*[,}]\\s*");
-    std::map<std::string, std::string> values;
+    std::map<std::string, std::any> values;
     std::smatch match;
 
 	while (std::regex_search(str, match, reg))
@@ -24,14 +24,14 @@ std::map <std::string, std::string> Parser::jsonParserString(std::string str) {
 	return values;
 }
 
-std::map <std::string, std::string> Parser::jsonParserFileName(std::string filename) {
+JSON JSON::parseFromFile(std::string filename) {
 	std::ifstream file;
 	file.open(filename);
 
     if (file.fail()) throw "it does not exist";
     else
     {
-        std::map <std::string, std::string> values = jsonParser(file);
+        JSON values = jsonParser(file);
         file.close();
 
         return values;
@@ -39,10 +39,10 @@ std::map <std::string, std::string> Parser::jsonParserFileName(std::string filen
     
 }
 
-std::map <std::string, std::string> Parser::jsonParser(std::string fileNameOrString) {
+JSON JSON::jsonParser(std::string fileNameOrString) {
     std::regex freg("([\\w]*).json$");
     std::smatch match;
 
-    if (!std::regex_search(fileNameOrString, match, freg)) return jsonParserString(fileNameOrString);
-    else return jsonParserFileName(fileNameOrString);
+    if (!std::regex_search(fileNameOrString, match, freg)) return parseFromString(fileNameOrString);
+    else return parseFromFile(fileNameOrString);
 }

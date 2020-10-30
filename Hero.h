@@ -1,5 +1,6 @@
 #include "Monster.h"
-class Player : public Character
+
+class Hero : public Monster
 {	
 
 protected:
@@ -10,7 +11,18 @@ protected:
 	void levelup();
 
 public:
-	Player(const std::string& characterName, int characterHP, int characterDMG, double characterACD) : Character(characterName, characterHP, characterDMG,characterACD), maxHP(characterHP), level(1), XP(0) {};
-	static Player parseUnit(const std::string& name);
-	std::string attack(Character& player1, Character& player2);
+	Hero(const std::string& characterName, int characterHP, int characterDMG, double characterACD)
+		: Monster
+		(
+		characterName,
+		characterHP,
+		characterDMG,
+		characterACD
+		),
+		maxHP(characterHP), 
+		level(1),
+		XP(0) 
+		{};
+	static Hero parse(const std::string& name);
+	std::string attack(Monster& player1, Monster& player2);
 };
