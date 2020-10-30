@@ -3,7 +3,7 @@
 
 TEST(JsonParser, istream) {
 	std::ifstream file;
-	file.open("Player_1_Kakarott.json");
+	file.open("../units/Player_1_Kakarott.json");
 	
 	std::map<std::string, std::string> actual = Parser::jsonParser(file);
 	std::map<std::string, std::string> whichis
@@ -23,7 +23,7 @@ TEST(JsonParser, istream) {
 }
 
 TEST(JsonParser, string) {
-	std::string filename = "Player_2_Sally.json";
+	std::string filename = "../units/Player_2_Sally.json";
 	std::ifstream file;
 	file.open(filename);
 	std::string content, line;
@@ -50,7 +50,7 @@ TEST(JsonParser, string) {
 
 
 TEST(JsonParser, filename) {
-	std::string filename = "Player_3_Maple.json";
+	std::string filename = "../units/Player_3_Maple.json";
 	
 	std::map<std::string, std::string> actual = Parser::jsonParser(filename);
 	std::map<std::string, std::string> whichis
@@ -69,7 +69,7 @@ TEST(JsonParser, filename) {
 
 TEST(JsonParser, errorfile) {
 	std::ifstream file;
-	file.open("error/Player_4_Enigma.json");
+	file.open("../units/error/Player_4_Enigma.json");
 	std::map<std::string, std::string> actual = Parser::jsonParser(file);
 	std::map<std::string, std::string> whichis
 	{
