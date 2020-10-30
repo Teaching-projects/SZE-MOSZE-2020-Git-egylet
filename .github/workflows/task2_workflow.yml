@@ -10,6 +10,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Update gcc/g++ version manually
         run: sudo apt-get install gcc-8 g++-8
+      - name: Set update to auto mode
+        run: sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 0 --slave /usr/bin/g++ g++ /usr/bin/g++-8
       - name: Build the program
         run: g++ -std=c++17 *.cpp
       - name: Run task2 shell script
