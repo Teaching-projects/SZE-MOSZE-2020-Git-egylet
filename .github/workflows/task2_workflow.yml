@@ -9,8 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the program
-        run: sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 0 --slave /usr/bin/g++ g++ /usr/bin/g++-8
-
+        run: g++ -std=c++17 *.cpp
       - name: Run task2 shell script
         run: ./task2.sh
       - name: Compare native_output.txt with units/good_output.txt
