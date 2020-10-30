@@ -11,6 +11,6 @@ jobs:
       - name: Build the program
         run: g++ -std=c++17 *.cpp
       - name: Run gtests shell script
-        run: ./tests/gtests.sh
+        run: chmod +x tests/gtests.sh && ./tests/gtests.sh
       - name: Compare tests/gtests_output.txt with tests/gtests_good_output.txt
         run: diff tests/gtests_output.txt tests/gtests_good_output.txt
