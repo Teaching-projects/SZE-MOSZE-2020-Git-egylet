@@ -18,5 +18,4 @@ sudo ln -st /usr/lib/ /usr/src/gtest/libgtest_main.a
 cd -
 cmake CMakeLists.txt
 make
-chmod +x runTests
-./runTests $i $j >> gtests_output.txt
+chmod +x runTests && ./runTests >> gtests_output.txt
