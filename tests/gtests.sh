@@ -18,3 +18,4 @@ sudo ln -st /usr/lib/ /usr/src/gtest/libgtest_main.a
 cd -
 cmake CMakeLists.txt
 make
+./runTests >> gtests_output.txt
