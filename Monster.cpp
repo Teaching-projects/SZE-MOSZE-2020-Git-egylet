@@ -2,7 +2,7 @@
 #include <string>
 #include <fstream>
 #include "Character.h"
-#include "JsonParser.h"
+#include "JSON.h"
 
 Character::Character(std::string name /** This is a string parameter*/, int HP /** This is an int parameter*/, int DMG /** This is an int parameter*/, double ACD /** This is a double parameter*/) : characterName(name), characterHP(HP), characterDMG(DMG), characterACD(ACD) {}
 

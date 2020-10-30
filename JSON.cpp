@@ -1,4 +1,4 @@
-#include "JsonParser.h"
+#include "JSON.h"
 
 std::map <std::string, std::string> Parser::jsonParser(std::istream& file) {
     std::string content, line;

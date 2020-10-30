@@ -1,5 +1,5 @@
-#include "Player.h"
-#include "Character.h"
+#include "Hero.h"
+#include "Monster.h"
 #include <cmath>
 #include <fstream>
 
