@@ -5,21 +5,26 @@
 #include "Monster.h"
 #include "JSON.h"
 
-Monster::Monster(std::string name /** This is a string parameter*/, int HP /** This is an int parameter*/, int DMG /** This is an int parameter*/, double ACD /** This is a double parameter*/) : characterName(name), characterHP(HP), characterDMG(DMG), characterACD(ACD) {}
+Monster::Monster(const std::string name, int HP, int DMG, double ACD)
+	: characterName(name),
+	characterHP(HP),
+	characterDMG(DMG),
+	characterACD(ACD)
+	{}
 
 std::string Monster::getName(/** Here is no parameter*/) const {
     return characterName;
 }
 
-int Monster::getHP(/** Here is no parameter*/) const {
+int Monster::getHealthPoints(/** Here is no parameter*/) const {
     return characterHP;
 }
 
-int Monster::getDMG(/** Here is no parameter*/) const {
+int Monster::getDamage(/** Here is no parameter*/) const {
     return characterDMG;
 }
 
-double Monster::getACD(/** Here is no parameter*/) const {
+double Monster::getAttackCoolDown(/** Here is no parameter*/) const {
     return characterACD;
 }
 
@@ -50,7 +55,7 @@ std::string Monster::attack(Monster& player1 /** This is a player parameter*/, M
 		if (time1 /**First player's time counter*/ < time2 /**Second player's time counter*/) {
 			player1.hit(player2 /**This is a player parameter*/);
 			if (!player2.isAlive(/** Here is no parameter*/)) {
-				std::string result = makeResults(player1.getName(/** Here is no parameter*/), player1.getHP(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
+				std::string result = makeResults(player1.getName(/** Here is no parameter*/), player1.getHealthPoints(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
 				return result;	///< \return The winner and the remaining HP
 			}
 			time1 += player1.characterACD;	///< Increases first player's time counter with first player's ACD
@@ -60,7 +65,7 @@ std::string Monster::attack(Monster& player1 /** This is a player parameter*/, M
 		else if (time1 /**First player's time counter*/ > time2 /**Second player's time counter*/) {
 			player2.hit(player1 /**This is a player parameter*/);
 			if (!player1.isAlive(/** Here is no parameter*/)) {
-				std::string result = makeResults(player2.getName(/** Here is no parameter*/), player2.getHP(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
+				std::string result = makeResults(player2.getName(/** Here is no parameter*/), player2.getHealthPoints(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
 				return result;	///< \return The winner and the remaining HP
 			}
 			time2 += player2.characterACD;	///< Increases second player's time counter with first player's ACD
@@ -70,13 +75,13 @@ std::string Monster::attack(Monster& player1 /** This is a player parameter*/, M
 		else {
 			player1.hit(player2 /**This is a player parameter*/);
 			if (!player2.isAlive(/** Here is no parameter*/)) {
-				std::string result = makeResults(player1.getName(/** Here is no parameter*/), player1.getHP(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
+				std::string result = makeResults(player1.getName(/** Here is no parameter*/), player1.getHealthPoints(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
 				return result;	///< \return The winner and the remaining HP
 			}
 			time1 += player1.characterACD;	///< Increases first player's time counter with first player's ACD
 			player2.hit(player1 /**This is a player parameter*/);
 			if (!player1.isAlive(/** Here is no parameter*/)) {
-				std::string result = makeResults(player2.getName(/** Here is no parameter*/), player2.getHP(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
+				std::string result = makeResults(player2.getName(/** Here is no parameter*/), player2.getHealthPoints(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
 				return result;	///< \return The winner and the remaining HP
 			}
 			time2 += player2.characterACD;	///< Increases second player's time counter with first player's ACD
@@ -86,7 +91,7 @@ std::string Monster::attack(Monster& player1 /** This is a player parameter*/, M
 }
 
 std::ostream& operator<<(std::ostream& os, const Monster& obj) {
-    return os << obj.getName(/** Here is no parameter*/) << ": HP: " << obj.getHP(/** Here is no parameter*/) << " DMG: " << obj.getDMG(/** Here is no parameter*/) << " ACD: " << obj.getACD(/** Here is no parameter*/) << std::endl;
+    return os << obj.getName(/** Here is no parameter*/) << ": HP: " << obj.getHealthPoints(/** Here is no parameter*/) << " DMG: " << obj.getDamage(/** Here is no parameter*/) << " ACD: " << obj.getAttackCoolDown(/** Here is no parameter*/) << std::endl;
 }
 
 Monster Monster::parse(const std::string& name) {

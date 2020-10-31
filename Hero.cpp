@@ -5,6 +5,14 @@
 #include <fstream>
 #include <any>
 
+int Hero::getLevel(/** Here is no parameter*/) {
+    return level;
+}
+
+int Hero::getMaxHealthPoints(/** Here is no parameter*/) {
+    return maxHP;
+}
+
 void Hero::levelup() {
 	level++;
 	maxHP *= 1.1;
@@ -20,16 +28,16 @@ std::string Hero::attack(Monster& player1 /** This is a player parameter*/, Mons
 	while (player1.isAlive() && player2.isAlive()) {
 		
 
-		if (player2.getHP() < player1.getDMG())
+		if (player2.getHealthPoints() < player1.getDamage())
 		{
 
-			XpToAdd = player2.getHP();
+			XpToAdd = player2.getHealthPoints();
 
 		}
 		else
 		{
 
-			XpToAdd = player1.getDMG();
+			XpToAdd = player1.getDamage();
 		}
 
 		XP += XpToAdd;
@@ -49,36 +57,36 @@ std::string Hero::attack(Monster& player1 /** This is a player parameter*/, Mons
 		if (time1 /**First player's time counter*/ < time2 /**Second player's time counter*/) {
 			player1.hit(player2 /**This is a player parameter*/);
 			if (!player2.isAlive(/** Here is no parameter*/)) {
-				std::string result = makeResults(player1.getName(/** Here is no parameter*/), player1.getHP(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
+				std::string result = makeResults(player1.getName(/** Here is no parameter*/), player1.getHealthPoints(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
 				return result;	///< \return The winner and the remaining HP
 			}
-			time1 += player1.getACD();	///< Increases first player's time counter with first player's ACD
+			time1 += player1.getAttackCoolDown();	///< Increases first player's time counter with first player's ACD
 		}
 
 		///Player2 is the next
 		else if (time1 /**First player's time counter*/ > time2 /**Second player's time counter*/) {
 			player2.hit(player1 /**This is a player parameter*/);
 			if (!player1.isAlive(/** Here is no parameter*/)) {
-				std::string result = makeResults(player2.getName(/** Here is no parameter*/), player2.getHP(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
+				std::string result = makeResults(player2.getName(/** Here is no parameter*/), player2.getHealthPoints(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
 				return result;	///< \return The winner and the remaining HP
 			}
-			time2 += player2.getACD();	///< Increases second player's time counter with first player's ACD
+			time2 += player2.getAttackCoolDown();	///< Increases second player's time counter with first player's ACD
 		}
 
 		///Both players hits at the same time, the first is who started the attack
 		else {
 			player1.hit(player2 /**This is a player parameter*/);
 			if (!player2.isAlive(/** Here is no parameter*/)) {
-				std::string result = makeResults(player1.getName(/** Here is no parameter*/), player1.getHP(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
+				std::string result = makeResults(player1.getName(/** Here is no parameter*/), player1.getHealthPoints(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
 				return result;	///< \return The winner and the remaining HP
 			}
-			time1 += player1.getACD();	///< Increases first player's time counter with first player's ACD
+			time1 += player1.getAttackCoolDown();	///< Increases first player's time counter with first player's ACD
 			player2.hit(player1 /**This is a player parameter*/);
 			if (!player1.isAlive(/** Here is no parameter*/)) {
-				std::string result = makeResults(player2.getName(/** Here is no parameter*/), player2.getHP(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
+				std::string result = makeResults(player2.getName(/** Here is no parameter*/), player2.getHealthPoints(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
 				return result;	///< \return The winner and the remaining HP
 			}
-			time2 += player2.getACD();	///< Increases second player's time counter with first player's ACD
+			time2 += player2.getAttackCoolDown();	///< Increases second player's time counter with first player's ACD
 		}
 	}
 	return 0;
