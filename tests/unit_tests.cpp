@@ -70,7 +70,7 @@ TEST(JsonParser, filename) {
 }
 
 //add some whitespaces in .json file
-TEST(JsonParser, istream) {
+TEST(JsonParser, Spacy) {
 	std::ifstream file;
 	file.open("../units/not_correct_units/Player_2_Spacy.json");
 	
@@ -92,7 +92,7 @@ TEST(JsonParser, istream) {
 }
 
 //mixed the lines in .json file
-TEST(JsonParser, istream) {
+TEST(JsonParser, mixi) {
 	std::ifstream file;
 	file.open("../units/not_correct_units/NCPlayer_1_Mixi.json");
 	
