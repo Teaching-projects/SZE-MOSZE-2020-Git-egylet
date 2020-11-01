@@ -220,18 +220,20 @@ TEST(Character, parseUnit){
 	ASSERT_DOUBLE_EQ(expected_acd, test_acd);
 }
 
-/*meg nem mukodnek
+TEST(Character, attack){
+	Character player_test_1("PLAYER1", 300, 100, 1.5);
+	Character player_test_2("PLAYER2", 300, 50, 2.5);
+	std::string test_winner = player_test_1.attack(player_test_1, player_test_2);
+	std::string expected_winner = "PLAYER1 wins. Remaining HP: 200.";
+	ASSERT_EQ(expected_winner, test_winner);
+}
 
 TEST(Character, makeResults){
 	std::string test_results = Character::makeResults("Kakarott", 100);
 	std::string expected_results = "Kakarott wins. Remaining HP: 100.";
 	ASSERT_EQ(expected_results, test_results);
-} cannot call member function without object
+} //cannot call member function without object
 
-TEST(Character, attack){
-	
-}
-*/
 
 int main(int argc, char** argv) {
 	::testing::InitGoogleTest(&argc, argv);
