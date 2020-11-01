@@ -16,14 +16,9 @@ public:
     static JSON jsonParser(std::string file);
     static JSON parseFromFile(std::string filename);
     static JSON parseFromString(std::string str);
+    int count(std::string key);
 
 	JSON(std::map<std::string, std::any> data) : data(data){};
-	
-	unsigned int count(const std::string &key)
-    {
-        return data.count(key);
-    }
-
 	
 	template <typename T>
     T get(const std::string &key)

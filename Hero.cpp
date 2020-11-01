@@ -207,5 +207,5 @@ Hero Hero::parse(const std::string& name) {
         values.get<int>("damage"),
         values.get<float>("attack_cooldown")
         );
-	else throw JSON::ParseException("Incorrect attributes in " + name + "!");
+	else throw JSON::ParseException("Incorrect values in " + name);
 }

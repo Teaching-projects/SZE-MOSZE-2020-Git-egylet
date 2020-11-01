@@ -8,7 +8,7 @@ JSON JSON::jsonParser(std::istream& file) {
         content += line;
     }
 
-    return jsonParser(content);
+    return parseFromString(content);
 }
 
 JSON JSON::parseFromString(std::string str) {
@@ -21,7 +21,7 @@ JSON JSON::parseFromString(std::string str) {
 		values[match[1]] = match[2];
 		str = match.suffix().str();
 	}
-	return values;
+	return JSON(values);
 }
 
 JSON JSON::parseFromFile(std::string filename) {
@@ -31,12 +31,12 @@ JSON JSON::parseFromFile(std::string filename) {
     if (file.fail()) throw "it does not exist";
     else
     {
-        JSON values = jsonParser(file);
+        std::map<std::string, std::any> values = jsonParser(file).data;
+        
         file.close();
 
-        return values;
+        return JSON(values);
     }
-    
 }
 
 JSON JSON::jsonParser(std::string fileNameOrString) {
@@ -45,4 +45,8 @@ JSON JSON::jsonParser(std::string fileNameOrString) {
 
     if (!std::regex_search(fileNameOrString, match, freg)) return parseFromString(fileNameOrString);
     else return parseFromFile(fileNameOrString);
+}
+
+int JSON::count(std::string key){
+    if (data.find(key) != data.end()) return 1; else return 0;
 }
