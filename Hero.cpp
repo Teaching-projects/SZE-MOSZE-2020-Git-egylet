@@ -91,8 +91,15 @@ void Hero::levelup() {
 	//~ }
 	//~ return 0;
 //~ }
+void Hero::getHit(Monster* target /** This is a player parameter*/) {
+	this->characterHP -= target->getDamage(); ///< Takes one hit
+	if (this->characterHP < 0) this->characterHP = 0; ///< Restores HP to 0 if HP decreases below 0
+}
 
-std::string Hero::fightTilDeath(Hero& target) {
+void Hero::hit(Monster* target) {
+	target->getHit(this);
+}
+std::string Hero::fightTilDeath(Monster target) {
 	double time1 = 0;	///< First player's time counter
 	double time2 = 0;	///< Second player's time counter
 	int XpToAdd = 0;
@@ -126,7 +133,7 @@ std::string Hero::fightTilDeath(Hero& target) {
 
 		///Player1 is the next
 		if (time1 /**First player's time counter*/ < time2 /**Second player's time counter*/) {
-			this->hit(target /**This is a player parameter*/);
+			this->hit(&target /**This is a player parameter*/);
 			if (!target.isAlive(/** Here is no parameter*/)) {
 				std::string result = makeResults(this->getName(/** Here is no parameter*/), this->getHealthPoints(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
 				return result;	///< \return The winner and the remaining HP
@@ -146,7 +153,7 @@ std::string Hero::fightTilDeath(Hero& target) {
 
 		///Both players hits at the same time, the first is who started the attack
 		else {
-			this->hit(target /**This is a player parameter*/);
+			this->hit(&target /**This is a player parameter*/);
 			if (!target.isAlive(/** Here is no parameter*/)) {
 				std::string result = makeResults(this->getName(/** Here is no parameter*/), this->getHealthPoints(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
 				return result;	///< \return The winner and the remaining HP

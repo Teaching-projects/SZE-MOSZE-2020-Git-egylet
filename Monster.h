@@ -29,9 +29,10 @@ public:
     int getDamage() const;	///< This is a simple getter for DMG
     double getAttackCoolDown() const;	///< This is a simple getter for ACD
     bool isAlive() const;	///< This shows that the player is alive or not
-    void hit(Monster& target);	///< This takes one hit
+    void getHit(Monster* target);	///< This takes one hit
+    void hit(Monster* target);
     std::string makeResults(std::string Name, int HP);	///< This makes the results into one string
-    std::string Monster::fightTilDeath(Monster& target);	///< This commands the hole battle
+    std::string fightTilDeath(Monster target);	///< This commands the hole battle
     friend std::ostream& operator<<(std::ostream& os, const Monster& obj);	///< This is an operator overwrite
 
 };

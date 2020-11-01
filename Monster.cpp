@@ -5,12 +5,7 @@
 #include "Monster.h"
 #include "JSON.h"
 
-Monster::Monster(const std::string name, int HP, int DMG, double ACD)
-	: characterName(name),
-	characterHP(HP),
-	characterDMG(DMG),
-	characterACD(ACD)
-	{}
+Monster::Monster(std::string name /** This is a string parameter*/, int HP /** This is an int parameter*/, int DMG /** This is an int parameter*/, double ACD /** This is a double parameter*/) : characterName(name), characterHP(HP), characterDMG(DMG), characterACD(ACD) {}
 
 std::string Monster::getName(/** Here is no parameter*/) const {
     return characterName;
@@ -32,9 +27,13 @@ bool Monster::isAlive(/** Here is no parameter*/) const {
      return this->characterHP > 0;
 }
 
-void Monster::hit(Monster& target /** This is a player parameter*/) {
-	target.characterHP -= this->characterDMG; ///< Takes one hit
-	if (target.characterHP < 0) target.characterHP = 0; ///< Restores HP to 0 if HP decreases below 0
+void Monster::getHit(Monster* target /** This is a player parameter*/) {
+	target->characterHP -= this->characterDMG; ///< Takes one hit
+	if (target->characterHP < 0) target->characterHP = 0; ///< Restores HP to 0 if HP decreases below 0
+}
+
+void Monster::hit(Monster* target) {
+	target->getHit(this);
 }
 
 std::string Monster::makeResults(std::string Name /** This is a string parameter*/, int HP /** This is an int parameter*/) {
@@ -94,41 +93,14 @@ std::string Monster::makeResults(std::string Name /** This is a string parameter
     //~ return os << obj.getName(/** Here is no parameter*/) << ": HP: " << obj.getHealthPoints(/** Here is no parameter*/) << " DMG: " << obj.getDamage(/** Here is no parameter*/) << " ACD: " << obj.getAttackCoolDown(/** Here is no parameter*/) << std::endl;
 //~ }
 
-std::string Monster::fightTilDeath(Monster& target) {
+std::string Monster::fightTilDeath(Monster target) {
 	double time1 = 0;	///< First player's time counter
 	double time2 = 0;	///< Second player's time counter
-	int XpToAdd = 0;
 	while (this->isAlive() && target.isAlive()) {
 		
-
-		if (target.getHealthPoints() < this->getDamage())
-		{
-
-			XpToAdd = target.getHealthPoints();
-
-		}
-		else
-		{
-
-			XpToAdd = this->getDamage();
-		}
-
-		XP += XpToAdd;
-
-		if (XP >= 100)
-		{
-			int LvlToAdd = XP / 100;
-			for (int i = 0; i < LvlToAdd; i++)
-			{
-				levelup();
-
-			}
-			XP -= LvlToAdd * 100;
-		}
-
 		///Player1 is the next
 		if (time1 /**First player's time counter*/ < time2 /**Second player's time counter*/) {
-			this->hit(target /**This is a player parameter*/);
+			this->hit(&target /**This is a player parameter*/);
 			if (!target.isAlive(/** Here is no parameter*/)) {
 				std::string result = makeResults(this->getName(/** Here is no parameter*/), this->getHealthPoints(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
 				return result;	///< \return The winner and the remaining HP
@@ -148,7 +120,7 @@ std::string Monster::fightTilDeath(Monster& target) {
 
 		///Both players hits at the same time, the first is who started the attack
 		else {
-			this->hit(target /**This is a player parameter*/);
+			this->hit(&target /**This is a player parameter*/);
 			if (!target.isAlive(/** Here is no parameter*/)) {
 				std::string result = makeResults(this->getName(/** Here is no parameter*/), this->getHealthPoints(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
 				return result;	///< \return The winner and the remaining HP

@@ -11,7 +11,7 @@ protected:
 	void levelup();
 
 public:
-	Hero(std::string name, int HP, int DMG, double ACD)
+	Hero(const std::string& characterName, int characterHP, int characterDMG, double characterACD)
 		: Monster
 		(
 		characterName,
@@ -26,8 +26,9 @@ public:
 	
 	int getLevel();
 	int getMaxHealthPoints();
-	
+	void getHit(Monster* target);
+	void hit(Monster* target);
 	static Hero parse(const std::string& name);
 	//~ std::string attack(Monster& player1, Monster& player2);
-	std::string Hero::fightTilDeath(Hero& target);
+	std::string fightTilDeath(Monster target);
 };
