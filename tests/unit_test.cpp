@@ -1,6 +1,7 @@
 #include "../JsonParser.h"
 #include <gtest/gtest.h>
 
+//Json file beolasasa file alapjan
 TEST(JsonParser, istream) {
 	std::ifstream file;
 	file.open("../units/Player_1_Kakarott.json");
@@ -22,6 +23,7 @@ TEST(JsonParser, istream) {
 	file.close();
 }
 
+//Json file beolasasa string alapjan
 TEST(JsonParser, string) {
 	std::string filename = "../units/Player_2_Sally.json";
 	std::ifstream file;
@@ -48,7 +50,7 @@ TEST(JsonParser, string) {
 	}
 }
 
-
+//Json file beolasasa fajlnev alapjan
 TEST(JsonParser, filename) {
 	std::string filename = "../units/Player_3_Maple.json";
 	
@@ -66,7 +68,9 @@ TEST(JsonParser, filename) {
 		ASSERT_EQ(whichis[entry.first], entry.second);
 	}
 }
-/*
+
+/* Direkt rossz test, a workflow rosszul fut le tole
+
 TEST(JsonParser, errorfile) {
 	std::ifstream file;
 	file.open("../units/error/Player_4_Enigma.json");
@@ -87,6 +91,89 @@ TEST(JsonParser, errorfile) {
 	file.close();
 }
 */
+
+/*Refactor tesztek alapja
+TEST(Monster, good_working){
+
+	for (auto entry : actual)
+	{
+		ASSERT_EQ(whichis[entry.first], entry.second);
+	}
+}
+
+TEST(parse, good_working){
+	
+	for (auto entry : actual)
+	{
+		ASSERT_EQ(whichis[entry.first], entry.second);
+	}
+}
+
+TEST(getName, good_working){
+	
+	for (auto entry : actual) 
+	{
+		ASSERT_EQ(whichis[entry.first], entry.second);
+	}
+}
+
+TEST(getHealthPoints, good_working){
+	
+	for (auto entry : actual)
+	{
+		ASSERT_EQ(whichis[entry.first], entry.second);
+	}
+}
+
+TEST(getDamage, good_working){
+	
+	for (auto entry : actual)
+	{
+		ASSERT_EQ(whichis[entry.first], entry.second);
+	}
+}
+
+TEST(getAttackCoolDown, good_working){
+	
+	for (auto entry : actual)
+	{
+		ASSERT_EQ(whichis[entry.first], entry.second);
+	}
+}
+
+TEST(isAlive, good_working){
+	
+	for (auto entry : actual)
+	{
+		ASSERT_EQ(whichis[entry.first], entry.second);
+	}
+}
+
+TEST(hit, good_working){
+	
+	for (auto entry : actual)
+	{
+		ASSERT_EQ(whichis[entry.first], entry.second);
+	}
+}
+
+TEST(makeResults, good_working){
+	
+	for (auto entry : actual)
+	{
+		ASSERT_EQ(whichis[entry.first], entry.second);
+	}
+}
+
+TEST(fightTilDeath, good_working){
+	
+	for (auto entry : actual)
+	{
+		ASSERT_EQ(whichis[entry.first], entry.second);
+	}
+}
+*/
+
 int main(int argc, char** argv) {
 	::testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();
