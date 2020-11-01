@@ -139,19 +139,35 @@ std::string Monster::fightTilDeath(Monster target) {
 
 Monster Monster::parse(const std::string& name) {
 	JSON values = JSON::jsonParser(name);
-	const std::vector<std::string> find{"name", "health_points", "damage", "attack_cooldown"};        
+	const std::vector<std::string> find
+	{
+		"name",
+		"base_health_points", 
+		"base_damage",
+		"base_attack_cooldown"
+		//~ "experience_per_level",
+		//~ "health_point_bonus_per_level",
+		//~ "damage_bonus_per_level",
+		//~ "cooldown_multiplier_per_level"
+	};        
+    
     bool load = true;
-	for (auto key : find)
-        if(!values.count(key))
-			load = false;
+	for (auto k : find)
+	{
+		if(!values.count(k)) load = false;
+	}
 
 	if (load) 
 		return Monster
 		(
         values.get<std::string>("name"),
-        values.get<int>("health_points"),
-        values.get<int>("damage"),
-        values.get<float>("attack_cooldown")
+        stoi(values.get<std::string>("base_health_points")),
+		stoi(values.get<std::string>("base_damage")),
+		stod(values.get<std::string>("base_attack_cooldown"))
+		//~ stoi(values.get<std::string>("experience_per_level")),
+		//~ stoi(values.get<std::string>("health_point_bonus_per_level")),
+		//~ stoi(values.get<std::string>("damage_bonus_per_level")),
+		//~ stod(values.get<std::string>("cooldown_multiplier_per_level"))
         );
 	else throw JSON::ParseException("Incorrect values in " + name);
 }

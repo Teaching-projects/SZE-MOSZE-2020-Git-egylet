@@ -12,16 +12,41 @@ JSON JSON::jsonParser(std::istream& file) {
 }
 
 JSON JSON::parseFromString(std::string str) {
-    std::regex reg("\\s*\"([\\w]*)\"\\s*:\\s*\"?([\\w\\.]*)\"?\\s*[,}]\\s*");
-    std::map<std::string, std::any> values;
+    std::regex reg("\\s*\"([\\w]*)\"\\s*:\\s*\"?([\\s\\w\\.]*)\"?\\s*[,}]\\s*");
+    std::map<std::string, std::string> values;
     std::smatch match;
 
-	while (std::regex_search(str, match, reg))
-	{
-		values[match[1]] = match[2];
-		str = match.suffix().str();
-	}
-	return JSON(values);
+	if (str.substr(0,1) != "{"){
+        throw ParseException("{ missing"); 
+    }
+    else if (str.substr(str.size()-1, 1) != "}"){
+        throw ParseException("} missing"); 
+    }
+
+    while(std::regex_search(str, match, reg)){
+        if (match[1] == "") {
+            throw ParseException("incorrect key"); 
+        }
+
+        else if (match[2] == "") {
+            throw ParseException("incorrect value"); 
+        }
+
+        else
+        {
+            values[match[1]] = match[2];
+            str = match.suffix().str();
+        }            
+    }
+    return JSON(values);
+
+
+	//~ while (std::regex_search(str, match, reg))
+	//~ {
+		//~ values[match[1]] = match[2];
+		//~ str = match.suffix().str();
+	//~ }
+	//~ return JSON(values);
 }
 
 JSON JSON::parseFromFile(std::string filename) {
@@ -31,7 +56,7 @@ JSON JSON::parseFromFile(std::string filename) {
     if (file.fail()) throw "it does not exist";
     else
     {
-        std::map<std::string, std::any> values = jsonParser(file).data;
+        std::map<std::string, std::string> values = jsonParser(file).data;
         
         file.close();
 
