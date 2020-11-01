@@ -139,21 +139,20 @@ std::string Monster::fightTilDeath(Monster target) {
 
 Monster Monster::parse(const std::string& name) {
 	JSON values = JSON::jsonParser(name);
-	
-	const std::vector<std::string> find{"name", "hp", "dmg", "acd"};
-    for (int i = 0; i < find.size(); i++)
-    {
-        if (!values.count(find[i]))
-        {
-            throw std::invalid_argument("JSON error: " + name + "-> " + find[i]);
-        }
-    }
+	const std::vector<std::string> find{"name", "health_points", "damage", "attack_cooldown"};        
+    
+    bool load = true;
+	for (auto key : find)
+        if(!values.count(key))
+			load = false;
 
-    return Monster
+	if (load) 
+		return Monster
 		(
         values.get<std::string>("name"),
-        values.get<int>("hp"),
-        values.get<int>("dmg"),
-        values.get<float>("acd")
+        values.get<int>("health_points"),
+        values.get<int>("damage"),
+        values.get<float>("attack_cooldown")
         );
+	else throw JSON::ParseException("Incorrect attributes in " + name + "!");
 }
