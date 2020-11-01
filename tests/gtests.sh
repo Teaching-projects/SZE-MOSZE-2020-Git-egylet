@@ -1,12 +1,6 @@
 #!/bin/bash
 
 cd tests
-
-if test -f gtests_output.txt
-then
-	rm gtests_output.txt
-fi
-
 sudo apt install build-essential
 sudo apt install libgtest-dev
 sudo apt install cmake
