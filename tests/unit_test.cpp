@@ -69,6 +69,50 @@ TEST(JsonParser, filename) {
 	}
 }
 
+//add some whitespaces in .json file
+TEST(JsonParser, istream) {
+	std::ifstream file;
+	file.open("../units/not_correct_units/Player_2_Spacy.json");
+	
+	std::map<std::string, std::string> actual = Parser::jsonParser(file);
+	std::map<std::string, std::string> whichis
+	{
+		{"name", "Spacy"},
+		{"hp", "400"},
+		{"dmg", "250"},
+		{"acd", "6.5"}
+	};
+	
+	for (auto entry : actual)
+	{
+		ASSERT_EQ(whichis[entry.first], entry.second);
+	}
+	
+	file.close();
+}
+
+//mixed the lines in .json file
+TEST(JsonParser, istream) {
+	std::ifstream file;
+	file.open("../units/not_correct_units/NCPlayer_1_Mixi.json");
+	
+	std::map<std::string, std::string> actual = Parser::jsonParser(file);
+	std::map<std::string, std::string> whichis
+	{
+		{"name", "Mixi"},
+		{"hp", "320"},
+		{"dmg", "140"},
+		{"acd", "5.3"}
+	};
+	
+	for (auto entry : actual)
+	{
+		ASSERT_EQ(whichis[entry.first], entry.second);
+	}
+	
+	file.close();
+}
+
 /* Direkt rossz test, a workflow rosszul fut le tole
 
 TEST(JsonParser, errorfile) {
