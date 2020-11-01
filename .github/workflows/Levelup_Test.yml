@@ -11,7 +11,7 @@ jobs:
       - name: Install cppcheck and valgrind
         run: sudo apt install -y cppcheck && sudo apt install -y valgrind 
       - name: Running code analysis with cppcheck
-        run: cppcheck *.cpp --enable=all --output-file=cppcheck_output.txt && chmod +x tests/warningcheck.sh && ./tests/warningcheck.sh && chmod +x errorcheck.sh && ./tests/errorcheck.sh
+        run: cppcheck *.cpp --enable=all --output-file=cppcheck_output.txt && chmod +x tests/warningcheck.sh && ./tests/warningcheck.sh && chmod +x tests/errorcheck.sh && ./tests/errorcheck.sh
       - name: Upload Cppcheck result 
         uses: actions/upload-artifact@v2  
         with:
