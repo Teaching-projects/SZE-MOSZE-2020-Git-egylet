@@ -136,7 +136,6 @@ TEST(Character, hit){
 	ASSERT_EQ(expected_hp, test_hp);
 }
 
-/*
 TEST(Character, parseUnit){
 	Character player_test = Character::parseUnit("../units/Player_1_Kakarott.json");
 	std::string test_name = player_test.getName();
@@ -154,6 +153,16 @@ TEST(Character, parseUnit){
 	ASSERT_EQ(expected_dmg, test_dmg);
 	ASSERT_DOUBLE_EQ(expected_acd, test_acd);
 }
+
+/*meg nem mukodnek
+
+
+TEST(Character, makeResults){
+	std::string test_results = Character::makeResults("Kakarott", 100);
+	std::string expected_results = "Kakarott wins. Remaining HP: 100.";
+	ASSERT_EQ(expected_results, test_results);
+} cannot call member function without object
+
 */
 
 /*Character tesztek alapja
@@ -162,54 +171,7 @@ TEST(Character, Character){ ??
 	
 }
 
-TEST(Character, makeResults){
-	
-}
-
 TEST(Character, attack){
-	
-}
-*/
-
-
-/*Refactor tesztek alapja
-TEST(Monster, good_working){
-	
-}
-
-TEST(parse, good_working){
-	
-}
-
-TEST(getName, good_working){
-	
-}
-
-TEST(getHealthPoints, good_working){
-	
-}
-
-TEST(getDamage, good_working){
-	
-}
-
-TEST(getAttackCoolDown, good_working){
-	
-}
-
-TEST(isAlive, good_working){
-	
-}
-
-TEST(hit, good_working){
-	
-}
-
-TEST(makeResults, good_working){
-	
-}
-
-TEST(fightTilDeath, good_working){
 	
 }
 */
