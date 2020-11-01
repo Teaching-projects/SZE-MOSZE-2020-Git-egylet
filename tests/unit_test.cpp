@@ -1,4 +1,4 @@
-#include "../JsonParser.h"
+#include "../Character.cpp"
 #include <gtest/gtest.h>
 
 //Json file beolasasa file alapjan
@@ -92,85 +92,117 @@ TEST(JsonParser, errorfile) {
 }
 */
 
+TEST(Character, getName){
+	Character player_test("Kakarott", 300, 150, 5.5);
+	std::string test_name = player_test.getName();
+	std::string expected_name = "Kakarott";
+	ASSERT_EQ(test_name, expected_name);
+}
+
+TEST(Character, getHP){
+	Character player_test("Kakarott", 300, 150, 5.5);
+	int test_hp = player_test.getHP();
+	int expected_hp = 300;
+	ASSERT_EQ(test_hp, expected_hp);
+}
+
+TEST(Character, getDMG){
+	Character player_test("Kakarott", 300, 150, 5.5);
+	int test_dmg = player_test.getDMG();
+	int expected_dmg = 150;
+	ASSERT_EQ(test_dmg, expected_dmg);
+}
+
+TEST(Character, getACD){
+	Character player_test("Kakarott", 300, 150, 5.5);
+	double test_acd = player_test.getACD();
+	double expected_acd = 5.5;
+	ASSERT_EQ(test_acd, expected_acd);
+}
+
+/*
+TEST(Character, parseUnit){
+	Character player_test = Character::parseUnit("../units/Player_1_Kakarott.json");
+	std::string test_name = player_test.getName();
+	int test_hp = player_test.getHP();
+	int test_dmg = player_test.getDMG();
+	double test_acd = player_test.getACD();
+	
+	std::string expected_name = "Kakarott";
+	int expected_hp = 300;
+	int expected_dmg = 150;
+	double expected_acd = 5.5;
+	
+	ASSERT_EQ(test_name, expected_name);
+	ASSERT_EQ(test_hp, expected_hp);
+	ASSERT_EQ(test_dmg, expected_dmg);
+	ASSERT_EQ(test_acd, expected_acd);
+}
+*/
+
+/*Character tesztek alapja
+
+TEST(Character, Character){ ??
+	
+}
+
+TEST(Character, isAlive){
+	
+}
+
+TEST(Character, hit){
+	
+}
+
+TEST(Character, makeResults){
+	
+}
+
+TEST(Character, attack){
+	
+}
+*/
+
+
 /*Refactor tesztek alapja
 TEST(Monster, good_working){
-
-	for (auto entry : actual)
-	{
-		ASSERT_EQ(whichis[entry.first], entry.second);
-	}
+	
 }
 
 TEST(parse, good_working){
 	
-	for (auto entry : actual)
-	{
-		ASSERT_EQ(whichis[entry.first], entry.second);
-	}
 }
 
 TEST(getName, good_working){
 	
-	for (auto entry : actual) 
-	{
-		ASSERT_EQ(whichis[entry.first], entry.second);
-	}
 }
 
 TEST(getHealthPoints, good_working){
 	
-	for (auto entry : actual)
-	{
-		ASSERT_EQ(whichis[entry.first], entry.second);
-	}
 }
 
 TEST(getDamage, good_working){
 	
-	for (auto entry : actual)
-	{
-		ASSERT_EQ(whichis[entry.first], entry.second);
-	}
 }
 
 TEST(getAttackCoolDown, good_working){
 	
-	for (auto entry : actual)
-	{
-		ASSERT_EQ(whichis[entry.first], entry.second);
-	}
 }
 
 TEST(isAlive, good_working){
 	
-	for (auto entry : actual)
-	{
-		ASSERT_EQ(whichis[entry.first], entry.second);
-	}
 }
 
 TEST(hit, good_working){
 	
-	for (auto entry : actual)
-	{
-		ASSERT_EQ(whichis[entry.first], entry.second);
-	}
 }
 
 TEST(makeResults, good_working){
 	
-	for (auto entry : actual)
-	{
-		ASSERT_EQ(whichis[entry.first], entry.second);
-	}
 }
 
 TEST(fightTilDeath, good_working){
 	
-	for (auto entry : actual)
-	{
-		ASSERT_EQ(whichis[entry.first], entry.second);
-	}
 }
 */
 
