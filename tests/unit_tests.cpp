@@ -1,4 +1,5 @@
-#include "../Character.cpp"
+#include "../Character.h"
+#include "../JsonParser.h"
 #include <gtest/gtest.h>
 
 //Json file beolasasa file alapjan
@@ -229,10 +230,11 @@ TEST(Character, attack){
 }
 
 TEST(Character, makeResults){
-	std::string test_results = Character::makeResults("Kakarott", 100);
-	std::string expected_results = "Kakarott wins. Remaining HP: 100.";
+	Character player_test("TESTPLAYER", 300, 150, 5.5);
+	std::string test_results = player_test.makeResults(player_test);
+	std::string expected_results = "TESTPLAYER wins. Remaining HP: 300.";
 	ASSERT_EQ(expected_results, test_results);
-} //cannot call member function without object
+}
 
 
 int main(int argc, char** argv) {
