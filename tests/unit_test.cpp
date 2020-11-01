@@ -127,6 +127,15 @@ TEST(Character, isAlive){
 	ASSERT_EQ(expected, test);
 }
 
+TEST(Character, hit){
+	Character player_test_1("Kakarott", 300, 150, 5.5);
+	Character player_test_2("Kakarott_2", 300, 150, 5.5);
+	player_test_1.hit(player_test_2);
+	int test_hp = player_test_2.getHP();
+	int expected_hp = 150;
+	ASSERT_EQ(expected_hp, test_hp);
+}
+
 /*
 TEST(Character, parseUnit){
 	Character player_test = Character::parseUnit("../units/Player_1_Kakarott.json");
@@ -150,10 +159,6 @@ TEST(Character, parseUnit){
 /*Character tesztek alapja
 
 TEST(Character, Character){ ??
-	
-}
-
-TEST(Character, hit){
 	
 }
 
