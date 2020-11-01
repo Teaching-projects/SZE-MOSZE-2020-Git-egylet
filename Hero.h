@@ -28,5 +28,6 @@ public:
 	int getMaxHealthPoints();
 	
 	static Hero parse(const std::string& name);
-	std::string attack(Monster& player1, Monster& player2);
+	//~ std::string attack(Monster& player1, Monster& player2);
+	std::string Hero::fightTilDeath(Hero& target);
 };
