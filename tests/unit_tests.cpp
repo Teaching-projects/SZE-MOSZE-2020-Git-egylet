@@ -92,7 +92,7 @@ TEST(JsonParser, Spacy) {
 }
 
 //mixed the lines in .json file
-TEST(JsonParser, mixi) {
+TEST(JsonParser, Mixi) {
 	std::ifstream file;
 	file.open("../units/not_correct_units/NCPlayer_1_Mixi.json");
 	
@@ -103,6 +103,28 @@ TEST(JsonParser, mixi) {
 		{"hp", "320"},
 		{"dmg", "140"},
 		{"acd", "5.3"}
+	};
+	
+	for (auto entry : actual)
+	{
+		ASSERT_EQ(whichis[entry.first], entry.second);
+	}
+	
+	file.close();
+}
+
+//mixed the lines and add some whitespaces in .json file
+TEST(JsonParser, Mixpacy) {
+	std::ifstream file;
+	file.open("../units/not_correct_units/NCPlayer_3_Mixpacy.json");
+	
+	std::map<std::string, std::string> actual = Parser::jsonParser(file);
+	std::map<std::string, std::string> whichis
+	{
+		{"name", "Mixpacy"},
+		{"hp", "456"},
+		{"dmg", "259"},
+		{"acd", "6.9"}
 	};
 	
 	for (auto entry : actual)
@@ -205,14 +227,6 @@ TEST(Character, makeResults){
 	std::string expected_results = "Kakarott wins. Remaining HP: 100.";
 	ASSERT_EQ(expected_results, test_results);
 } cannot call member function without object
-
-*/
-
-/*Character tesztek alapja
-
-TEST(Character, Character){ ??
-	
-}
 
 TEST(Character, attack){
 	
