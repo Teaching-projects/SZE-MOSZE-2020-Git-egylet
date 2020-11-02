@@ -16,13 +16,6 @@ JSON JSON::parseFromString(std::string str) {
     std::map<std::string, std::string> values;
     std::smatch match;
 
-	if (str.substr(0,1) != "{"){
-        throw ParseException("{ missing"); 
-    }
-    else if (str.substr(str.size()-1, 1) != "}"){
-        throw ParseException("} missing"); 
-    }
-
     while(std::regex_search(str, match, reg)){
         if (match[1] == "") {
             throw ParseException("incorrect key"); 
@@ -39,14 +32,6 @@ JSON JSON::parseFromString(std::string str) {
         }            
     }
     return JSON(values);
-
-
-	//~ while (std::regex_search(str, match, reg))
-	//~ {
-		//~ values[match[1]] = match[2];
-		//~ str = match.suffix().str();
-	//~ }
-	//~ return JSON(values);
 }
 
 JSON JSON::parseFromFile(std::string filename) {
