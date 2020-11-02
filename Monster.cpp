@@ -134,7 +134,7 @@ std::string Monster::fightTilDeath(Monster target) {
 			time2 += target.getAttackCoolDown();	///< Increases second player's time counter with first player's ACD
 		}
 	}
-	return 0;
+	return "";
 }
 
 Monster Monster::parse(const std::string& name) {
@@ -142,9 +142,9 @@ Monster Monster::parse(const std::string& name) {
 	const std::vector<std::string> find
 	{
 		"name",
-		"base_health_points", 
-		"base_damage",
-		"base_attack_cooldown"
+		"health_points", 
+		"damage",
+		"attack_cooldown"
 	};        
     
     bool load = true;
@@ -158,9 +158,9 @@ Monster Monster::parse(const std::string& name) {
 		return Monster
 		(
 			values.get<std::string>("name"),
-			stoi(values.get<std::string>("base_health_points")),
-			stoi(values.get<std::string>("base_damage")),
-			stod(values.get<std::string>("base_attack_cooldown"))
+			stoi(values.get<std::string>("health_points")),
+			stoi(values.get<std::string>("damage")),
+			stod(values.get<std::string>("attack_cooldown"))
         );
 	}
 	else throw JSON::ParseException("incorrect values:" + name);

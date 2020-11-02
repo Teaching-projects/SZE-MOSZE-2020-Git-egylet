@@ -97,7 +97,7 @@ std::string Hero::fightTilDeath(Monster target) {
 			time2 += target.getAttackCoolDown();	///< Increases second player's time counter with first player's ACD
 		}
 	}
-	return 0;
+	return "";
 }
 
 Hero Hero::parse(const std::string& name) {
