@@ -5,8 +5,6 @@
 #include "Monster.h"
 #include "JSON.h"
 
-Monster::Monster(std::string name /** This is a string parameter*/, int HP /** This is an int parameter*/, int DMG /** This is an int parameter*/, double ACD /** This is a double parameter*/) : characterName(name), characterHP(HP), characterDMG(DMG), characterACD(ACD) {}
-
 std::string Monster::getName(/** Here is no parameter*/) const {
     return characterName;
 }

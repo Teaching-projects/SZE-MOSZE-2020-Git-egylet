@@ -16,13 +16,14 @@ Created on: 2020/10/11 12:39
 class Monster
 {
 protected:
-    const std::string characterName;	///< The character's name
+    std::string characterName;	///< The character's name
     int characterHP;	///< The character's HP
     int characterDMG;	///< The character's DMG
     double characterACD;	///< The character's ACD
 
 public:
-	Monster(std::string, int, int, double);	///< This builds  a character object
+    Monster(std::string name /** This is a string parameter*/, int HP /** This is an int parameter*/, int DMG /** This is an int parameter*/, double ACD /** This is a double parameter*/) : characterName(name), characterHP(HP), characterDMG(DMG), characterACD(ACD) {}
+
     static Monster parse(const std::string& name);	///< This reads in the player data from file
     std::string getName() const;	///< This is a simple getter for Name
     int getHealthPoints() const;	///< This is a simple getter for HP
