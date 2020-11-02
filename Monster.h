@@ -32,7 +32,7 @@ public:
     bool isAlive() const;	///< This shows that the player is alive or not
     void getHit(Monster* target);	///< This takes one hit
     void hit(Monster* target);
-    Monster* fightTilDeath(Monster& target);	///< This commands the hole battle
+    void fightTilDeath(Monster& target);	///< This commands the hole battle
     friend std::ostream& operator<<(std::ostream& os, const Monster& obj);	///< This is an operator overwrite
 
 };

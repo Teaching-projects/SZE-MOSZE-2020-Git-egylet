@@ -34,7 +34,7 @@ void Monster::hit(Monster* target) {
 	target->getHit(this);
 }
 
-Monster* Monster::fightTilDeath(Monster& target) {
+void Monster::fightTilDeath(Monster& target) {
 	double time1 = 0;	///< First player's time counter
 	double time2 = 0;	///< Second player's time counter
 	while (this->isAlive() && target.isAlive()) {
@@ -59,7 +59,6 @@ Monster* Monster::fightTilDeath(Monster& target) {
 			time2 += target.getAttackCoolDown();	///< Increases second player's time counter with first player's ACD
 		}
 	}
-	return target.isAlive() ? this : &target;
 }
 
 Monster Monster::parse(const std::string& name) {

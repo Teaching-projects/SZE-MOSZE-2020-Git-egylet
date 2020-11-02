@@ -29,7 +29,7 @@ void Hero::getHit(Monster* target /** This is a player parameter*/) {
 void Hero::hit(Monster* target) {
 	target->getHit(this);
 }
-Monster* Hero::fightTilDeath(Monster& target) {
+void Hero::fightTilDeath(Monster& target) {
 	double time1 = 0;	///< First player's time counter
 	double time2 = 0;	///< Second player's time counter
 	int XpToAdd = 0;
@@ -81,7 +81,6 @@ Monster* Hero::fightTilDeath(Monster& target) {
 			time2 += target.getAttackCoolDown();	///< Increases second player's time counter with first player's ACD
 		}
 	}
-	return target.isAlive() ? this : &target;
 }
 
 Hero Hero::parse(const std::string& name) {
