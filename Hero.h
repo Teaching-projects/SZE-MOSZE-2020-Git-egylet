@@ -53,6 +53,5 @@ public:
 	void getHit(Monster* target);
 	void hit(Monster* target);
 	static Hero parse(const std::string& name);
-	//~ std::string attack(Monster& player1, Monster& player2);
-	std::string fightTilDeath(Monster target);
+	Monster* fightTilDeath(Monster& target);
 };

@@ -29,7 +29,7 @@ void Hero::getHit(Monster* target /** This is a player parameter*/) {
 void Hero::hit(Monster* target) {
 	target->getHit(this);
 }
-std::string Hero::fightTilDeath(Monster target) {
+Monster* Hero::fightTilDeath(Monster& target) {
 	double time1 = 0;	///< First player's time counter
 	double time2 = 0;	///< Second player's time counter
 	int XpToAdd = 0;
@@ -64,40 +64,24 @@ std::string Hero::fightTilDeath(Monster target) {
 		///Player1 is the next
 		if (time1 /**First player's time counter*/ < time2 /**Second player's time counter*/) {
 			this->hit(&target /**This is a player parameter*/);
-			if (!target.isAlive(/** Here is no parameter*/)) {
-				std::string result = makeResults(this->getName(/** Here is no parameter*/), this->getHealthPoints(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
-				return result;	///< \return The winner and the remaining HP
-			}
 			time1 +=this->getAttackCoolDown();	///< Increases first player's time counter with first player's ACD
 		}
 
 		///Player2 is the next
 		else if (time1 /**First player's time counter*/ > time2 /**Second player's time counter*/) {
 			target.hit(this /**This is a player parameter*/);
-			if (!this->isAlive(/** Here is no parameter*/)) {
-				std::string result = makeResults(target.getName(/** Here is no parameter*/), target.getHealthPoints(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
-				return result;	///< \return The winner and the remaining HP
-			}
 			time2 += target.getAttackCoolDown();	///< Increases second player's time counter with first player's ACD
 		}
 
 		///Both players hits at the same time, the first is who started the attack
 		else {
 			this->hit(&target /**This is a player parameter*/);
-			if (!target.isAlive(/** Here is no parameter*/)) {
-				std::string result = makeResults(this->getName(/** Here is no parameter*/), this->getHealthPoints(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
-				return result;	///< \return The winner and the remaining HP
-			}
 			time1 += this->getAttackCoolDown();	///< Increases first player's time counter with first player's ACD
 			target.hit(this /**This is a player parameter*/);
-			if (!this->isAlive(/** Here is no parameter*/)) {
-				std::string result = makeResults(target.getName(/** Here is no parameter*/), target.getHealthPoints(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
-				return result;	///< \return The winner and the remaining HP
-			}
 			time2 += target.getAttackCoolDown();	///< Increases second player's time counter with first player's ACD
 		}
 	}
-	return "";
+	return target.isAlive() ? this : &target;
 }
 
 Hero Hero::parse(const std::string& name) {
