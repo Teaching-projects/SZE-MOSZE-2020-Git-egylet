@@ -16,7 +16,6 @@ public:
     static JSON jsonParser(std::istream& file);
     static JSON parseFromString(std::string str);
     static JSON parseFromFile(std::string filename);
-    static JSON jsonParser(std::string file);
     
     
     int count(std::string key);

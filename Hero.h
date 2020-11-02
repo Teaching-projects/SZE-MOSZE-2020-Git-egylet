@@ -8,20 +8,44 @@ protected:
 	int maxHP;
 	int level;
 	int XP;	
+	
+	int experience_per_level;
+	int health_point_bonus_per_level;
+	int damage_bonus_per_level;
+	double cooldown_multiplier_per_level;
+	
 	void levelup();
 
 public:
-	Hero(const std::string& characterName, int characterHP, int characterDMG, double characterACD)
+
+	Hero(
+		
+		const std::string& characterName,
+		int characterHP,
+		int characterDMG,
+		double characterACD,
+		
+		int experience_per_level,
+		int health_point_bonus_per_level,
+		int damage_bonus_per_level,
+		double cooldown_multiplier_per_level
+		
+		)
 		: Monster
 		(
-		characterName,
-		characterHP,
-		characterDMG,
-		characterACD
+			characterName,
+			characterHP,
+			characterDMG,
+			characterACD
 		),
-		maxHP(characterHP),
-		level(1),
-		XP(0) 
+			maxHP(characterHP),
+			level(1),
+			XP(0),
+			
+			experience_per_level(experience_per_level),
+			health_point_bonus_per_level(health_point_bonus_per_level),
+			damage_bonus_per_level(damage_bonus_per_level),
+			cooldown_multiplier_per_level(cooldown_multiplier_per_level)
 		{};
 	
 	int getLevel();

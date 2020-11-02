@@ -50,26 +50,24 @@ JSON JSON::parseFromString(std::string str) {
 }
 
 JSON JSON::parseFromFile(std::string filename) {
+	std::smatch match;
 	std::ifstream file;
-	file.open(filename);
+    file.open(filename);
 
-    if (file.fail()) throw "it does not exist";
-    else
+    static const std::regex freg("([\\w]*).json$");
+    if (std::regex_search(filename, match, freg))
     {
-        std::map<std::string, std::string> values = jsonParser(file).data;
         
-        file.close();
-
-        return JSON(values);
+        if (file.fail()) throw ParseException("it does not exist");
+        else
+        {
+           std::map<std::string, std::string> values = jsonParser(file).data;
+           file.close();
+           
+           return JSON(values);
+        }
     }
-}
-
-JSON JSON::jsonParser(std::string fileNameOrString) {
-    std::regex freg("([\\w]*).json$");
-    std::smatch match;
-
-    if (!std::regex_search(fileNameOrString, match, freg)) return parseFromString(fileNameOrString);
-    else return parseFromFile(fileNameOrString);
+    else return parseFromString(filename);
 }
 
 int JSON::count(std::string key){
