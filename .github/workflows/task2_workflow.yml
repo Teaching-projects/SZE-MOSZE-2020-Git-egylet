@@ -1,11 +1,11 @@
 name: task2 workflow (inactive)
 
-#~ on:
-  #~ push
+on:
+  push
 
-#~ jobs:
-  #~ build_and_test:
-    #~ runs-on: ubuntu-latest
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
     #~ steps:
       #~ - uses: actions/checkout@v2
       #~ - name: Build the program
