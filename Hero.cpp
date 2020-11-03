@@ -5,11 +5,29 @@
 #include <fstream>
 #include <vector>
 
-
-Hero::Hero(const std::string characterName, int characterHP, int characterDMG, double characterACD, int XPperlevel, int HPperlevel, int DMGperlevel, float ACDperlevel) : Monster(characterName, characterHP, characterDMG, characterACD), level(1), maxHP(characterHP), XP(0), experience_per_level(XPperlevel), health_point_bonus_per_level(HPperlevel), damage_bonus_per_level(DMGperlevel), cooldown_multiplier_per_level(ACDperlevel)
-{
-
-}
+Hero::Hero(
+			const std::string characterName,
+			int characterHP,
+			int characterDMG,
+			double characterACD,
+			int XPperlevel,
+			int HPperlevel,
+			int DMGperlevel,
+			float ACDperlevel
+		) : Monster
+		(	
+			characterName,
+			characterHP,
+			characterDMG,
+			characterACD),
+			level(1),
+			maxHP(characterHP),
+			XP(0),
+			experience_per_level(XPperlevel),
+			health_point_bonus_per_level(HPperlevel),
+			damage_bonus_per_level(DMGperlevel),
+			cooldown_multiplier_per_level(ACDperlevel)
+{}
 
 
 int Hero::getLevel(/** Here is no parameter*/) {
