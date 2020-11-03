@@ -1,6 +1,6 @@
 OBJs := Jsonparser.o Monster.o Hero.o main.o
 CFLAGS := -std=c++17 -Wall -Wextra 
-COMPILER := g++
+COMPILER := g++-9
 
 CPPS := Jsonparser.cpp Monster.cpp Hero.cpp main.cpp
 
