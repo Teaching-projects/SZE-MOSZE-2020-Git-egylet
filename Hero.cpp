@@ -5,6 +5,7 @@
 #include <fstream>
 #include <vector>
 
+//This is the constructor
 Hero::Hero(
 			const std::string characterName,
 			int characterHP,
@@ -29,7 +30,7 @@ Hero::Hero(
 			cooldown_multiplier_per_level(ACDperlevel)
 {}
 
-
+//Getters 
 int Hero::getLevel(/** Here is no parameter*/) {
     return level;
 }
@@ -38,6 +39,7 @@ int Hero::getMaxHealthPoints(/** Here is no parameter*/) {
     return maxHP;
 }
 
+//Buffs the hero when it hits a new level, and heals it to max health
 void Hero::levelup() {
 	level++;
 	maxHP += health_point_bonus_per_level;
@@ -48,11 +50,12 @@ void Hero::levelup() {
 
 }
 
-void Hero::getHit(Monster* target /** This is a player parameter*/) {
+void Hero::getHit(Monster* target ) {
 	characterHP-= target->getDamage(); ///< Takes one hit
 	if (characterHP < 0) characterHP = 0; ///< Restores HP to 0 if HP decreases below 0
 }
 
+//Delivers the getHit function to the target, and calculates the XP the hero is going to receive 
 void Hero::hit(Monster* target) {
 	int XpToAdd = 0;
 	if (target->getHealthPoints() < characterDMG)
@@ -81,7 +84,7 @@ void Hero::hit(Monster* target) {
 	}
 }
 
-
+//Parser function to return a Hero object from a JSON file
 Hero Hero::parse(const std::string& name) {
 	JSON values = JSON::parseFromFile(name);
 	std::vector<std::string> find
