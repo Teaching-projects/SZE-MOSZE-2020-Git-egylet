@@ -22,7 +22,7 @@ protected:
     double characterACD;	///< The character's ACD
 
 public:
-    Monster(std::string name /** This is a string parameter*/, int HP /** This is an int parameter*/, int DMG /** This is an int parameter*/, double ACD /** This is a double parameter*/) : characterName(name), characterHP(HP), characterDMG(DMG), characterACD(ACD) {}
+    Monster(std::string name /** This is a string parameter*/, int HP /** This is an int parameter*/, int DMG /** This is an int parameter*/, double ACD /** This is a double parameter*/);
 
     static Monster parse(const std::string& name);	///< This reads in the player data from file
     std::string getName() const;	///< This is a simple getter for Name
