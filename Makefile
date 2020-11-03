@@ -1,4 +1,4 @@
-OBJs := Jsonparser.o Monster.o Hero.o main.o
+OBJS := Jsonparser.o Monster.o Hero.o main.o
 CFLAGS := -std=c++17 -Wall -Wextra 
 COMPILER := g++-9
 
