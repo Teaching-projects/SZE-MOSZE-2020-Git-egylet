@@ -26,8 +26,8 @@ bool Monster::isAlive(/** Here is no parameter*/) const {
 }
 
 void Monster::getHit(Monster* target /** This is a player parameter*/) {
-	target->characterHP -= this->characterDMG; ///< Takes one hit
-	if (target->characterHP < 0) target->characterHP = 0; ///< Restores HP to 0 if HP decreases below 0
+	characterHP -= target->getDamage(); ///< Takes one hit
+	if (characterHP < 0) characterHP = 0; ///< Restores HP to 0 if HP decreases below 0
 }
 
 void Monster::hit(Monster* target) {
@@ -37,28 +37,27 @@ void Monster::hit(Monster* target) {
 void Monster::fightTilDeath(Monster& target) {
 	double time1 = 0;	///< First player's time counter
 	double time2 = 0;	///< Second player's time counter
+
+	///Both players hits at the same time, the first is who started the attack
+	this->hit(&target /**This is a player parameter*/);
+	target.hit(this /**This is a player parameter*/);
+
 	while (this->isAlive() && target.isAlive()) {
 		
-		///Player1 is the next
-		if (time1 /**First player's time counter*/ < time2 /**Second player's time counter*/) {
-			this->hit(&target /**This is a player parameter*/);
-			time1 +=this->getAttackCoolDown();	///< Increases first player's time counter with first player's ACD
+		if (time1 >= getAttackCoolDown()) {
+			this->hit(&target);
+			time1 = 0;
 		}
-
-		///Player2 is the next
-		else if (time1 /**First player's time counter*/ > time2 /**Second player's time counter*/) {
-			target.hit(this /**This is a player parameter*/);
-			time2 += target.getAttackCoolDown();	///< Increases second player's time counter with first player's ACD
-		}
-
-		///Both players hits at the same time, the first is who started the attack
 		else {
-			this->hit(&target /**This is a player parameter*/);
-			time1 += this->getAttackCoolDown();	///< Increases first player's time counter with first player's ACD
-			target.hit(this /**This is a player parameter*/);
-			time2 += target.getAttackCoolDown();	///< Increases second player's time counter with first player's ACD
+			time1++;
 		}
+		if (time2 >= target.getAttackCoolDown()) {
+			target.hit(this);
+			time2 = 0;
+		}
+		else time2++;
 	}
+
 }
 
 Monster Monster::parse(const std::string& name) {
