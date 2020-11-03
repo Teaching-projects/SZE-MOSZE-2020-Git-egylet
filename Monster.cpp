@@ -5,6 +5,7 @@
 #include "Monster.h"
 #include "JSON.h"
 
+//This is the constructor
 Monster::Monster
 (
 	std::string name,
@@ -18,31 +19,33 @@ Monster::Monster
 	characterACD(ACD)
 {}
 
-std::string Monster::getName(/** Here is no parameter*/) const {
+//Getters for protected parameters
+std::string Monster::getName() const {
     return characterName;
 }
 
-int Monster::getHealthPoints(/** Here is no parameter*/) const {
+int Monster::getHealthPoints() const {
     return characterHP;
 }
 
-int Monster::getDamage(/** Here is no parameter*/) const {
+int Monster::getDamage() const {
     return characterDMG;
 }
 
-double Monster::getAttackCoolDown(/** Here is no parameter*/) const {
+double Monster::getAttackCoolDown() const {
     return characterACD;
 }
 
-bool Monster::isAlive(/** Here is no parameter*/) const {
+bool Monster::isAlive() const {
      return this->characterHP > 0;
 }
 
-void Monster::getHit(Monster* target /** This is a player parameter*/) {
+//Uses target's damage getter to lower the object's health
+void Monster::getHit(Monster* target ) {
 	characterHP -= target->getDamage(); ///< Takes one hit
 	if (characterHP < 0) characterHP = 0; ///< Restores HP to 0 if HP decreases below 0
 }
-
+//Delivering getHit function on given target
 void Monster::hit(Monster* target) {
 	target->getHit(this);
 }
@@ -55,6 +58,7 @@ void Monster::fightTilDeath(Monster& target) {
 	this->hit(&target /**This is a player parameter*/);
 	target.hit(this /**This is a player parameter*/);
 
+	//The fight goes on until one of the participants die
 	while (this->isAlive() && target.isAlive()) {
 		
 		if (time1 >= getAttackCoolDown()) {
@@ -72,6 +76,7 @@ void Monster::fightTilDeath(Monster& target) {
 	}
 }
 
+//Parser function to return a Monster object from a JSON file
 Monster Monster::parse(const std::string& name) {
 	JSON values = JSON::parseFromFile(name);
 	const std::vector<std::string> find
