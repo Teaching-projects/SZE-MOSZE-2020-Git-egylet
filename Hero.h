@@ -6,7 +6,7 @@ class Hero : public Monster
 protected:
 	const std::string name;
 	int level;
-	int maxHP;
+	double maxHP;
 	int XP;	
 	
 	int experience_per_level; //amount of experience needed to level up

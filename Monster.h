@@ -17,8 +17,8 @@ class Monster
 {
 protected:
     std::string characterName;	///< The character's name
-    int characterHP;	///< The character's HP
-    int characterDMG;	///< The character's DMG
+    double characterHP;	///< The character's HP
+    double characterDMG;	///< The character's DMG
     double characterACD;	///< The character's ACD
 
 public:
