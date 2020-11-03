@@ -6,7 +6,7 @@ on:
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
-    # steps:
+    steps:
       # - uses: actions/checkout@v2
       # - name: Build the program
         # run: g++-8 -std=c++17 *.cpp
