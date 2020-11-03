@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['readme',['Readme',['../md_Readme.html',1,'']]]
+  ['operator_3c_3c',['operator&lt;&lt;',['../classMonster.html#acbec2c73af109326766919741ffa9515',1,'Monster']]]
 ];

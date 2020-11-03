@@ -1,10 +1,11 @@
 var indexSectionsWithContent =
 {
-  0: "acgimopr",
-  1: "c",
-  2: "acgimp",
-  3: "o",
-  4: "gr"
+  0: "cfghijmopr",
+  1: "chjmp",
+  2: "fgimp",
+  3: "c",
+  4: "o",
+  5: "gr"
 };
 
 var indexSectionNames =
@@ -12,8 +13,9 @@ var indexSectionNames =
   0: "all",
   1: "classes",
   2: "functions",
-  3: "related",
-  4: "pages"
+  3: "variables",
+  4: "related",
+  5: "pages"
 };
 
 var indexSectionLabels =
@@ -21,7 +23,8 @@ var indexSectionLabels =
   0: "All",
   1: "Classes",
   2: "Functions",
-  3: "Friends",
-  4: "Pages"
+  3: "Variables",
+  4: "Friends",
+  5: "Pages"
 };
 

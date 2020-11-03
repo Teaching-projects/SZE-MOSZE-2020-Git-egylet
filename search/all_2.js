@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['getacd',['getACD',['../classcharacter.html#a5457db617ffd5e070043060e026d0d75',1,'character']]],
-  ['getdmg',['getDMG',['../classcharacter.html#a478cdd57fc2a425661c114d3ac298c90',1,'character']]],
-  ['gethp',['getHP',['../classcharacter.html#a442c2bb909870509816c6fb8344d2176',1,'character']]],
-  ['getname',['getName',['../classcharacter.html#ac5967131fbaf7f8a82909a29e720695f',1,'character']]],
+  ['getattackcooldown',['getAttackCoolDown',['../classMonster.html#ad84dbe06c7a2aa7f75164dd9db52daf3',1,'Monster']]],
+  ['getdamage',['getDamage',['../classMonster.html#a5872e19f684e0a81ead15da3e82992ad',1,'Monster']]],
+  ['gethealthpoints',['getHealthPoints',['../classMonster.html#acbfb552014439fe02d10f2492e60fe34',1,'Monster']]],
+  ['gethit',['getHit',['../classHero.html#a336bd6536cc0124dec86505b2c48e479',1,'Hero::getHit()'],['../classMonster.html#a79731fd9433542d982a1062d5b1005a4',1,'Monster::getHit()']]],
+  ['getname',['getName',['../classMonster.html#a28ae1112e37262ce150e3c02465b3dd5',1,'Monster']]],
   ['git_20egylet_27s_20documentation',['Git egylet&apos;s documentation',['../index.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['makeresults',['makeResults',['../classcharacter.html#a989b453300b4654ba7b96ce0f74baf79',1,'character']]]
+  ['isalive',['isAlive',['../classMonster.html#a77ad18c44b3fb2df92b30ece4dc7847b',1,'Monster']]]
 ];

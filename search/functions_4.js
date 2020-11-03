@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['makeresults',['makeResults',['../classcharacter.html#a989b453300b4654ba7b96ce0f74baf79',1,'character']]]
+  ['parse',['parse',['../classMonster.html#a204b0e1759a752e9ceb44944cf5dff02',1,'Monster']]]
 ];
