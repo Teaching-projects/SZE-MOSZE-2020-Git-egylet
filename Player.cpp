@@ -55,7 +55,7 @@ std::string Player::attack(Character& player1 /** This is a player parameter*/, 
 		if (time1 /**First player's time counter*/ < time2 /**Second player's time counter*/) {
 			player1.hit(player2 /**This is a player parameter*/);
 			if (!player2.isAlive(/** Here is no parameter*/)) {
-				std::string result = makeResults(player1.getName(/** Here is no parameter*/), player1.getHP(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
+				std::string result = player1.makeResults(player1); 	///< Makes result string, that contains the winner and the remaining HP
 				return result;	///< \return The winner and the remaining HP
 			}
 			time1 += player1.getACD();	///< Increases first player's time counter with first player's ACD
@@ -65,7 +65,7 @@ std::string Player::attack(Character& player1 /** This is a player parameter*/, 
 		else if (time1 /**First player's time counter*/ > time2 /**Second player's time counter*/) {
 			player2.hit(player1 /**This is a player parameter*/);
 			if (!player1.isAlive(/** Here is no parameter*/)) {
-				std::string result = makeResults(player2.getName(/** Here is no parameter*/), player2.getHP(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
+				std::string result = player2.makeResults(player2); 	///< Makes result string, that contains the winner and the remaining HP
 				return result;	///< \return The winner and the remaining HP
 			}
 			time2 += player2.getACD();	///< Increases second player's time counter with first player's ACD
@@ -75,13 +75,13 @@ std::string Player::attack(Character& player1 /** This is a player parameter*/, 
 		else {
 			player1.hit(player2 /**This is a player parameter*/);
 			if (!player2.isAlive(/** Here is no parameter*/)) {
-				std::string result = makeResults(player1.getName(/** Here is no parameter*/), player1.getHP(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
+				std::string result = player1.makeResults(player1); 	///< Makes result string, that contains the winner and the remaining HP
 				return result;	///< \return The winner and the remaining HP
 			}
 			time1 += player1.getACD();	///< Increases first player's time counter with first player's ACD
 			player2.hit(player1 /**This is a player parameter*/);
 			if (!player1.isAlive(/** Here is no parameter*/)) {
-				std::string result = makeResults(player2.getName(/** Here is no parameter*/), player2.getHP(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
+				std::string result = player2.makeResults(player2); 	///< Makes result string, that contains the winner and the remaining HP
 				return result;	///< \return The winner and the remaining HP
 			}
 			time2 += player2.getACD();	///< Increases second player's time counter with first player's ACD

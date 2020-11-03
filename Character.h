@@ -17,8 +17,8 @@ class Character
 {
 protected:
     const std::string characterName;	///< The character's name
-    int characterHP;	///< The character's HP
-    int characterDMG;	///< The character's DMG
+    double characterHP;	///< The character's HP
+    double characterDMG;	///< The character's DMG
     const double characterACD;	///< The character's ACD
 
 public:
@@ -30,7 +30,7 @@ public:
     double getACD() const;	///< This is a simple getter for ACD
     bool isAlive() const;	///< This shows that the player is alive or not
     void hit(Character& target);	///< This takes one hit
-    std::string makeResults(std::string Name, int HP);	///< This makes the results into one string
+    std::string makeResults(Character& player1) const;	///< This makes the results into one string
     std::string attack(Character& player1, Character& player2);	///< This commands the hole battle
     friend std::ostream& operator<<(std::ostream& os, const Character& obj);	///< This is an operator overwrite
 

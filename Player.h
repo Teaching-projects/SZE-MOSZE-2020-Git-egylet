@@ -4,7 +4,7 @@ class Player : public Character
 
 protected:
 	const std::string name;
-	int maxHP;
+	double maxHP;
 	int level;
 	int XP;	
 	void levelup();

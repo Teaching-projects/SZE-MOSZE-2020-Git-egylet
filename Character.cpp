@@ -31,7 +31,9 @@ void Character::hit(Character& target /** This is a player parameter*/) {
 	if (target.characterHP < 0) target.characterHP = 0; ///< Restores HP to 0 if HP decreases below 0
 }
 
-std::string Character::makeResults(std::string Name /** This is a string parameter*/, int HP /** This is an int parameter*/) {
+std::string Character::makeResults(Character& player1) const {
+	std::string Name = player1.getName();
+	int HP = player1.getHP();
 	std::string results = "";	///< This makes a new empty string: results
 	results += Name; 	///< This add the Name to results string
 	results += " wins. Remaining HP: ";	///< This add filling text to results string
@@ -49,7 +51,7 @@ std::string Character::attack(Character& player1 /** This is a player parameter*
 		if (time1 /**First player's time counter*/ < time2 /**Second player's time counter*/) {
 			player1.hit(player2 /**This is a player parameter*/);
 			if (!player2.isAlive(/** Here is no parameter*/)) {
-				std::string result = makeResults(player1.getName(/** Here is no parameter*/), player1.getHP(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
+				std::string result = player1.makeResults(player1); 	///< Makes result string, that contains the winner and the remaining HP
 				return result;	///< \return The winner and the remaining HP
 			}
 			time1 += player1.characterACD;	///< Increases first player's time counter with first player's ACD
@@ -59,7 +61,7 @@ std::string Character::attack(Character& player1 /** This is a player parameter*
 		else if (time1 /**First player's time counter*/ > time2 /**Second player's time counter*/) {
 			player2.hit(player1 /**This is a player parameter*/);
 			if (!player1.isAlive(/** Here is no parameter*/)) {
-				std::string result = makeResults(player2.getName(/** Here is no parameter*/), player2.getHP(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
+				std::string result = player2.makeResults(player2); 	///< Makes result string, that contains the winner and the remaining HP
 				return result;	///< \return The winner and the remaining HP
 			}
 			time2 += player2.characterACD;	///< Increases second player's time counter with first player's ACD
@@ -69,13 +71,13 @@ std::string Character::attack(Character& player1 /** This is a player parameter*
 		else {
 			player1.hit(player2 /**This is a player parameter*/);
 			if (!player2.isAlive(/** Here is no parameter*/)) {
-				std::string result = makeResults(player1.getName(/** Here is no parameter*/), player1.getHP(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
+				std::string result = player1.makeResults(player1); 	///< Makes result string, that contains the winner and the remaining HP
 				return result;	///< \return The winner and the remaining HP
 			}
 			time1 += player1.characterACD;	///< Increases first player's time counter with first player's ACD
 			player2.hit(player1 /**This is a player parameter*/);
 			if (!player1.isAlive(/** Here is no parameter*/)) {
-				std::string result = makeResults(player2.getName(/** Here is no parameter*/), player2.getHP(/** Here is no parameter*/)); 	///< Makes result string, that contains the winner and the remaining HP
+				std::string result = player2.makeResults(player2); 	///< Makes result string, that contains the winner and the remaining HP
 				return result;	///< \return The winner and the remaining HP
 			}
 			time2 += player2.characterACD;	///< Increases second player's time counter with first player's ACD
@@ -96,7 +98,7 @@ Character Character::parseUnit(const std::string& name) {
 	std::map<std::string, std::string> values = parser.jsonParser(file);
 	if (values.find("name") != values.end() && values.find("hp") != values.end() && values.find("dmg") != values.end() && values.find("acd") != values.end()) {
 		file.close();
-		return Character(values["name"], stoi(values["hp"]), stoi(values["dmg"]), stoi(values["acd"]));
+		return Character(values["name"], stoi(values["hp"]), stoi(values["dmg"]), stod(values["acd"]));
 	}
 	else throw "incorrect values";
 }
