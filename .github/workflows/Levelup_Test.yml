@@ -20,6 +20,6 @@ jobs:
       - name: build
         run: g++-8 -Wall -Werror -Wextra -std=c++17 *.cpp 
       - name: Valgrind check
-        run: valgrind --leak-check=full --error-exitcode=1 ./a.out units/Player_1_Kakarott.json units/Player_2_Sally.json 
+        run: valgrind --leak-check=full --error-exitcode=1 ./a.out scenarios/scenario1.json
       - name: In-out tests
         run: chmod +x tests/task2.sh && ./tests/task2.sh
