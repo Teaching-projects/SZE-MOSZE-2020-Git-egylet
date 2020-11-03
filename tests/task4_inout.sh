@@ -12,14 +12,3 @@ fi
 
 ./a.out scenarios/scenario1.json >> native_output1.txt
 ./a.out scenarios/scenario2.json >> native_output2.txt
-
-#~ for i in scenarios/*.json 
-#~ do
-	#~ for j in scenarios/*.json
-	#~ do
-		#~ if [ $i != $j ]
-		#~ then
-			#~ ./a.out $i $j >> native_output.txt
-		#~ fi
-	#~ done
-#~ done
