@@ -8,8 +8,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Add toolchain
+        run: sudo apt install software-properties-common
+      - name: Add PPA
+        run: sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+      - name: Install latest g++ and gcc versions
+        run: sudo apt install gcc-9 g++-9
+      - name: Configure gcc-9/g++-9
+        run: sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/g++ g++ /usr/bin/g++-9 --slave /usr/bin/gcov gcov /usr/bin/gcov-9
       - name: Build the program
-        run: g++-8 -std=c++17 *.cpp
+        run: g++-9 -std=c++17 *.cpp
       - name: Run task4_inout shell script
         run: ./tests/task4_inout.sh
       - name: Compare native_output1.txt with scenarios/output1.txt
