@@ -13,6 +13,6 @@ jobs:
       - name: Run task4_inout shell script
         run: ./tests/task4_inout.sh
       - name: Compare native_output1.txt with scenarios/output1.txt
-        run: diff native_output1.txt scenarios/output1.txt
+        run: diff scenario1_native.txt scenarios/output1.txt
       - name: Compare native_output2.txt with scenarios/output2.txt
-        run: diff native_output2.txt scenarios/output2.txt
+        run: diff scenario2_native.txt scenarios/output2.txt
