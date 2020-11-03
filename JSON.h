@@ -17,8 +17,9 @@ public:
     static JSON parseFromString(std::string str);
     static JSON parseFromFile(std::string filename);
     
-    
-    int count(std::string key);
+    int count(std::string key){
+		if (data.find(key) != data.end()) return 1; else return 0;
+	}
 	
 	template <typename T>
     T get(const std::string &key)

@@ -5,10 +5,18 @@
 #include "Monster.h"
 #include "JSON.h"
 
-Monster::Monster(std::string name , int HP , int DMG , double ACD ) : characterName(name), characterHP(HP), characterDMG(DMG), characterACD(ACD) {}
-
-
-
+Monster::Monster
+(
+	std::string name,
+	int HP,
+	int DMG,
+	double ACD
+	) : 
+	characterName(name),
+	characterHP(HP),
+	characterDMG(DMG),
+	characterACD(ACD)
+{}
 
 std::string Monster::getName(/** Here is no parameter*/) const {
     return characterName;
@@ -62,7 +70,6 @@ void Monster::fightTilDeath(Monster& target) {
 		}
 		else time2++;
 	}
-
 }
 
 Monster Monster::parse(const std::string& name) {

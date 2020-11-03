@@ -39,7 +39,7 @@ JSON JSON::parseFromFile(std::string filename) {
 	std::ifstream file;
     file.open(filename);
 
-    static const std::regex freg("([\\w]*).json$");
+    std::regex freg("([\\w]*).json$");
     if (std::regex_search(filename, match, freg))
     {
         
@@ -53,8 +53,4 @@ JSON JSON::parseFromFile(std::string filename) {
         }
     }
     else return parseFromString(filename);
-}
-
-int JSON::count(std::string key){
-    if (data.find(key) != data.end()) return 1; else return 0;
 }

@@ -18,9 +18,8 @@ protected:
 
 public:
 
-	Hero(const std::string, int, int, double,  int,   int,   int,  float);
+	Hero(const std::string, int, int, double, int, int, int, float);
 
-	
 	int getLevel();
 	int getMaxHealthPoints();
 	void getHit(Monster* target);
