@@ -26,7 +26,7 @@ clean:
 	rm -rf $(OBJS) a.out cppcheck_output.txt scenario1_native.txt scenario2_native.txt
 
 install_dependencies:
-	sudo apt install -y cppcheck && sudo apt install -y valgrind && sudo apt install -y gcc g++ && sudo apt install doxygen 
+	sudo apt install -y cppcheck && sudo apt install -y valgrind && sudo apt install -y gcc g++ && sudo apt install doxygen && sudo apt install graphviz
 
 install_googletest_and_cmake:
 	sudo apt install libgtest-dev && sudo apt install cmake && cd /usr/src/gtest && sudo cmake . && sudo make && sudo cp *.a /usr/lib && sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
