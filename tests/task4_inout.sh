@@ -12,10 +12,7 @@ fi
 
 for i in scenarios/*.json
 do
-	then
-		./a.out $i >> ${i%.json}_native.txt # etc. scenario1_native.txt
-		
-	fi
+	./a.out $i >> ${i%.json}_native.txt
 done
 
 #~ ./a.out scenarios/scenario1.json >> native_output1.txt
