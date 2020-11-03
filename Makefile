@@ -1,8 +1,8 @@
-OBJS := Jsonparser.o Monster.o Hero.o main.o
+OBJS := JSON.o Monster.o Hero.o main.o
 CFLAGS := -std=c++17 -Wall -Wextra 
 COMPILER := g++-9
 
-CPPS := Jsonparser.cpp Monster.cpp Hero.cpp main.cpp
+CPPS := JSON.cpp Monster.cpp Hero.cpp main.cpp
 
 VFLAGS:= --leak-check=full --error-exitcode=1
 VPARAMETER:=  ./a.out scenario1.json
@@ -10,13 +10,13 @@ VPARAMETER:=  ./a.out scenario1.json
 build: $(OBJS)
 	$(COMPILER) $(CFLAGS) -o a.out $(OBJS)
 
-Jsonparser.o: Jsonparser.cpp Jsonparser.h
-	$(COMPILER) $(CFLAGS) -c Jsonparser.cpp
+JSON.o: JSON.cpp JSON.h
+	$(COMPILER) $(CFLAGS) -c JSON.cpp
 
-Monster.o: Monster.cpp Monster.h Jsonparser.h
+Monster.o: Monster.cpp Monster.h JSON.h
 	$(COMPILER) $(CFLAGS) -c Monster.cpp
 
-Hero.o: Hero.cpp Hero.h Monster.h Jsonparser.h
+Hero.o: Hero.cpp Hero.h Monster.h JSON.h
 	$(COMPILER) $(CFLAGS) -c Hero.cpp
 
 main.o: main.cpp Monster.h Hero.h
