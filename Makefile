@@ -41,7 +41,7 @@ io-diff-tests:
 	chmod +x tests/task4_inout.sh && ./tests/task4_inout.sh
 
 doc:
-	doxygen doxyconf
+	doxygen doxconf
 
 build_unittest:
 	cd tests && cmake . && make

@@ -2,9 +2,7 @@ name: pushdocs workflow
 
 on:
   push:
-    branches:
-      - attackspeed
-
+  
 jobs:
   deploy:
     name: Deploy to github pages
