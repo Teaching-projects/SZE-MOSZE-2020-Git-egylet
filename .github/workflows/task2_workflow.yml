@@ -17,4 +17,4 @@ jobs:
       - name: Run task2 shell script
         run: ./tests/task2.sh
       - name: Compare native_output.txt with units/good_output.txt
-        run: diff native_output.txt scenarios/output1.txt
+        run: diff native_output.txt units/good_output.txt
