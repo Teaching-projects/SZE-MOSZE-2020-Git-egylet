@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - run: install doxygen && sudo apt install graphviz
+    - run: sudo apt install doxygen && sudo apt install graphviz
     - run: make doc
 
     - name: Push git subdir as branch
