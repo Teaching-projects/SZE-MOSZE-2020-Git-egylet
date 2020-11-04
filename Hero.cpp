@@ -13,7 +13,7 @@ Hero::Hero(
 			int XPperlevel,
 			int HPperlevel,
 			int DMGperlevel,
-			float ACDperlevel
+			double ACDperlevel
 		) : Monster
 		(	
 			characterName,
