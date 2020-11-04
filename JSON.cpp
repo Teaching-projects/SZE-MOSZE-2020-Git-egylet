@@ -1,4 +1,3 @@
-#include <variant>
 #include "JSON.h"
 
 JSON JSON::jsonParser(std::istream& file) {

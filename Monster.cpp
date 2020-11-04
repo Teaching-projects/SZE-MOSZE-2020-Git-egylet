@@ -2,6 +2,7 @@
 #include <string>
 #include <fstream>
 #include <vector>
+#include <variant>
 #include "Monster.h"
 #include "JSON.h"
 
