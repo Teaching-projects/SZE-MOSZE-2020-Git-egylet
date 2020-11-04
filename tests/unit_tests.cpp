@@ -75,7 +75,7 @@ TEST(JsonParser, Fallen) {
 	std::ifstream file;
 	file.open("../Fallen.json");
 	
-	std::map<std::string, std::string> actual = Monster::parse(file);
+	std::map<std::string, std::string> actual = JSON::jsonParser(file);
 	std::map<std::string, std::string> whichis
 	{
 		{"name", "Fallen"},
