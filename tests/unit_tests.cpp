@@ -11,9 +11,9 @@ TEST(JSON, jsonParser) {
     file.close();
     
 	ASSERT_EQ(values.get<std::string>("name"),"Kakarott");
-	ASSERT_EQ(stoi(values.get<std::string>("health_points")),300);
-	ASSERT_EQ(stoi(values.get<std::string>("damage")),150);
-	ASSERT_EQ(stod(values.get<std::string>("attack_cooldown")),5.5);
+	ASSERT_EQ(values.get<int>("health_points"),300);
+	ASSERT_EQ(values.get<int>("damage"),150);
+	ASSERT_EQ(values.get<double>("attack_cooldown"),5.5);
 }
 
 //Player_2_Sally.json
@@ -28,9 +28,9 @@ TEST(JSON, parseFromString) {
 	JSON values = JSON::parseFromString(content);
     
 	ASSERT_EQ(values.get<std::string>("name"),"Sally");
-	ASSERT_EQ(stoi(values.get<std::string>("health_points")),500);
-	ASSERT_EQ(stoi(values.get<std::string>("damage")),250);
-	ASSERT_EQ(stod(values.get<std::string>("attack_cooldown")),3.5);
+	ASSERT_EQ(values.get<int>("health_points"),500);
+	ASSERT_EQ(values.get<int>("damage"),250);
+	ASSERT_EQ(values.get<double>("attack_cooldown"),3.5);
 }
 
 //Player_3_Maple.json
@@ -38,9 +38,9 @@ TEST(JSON, parseFromFile) {
     JSON values = JSON::parseFromFile("../units/Player_3_Maple.json");
     
 	ASSERT_EQ(values.get<std::string>("name"),"Maple");
-	ASSERT_EQ(stoi(values.get<std::string>("health_points")),700);
-	ASSERT_EQ(stoi(values.get<std::string>("damage")),100);
-	ASSERT_EQ(stod(values.get<std::string>("attack_cooldown")),4.5);
+	ASSERT_EQ(values.get<int>("health_points"),700);
+	ASSERT_EQ(values.get<int>("damage"),100);
+	ASSERT_EQ(values.get<double>("attack_cooldown"),4.5);
 }
 
 //Read in Fallen.json file
@@ -52,8 +52,8 @@ TEST(JSON, Fallen) {
     file.close();
     
     ASSERT_EQ(values.get<std::string>("name"),"Fallen");
-	ASSERT_EQ(stoi(values.get<std::string>("health_points")),4);
-	ASSERT_EQ(stoi(values.get<std::string>("damage")),2);
+	ASSERT_EQ(values.get<int>("health_points"),4);
+	ASSERT_EQ(values.get<int>("damage"),2);
 }
 
 //mixed the lines in .json file
@@ -65,9 +65,9 @@ TEST(JSON, Mixi) {
     file.close();
     
 	ASSERT_EQ(values.get<std::string>("name"),"Mixi");
-	ASSERT_EQ(stoi(values.get<std::string>("health_points")),320);
-	ASSERT_EQ(stoi(values.get<std::string>("damage")),140);
-	ASSERT_EQ(stod(values.get<std::string>("attack_cooldown")),5.3);
+	ASSERT_EQ(values.get<int>("health_points"),320);
+	ASSERT_EQ(values.get<int>("damage"),140);
+	ASSERT_EQ(values.get<double>("attack_cooldown"),5.3);
 }
 
 //add some whitespaces in .json file
@@ -79,9 +79,9 @@ TEST(JSON, Spacy) {
     file.close();
     
 	ASSERT_EQ(values.get<std::string>("name"),"Spacy");
-	ASSERT_EQ(stoi(values.get<std::string>("health_points")),400);
-	ASSERT_EQ(stoi(values.get<std::string>("damage")),250);
-	ASSERT_EQ(stod(values.get<std::string>("attack_cooldown")),6.5);
+	ASSERT_EQ(values.get<int>("health_points"),400);
+	ASSERT_EQ(values.get<int>("damage"),250);
+	ASSERT_EQ(values.get<double>("attack_cooldown"),6.5);
 }
 
 //mixed the lines and add some whitespaces in .json file
@@ -93,9 +93,9 @@ TEST(JSON, Mixpacy) {
     file.close();
     
     ASSERT_EQ(values.get<std::string>("name"),"Mixpacy");
-	ASSERT_EQ(stoi(values.get<std::string>("health_points")),456);
-	ASSERT_EQ(stoi(values.get<std::string>("damage")),259);
-	ASSERT_EQ(stod(values.get<std::string>("attack_cooldown")),6.9);
+	ASSERT_EQ(values.get<int>("health_points"),456);
+	ASSERT_EQ(values.get<int>("damage"),259);
+	ASSERT_EQ(values.get<double>("attack_cooldown"),6.9);
 }
 
 /* Direkt rossz test, a workflow rosszul fut le tole
