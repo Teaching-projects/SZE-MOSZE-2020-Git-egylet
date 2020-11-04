@@ -1,5 +1,5 @@
-#include "../Character.h"
-#include "../JsonParser.h"
+#include "../Monster.h"
+#include "../JSON.h"
 #include <gtest/gtest.h>
 
 //Json file beolasasa file alapjan
@@ -7,7 +7,7 @@ TEST(JsonParser, istream) {
 	std::ifstream file;
 	file.open("../units/Player_1_Kakarott.json");
 	
-	std::map<std::string, std::string> actual = Parser::jsonParser(file);
+	std::map<std::string, std::string> actual = Monster::parse(file);
 	std::map<std::string, std::string> whichis
 	{
 		{"name", "Kakarott"},
@@ -159,56 +159,56 @@ TEST(JsonParser, errorfile) {
 }
 */
 
-TEST(Character, getName){
-	Character player_test("Kakarott", 300, 150, 5.5);
+TEST(Monster, getName){
+	Monster player_test("Kakarott", 300, 150, 5.5);
 	std::string test_name = player_test.getName();
 	std::string expected_name = "Kakarott";
 	ASSERT_EQ(expected_name, test_name);
 }
 
-TEST(Character, getHP){
-	Character player_test("Kakarott", 300, 150, 5.5);
-	int test_hp = player_test.getHP();
+TEST(Monster, getHealthPoints){
+	Monster player_test("Kakarott", 300, 150, 5.5);
+	int test_hp = player_test.getHealthPoints();
 	int expected_hp = 300;
 	ASSERT_EQ(expected_hp, test_hp);
 }
 
-TEST(Character, getDMG){
-	Character player_test("Kakarott", 300, 150, 5.5);
-	int test_dmg = player_test.getDMG();
+TEST(Monster, getDamage){
+	Monster player_test("Kakarott", 300, 150, 5.5);
+	int test_dmg = player_test.getDamage();
 	int expected_dmg = 150;
 	ASSERT_EQ(expected_dmg, test_dmg);
 }
 
-TEST(Character, getACD){
-	Character player_test("Kakarott", 300, 150, 5.5);
-	double test_acd = player_test.getACD();
+TEST(Monster, getAttackCoolDown){
+	Monster player_test("Kakarott", 300, 150, 5.5);
+	double test_acd = player_test.getAttackCoolDown();
 	double expected_acd = 5.5;
 	ASSERT_EQ(expected_acd, test_acd);
 }
 
-TEST(Character, isAlive){
-	Character player_test("Kakarott", 300, 150, 5.5);
+TEST(Monster, isAlive){
+	Monster player_test("Kakarott", 300, 150, 5.5);
 	bool test = player_test.isAlive();
 	bool expected = true;
 	ASSERT_EQ(expected, test);
 }
 
-TEST(Character, hit){
-	Character player_test_1("Kakarott", 300, 150, 5.5);
-	Character player_test_2("Kakarott_2", 300, 150, 5.5);
-	player_test_1.hit(player_test_2);
-	int test_hp = player_test_2.getHP();
+TEST(Monster, hit){
+	Monster player_test_1("Kakarott", 300, 150, 5.5);
+	Monster player_test_2("Kakarott_2", 300, 150, 5.5);
+	player_test_1.hit(&player_test_2);
+	int test_hp = player_test_2.getHealthPoints();
 	int expected_hp = 150;
 	ASSERT_EQ(expected_hp, test_hp);
 }
 
-TEST(Character, parseUnit){
-	Character player_test = Character::parseUnit("../units/Player_1_Kakarott.json");
+TEST(Monster, parse){
+	Monster player_test = Monster::parse("../units/Player_1_Kakarott.json");
 	std::string test_name = player_test.getName();
-	int test_hp = player_test.getHP();
-	int test_dmg = player_test.getDMG();
-	double test_acd = player_test.getACD();
+	int test_hp = player_test.getHealthPoints();
+	int test_dmg = player_test.getDamage();
+	double test_acd = player_test.getAttackCoolDown();
 	
 	std::string expected_name = "Kakarott";
 	int expected_hp = 300;
@@ -221,21 +221,15 @@ TEST(Character, parseUnit){
 	ASSERT_DOUBLE_EQ(expected_acd, test_acd);
 }
 
-TEST(Character, attack){
-	Character player_test_1("PLAYER1", 300, 100, 1.5);
-	Character player_test_2("PLAYER2", 300, 50, 2.5);
-	std::string test_winner = player_test_1.attack(player_test_1, player_test_2);
+TEST(Monster, fightTilDeath){
+	Monster player_test_1("PLAYER1", 300, 100, 1.5);
+	Monster player_test_2("PLAYER2", 300, 50, 2.5);
+	std::string test_winner = "";
+	player_test_1.fightTilDeath(player_test_2);
+	if ((player_test_1.isAlive()) && !(player_test_2.isAlive())) std::string test_winner = "PLAYER1 wins. Remaining HP: 200.";
 	std::string expected_winner = "PLAYER1 wins. Remaining HP: 200.";
 	ASSERT_EQ(expected_winner, test_winner);
 }
-
-TEST(Character, makeResults){
-	Character player_test("TESTPLAYER", 300, 150, 5.5);
-	std::string test_results = player_test.makeResults(player_test);
-	std::string expected_results = "TESTPLAYER wins. Remaining HP: 300.";
-	ASSERT_EQ(expected_results, test_results);
-}
-
 
 int main(int argc, char** argv) {
 	::testing::InitGoogleTest(&argc, argv);
