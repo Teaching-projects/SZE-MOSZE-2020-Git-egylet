@@ -1,7 +1,7 @@
 #include "../Monster.h"
 #include "../JSON.h"
 #include <gtest/gtest.h>
-#include <variant>
+//~ #include <variant>
 
 //Player_1_Kakarott.json
 TEST(JSON, jsonParser) {

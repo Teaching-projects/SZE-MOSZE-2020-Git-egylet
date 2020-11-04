@@ -52,7 +52,7 @@ JSON JSON::parseFromFile(std::string filename) {
         if (file.fail()) throw ParseException("it does not exist");
         else
         {
-           std::map<std::string, std::variant<std::string, int, double>> values = jsonParser(file).data;
+           std::map<std::string, std::variant<std::string, int, double>> values = jsonParser(file).pdata;
            file.close();
            
            return JSON(values);
