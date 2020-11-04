@@ -1,8 +1,10 @@
 #include <iostream>
-#include <string>
-#include <fstream>
+#include <map>
 #include <vector>
+#include <fstream>
+#include <algorithm>
 #include <variant>
+#include <cctype>
 #include "Monster.h"
 #include "JSON.h"
 
