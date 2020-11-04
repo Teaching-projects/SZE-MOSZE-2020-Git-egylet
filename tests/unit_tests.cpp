@@ -2,138 +2,93 @@
 #include "../JSON.h"
 #include <gtest/gtest.h>
 
-//Json file beolasasa file alapjan
-TEST(JsonParser, istream) {
+//Player_1_Kakarott.json
+TEST(JSON, jsonParser) {
 	std::ifstream file;
 	file.open("../units/Player_1_Kakarott.json");
 	
-	std::map<std::string, std::string> actual = Monster::parse(file);
-	std::map<std::string, std::string> whichis
-	{
-		{"name", "Kakarott"},
-		{"hp", "300"},
-		{"dmg", "150"},
-		{"acd", "5.5"}
-	};
-	
-	for (auto entry : actual)
-	{
-		ASSERT_EQ(whichis[entry.first], entry.second);
-	}
-	
-	file.close();
+    JSON values = JSON::jsonParser(file);
+    file.close();
+    
+	ASSERT_EQ(values.get<std::string>("name"),"Kakarott");
+	ASSERT_EQ(stoi(values.get<std::string>("health_points")),300);
+	ASSERT_EQ(stoi(values.get<std::string>("damage")),150);
+	ASSERT_EQ(stod(values.get<std::string>("attack_cooldown")),5.5);
 }
 
-//Json file beolasasa string alapjan
-TEST(JsonParser, string) {
-	std::string filename = "../units/Player_2_Sally.json";
+//Player_2_Sally.json
+TEST(JSON, parseFromString) {
+    JSON values = JSON::parseFromString("../units/Player_2_Sally.json");
+    
+	ASSERT_EQ(values.get<std::string>("name"),"Sally");
+	ASSERT_EQ(stoi(values.get<std::string>("health_points")),500);
+	ASSERT_EQ(stoi(values.get<std::string>("damage")),250);
+	ASSERT_EQ(stod(values.get<std::string>("attack_cooldown")),3.5);
+}
+
+//Player_3_Maple.json
+TEST(JSON, parseFromFile) {
+    JSON values = JSON::parseFromFile("../units/Player_3_Maple.json");
+    
+	ASSERT_EQ(values.get<std::string>("name"),"Maple");
+	ASSERT_EQ(stoi(values.get<std::string>("health_points")),700);
+	ASSERT_EQ(stoi(values.get<std::string>("damage")),100);
+	ASSERT_EQ(stod(values.get<std::string>("attack_cooldown")),4.5);
+}
+
+//Read in Fallen.json file
+TEST(JSON, Fallen) {
 	std::ifstream file;
-	file.open(filename);
-	std::string content, line;
+	file.open("../Fallen.json");
 	
-	std::map<std::string, std::string> whichis
-	{
-		{"name", "Sally"},
-		{"hp", "500"},
-		{"dmg", "250"},
-		{"acd", "3.5"}
-	};
-	
-	while (std::getline(file, line))
-	{
-		content += line;
-	}
-	
-	std::map<std::string, std::string> actual = Parser::jsonParser(content);
-	for (auto entry : actual)
-	{
-		ASSERT_EQ(whichis[entry.first], entry.second);
-	}
-}
-
-//Json file beolasasa fajlnev alapjan
-TEST(JsonParser, filename) {
-	std::string filename = "../units/Player_3_Maple.json";
-	
-	std::map<std::string, std::string> actual = Parser::jsonParser(filename);
-	std::map<std::string, std::string> whichis
-	{
-		{"name", "Maple"},
-		{"hp", "700"},
-		{"dmg", "100"},
-		{"acd", "4.5"}
-	};
-	
-	for (auto entry : actual)
-	{
-		ASSERT_EQ(whichis[entry.first], entry.second);
-	}
-}
-
-//add some whitespaces in .json file
-TEST(JsonParser, Spacy) {
-	std::ifstream file;
-	file.open("../units/not_correct_units/Player_2_Spacy.json");
-	
-	std::map<std::string, std::string> actual = Parser::jsonParser(file);
-	std::map<std::string, std::string> whichis
-	{
-		{"name", "Spacy"},
-		{"hp", "400"},
-		{"dmg", "250"},
-		{"acd", "6.5"}
-	};
-	
-	for (auto entry : actual)
-	{
-		ASSERT_EQ(whichis[entry.first], entry.second);
-	}
-	
-	file.close();
+    JSON values = JSON::jsonParser(file);
+    file.close();
+    
+    ASSERT_EQ(values.get<std::string>("name"),"Fallen");
+	ASSERT_EQ(stoi(values.get<std::string>("health_points")),4);
+	ASSERT_EQ(stoi(values.get<std::string>("damage")),2);
 }
 
 //mixed the lines in .json file
-TEST(JsonParser, Mixi) {
+TEST(JSON, Mixi) {
 	std::ifstream file;
 	file.open("../units/not_correct_units/NCPlayer_1_Mixi.json");
 	
-	std::map<std::string, std::string> actual = Parser::jsonParser(file);
-	std::map<std::string, std::string> whichis
-	{
-		{"name", "Mixi"},
-		{"hp", "320"},
-		{"dmg", "140"},
-		{"acd", "5.3"}
-	};
+    JSON values = JSON::jsonParser(file);
+    file.close();
+    
+	ASSERT_EQ(values.get<std::string>("name"),"Mixi");
+	ASSERT_EQ(stoi(values.get<std::string>("health_points")),320);
+	ASSERT_EQ(stoi(values.get<std::string>("damage")),140);
+	ASSERT_EQ(stod(values.get<std::string>("attack_cooldown")),5.3);
+}
+
+//add some whitespaces in .json file
+TEST(JSON, Spacy) {
+	std::ifstream file;
+	file.open("../units/not_correct_units/NCPlayer_2_Spacy.json");
 	
-	for (auto entry : actual)
-	{
-		ASSERT_EQ(whichis[entry.first], entry.second);
-	}
-	
-	file.close();
+    JSON values = JSON::jsonParser(file);
+    file.close();
+    
+	ASSERT_EQ(values.get<std::string>("name"),"Spacy");
+	ASSERT_EQ(stoi(values.get<std::string>("health_points")),400);
+	ASSERT_EQ(stoi(values.get<std::string>("damage")),250);
+	ASSERT_EQ(stod(values.get<std::string>("attack_cooldown")),6.5);
 }
 
 //mixed the lines and add some whitespaces in .json file
-TEST(JsonParser, Mixpacy) {
+TEST(JSON, Mixpacy) {
 	std::ifstream file;
 	file.open("../units/not_correct_units/NCPlayer_3_Mixpacy.json");
 	
-	std::map<std::string, std::string> actual = Parser::jsonParser(file);
-	std::map<std::string, std::string> whichis
-	{
-		{"name", "Mixpacy"},
-		{"hp", "456"},
-		{"dmg", "259"},
-		{"acd", "6.9"}
-	};
-	
-	for (auto entry : actual)
-	{
-		ASSERT_EQ(whichis[entry.first], entry.second);
-	}
-	
-	file.close();
+    JSON values = JSON::jsonParser(file);
+    file.close();
+    
+    ASSERT_EQ(values.get<std::string>("name"),"Mixpacy");
+	ASSERT_EQ(stoi(values.get<std::string>("health_points")),456);
+	ASSERT_EQ(stoi(values.get<std::string>("damage")),259);
+	ASSERT_EQ(stod(values.get<std::string>("attack_cooldown")),6.9);
 }
 
 /* Direkt rossz test, a workflow rosszul fut le tole
@@ -226,7 +181,9 @@ TEST(Monster, fightTilDeath){
 	Monster player_test_2("PLAYER2", 300, 50, 2.5);
 	std::string test_winner = "";
 	player_test_1.fightTilDeath(player_test_2);
-	if ((player_test_1.isAlive()) && !(player_test_2.isAlive())) std::string test_winner = "PLAYER1 wins. Remaining HP: 200.";
+	if ((player_test_1.isAlive()) || !(player_test_2.isAlive())) {
+		std::string test_winner = "PLAYER1 wins. Remaining HP: 200.";
+	}
 	std::string expected_winner = "PLAYER1 wins. Remaining HP: 200.";
 	ASSERT_EQ(expected_winner, test_winner);
 }
