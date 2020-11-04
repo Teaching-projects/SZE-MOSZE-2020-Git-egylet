@@ -93,9 +93,9 @@ Monster Monster::parse(const std::string& name) {
 		return Monster
 		(
 			values.get<std::string>("name"),
-			stoi(values.get<std::string>("health_points")),
-			stoi(values.get<std::string>("damage")),
-			stod(values.get<std::string>("attack_cooldown"))
+			values.get<int>("health_points"),
+			values.get<int>("damage"),
+			values.get<double>("attack_cooldown")
         );
 	}
 	else throw JSON::ParseException("incorrect values:" + name);

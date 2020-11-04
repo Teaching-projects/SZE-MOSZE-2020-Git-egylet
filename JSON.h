@@ -1,17 +1,19 @@
-#include <regex>
-#include <map>
 #include <iostream>
+#include <map>
+#include <regex>
 #include <fstream>
-#include <any>
+#include <algorithm>
+#include <variant>
+#include <cctype>
 
 class JSON
 {
 
 private:
-	std::map<std::string, std::string> data;
+	std::map<std::string, std::variant<std::string, int, double>> data;
 
 public:
-	JSON(std::map<std::string, std::string> data) : data(data){};
+	JSON(std::map<std::string, std::variant<std::string, int, double>> data) : data(data){};
 
     static JSON jsonParser(std::istream& file);
     static JSON parseFromString(std::string str);
@@ -22,9 +24,10 @@ public:
 	}
 	
 	template <typename T>
-    T get(const std::string &key)
+    T get(const std::string& key)
     {
-        return data[key];
+		if (!count(key)) throw ParseException("it does not exist");
+        else return std::get<T>(data[key]);
     }
     
     class ParseException : public std::runtime_error

@@ -108,14 +108,14 @@ Hero Hero::parse(const std::string& name) {
 		return Hero
 		(
 			values.get<std::string>("name"),
-			stoi(values.get<std::string>("base_health_points")),
-			stoi(values.get<std::string>("base_damage")),
-			stof(values.get<std::string>("base_attack_cooldown")),
+			values.get<int>("base_health_points"),
+			values.get<int>("base_damage"),
+			values.get<double>("base_attack_cooldown"),
 			
-			stoi(values.get<std::string>("experience_per_level")),
-			stoi(values.get<std::string>("health_point_bonus_per_level")),
-			stoi(values.get<std::string>("damage_bonus_per_level")),
-			stof(values.get<std::string>("cooldown_multiplier_per_level"))
+			values.get<int>("experience_per_level"),
+			values.get<int>("health_point_bonus_per_level"),
+			values.get<int>("damage_bonus_per_level"),
+			values.get<double>("cooldown_multiplier_per_level")
         );
 	}
 	else throw JSON::ParseException("incorrect values: " + name);
