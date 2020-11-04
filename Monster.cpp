@@ -10,7 +10,7 @@ Monster::Monster
 	std::string name,
 	int HP,
 	int DMG,
-	double ACD
+	float ACD
 	) : 
 	characterName(name),
 	characterHP(HP),
