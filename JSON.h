@@ -1,10 +1,10 @@
-#include <iostream>
 #include <map>
 #include <regex>
+#include <iostream>
 #include <fstream>
-#include <algorithm>
 #include <variant>
 #include <cctype>
+#include <algorithm>
 
 class JSON
 {
