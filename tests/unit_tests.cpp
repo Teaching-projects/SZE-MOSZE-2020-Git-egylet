@@ -75,21 +75,12 @@ TEST(JsonParser, Fallen) {
 	std::ifstream file;
 	file.open("../Fallen.json");
 	
-	std::map<std::string, std::string> actual = JSON::jsonParser(file);
-	std::map<std::string, std::string> whichis
-	{
-		{"name", "Fallen"},
-		{"health_points", "4"},
-		{"damage", "2"},
-		{"attack_cooldown", "1.6"}
-	};
-	
-	for (auto entry : actual)
-	{
-		ASSERT_EQ(whichis[entry.first], entry.second);
-	}
-	
-	file.close();
+    JSON values = JSON::jsonParser(file);
+    file.close();
+    
+    ASSERT_EQ(values.get<std::string>("name"),"Fallen");
+    ASSERT_EQ(values.get<int>("health_points"),4);
+    ASSERT_EQ(values.get<int>("damage"),2);
 }
 
 //mixed the lines in .json file
