@@ -52,3 +52,7 @@ Actions - Workflow:
 ---
 
 GitHub Pages Dokumentáció: https://teaching-projects.github.io/SZE-MOSZE-2020-Git-egylet/index.html  
+
+---
+
+Waiting for commits. Readme is loading...
