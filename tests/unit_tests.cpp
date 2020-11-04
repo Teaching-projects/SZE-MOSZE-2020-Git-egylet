@@ -18,7 +18,14 @@ TEST(JSON, jsonParser) {
 
 //Player_2_Sally.json
 TEST(JSON, parseFromString) {
-    JSON values = JSON::parseFromString("../units/Player_2_Sally.json");
+    std::string filename = "../units/Player_2_Sally.json";
+	std::ifstream file;
+	file.open(filename);
+	std::string content, line;
+
+	while (std::getline(file, line)) content += line;
+
+	JSON values = JSON::parseFromString(content);
     
 	ASSERT_EQ(values.get<std::string>("name"),"Sally");
 	ASSERT_EQ(stoi(values.get<std::string>("health_points")),500);
@@ -179,12 +186,14 @@ TEST(Monster, parse){
 TEST(Monster, fightTilDeath){
 	Monster player_test_1("PLAYER1", 300, 100, 1.5);
 	Monster player_test_2("PLAYER2", 300, 50, 2.5);
+	std::string expected_winner = "Good.";
 	std::string test_winner = "";
+	
 	player_test_1.fightTilDeath(player_test_2);
-	if ((player_test_1.isAlive()) || !(player_test_2.isAlive())) {
-		std::string test_winner = "PLAYER1 wins. Remaining HP: 200.";
-	}
-	std::string expected_winner = "PLAYER1 wins. Remaining HP: 200.";
+	
+	if (player_test_1.isAlive() && !player_test_2.isAlive()) test_winner = "Good."; 
+	else test_winner = "Bad";
+
 	ASSERT_EQ(expected_winner, test_winner);
 }
 
