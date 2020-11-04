@@ -71,17 +71,17 @@
 //~ }
 
 //add some whitespaces in .json file
-TEST(JsonParser, Spacy) {
+TEST(JsonParser, Fallen) {
 	std::ifstream file;
-	file.open("../units/not_correct_units/Player_2_Spacy.json");
+	file.open("../Fallen.json");
 	
-	std::map<std::string, std::string> actual = Parser::jsonParser(file);
+	std::map<std::string, std::string> actual = JSON::parse(file);
 	std::map<std::string, std::string> whichis
 	{
-		{"name", "Spacy"},
-		{"hp", "400"},
-		{"dmg", "250"},
-		{"acd", "6.5"}
+		{"name", "Fallen"},
+		{"health_points", "4"},
+		{"damage", "2"},
+		{"attack_cooldown", "1.6"}
 	};
 	
 	for (auto entry : actual)
@@ -97,7 +97,7 @@ TEST(JsonParser, Mixi) {
 	std::ifstream file;
 	file.open("../units/not_correct_units/NCPlayer_1_Mixi.json");
 	
-	std::map<std::string, std::string> actual = Monster::parse(file);
+	std::map<std::string, std::string> actual = Parser::jsonParser(file);
 	std::map<std::string, std::string> whichis
 	{
 		{"name", "Mixi"},
