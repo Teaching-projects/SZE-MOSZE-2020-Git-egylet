@@ -10,8 +10,8 @@ class JSON
 {
 
 private:
-	std::map<std::string, std::variant<std::string, int, double>> pdata;
-
+	std::map <std::string, std::variant<std::string, int, double>> pdata;
+	
 public:
 	JSON(std::map<std::string, std::variant<std::string, int, double>> data) : pdata(data){};
 
