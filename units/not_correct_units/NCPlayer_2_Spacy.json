@@ -1,6 +1,6 @@
 {
   "name"    :    "Spacy",
-  "health_points"   :   400,
-  "damage"  :  250,
-  "attack_cooldown" : 6.5
+  "hp"   :   400,
+  "dmg"  :  250,
+  "acd" : 6.5
 }

@@ -1,6 +1,6 @@
 {
   "name" : "Maple",
-  "health_points" : 700,
-  "damage" : 100,
-  "attack_cooldown" : 4.5
+  "hp" : 700,
+  "dmg" : 100,
+  "acd" : 4.5
 }

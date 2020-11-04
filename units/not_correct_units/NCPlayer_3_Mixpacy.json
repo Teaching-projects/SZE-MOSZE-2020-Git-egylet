@@ -1,6 +1,6 @@
 {
-  "damage"  :  259,
-  "health_points"   :   456,
-  "attack_cooldown" : 6.9,
+  "dmg"  :  259,
+  "hp"   :   456,
+  "acd" : 6.9,
   "name"    :    "Mixpacy"
 }
