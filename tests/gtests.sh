@@ -12,8 +12,6 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /u
 cd /usr/src/gtest
 sudo cmake .
 sudo make
-sudo ln -st /usr/lib/ /usr/src/gtest/libgtest.a
-sudo ln -st /usr/lib/ /usr/src/gtest/libgtest_main.a
-cd -
-sudo make
+
+cd-
 cd tests && ./runTests
