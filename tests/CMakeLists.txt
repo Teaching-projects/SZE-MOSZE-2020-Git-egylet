@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
+project(SZE-MOSZE-2020-Git-egylet)
+
 # Locate GTest
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
