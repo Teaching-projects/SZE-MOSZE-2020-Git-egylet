@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: g++ version info
+        run: g++ --version
       - name: Build the program
         run: g++-9 -std=c++17 *.cpp
       - name: Run gtests shell script
