@@ -10,11 +10,10 @@ sudo apt install gcc-7 g++-7 gcc-8 g++-8 gcc-9 g++-9
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/g++ g++ /usr/bin/g++-9 --slave /usr/bin/gcov gcov /usr/bin/gcov-9
 
 cd /usr/src/gtest
-sudo cmake CMakeLists.txt
+sudo cmake .
 sudo make
 sudo ln -st /usr/lib/ /usr/src/gtest/libgtest.a
 sudo ln -st /usr/lib/ /usr/src/gtest/libgtest_main.a
 cd -
-cmake .
-make
+sudo make
 ./runTests
