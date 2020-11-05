@@ -13,5 +13,5 @@ cd /usr/src/gtest
 sudo cmake .
 sudo make
 
-cd-
-cd tests && ./runTests
+cd -
+./runTests
