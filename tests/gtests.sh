@@ -16,4 +16,4 @@ sudo ln -st /usr/lib/ /usr/src/gtest/libgtest.a
 sudo ln -st /usr/lib/ /usr/src/gtest/libgtest_main.a
 cd -
 sudo make
-./runTests
+cd tests && ./runTests
