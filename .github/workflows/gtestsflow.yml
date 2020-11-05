@@ -11,8 +11,6 @@ jobs:
       
       - name: update 1
         run: sudo apt install software-properties-common
-      - name: update 2
-        run: sudo add-apt-repository ppa:ubuntu-toolchain-r/test
       - name: update 3
         run: sudo apt install gcc-7 g++-7 gcc-8 g++-8 gcc-9 g++-9
       - name: update 4
