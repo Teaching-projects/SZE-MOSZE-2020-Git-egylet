@@ -41,7 +41,7 @@ doc:
 	doxygen doxconf
 
 build_unittest:
-	cd tests && cmake . && make
+	cd tests && sudo cmake CMakeLists.txt && sudo make
 
 run_unittest:
 	cd tests && ./runTests
