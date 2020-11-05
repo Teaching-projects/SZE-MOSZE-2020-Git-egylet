@@ -8,14 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
-      - name: update 1
-        run: sudo apt install software-properties-common
-      - name: update 3
-        run: sudo apt install gcc-7 g++-7 gcc-8 g++-8 gcc-9 g++-9
-      - name: update 4
-        run: sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/g++ g++ /usr/bin/g++-9 --slave /usr/bin/gcov gcov /usr/bin/gcov-9
-            
       - name: g++ version info
         run: g++ --version
       - name: Build the program
