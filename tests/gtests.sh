@@ -15,6 +15,6 @@ sudo make
 sudo ln -st /usr/lib/ /usr/src/gtest/libgtest.a
 sudo ln -st /usr/lib/ /usr/src/gtest/libgtest_main.a
 cd -
-cmake CMakeLists.txt
+cmake .
 make
 ./runTests
