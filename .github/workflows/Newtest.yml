@@ -8,7 +8,8 @@ jobs:
       - name: Install dependencies
         run: sudo apt install libgtest-dev && sudo apt install cmake && cd /usr/src/gtest && sudo cmake . && sudo make && sudo cp *.a /usr/lib && sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
       - name: cmake
-        run: cd tests && cmake . && make
-      - name: Run unit tests
-        run: cd tests && ./runTests
+        run: make build_unittest
+      - name: run unit tests
+        run: make run_unittest
+      
       
