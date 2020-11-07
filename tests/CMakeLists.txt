@@ -9,7 +9,7 @@ include_directories(${GTEST_INCLUDE_DIRS})
 
 # Link runTests with what we want to test
 # and the GTest and pthread library
-
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 add_library(functions ../Monster.cpp ../JSON.cpp)
 add_executable( runTests unit_tests.cpp )
 target_link_libraries(runTests ${GTEST_LIBRARIES} pthread functions)
