@@ -100,7 +100,6 @@ TEST(JSON, Mixpacy) {
 }
 
 /* Direkt rossz test, a workflow rosszul fut le tole
-
 TEST(JsonParser, errorfile) {
 	std::ifstream file;
 	file.open("../units/error/Player_4_Enigma.json");
