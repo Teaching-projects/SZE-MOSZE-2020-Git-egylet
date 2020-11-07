@@ -1,6 +1,6 @@
 {
   "name" : "Enigma",
-  "hp" : 3000,
-  "dmg" : 1w3,
-  "acd" : 5.0
+  "health_points" : 3000,
+  "damage" : 1w3,
+  "attack_cooldown" : 5.0
 }
