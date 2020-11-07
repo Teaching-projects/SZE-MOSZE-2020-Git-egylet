@@ -17,8 +17,8 @@ class Monster
 {
 protected:
     std::string characterName;	///< The character's name
-    double characterHP;	///< The character's HP
-    double characterDMG;	///< The character's DMG
+    int characterHP;	///< The character's HP
+    int characterDMG;	///< The character's DMG
     double characterACD;	///< The character's ACD
 
 public:
@@ -35,10 +35,10 @@ public:
     int getHealthPoints() const;	///< This is a simple getter for HP
     int getDamage() const;	///< This is a simple getter for DMG
     double getAttackCoolDown() const;	///< This is a simple getter for ACD
-    bool isAlive() const;	///< This shows that the player is alive or not
+    bool isAlive() const;	///< This shows if the player is alive or not
     void getHit(Monster* target);	///< This takes one hit
     virtual void hit(Monster* target);
-    void fightTilDeath(Monster& target);	///< This controls the whole battle
+    void fightTilDeath(Monster& target);	///< This is controlling the whole battle
     friend std::ostream& operator<<(std::ostream& os, const Monster& obj);	///< This is an operator overwrite
 
 };

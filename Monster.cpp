@@ -19,7 +19,7 @@ Monster::Monster
 	characterACD(ACD)
 {}
 
-//Getters for the object's parameters
+//Getters for protected parameters
 std::string Monster::getName() const {
     return characterName;
 }
@@ -36,22 +36,19 @@ double Monster::getAttackCoolDown() const {
     return characterACD;
 }
 
-//Shows if the object is alive
 bool Monster::isAlive() const {
      return this->characterHP > 0;
 }
 
-//Uses the target's damage getter to lower the object's health
+//Uses target's damage getter to lower the object's health
 void Monster::getHit(Monster* target ) {
 	characterHP -= target->getDamage(); ///< Takes one hit
 	if (characterHP < 0) characterHP = 0; ///< Restores HP to 0 if HP decreases below 0
 }
-
-//Delivers the getHit function to the target
+//Delivering getHit function on given target
 void Monster::hit(Monster* target) {
 	target->getHit(this);
 }
-
 
 void Monster::fightTilDeath(Monster& target) {
 	double time1 = 0;	///< First player's time counter
@@ -61,7 +58,7 @@ void Monster::fightTilDeath(Monster& target) {
 	this->hit(&target /**This is a player parameter*/);
 	target.hit(this /**This is a player parameter*/);
 
-	//The fight keeps going until one of the participants die
+	//The fight goes on until one of the participants die
 	while (this->isAlive() && target.isAlive()) {
 		
 		if (time1 >= getAttackCoolDown()) {
@@ -79,7 +76,7 @@ void Monster::fightTilDeath(Monster& target) {
 	}
 }
 
-//Parser function that returns a Monster object from a JSON file
+//Parser function to return a Monster object from a JSON file
 Monster Monster::parse(const std::string& name) {
 	JSON values = JSON::parseFromFile(name);
 	const std::vector<std::string> find
@@ -101,9 +98,9 @@ Monster Monster::parse(const std::string& name) {
 		return Monster
 		(
 			values.get<std::string>("name"),
-			stoi(values.get<std::string>("health_points")),
-			stoi(values.get<std::string>("damage")),
-			stod(values.get<std::string>("attack_cooldown"))
+			values.get<int>("health_points"),
+			values.get<int>("damage"),
+			values.get<double>("attack_cooldown")
         );
 	}
 	else throw JSON::ParseException("incorrect values:" + name);

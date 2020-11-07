@@ -14,7 +14,7 @@ Hero::Hero(
 			int XPperlevel,
 			int HPperlevel,
 			int DMGperlevel,
-			float ACDperlevel
+			double ACDperlevel
 		) : Monster
 		(	
 			characterName,
@@ -30,16 +30,18 @@ Hero::Hero(
 			cooldown_multiplier_per_level(ACDperlevel)
 {}
 
-//Getters 
-int Hero::getLevel(/** Here is no parameter*/) {
+
+
+//Getters
+int Hero::getLevel() {
     return level;
 }
 
-int Hero::getMaxHealthPoints(/** Here is no parameter*/) {
+int Hero::getMaxHealthPoints() {
     return maxHP;
 }
 
-//Buffs the hero when it hits a new level, and heals it to max health
+//If the hero reaches the required amount of XP, this function buffs the hero, and restore it to maximum health
 void Hero::levelup() {
 	level++;
 	maxHP += health_point_bonus_per_level;
@@ -55,7 +57,7 @@ void Hero::getHit(Monster* target ) {
 	if (characterHP < 0) characterHP = 0; ///< Restores HP to 0 if HP decreases below 0
 }
 
-//Delivers the getHit function to the target, and calculates the XP the hero is going to receive 
+//Delivers the getHit function, and calculates the amount of XP the hero is going to get
 void Hero::hit(Monster* target) {
 	int XpToAdd = 0;
 	if (target->getHealthPoints() < characterDMG)
@@ -111,14 +113,14 @@ Hero Hero::parse(const std::string& name) {
 		return Hero
 		(
 			values.get<std::string>("name"),
-			stoi(values.get<std::string>("base_health_points")),
-			stoi(values.get<std::string>("base_damage")),
-			stof(values.get<std::string>("base_attack_cooldown")),
+			values.get<int>("base_health_points"),
+			values.get<int>("base_damage"),
+			values.get<double>("base_attack_cooldown"),
 			
-			stoi(values.get<std::string>("experience_per_level")),
-			stoi(values.get<std::string>("health_point_bonus_per_level")),
-			stoi(values.get<std::string>("damage_bonus_per_level")),
-			stof(values.get<std::string>("cooldown_multiplier_per_level"))
+			values.get<int>("experience_per_level"),
+			values.get<int>("health_point_bonus_per_level"),
+			values.get<int>("damage_bonus_per_level"),
+			values.get<double>("cooldown_multiplier_per_level")
         );
 	}
 	else throw JSON::ParseException("incorrect values: " + name);
