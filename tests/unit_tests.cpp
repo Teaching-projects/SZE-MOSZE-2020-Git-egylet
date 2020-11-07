@@ -1,5 +1,5 @@
-#include "../Monster.h"
-#include "../JSON.h"
+#include "../Monster.cpp"
+#include "../JSON.cpp"
 #include <gtest/gtest.h>
 
 //Player_1_Kakarott.json
