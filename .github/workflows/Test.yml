@@ -17,7 +17,7 @@ jobs:
           name: cppcheck_output
           path: cppcheck_output.txt
       - name: build
-        run: make build_unittest
+        run: make build
       - name: Valgrind check
         run: make leakcheck
       - name: In-out tests
