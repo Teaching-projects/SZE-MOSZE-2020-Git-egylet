@@ -5,11 +5,10 @@ on:
 
 jobs:
   build_and_test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
+    container: vasbeton/test_image:latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install cppcheck and valgrind
-        run: sudo apt install -y cppcheck && sudo apt install -y valgrind && sudo apt install -y gcc g++ 
       - name: Running code analysis with cppcheck
         run: make static_code_analysis
       - name: Upload Cppcheck result 
@@ -23,3 +22,4 @@ jobs:
         run: make leakcheck
       - name: In-out tests
         run: make io-diff-tests
+ 
