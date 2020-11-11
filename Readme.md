@@ -51,7 +51,7 @@ Actions - Workflow:<br />
 
 ---
 
-GitHub Pages Dokumentáció: https:<br /><br />teaching-projects.github.io<br />SZE-MOSZE-2020-Git-egylet<br />index.html<br />
+GitHub Pages Dokumentáció: https://teaching-projects.github.io/SZE-MOSZE-2020-Git-egylet/index.html<br />
 
 ---
 
