@@ -67,30 +67,30 @@ $(function() {
 <div class="title">Readme </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Ez a repository a Git egylet csapat munkáját tartalmazza./</p>
+<div class="textblock"><p>Ez a repository a Git egylet csapat munkáját tartalmazza.\</p>
 <hr  />
-<p>Csapattagok:/ </p><pre class="fragment">* Adorján András Bálint/
-* Kisszölgyémi Áron/
-* Nátz Kornél/
+<p>Csapattagok:\ </p><pre class="fragment">* Adorján András Bálint\
+* Kisszölgyémi Áron\
+* Nátz Kornél\
 </pre><hr  />
-<p>Leírás:/ / A programban egy hős harcol egy vagy több szörny ellen. A játékmenetek és az elvért kimenetelek a scenarios mappában vannak letárolva. A karakterek tulajdonságai a gyökér mappában, json fájlokban vannak eltárolva. A program futtatásakor parancssori argumentumként a futtatni kívánt scenario nevét kell megadni. A harc addig tart amíg a hős meg nem hal, vagy le nem győzi az összes szörnyet. A harc után a játék felsorolja, hogy a hős kik ellen és milyen aktuális szinttel harcolt, majd a végső szintet, hp-t, dmg-t és acd-t./ / Fájlok:/</p><ul>
-<li><b>Character.h</b>: Class meghatározása./</li>
-<li><b>Character.cpp</b>: A játék levezényléséhez használt függvények definiálása./</li>
-<li><b>main.cpp</b>: Objektumok létrehozása, függvények használata./ / Az adatok kezelésére a "character" osztályt használjuk./ Egy character objektum paraméterei egy string, és két int./ Az osztály tartalmazza az ezekhez szükséges settereket és függvényeket./ / Függvények:/</li>
-<li><b>attack</b>:/ Alapvető támadás./ Ha a target HP-ja mínuszba menne át, azt nullára módosítja./ Használat: X.attack(Y), ha X a támadó fél, Y pedig a target./</li>
-<li><b>isAlive</b>:/ Megvizsgálja az objektum HP-ját, ha nagyobb mint 0, true értékkel tér vissza, azaz az objektum életben van./ Használat: X.isAlive()/</li>
-<li><b>parseUnit</b> Paraméterül kap egy json fájlt, amit megpróbál megnyitni,/ ha sikertelen, akkor egy hibaüzenettel kilép,/ ha pedig sikeres, return-öli a name, HP, és DMG-hez tartozó értékeket, külön változókban./</li>
+<p>Leírás:\ \ A programban egy hős harcol egy vagy több szörny ellen. A játékmenetek és az elvért kimenetelek a scenarios mappában vannak letárolva. A karakterek tulajdonságai a gyökér mappában, json fájlokban vannak eltárolva. A program futtatásakor parancssori argumentumként a futtatni kívánt scenario nevét kell megadni. A harc addig tart amíg a hős meg nem hal, vagy le nem győzi az összes szörnyet. A harc után a játék felsorolja, hogy a hős kik ellen és milyen aktuális szinttel harcolt, majd a végső szintet, hp-t, dmg-t és acd-t.\ \ Fájlok:\</p><ul>
+<li><b>Character.h</b>: Class meghatározása.\</li>
+<li><b>Character.cpp</b>: A játék levezényléséhez használt függvények definiálása.\</li>
+<li><b>main.cpp</b>: Objektumok létrehozása, függvények használata.\ \ Az adatok kezelésére a "character" osztályt használjuk.\ Egy character objektum paraméterei egy string, és két int.\ Az osztály tartalmazza az ezekhez szükséges settereket és függvényeket.\ \ Függvények:\</li>
+<li><b>attack</b>:\ Alapvető támadás.\ Ha a target HP-ja mínuszba menne át, azt nullára módosítja.\ Használat: X.attack(Y), ha X a támadó fél, Y pedig a target.\</li>
+<li><b>isAlive</b>:\ Megvizsgálja az objektum HP-ját, ha nagyobb mint 0, true értékkel tér vissza, azaz az objektum életben van.\ Használat: X.isAlive()\</li>
+<li><b>parseUnit</b> Paraméterül kap egy json fájlt, amit megpróbál megnyitni,\ ha sikertelen, akkor egy hibaüzenettel kilép,\ ha pedig sikeres, return-öli a name, HP, és DMG-hez tartozó értékeket, külön változókban.\</li>
 </ul>
 <hr  />
-<p>Actions - Workflow:/</p><ul>
-<li><b>Build the program</b>:/ Az Actions-ben lévő workflow lefordítja a kódot g++ -std=c++17 *.cpp segítségével./</li>
-<li><b>Run task2 shell script</b>:/ Lefuttatja a bash shell script-ként megírt task2.sh nevezetű shell scriptet./ A shell script lekezeli hogy létezik-e már előző futtatás által keletkezett native_output.txt, avagy sem./ Ezután lefuttatja a programot a unit_test_* elnevezésű json fájlokban található bemenetekkel./ A kimeneteket ideiglenesen kiírja egy native_output.txt fájlba./</li>
-<li><b>Compare native_output.txt with units/good_output.txt</b>:/ Összehasonlítja a test által generált kimeneteket a good_output.txt-ben előre definiált kimenetekkel./</li>
+<p>Actions - Workflow:\</p><ul>
+<li><b>Build the program</b>:\ Az Actions-ben lévő workflow lefordítja a kódot g++ -std=c++17 *.cpp segítségével.\</li>
+<li><b>Run task2 shell script</b>:\ Lefuttatja a bash shell script-ként megírt task2.sh nevezetű shell scriptet.\ A shell script lekezeli hogy létezik-e már előző futtatás által keletkezett native_output.txt, avagy sem.\ Ezután lefuttatja a programot a unit_test_* elnevezésű json fájlokban található bemenetekkel.\ A kimeneteket ideiglenesen kiírja egy native_output.txt fájlba.\</li>
+<li>**Compare native_output.txt with units\good_output.txt**:\ Összehasonlítja a test által generált kimeneteket a good_output.txt-ben előre definiált kimenetekkel.\</li>
 </ul>
 <hr  />
-<p>GitHub Pages Dokumentáció: <a href="https://teaching-projects.github.io/SZE-MOSZE-2020-Git-egylet/index.html/">https://teaching-projects.github.io/SZE-MOSZE-2020-Git-egylet/index.html/</a></p>
+<p>GitHub Pages Dokumentáció: https:\teaching-projects.github.io\SZE-MOSZE-2020-Git-egylet\index.html\</p>
 <hr  />
-<p>Readme is loading... Waiting for commits.../ </p>
+<p>Readme is loading... Waiting for commits... </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
