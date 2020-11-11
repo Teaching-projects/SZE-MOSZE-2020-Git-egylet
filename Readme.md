@@ -48,9 +48,9 @@ Fájlok:<br />
 *	**units/Player_2_Sally.json**: Leiras.<br />
 *	**units/Player_3_Maple.json**: Leiras.<br />
 *	**units/error/Player_4_Enigma.json**: Leiras.<br />
-*	**units/nor_correct_units/NCPlayer_1_Mixi.json**: Leiras.<br />
-*	**units/nor_correct_units/NCPlayer_2_Spacy.json**: Leiras.<br />
-*	**units/nor_correct_units/NCPlayer_3_Mixpacy.json**: Leiras.<br />
+*	**units/not_correct_units/NCPlayer_1_Mixi.json**: Leiras.<br />
+*	**units/not_correct_units/NCPlayer_2_Spacy.json**: Leiras.<br />
+*	**units/not_correct_units/NCPlayer_3_Mixpacy.json**: Leiras.<br />
 *	**units/good_output.txt**: Leiras.<br />
 <br />
 Az adatok kezelésére a "character" osztályt használjuk.<br />
