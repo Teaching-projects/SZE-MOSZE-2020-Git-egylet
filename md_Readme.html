@@ -80,12 +80,79 @@ $(function() {
  A programban egy hős harcol egy vagy több szörny ellen. A játékmenetek és az elvért kimenetelek a scenarios mappában vannak letárolva. A karakterek tulajdonságai a gyökér mappában, json fájlokban vannak eltárolva. A program futtatásakor parancssori argumentumként a futtatni kívánt scenario nevét kell megadni. A harc addig tart amíg a hős meg nem hal, vagy le nem győzi az összes szörnyet. A harc után a játék felsorolja, hogy a hős kik ellen és milyen aktuális szinttel harcolt, majd a végső szintet, hp-t, dmg-t és acd-t.<br  />
  <br  />
  Fájlok:<br  />
-</p><ul>
-<li><b>Character.h</b>: Class meghatározása.<br  />
+</p>
+<ul>
+<li><b>main.cpp</b>: Leiras.<br  />
 </li>
-<li><b>Character.cpp</b>: A játék levezényléséhez használt függvények definiálása.<br  />
+<li><b><a class="el" href="Hero_8h_source.html">Hero.h</a></b>: Leiras.<br  />
 </li>
-<li><b>main.cpp</b>: Objektumok létrehozása, függvények használata.<br  />
+<li><b>Hero.cpp</b>: Leiras.<br  />
+</li>
+<li><b><a class="el" href="JSON_8h_source.html">JSON.h</a></b>: Leiras.<br  />
+</li>
+<li><b>JSON.cpp</b>: Leiras.<br  />
+</li>
+<li><b><a class="el" href="Monster_8h_source.html">Monster.h</a></b>: Leiras.<br  />
+</li>
+<li><b>Monster.cpp</b>: Leiras.<br  />
+</li>
+<li><b>Readme.md</b>: Leiras.<br  />
+</li>
+<li><b>Blood_Raven.json</b>: Leiras.<br  />
+</li>
+<li><b>Dark_Wanderer.json</b>: Leiras.<br  />
+</li>
+<li><b>Fallen.json</b>: Leiras.<br  />
+</li>
+<li><b>Zombie.json</b>: Leiras.<br  />
+</li>
+<li><b>Makefile</b>: Leiras.<br  />
+</li>
+<li>**.github/workflows/Newtest.yml**: Leiras.<br  />
+</li>
+<li>**.github/workflows/pushdocs.yml**: Leiras.<br  />
+</li>
+<li>**.github/workflows/Test.yml**: Leiras.<br  />
+</li>
+<li><b>docker/dox_docker</b>: Leiras.<br  />
+</li>
+<li><b>docker/sca_docker</b>: Leiras.<br  />
+</li>
+<li><b>docker/unittest_docker</b>: Leiras.<br  />
+</li>
+<li><b>scenarios/output1.txt</b>: Leiras.<br  />
+</li>
+<li><b>scenarios/output2.txt</b>: Leiras.<br  />
+</li>
+<li><b>scenarios/scenario1.json</b>: Leiras.<br  />
+</li>
+<li><b>scenarios/scenario2.json</b>: Leiras.<br  />
+</li>
+<li><b>tests/CMakeLists.txt</b>: Leiras.<br  />
+</li>
+<li><b>tests/errorcheck.sh</b>: Leiras.<br  />
+</li>
+<li><b>tests/task2_inout.sh</b>: Leiras.<br  />
+</li>
+<li><b>tests/unit_tests.cpp</b>: Leiras.<br  />
+</li>
+<li><b>tests/warningcheck.sh</b>: Leiras.<br  />
+</li>
+<li><b>units/Player_1_Kakarott.json</b>: Leiras.<br  />
+</li>
+<li><b>units/Player_2_Sally.json</b>: Leiras.<br  />
+</li>
+<li><b>units/Player_3_Maple.json</b>: Leiras.<br  />
+</li>
+<li><b>units/error/Player_4_Enigma.json</b>: Leiras.<br  />
+</li>
+<li><b>units/nor_correct_units/NCPlayer_1_Mixi.json</b>: Leiras.<br  />
+</li>
+<li><b>units/nor_correct_units/NCPlayer_2_Spacy.json</b>: Leiras.<br  />
+</li>
+<li><b>units/nor_correct_units/NCPlayer_3_Mixpacy.json</b>: Leiras.<br  />
+</li>
+<li><b>units/good_output.txt</b>: Leiras.<br  />
  <br  />
  Az adatok kezelésére a "character" osztályt használjuk.<br  />
  Egy character objektum paraméterei egy string, és két int.<br  />
