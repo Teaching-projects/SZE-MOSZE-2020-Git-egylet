@@ -12,7 +12,7 @@ Csapattagok:
 
 Leírás:  
   
-A programban 2 karakter harcol egymás ellen, ezek adatai json fájlokban vannak eltárolva. A program futtatásakor parancssori argumentumként a fájlok neveit kell megadni szóközzel elválasztva. A játék ezután kiírja a győztes nevét, és a megmaradt HP-ját.  
+A programban egy hős harcol egy vagy több szörny ellen. A játékmenetek és az elvért kimenetelek a scenarios mappában vannak letárolva. A karakterek tulajdonságai a gyökér mappában, json fájlokban vannak eltárolva. A program futtatásakor parancssori argumentumként a futtatni kívánt scenario nevét kell megadni. A harc addig tart amíg a hős meg nem hal, vagy le nem győzi az összes szörnyet. A harc után a játék felsorolja, hogy a hős kik ellen és milyen aktuális szinttel harcolt, majd a végső szintet, hp-t, dmg-t és acd-t.  
   
 Fájlok:  
 *	**Character.h**: Class meghatározása.  
@@ -52,3 +52,7 @@ Actions - Workflow:
 ---
 
 GitHub Pages Dokumentáció: https://teaching-projects.github.io/SZE-MOSZE-2020-Git-egylet/index.html  
+
+---
+
+Readme is loading... Waiting for commits...   
