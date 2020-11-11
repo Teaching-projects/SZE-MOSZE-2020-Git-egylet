@@ -4,9 +4,9 @@ Ez a repository a Git egylet csapat munkáját tartalmazza.<br />
 
 Csapattagok:<br />
 
-	* Adorján András Bálint<br />
-	* Kisszölgyémi Áron<br />
-	* Nátz Kornél<br />
+	* Adorján András Bálint
+	* Kisszölgyémi Áron
+	* Nátz Kornél
 
 ---
 
