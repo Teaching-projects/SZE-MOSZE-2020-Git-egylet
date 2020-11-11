@@ -24,7 +24,7 @@ Egy character objektum paraméterei egy string, és két int.<br />
 Az osztály tartalmazza az ezekhez szükséges settereket és függvényeket.<br />
 <br />
 Függvények:<br />
-*	**attack**:<br />
+*	**attack**:  
 		Alapvető támadás.<br />
 		Ha a target HP-ja mínuszba menne át, azt nullára módosítja.<br />
 		Használat: X.attack(Y), ha X a támadó fél, Y pedig a target.<br />
@@ -46,7 +46,7 @@ Actions - Workflow:<br />
 		A shell script lekezeli hogy létezik-e már előző futtatás által keletkezett native_output.txt, avagy sem.<br />
 		Ezután lefuttatja a programot a unit_test_* elnevezésű json fájlokban található bemenetekkel.<br />
 		A kimeneteket ideiglenesen kiírja egy native_output.txt fájlba.<br />
-*	**Compare native_output.txt with units<br />good_output.txt**:<br />
+*	**Compare native_output.txt with units good_output.txt**:<br />
 		Összehasonlítja a test által generált kimeneteket a good_output.txt-ben előre definiált kimenetekkel.<br />
 
 ---
