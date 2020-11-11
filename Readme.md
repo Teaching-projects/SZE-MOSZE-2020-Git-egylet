@@ -24,6 +24,7 @@ Egy character objektum paraméterei egy string, és két int.<br />
 Az osztály tartalmazza az ezekhez szükséges settereket és függvényeket.<br />
 <br />
 Függvények:<br />
+
 *	**attack**: <br />
 		Alapvető támadás.<br />
 		Ha a target HP-ja mínuszba menne át, azt nullára módosítja.<br />
