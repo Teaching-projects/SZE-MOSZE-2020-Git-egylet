@@ -15,9 +15,43 @@ Leírás:<br />
 A programban egy hős harcol egy vagy több szörny ellen. A játékmenetek és az elvért kimenetelek a scenarios mappában vannak letárolva. A karakterek tulajdonságai a gyökér mappában, json fájlokban vannak eltárolva. A program futtatásakor parancssori argumentumként a futtatni kívánt scenario nevét kell megadni. A harc addig tart amíg a hős meg nem hal, vagy le nem győzi az összes szörnyet. A harc után a játék felsorolja, hogy a hős kik ellen és milyen aktuális szinttel harcolt, majd a végső szintet, hp-t, dmg-t és acd-t.<br />
 <br />
 Fájlok:<br />
-*	**Character.h**: Class meghatározása.<br />
-*	**Character.cpp**: A játék levezényléséhez használt függvények definiálása.<br />
-*	**main.cpp**: Objektumok létrehozása, függvények használata.<br />
+
+*	**main.cpp**: Leiras.<br />
+*	**Hero.h**: Leiras.<br />
+*	**Hero.cpp**: Leiras.<br />
+*	**JSON.h**: Leiras.<br />
+*	**JSON.cpp**: Leiras.<br />
+*	**Monster.h**: Leiras.<br />
+*	**Monster.cpp**: Leiras.<br />
+*	**Readme.md**: Leiras.<br />
+*	**Blood_Raven.json**: Leiras.<br />
+*	**Dark_Wanderer.json**: Leiras.<br />
+*	**Fallen.json**: Leiras.<br />
+*	**Zombie.json**: Leiras.<br />
+*	**Makefile**: Leiras.<br />
+*	**.github/workflows/Newtest.yml**: Leiras.<br />
+*	**.github/workflows/pushdocs.yml**: Leiras.<br />
+*	**.github/workflows/Test.yml**: Leiras.<br />
+*	**docker/dox_docker**: Leiras.<br />
+*	**docker/sca_docker**: Leiras.<br />
+*	**docker/unittest_docker**: Leiras.<br />
+*	**scenarios/output1.txt**: Leiras.<br />
+*	**scenarios/output2.txt**: Leiras.<br />
+*	**scenarios/scenario1.json**: Leiras.<br />
+*	**scenarios/scenario2.json**: Leiras.<br />
+*	**tests/CMakeLists.txt**: Leiras.<br />
+*	**tests/errorcheck.sh**: Leiras.<br />
+*	**tests/task2_inout.sh**: Leiras.<br />
+*	**tests/unit_tests.cpp**: Leiras.<br />
+*	**tests/warningcheck.sh**: Leiras.<br />
+*	**units/Player_1_Kakarott.json**: Leiras.<br />
+*	**units/Player_2_Sally.json**: Leiras.<br />
+*	**units/Player_3_Maple.json**: Leiras.<br />
+*	**units/error/Player_4_Enigma.json**: Leiras.<br />
+*	**units/nor_correct_units/NCPlayer_1_Mixi.json**: Leiras.<br />
+*	**units/nor_correct_units/NCPlayer_2_Spacy.json**: Leiras.<br />
+*	**units/nor_correct_units/NCPlayer_3_Mixpacy.json**: Leiras.<br />
+*	**units/good_output.txt**: Leiras.<br />
 <br />
 Az adatok kezelésére a "character" osztályt használjuk.<br />
 Egy character objektum paraméterei egy string, és két int.<br />
