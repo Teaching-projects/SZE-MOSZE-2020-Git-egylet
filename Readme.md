@@ -24,14 +24,14 @@ Egy character objektum paraméterei egy string, és két int.<br />
 Az osztály tartalmazza az ezekhez szükséges settereket és függvényeket.<br />
 <br />
 Függvények:<br />
-*	**attack**:  
+*	**attack**: <br />
 		Alapvető támadás.<br />
 		Ha a target HP-ja mínuszba menne át, azt nullára módosítja.<br />
 		Használat: X.attack(Y), ha X a támadó fél, Y pedig a target.<br />
-*	**isAlive**:<br />
+*	**isAlive**: <br />
 		Megvizsgálja az objektum HP-ját, ha nagyobb mint 0, true értékkel tér vissza, azaz az objektum életben van.<br />
 		Használat: X.isAlive()<br />
-*	**parseUnit**
+*	**parseUnit** <br />
 		Paraméterül kap egy json fájlt, amit megpróbál megnyitni,<br />
 			ha sikertelen, akkor egy hibaüzenettel kilép,<br />
 			ha pedig sikeres, return-öli a name, HP, és DMG-hez tartozó értékeket, külön változókban.<br />
