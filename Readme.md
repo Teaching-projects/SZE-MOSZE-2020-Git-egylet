@@ -60,11 +60,11 @@ Fájlok:<br />
 
 Osztályok:<br />
 
-*	**Hero**: Leírás.<br />
-*	**Monster**: Leírás.<br />
-*	**JSON**: Leírás.<br />
+*	**Hero**: Hero típusú karakter objektumait és függvényeit tartalmazó osztály.<br />
+*	**Monster**: Monster típusú karakter objektumait és függvényeit tartalmazó osztály.<br />
+*	**JSON**: A .json kiterjesztésű fájlokban tárolt adatok beolvasásáért felelős osztály.<br />
 
-
+Az osztályok és függvényeik működéséről részletesebb információk a doxygen segítségével létrehozott GitHub Pages dokumentációnkban érhetőek el: https://teaching-projects.github.io/SZE-MOSZE-2020-Git-egylet/index.html<br />
 <br />
 !!!Jelzősor!!!<br />
 <br />
@@ -82,10 +82,6 @@ Actions - Workflow:<br />
 		A kimeneteket ideiglenesen kiírja egy native_output.txt fájlba.<br />
 *	**Compare native_output.txt with units good_output.txt**:<br />
 		Összehasonlítja a test által generált kimeneteket a good_output.txt-ben előre definiált kimenetekkel.<br />
-
----
-
-GitHub Pages Dokumentáció: https://teaching-projects.github.io/SZE-MOSZE-2020-Git-egylet/index.html<br />
 
 ---
 
