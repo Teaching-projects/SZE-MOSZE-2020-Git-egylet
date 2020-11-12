@@ -169,24 +169,15 @@ $(function() {
 </li>
 </ul>
 <p>Az osztályok és függvényeik működéséről részletesebb információk a doxygen segítségével létrehozott GitHub Pages dokumentációnkban érhetőek el: <a href="https://teaching-projects.github.io/SZE-MOSZE-2020-Git-egylet/index.html">https://teaching-projects.github.io/SZE-MOSZE-2020-Git-egylet/index.html</a><br  />
- <br  />
- !!!Jelzősor!!!<br  />
- <br  />
 </p>
 <hr  />
-<p>Actions - Workflow:<br  />
+<p>Actions - Workflows:<br  />
 </p><ul>
-<li><b>Build the program</b>:<br  />
- Az Actions-ben lévő workflow lefordítja a kódot g++ -std=c++17 *.cpp segítségével.<br  />
+<li><b>Unit tests</b>: A google tesztek futtatásáért és ellenőrzéséért felelős workflow.<br  />
 </li>
-<li><b>Run task2 shell script</b>:<br  />
- Lefuttatja a bash shell script-ként megírt task2.sh nevezetű shell scriptet.<br  />
- A shell script lekezeli hogy létezik-e már előző futtatás által keletkezett native_output.txt, avagy sem.<br  />
- Ezután lefuttatja a programot a unit_test_* elnevezésű json fájlokban található bemenetekkel.<br  />
- A kimeneteket ideiglenesen kiírja egy native_output.txt fájlba.<br  />
+<li><b>pushdocs workflow</b>: A doxygen-es GitHub Pages dokumentáció létrehozásáért felelős workflow.<br  />
 </li>
-<li><b>Compare native_output.txt with units good_output.txt</b>:<br  />
- Összehasonlítja a test által generált kimeneteket a good_output.txt-ben előre definiált kimenetekkel.<br  />
+<li><b>build, static code analysis, leakcheck</b>: A kód szintaktikáját és helyes futását ellenőrző workflow.<br  />
 </li>
 </ul>
 <hr  />
