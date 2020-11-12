@@ -77,9 +77,10 @@ $(function() {
 </pre><hr  />
 <p>Leírás:<br  />
  <br  />
- A programban egy hős harcol egy vagy több szörny ellen. A játékmenetek és az elvért kimenetelek a scenarios mappában vannak letárolva. A karakterek tulajdonságai a gyökér mappában, json fájlokban vannak eltárolva. A program futtatásakor parancssori argumentumként a futtatni kívánt scenario nevét kell megadni. A harc addig tart amíg a hős meg nem hal, vagy le nem győzi az összes szörnyet. A harc után a játék felsorolja, hogy a hős kik ellen és milyen aktuális szinttel harcolt, majd a végső szintet, hp-t, dmg-t és acd-t.<br  />
- <br  />
- Fájlok:<br  />
+ A programban egy hős harcol egy vagy több szörny ellen. A játékmenetek és az elvárt kimenetelek a scenarios mappában vannak letárolva. A karakterek tulajdonságai a gyökér mappában, json fájlokban vannak eltárolva. A program futtatásakor parancssori argumentumként a futtatni kívánt scenario nevét kell megadni. A harc addig tart amíg a hős meg nem hal, vagy le nem győzi az összes szörnyet. A harc után a játék felsorolja, hogy a hős kik ellen és milyen aktuális szinttel harcolt, majd a végső szintet, hp-t, dmg-t és acd-t.<br  />
+</p>
+<hr  />
+<p>Fájlok:<br  />
 </p>
 <ul>
 <li><b>main.cpp</b>: @hegyhati által megadott, a játék egészét levezénylő fájl.<br  />
@@ -114,11 +115,11 @@ $(function() {
 </li>
 <li>**.github/workflows/Test.yml**: A "build, static code analysis, leakcheck" nevű workflow futtatási fájlja.<br  />
 </li>
-<li><b>docker/dox_docker</b>: Docker dokumentáció létrehozásához szükséges fájl.<br  />
+<li><b>docker/dox_docker</b>: Docker container létrehozásához szükséges fájl.<br  />
 </li>
-<li><b>docker/sca_docker</b>: Docker dokumentáció létrehozásához szükséges fájl.<br  />
+<li><b>docker/sca_docker</b>: Docker container létrehozásához szükséges fájl.<br  />
 </li>
-<li><b>docker/unittest_docker</b>: Docker dokumentáció létrehozásához szükséges fájl.<br  />
+<li><b>docker/unittest_docker</b>: Docker container létrehozásához szükséges fájl.<br  />
 </li>
 <li><b>scenarios/output1.txt</b>: @hegyhati által megadott elvárt kimenetet tartalmazó fájl.<br  />
 </li>
@@ -154,31 +155,23 @@ $(function() {
 </li>
 <li><b>units/not_correct_units/NCPlayer_3_Mixpacy.json</b>: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl, amiben az adatok sorrendje fel van cserélve és emellett felesleges whitespacek is találhatóak benne.<br  />
  <br  />
- !!!Jelzősor!!!<br  />
 </li>
 </ul>
-<p>Az adatok kezelésére a "character" osztályt használjuk.<br  />
- Egy character objektum paraméterei egy string, és két int.<br  />
- Az osztály tartalmazza az ezekhez szükséges settereket és függvényeket.<br  />
- <br  />
- Függvények:<br  />
+<hr  />
+<p>Osztályok:<br  />
 </p>
 <ul>
-<li><b>attack</b>: <br  />
- Alapvető támadás.<br  />
- Ha a target HP-ja mínuszba menne át, azt nullára módosítja.<br  />
- Használat: X.attack(Y), ha X a támadó fél, Y pedig a target.<br  />
+<li><b><a class="el" href="classHero.html">Hero</a></b>: Leírás.<br  />
 </li>
-<li><b>isAlive</b>: <br  />
- Megvizsgálja az objektum HP-ját, ha nagyobb mint 0, true értékkel tér vissza, azaz az objektum életben van.<br  />
- Használat: X.isAlive()<br  />
+<li><b><a class="el" href="classMonster.html">Monster</a></b>: Leírás.<br  />
 </li>
-<li><b>parseUnit</b> <br  />
- Paraméterül kap egy json fájlt, amit megpróbál megnyitni,<br  />
- ha sikertelen, akkor egy hibaüzenettel kilép,<br  />
- ha pedig sikeres, return-öli a name, HP, és DMG-hez tartozó értékeket, külön változókban.<br  />
+<li><b><a class="el" href="classJSON.html">JSON</a></b>: Leírás.<br  />
 </li>
 </ul>
+<p><br  />
+ !!!Jelzősor!!!<br  />
+ <br  />
+</p>
 <hr  />
 <p>Actions - Workflow:<br  />
 </p><ul>
