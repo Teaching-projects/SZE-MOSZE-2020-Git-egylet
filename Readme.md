@@ -12,8 +12,10 @@ Csapattagok:<br />
 
 Leírás:<br />
 <br />
-A programban egy hős harcol egy vagy több szörny ellen. A játékmenetek és az elvért kimenetelek a scenarios mappában vannak letárolva. A karakterek tulajdonságai a gyökér mappában, json fájlokban vannak eltárolva. A program futtatásakor parancssori argumentumként a futtatni kívánt scenario nevét kell megadni. A harc addig tart amíg a hős meg nem hal, vagy le nem győzi az összes szörnyet. A harc után a játék felsorolja, hogy a hős kik ellen és milyen aktuális szinttel harcolt, majd a végső szintet, hp-t, dmg-t és acd-t.<br />
-<br />
+A programban egy hős harcol egy vagy több szörny ellen. A játékmenetek és az elvárt kimenetelek a scenarios mappában vannak letárolva. A karakterek tulajdonságai a gyökér mappában, json fájlokban vannak eltárolva. A program futtatásakor parancssori argumentumként a futtatni kívánt scenario nevét kell megadni. A harc addig tart amíg a hős meg nem hal, vagy le nem győzi az összes szörnyet. A harc után a játék felsorolja, hogy a hős kik ellen és milyen aktuális szinttel harcolt, majd a végső szintet, hp-t, dmg-t és acd-t.<br />
+
+---
+
 Fájlok:<br />
 
 *	**main.cpp**: @hegyhati által megadott, a játék egészét levezénylő fájl.<br />
@@ -32,9 +34,9 @@ Fájlok:<br />
 *	**.github/workflows/Newtest.yml**: A "Unit tests" nevű workflow futtatási fájlja.<br />
 *	**.github/workflows/pushdocs.yml**: A "pushdocs workflow" nevű workflow futtatási fájlja.<br />
 *	**.github/workflows/Test.yml**: A "build, static code analysis, leakcheck" nevű workflow futtatási fájlja.<br />
-*	**docker/dox_docker**: Docker dokumentáció létrehozásához szükséges fájl.<br />
-*	**docker/sca_docker**: Docker dokumentáció létrehozásához szükséges fájl.<br />
-*	**docker/unittest_docker**: Docker dokumentáció létrehozásához szükséges fájl.<br />
+*	**docker/dox_docker**: Docker container létrehozásához szükséges fájl.<br />
+*	**docker/sca_docker**: Docker container létrehozásához szükséges fájl.<br />
+*	**docker/unittest_docker**: Docker container létrehozásához szükséges fájl.<br />
 *	**scenarios/output1.txt**: @hegyhati által megadott elvárt kimenetet tartalmazó fájl.<br />
 *	**scenarios/output2.txt**: @hegyhati által megadott elvárt kimenetet tartalmazó fájl.<br />
 *	**scenarios/scenario1.json**: @hegyhati által megadott játékmenetet tartalmazó fájl.<br />
@@ -53,25 +55,20 @@ Fájlok:<br />
 *	**units/not_correct_units/NCPlayer_2_Spacy.json**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl, amelyben felesleges whitespacek találhatóak.<br />
 *	**units/not_correct_units/NCPlayer_3_Mixpacy.json**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl, amiben az adatok sorrendje fel van cserélve és emellett felesleges whitespacek is találhatóak benne.<br />
 <br />
-!!!Jelzősor!!!<br />
 
-Az adatok kezelésére a "character" osztályt használjuk.<br />
-Egy character objektum paraméterei egy string, és két int.<br />
-Az osztály tartalmazza az ezekhez szükséges settereket és függvényeket.<br />
+---
+
+Osztályok:<br />
+
+*	**Hero**: Leírás.<br />
+*	**Monster**: Leírás.<br />
+*	**JSON**: Leírás.<br />
+
+
 <br />
-Függvények:<br />
+!!!Jelzősor!!!<br />
+<br />
 
-*	**attack**: <br />
-		Alapvető támadás.<br />
-		Ha a target HP-ja mínuszba menne át, azt nullára módosítja.<br />
-		Használat: X.attack(Y), ha X a támadó fél, Y pedig a target.<br />
-*	**isAlive**: <br />
-		Megvizsgálja az objektum HP-ját, ha nagyobb mint 0, true értékkel tér vissza, azaz az objektum életben van.<br />
-		Használat: X.isAlive()<br />
-*	**parseUnit** <br />
-		Paraméterül kap egy json fájlt, amit megpróbál megnyitni,<br />
-			ha sikertelen, akkor egy hibaüzenettel kilép,<br />
-			ha pedig sikeres, return-öli a name, HP, és DMG-hez tartozó értékeket, külön változókban.<br />
 
 ---
 
