@@ -54,7 +54,6 @@ Fájlok:<br />
 *	**units/not_correct_units/NCPlayer_1_Mixi.json**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl, amiben az adatok sorrendje fel van cserélve.<br />
 *	**units/not_correct_units/NCPlayer_2_Spacy.json**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl, amelyben felesleges whitespacek találhatóak.<br />
 *	**units/not_correct_units/NCPlayer_3_Mixpacy.json**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl, amiben az adatok sorrendje fel van cserélve és emellett felesleges whitespacek is találhatóak benne.<br />
-<br />
 
 ---
 
@@ -75,4 +74,4 @@ Actions - Workflows:<br />
 
 ---
 
-Readme is loading... Waiting for commits...<br /> 
+Readme is up to date to task "Docker (#16)". Waiting for commits...<br /> 
