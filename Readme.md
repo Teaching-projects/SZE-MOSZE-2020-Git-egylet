@@ -65,23 +65,13 @@ Osztályok:<br />
 *	**JSON**: A .json kiterjesztésű fájlokban tárolt adatok beolvasásáért felelős osztály.<br />
 
 Az osztályok és függvényeik működéséről részletesebb információk a doxygen segítségével létrehozott GitHub Pages dokumentációnkban érhetőek el: https://teaching-projects.github.io/SZE-MOSZE-2020-Git-egylet/index.html<br />
-<br />
-!!!Jelzősor!!!<br />
-<br />
-
 
 ---
 
-Actions - Workflow:<br />
-*	**Build the program**:<br />
-		Az Actions-ben lévő workflow lefordítja a kódot g++ -std=c++17 *.cpp segítségével.<br />
-*	**Run task2 shell script**:<br />
-		Lefuttatja a bash shell script-ként megírt task2.sh nevezetű shell scriptet.<br />
-		A shell script lekezeli hogy létezik-e már előző futtatás által keletkezett native_output.txt, avagy sem.<br />
-		Ezután lefuttatja a programot a unit_test_* elnevezésű json fájlokban található bemenetekkel.<br />
-		A kimeneteket ideiglenesen kiírja egy native_output.txt fájlba.<br />
-*	**Compare native_output.txt with units good_output.txt**:<br />
-		Összehasonlítja a test által generált kimeneteket a good_output.txt-ben előre definiált kimenetekkel.<br />
+Actions - Workflows:<br />
+*	**Unit tests**: A google tesztek futtatásáért és ellenőrzéséért felelős workflow.<br />
+*	**pushdocs workflow**: A doxygen-es GitHub Pages dokumentáció létrehozásáért felelős workflow.<br />
+*	**build, static code analysis, leakcheck**: A kód szintaktikáját és helyes futását ellenőrző workflow.<br />
 
 ---
 
