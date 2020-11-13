@@ -16,19 +16,18 @@ JSON JSON::parseFromString(std::string str) {
     std::map<std::string, std::variant<std::string, int, double>> values;
     std::smatch match;
 
-    while(std::regex_search(str, match, reg)){
+	std::regex reglist("\\s*\"([\\w]*)\"\\s*:\\s*\"?\\[?\\s*([\\w\\.\"?,?\\s*]*)\"?\\s*[,\\]}]");
+	std::smatch matchlist;
+
+    while (std::regex_search(str, match, reg)) {
         if (match[1] == "") {
             throw ParseException("incorrect key"); 
         }
-
         else if (match[2] == "") {
             throw ParseException("incorrect value"); 
         }
-
         else
         {
-            //~ values[match[1]] = match[2];
-            
             std::string m2 = match[2];
             if (!m2.empty() && std::all_of(m2.begin(), m2.end(), [](char ch){return std::isdigit(ch);})) values[match[1]] = std::stoi(m2);
             else if (!m2.empty() && std::all_of(m2.begin(), m2.end(), [](char ch){return ((std::isdigit(ch) || ch == '.') ? true : false);})) values[match[1]] = std::stod(match[2]);
@@ -37,6 +36,21 @@ JSON JSON::parseFromString(std::string str) {
             str = match.suffix().str();
         }            
     }
+    
+    if (std::regex_search(str, matchlist, reglist)) {
+        std::string m2l = matchlist[2];
+        while (m2l.find(",")!=std::string::npos)
+        {
+            m2l.erase(m2l.find(","), 1);
+        }
+        while(m2l.find("\"")!= std::string::npos)
+        {
+            m2l.erase(m2l.find("\""), 1);
+		}
+        values[matchlist[1]] = m2l;
+        str = matchlist.suffix().str();
+    }
+    
     return JSON(values);
 }
 
