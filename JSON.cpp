@@ -12,8 +12,9 @@ JSON JSON::jsonParser(std::istream& file) {
 }
 
 JSON JSON::parseFromString(std::string str) {
+	std::map<std::string, std::variant<std::string, int, double>> values;
+	
     std::regex reg("\\s*\"([\\w]*)\"\\s*:\\s*\"?([\\s\\w\\.]*)\"?\\s*[,}]\\s*");
-    std::map<std::string, std::variant<std::string, int, double>> values;
     std::smatch match;
 
 	std::regex reglist("\\s*\"([\\w]*)\"\\s*:\\s*\"?\\[?\\s*([\\w\\.\"?,?\\s*]*)\"?\\s*[,\\]}]");

@@ -15,9 +15,9 @@ private:
 	std::map <std::string, std::variant<std::string, int, double>> pdata;
 	
 public:
-	JSON(std::map<std::string, std::variant<std::string, int, double>> data) : pdata(data){};
-
 	typedef std::list<std::variant<std::string, int, double>> list;
+
+	JSON(std::map<std::string, std::variant<std::string, int, double>> data) : pdata(data){};
 	
     static JSON jsonParser(std::istream& file);
     static JSON parseFromString(std::string str);
@@ -28,7 +28,7 @@ public:
 	}
 	
 	template <typename T>
-	inline typename std::enable_if <std::is_same<T, JSON::list>::value, T>::type
+	inline typename std::enable_if<std::is_same<T, JSON::list>::value, T>::type
     get(const std::string& key)
     {
 		if (!count(key)) throw ParseException("it does not exist");
@@ -43,6 +43,13 @@ public:
 			return returns;
 			
 		}
+    }
+    
+    template <typename T> inline typename std::enable_if<!std::is_same<T, JSON::list>::value, T>::type
+	get(const std::string& key)
+	{
+       	if (!count(key)) throw ParseException("it does not exist");
+        else return std::get<T>(pdata[key]);
     }
     
     class ParseException : public std::runtime_error
