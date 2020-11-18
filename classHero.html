@@ -94,9 +94,9 @@ Collaboration diagram for Hero:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afb859768c8268b7e2e074de70d491a47"><td class="memItemLeft" align="right" valign="top"><a id="afb859768c8268b7e2e074de70d491a47"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Hero</b> (const std::string, int, int, double, int, int, int, double)</td></tr>
-<tr class="separator:afb859768c8268b7e2e074de70d491a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a798bf230007ab8519662fdd97f858ca5"><td class="memItemLeft" align="right" valign="top"><a id="a798bf230007ab8519662fdd97f858ca5"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Hero</b> (const std::string, int, int, double, int, int, int, double, double)</td></tr>
+<tr class="separator:a798bf230007ab8519662fdd97f858ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e57cbaa03afdb8ee9b0c5c3505a76be"><td class="memItemLeft" align="right" valign="top"><a id="a5e57cbaa03afdb8ee9b0c5c3505a76be"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>getLevel</b> ()</td></tr>
 <tr class="separator:a5e57cbaa03afdb8ee9b0c5c3505a76be"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -109,8 +109,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>getMaxHealthPoints</b>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>hit</b> (<a class="el" href="classMonster.html">Monster</a> *target) override</td></tr>
 <tr class="separator:ad4694990a6233f911292790a8a4e306c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classMonster"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classMonster')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classMonster.html">Monster</a></td></tr>
-<tr class="memitem:ac11eadd14963de835cd2b431d43e82ab inherit pub_methods_classMonster"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#ac11eadd14963de835cd2b431d43e82ab">Monster</a> (std::string name, int HP, int DMG, double ACD)</td></tr>
-<tr class="separator:ac11eadd14963de835cd2b431d43e82ab inherit pub_methods_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a371556066f2d29e65e70ad85fd1b59b0 inherit pub_methods_classMonster"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a371556066f2d29e65e70ad85fd1b59b0">Monster</a> (std::string name, int HP, int DMG, double ACD, double DEF)</td></tr>
+<tr class="separator:a371556066f2d29e65e70ad85fd1b59b0 inherit pub_methods_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28ae1112e37262ce150e3c02465b3dd5 inherit pub_methods_classMonster"><td class="memItemLeft" align="right" valign="top"><a id="a28ae1112e37262ce150e3c02465b3dd5"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a28ae1112e37262ce150e3c02465b3dd5">getName</a> () const</td></tr>
 <tr class="memdesc:a28ae1112e37262ce150e3c02465b3dd5 inherit pub_methods_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a simple getter for Name. <br /></td></tr>
@@ -127,6 +127,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#ad84dbe06c7a2aa7f75164dd9db52daf3">getAttackCoolDown</a> () const</td></tr>
 <tr class="memdesc:ad84dbe06c7a2aa7f75164dd9db52daf3 inherit pub_methods_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a simple getter for ACD. <br /></td></tr>
 <tr class="separator:ad84dbe06c7a2aa7f75164dd9db52daf3 inherit pub_methods_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85db198b71d291aeb33fa1342b455f28 inherit pub_methods_classMonster"><td class="memItemLeft" align="right" valign="top"><a id="a85db198b71d291aeb33fa1342b455f28"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a85db198b71d291aeb33fa1342b455f28">getDefense</a> () const</td></tr>
+<tr class="memdesc:a85db198b71d291aeb33fa1342b455f28 inherit pub_methods_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a simple getter for DEF. <br /></td></tr>
+<tr class="separator:a85db198b71d291aeb33fa1342b455f28 inherit pub_methods_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77ad18c44b3fb2df92b30ece4dc7847b inherit pub_methods_classMonster"><td class="memItemLeft" align="right" valign="top"><a id="a77ad18c44b3fb2df92b30ece4dc7847b"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a77ad18c44b3fb2df92b30ece4dc7847b">isAlive</a> () const</td></tr>
 <tr class="memdesc:a77ad18c44b3fb2df92b30ece4dc7847b inherit pub_methods_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">This shows if the player is alive or not. <br /></td></tr>
@@ -181,6 +185,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>damage_bonus_per_level
 <tr class="memitem:a1c93fe2c0a2125999702e0be199066df"><td class="memItemLeft" align="right" valign="top"><a id="a1c93fe2c0a2125999702e0be199066df"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>cooldown_multiplier_per_level</b></td></tr>
 <tr class="separator:a1c93fe2c0a2125999702e0be199066df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2799891af4917c1c8f49611fbb9ef419"><td class="memItemLeft" align="right" valign="top"><a id="a2799891af4917c1c8f49611fbb9ef419"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>defense_bonus_per_level</b></td></tr>
+<tr class="separator:a2799891af4917c1c8f49611fbb9ef419"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classMonster"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classMonster')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classMonster.html">Monster</a></td></tr>
 <tr class="memitem:aa381e433e6f479f1a9bc219b6267ddb7 inherit pro_attribs_classMonster"><td class="memItemLeft" align="right" valign="top"><a id="aa381e433e6f479f1a9bc219b6267ddb7"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#aa381e433e6f479f1a9bc219b6267ddb7">characterName</a></td></tr>
@@ -188,16 +195,20 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <tr class="separator:aa381e433e6f479f1a9bc219b6267ddb7 inherit pro_attribs_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33e9813fa774a963c20fbafa5cd4b64e inherit pro_attribs_classMonster"><td class="memItemLeft" align="right" valign="top"><a id="a33e9813fa774a963c20fbafa5cd4b64e"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a33e9813fa774a963c20fbafa5cd4b64e">characterHP</a></td></tr>
-<tr class="memdesc:a33e9813fa774a963c20fbafa5cd4b64e inherit pro_attribs_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">The character's HP. <br /></td></tr>
+<tr class="memdesc:a33e9813fa774a963c20fbafa5cd4b64e inherit pro_attribs_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">The character's health points. <br /></td></tr>
 <tr class="separator:a33e9813fa774a963c20fbafa5cd4b64e inherit pro_attribs_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d2e4ddb74bb0e77565c994acb45991b inherit pro_attribs_classMonster"><td class="memItemLeft" align="right" valign="top"><a id="a2d2e4ddb74bb0e77565c994acb45991b"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a2d2e4ddb74bb0e77565c994acb45991b">characterDMG</a></td></tr>
-<tr class="memdesc:a2d2e4ddb74bb0e77565c994acb45991b inherit pro_attribs_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">The character's DMG. <br /></td></tr>
+<tr class="memdesc:a2d2e4ddb74bb0e77565c994acb45991b inherit pro_attribs_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">The character's damage. <br /></td></tr>
 <tr class="separator:a2d2e4ddb74bb0e77565c994acb45991b inherit pro_attribs_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26ce8b3bb6fb2301aa9c6bf8ee4941c2 inherit pro_attribs_classMonster"><td class="memItemLeft" align="right" valign="top"><a id="a26ce8b3bb6fb2301aa9c6bf8ee4941c2"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a26ce8b3bb6fb2301aa9c6bf8ee4941c2">characterACD</a></td></tr>
-<tr class="memdesc:a26ce8b3bb6fb2301aa9c6bf8ee4941c2 inherit pro_attribs_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">The character's ACD. <br /></td></tr>
+<tr class="memdesc:a26ce8b3bb6fb2301aa9c6bf8ee4941c2 inherit pro_attribs_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">The character's attack cooldown. <br /></td></tr>
 <tr class="separator:a26ce8b3bb6fb2301aa9c6bf8ee4941c2 inherit pro_attribs_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c250849400e4ea65cc3ebc1387df8e6 inherit pro_attribs_classMonster"><td class="memItemLeft" align="right" valign="top"><a id="a2c250849400e4ea65cc3ebc1387df8e6"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a2c250849400e4ea65cc3ebc1387df8e6">characterDEF</a></td></tr>
+<tr class="memdesc:a2c250849400e4ea65cc3ebc1387df8e6 inherit pro_attribs_classMonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">The character's defense. <br /></td></tr>
+<tr class="separator:a2c250849400e4ea65cc3ebc1387df8e6 inherit pro_attribs_classMonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a336bd6536cc0124dec86505b2c48e479"></a>
