@@ -11,12 +11,14 @@ Monster::Monster
 	std::string name,
 	int HP,
 	int DMG,
-	double ACD
+	double ACD,
+	double DEF
 	) : 
 	characterName(name),
 	characterHP(HP),
 	characterDMG(DMG),
-	characterACD(ACD)
+	characterACD(ACD),
+	characterDEF(DEF)
 {}
 
 //Getters for protected parameters
@@ -36,15 +38,22 @@ double Monster::getAttackCoolDown() const {
     return characterACD;
 }
 
+double Monster::getDefense() const {
+    return characterDEF;
+}
+
 bool Monster::isAlive() const {
      return this->characterHP > 0;
 }
 
 //Uses target's damage getter to lower the object's health
 void Monster::getHit(Monster* target ) {
-	characterHP -= target->getDamage(); ///< Takes one hit
+	double finaledamage = target->getDamage() - characterDEF;
+	if (finaledamage < 0) finaledamage=0;
+	characterHP -= finaledamage; ///< Takes one hit
 	if (characterHP < 0) characterHP = 0; ///< Restores HP to 0 if HP decreases below 0
 }
+
 //Delivering getHit function on given target
 void Monster::hit(Monster* target) {
 	target->getHit(this);
@@ -84,7 +93,8 @@ Monster Monster::parse(const std::string& name) {
 		"name",
 		"health_points", 
 		"damage",
-		"attack_cooldown"
+		"attack_cooldown",
+		"defense"
 	};        
     
     bool load = true;
@@ -100,7 +110,8 @@ Monster Monster::parse(const std::string& name) {
 			values.get<std::string>("name"),
 			values.get<int>("health_points"),
 			values.get<int>("damage"),
-			values.get<double>("attack_cooldown")
+			values.get<double>("attack_cooldown"),
+			values.get<double>("defense")
         );
 	}
 	else throw JSON::ParseException("incorrect values:" + name);

@@ -17,9 +17,10 @@ class Monster
 {
 protected:
     std::string characterName;	///< The character's name
-    int characterHP;	///< The character's HP
-    int characterDMG;	///< The character's DMG
-    double characterACD;	///< The character's ACD
+    int characterHP;	///< The character's health points
+    int characterDMG;	///< The character's damage
+    double characterACD;	///< The character's attack cooldown
+    double characterDEF;    ///< The character's defense
 
 public:
     Monster
@@ -27,7 +28,8 @@ public:
 		std::string name /** This is a string parameter*/,
 		int HP /** This is an int parameter*/,
 		int DMG /** This is an int parameter*/,
-		double ACD /** This is a double parameter*/
+		double ACD /** This is a double parameter*/,
+        double DEF /** This is a double parameter*/
 	);
 
     static Monster parse(const std::string& name);	///< This reads in the player data from file
@@ -35,6 +37,7 @@ public:
     int getHealthPoints() const;	///< This is a simple getter for HP
     int getDamage() const;	///< This is a simple getter for DMG
     double getAttackCoolDown() const;	///< This is a simple getter for ACD
+    double getDefense() const;	///< This is a simple getter for DEF
     bool isAlive() const;	///< This shows if the player is alive or not
     void getHit(Monster* target);	///< This takes one hit
     virtual void hit(Monster* target);
