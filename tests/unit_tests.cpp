@@ -204,6 +204,10 @@ TEST(Map, coordinateOutOfRange){
 	ASSERT_THROW(map_test.get(1,200), Map::WrongIndexException);
 }
 
+TEST(Map, noSuchFile){
+	ASSERT_THROW(Map map_test("../maps/levelNoSuch.txt"), Map::WrongIndexException);
+}
+
 int main(int argc, char** argv) {
 	::testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();
