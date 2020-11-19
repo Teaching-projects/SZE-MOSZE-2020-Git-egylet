@@ -200,7 +200,7 @@ TEST(Monster, fightTilDeath){
 
 TEST(Map, mapReading){
     Map map_test("../maps/level1.txt");
-    std::cout << test.get(1,2);
+    std::cout << map_test.get(1,2);
 }
 
 int main(int argc, char** argv) {
