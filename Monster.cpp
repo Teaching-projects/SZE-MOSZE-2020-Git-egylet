@@ -88,7 +88,7 @@ void Monster::fightTilDeath(Monster& target) {
 //Parser function to return a Monster object from a JSON file
 Monster Monster::parse(const std::string& name) {
 	JSON values = JSON::parseFromFile(name);
-	const std::vector<std::string> find
+	std::vector<std::string> find
 	{
 		"name",
 		"health_points", 

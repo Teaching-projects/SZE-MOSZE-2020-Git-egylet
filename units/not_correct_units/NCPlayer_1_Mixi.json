@@ -3,5 +3,5 @@
   "health_points" : 320,
   "name" : "Mixi",
   "attack_cooldown" : 5.3,
-  "defense" : 280
+  "defense" : 280.0
 }

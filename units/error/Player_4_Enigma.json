@@ -3,5 +3,5 @@
   "health_points" : 3000,
   "damage" : 1w3,
   "attack_cooldown" : 5.0,
-  "defense" : 40
+  "defense" : 40.0
 }
