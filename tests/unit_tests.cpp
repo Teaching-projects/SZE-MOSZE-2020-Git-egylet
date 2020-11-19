@@ -1,5 +1,6 @@
 #include "../Monster.h"
 #include "../JSON.h"
+#include "../Map.h"
 #include <gtest/gtest.h>
 
 //Player_1_Kakarott.json
@@ -195,6 +196,11 @@ TEST(Monster, fightTilDeath){
 	else test_winner = "Bad";
 
 	ASSERT_EQ(expected_winner, test_winner);
+}
+
+TEST(Map, mapReading){
+    Map map_test("../maps/level1.txt");
+    std::cout << test.get(1,2);
 }
 
 int main(int argc, char** argv) {
