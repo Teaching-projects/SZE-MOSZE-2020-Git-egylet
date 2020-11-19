@@ -2,7 +2,7 @@
 #include <fstream>
 
 Map::Map(const std::string& filename) {
-	std::ifstream file;
+	std::ifstream file(filename);
 	if (!file.fail()) 
 	{
 		std::string line;

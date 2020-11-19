@@ -200,7 +200,7 @@ TEST(Monster, fightTilDeath){
 
 TEST(Map, mapReading){
     Map map_test("../maps/level1.txt");
-    map_test.get(1, 100);
+    map_test.get(1, 2);
 }
 
 int main(int argc, char** argv) {
