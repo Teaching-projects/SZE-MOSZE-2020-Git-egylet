@@ -14,7 +14,7 @@ TEST(JSON, jsonParser) {
 	ASSERT_EQ(values.get<int>("health_points"),300);
 	ASSERT_EQ(values.get<int>("damage"),150);
 	ASSERT_EQ(values.get<double>("attack_cooldown"),5.5);
-	ASSERT_EQ(values.get<double>("defense"),240);
+	//ASSERT_EQ(values.get<double>("defense"),240);
 }
 
 //Read in Player_2_Sally.json file
@@ -32,7 +32,7 @@ TEST(JSON, parseFromString) {
 	ASSERT_EQ(values.get<int>("health_points"),500);
 	ASSERT_EQ(values.get<int>("damage"),250);
 	ASSERT_EQ(values.get<double>("attack_cooldown"),3.5);
-	ASSERT_EQ(values.get<double>("defense"),180);
+	//ASSERT_EQ(values.get<double>("defense"),180);
 }
 
 //Read in Player_3_Maple.json file
@@ -43,7 +43,7 @@ TEST(JSON, parseFromFile) {
 	ASSERT_EQ(values.get<int>("health_points"),700);
 	ASSERT_EQ(values.get<int>("damage"),100);
 	ASSERT_EQ(values.get<double>("attack_cooldown"),4.5);
-	ASSERT_EQ(values.get<double>("defense"),120);
+	//ASSERT_EQ(values.get<double>("defense"),120);
 }
 
 //Read in Fallen.json file
@@ -73,7 +73,7 @@ TEST(JSON, Mixi) {
 	ASSERT_EQ(values.get<int>("health_points"),320);
 	ASSERT_EQ(values.get<int>("damage"),140);
 	ASSERT_EQ(values.get<double>("attack_cooldown"),5.3);
-	ASSERT_EQ(values.get<double>("defense"),280);
+	//ASSERT_EQ(values.get<double>("defense"),280);
 }
 
 //Read in NCPlayer_2_Spacy.json file
@@ -88,7 +88,7 @@ TEST(JSON, Spacy) {
 	ASSERT_EQ(values.get<int>("health_points"),400);
 	ASSERT_EQ(values.get<int>("damage"),250);
 	ASSERT_EQ(values.get<double>("attack_cooldown"),6.5);
-	ASSERT_EQ(values.get<double>("defense"),100);
+	//ASSERT_EQ(values.get<double>("defense"),100);
 }
 
 //Read in NCPlayer_3_Mixpacy.json file
@@ -103,7 +103,7 @@ TEST(JSON, Mixpacy) {
 	ASSERT_EQ(values.get<int>("health_points"),456);
 	ASSERT_EQ(values.get<int>("damage"),259);
 	ASSERT_EQ(values.get<double>("attack_cooldown"),6.9);
-	ASSERT_EQ(values.get<double>("defense"),233);
+	//ASSERT_EQ(values.get<double>("defense"),233);
 }
 
 /* Direkt rossz test, a workflow rosszul fut le tole
@@ -157,7 +157,7 @@ TEST(Monster, getAttackCoolDown){
 }
 
 TEST(Monster, getDefense){
-	Monster player_test("Kakarott", 300, 150, 5.5, 240);
+	Monster player_test("Kakkarott", 300, 150, 5.5, 240);
 	double test_def = player_test.getDefense();
 	double expected_def = 240;
 	ASSERT_EQ(expected_def, test_def);
@@ -179,29 +179,52 @@ TEST(Monster, hit){
 	ASSERT_EQ(expected_hp, test_hp);
 }
 
+/*
 TEST(Monster, parse){
 	Monster player_test = Monster::parse("../units/Player_1_Kakarott.json");
 	std::string test_name = player_test.getName();
 	int test_hp = player_test.getHealthPoints();
 	int test_dmg = player_test.getDamage();
 	double test_acd = player_test.getAttackCoolDown();
-	double test_def = player_test.getDefense();
+	//double test_def = player_test.getDefense();
 	
 	std::string expected_name = "Kakarott";
 	int expected_hp = 300;
 	int expected_dmg = 150;
 	double expected_acd = 5.5;
-	double expected_def = 240;
+	//double expected_def = 240;
 	
 	ASSERT_EQ(expected_name, test_name);
 	ASSERT_EQ(expected_hp, test_hp);
 	ASSERT_EQ(expected_dmg, test_dmg);
 	ASSERT_DOUBLE_EQ(expected_acd, test_acd);
-	ASSERT_DOUBLE_EQ(expected_def, test_def);
+	//ASSERT_DOUBLE_EQ(expected_def, test_def);
+}
+*/
+
+TEST(Monster, parse){
+	Monster player_test = Monster::parse("../Fallen.json");
+	std::string test_name = player_test.getName();
+	int test_hp = player_test.getHealthPoints();
+	int test_dmg = player_test.getDamage();
+	double test_acd = player_test.getAttackCoolDown();
+	//double test_def = player_test.getDefense();
+	
+	std::string expected_name = "Fallen";
+	int expected_hp = 4;
+	int expected_dmg = 2;
+	double expected_acd = 1.6;
+	//double expected_def = 240;
+	
+	ASSERT_EQ(expected_name, test_name);
+	ASSERT_EQ(expected_hp, test_hp);
+	ASSERT_EQ(expected_dmg, test_dmg);
+	ASSERT_DOUBLE_EQ(expected_acd, test_acd);
+	//ASSERT_DOUBLE_EQ(expected_def, test_def);
 }
 
 TEST(Monster, fightTilDeath){
-	Monster player_test_1("PLAYER1", 300, 100, 1.5, 240);
+	Monster player_test_1("PLAYER1", 300, 150, 1.5, 240);
 	Monster player_test_2("PLAYER2", 300, 50, 2.5, 120);
 	std::string expected_winner = "Good.";
 	std::string test_winner = "";
