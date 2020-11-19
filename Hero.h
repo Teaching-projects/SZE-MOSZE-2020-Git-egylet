@@ -12,8 +12,8 @@ protected:
 	int experience_per_level;
 	int health_point_bonus_per_level;
 	int damage_bonus_per_level;
-	double defense_bonus_per_level;
 	double cooldown_multiplier_per_level;
+	double defense_bonus_per_level;
 	
 	void levelup();
 
