@@ -201,7 +201,7 @@ TEST(Monster, fightTilDeath){
 TEST(Map, coordinateOutOfRange){
     Map map_test("../maps/level1.txt");
     
-	ASSERT_THROW(map_test.get(1,200),"y coordinate is out of range");
+	ASSERT_THROW(map_test.get(1,200), Map::WrongIndexException);
 }
 
 int main(int argc, char** argv) {
