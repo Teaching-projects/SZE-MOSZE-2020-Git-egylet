@@ -198,9 +198,10 @@ TEST(Monster, fightTilDeath){
 	ASSERT_EQ(expected_winner, test_winner);
 }
 
-TEST(Map, mapReading){
+TEST(Map, coordinateOutOfRange){
     Map map_test("../maps/level1.txt");
-    map_test.get(1, 2);
+    
+	ASSERT_THROW(map_test.get(1,200),"y coordinate is out of range");
 }
 
 int main(int argc, char** argv) {
