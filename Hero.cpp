@@ -11,6 +11,7 @@ Hero::Hero(
 			int characterHP,
 			int characterDMG,
 			double characterACD,
+			double characterDEF,
 			int XPperlevel,
 			int HPperlevel,
 			int DMGperlevel,
@@ -21,15 +22,16 @@ Hero::Hero(
 			characterName,
 			characterHP,
 			characterDMG,
-			characterACD),
+			characterACD,
+			characterDEF),
 			level(1),
 			maxHP(characterHP),
 			XP(0),
 			experience_per_level(XPperlevel),
 			health_point_bonus_per_level(HPperlevel),
 			damage_bonus_per_level(DMGperlevel),
-			cooldown_multiplier_per_level(ACDperlevel),
-			defense_bonus_per_level(DEFperlevel)
+			defense_bonus_per_level(DEFperlevel),
+			cooldown_multiplier_per_level(ACDperlevel)
 {}
 
 
@@ -100,12 +102,13 @@ Hero Hero::parse(const std::string& name) {
 		"base_health_points", 
 		"base_damage",
 		"base_attack_cooldown",
+		"defense",
 		
 		"experience_per_level",
 		"health_point_bonus_per_level",
 		"damage_bonus_per_level",
-		"cooldown_multiplier_per_level",
-		"defense_bonus_per_level"
+		"defense_bonus_per_level",
+		"cooldown_multiplier_per_level"
 	};        
     
     bool load = true;
@@ -122,12 +125,13 @@ Hero Hero::parse(const std::string& name) {
 			values.get<int>("base_health_points"),
 			values.get<int>("base_damage"),
 			values.get<double>("base_attack_cooldown"),
+			values.get<double>("defense"),
 			
 			values.get<int>("experience_per_level"),
 			values.get<int>("health_point_bonus_per_level"),
 			values.get<int>("damage_bonus_per_level"),
-			values.get<double>("cooldown_multiplier_per_level"),
-			values.get<double>("defense_bonus_per_level")
+			values.get<double>("defense_bonus_per_level"),
+			values.get<double>("cooldown_multiplier_per_level")
         );
 	}
 	else throw JSON::ParseException("incorrect values: " + name);
