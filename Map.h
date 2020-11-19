@@ -8,7 +8,7 @@ private:
 	std::vector<std::string> map;
 	
 public:
-	Map (std::string& filename);
+	Map(std::string& filename);
 	
 	enum type
 	{
