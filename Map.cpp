@@ -1,7 +1,7 @@
 #include "Map.h"
 #include <fstream>
 
-Map::Map (std::string& filename) {
+Map::Map(const std::string& filename) {
 	std::ifstream file;
 	if (!file.fail()) 
 	{
