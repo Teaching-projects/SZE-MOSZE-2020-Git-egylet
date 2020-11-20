@@ -28,7 +28,7 @@ public:
 	Map::type get(int x, int y) const; ///< Get map field type
 	
 	///< Map class Exception function
-	class WrongIndexException : public std::runtime_error; 
+	class WrongIndexException : public std::runtime_error
     {
     public:
         explicit WrongIndexException(const std::string &content) : std::runtime_error(content) {}
