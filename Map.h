@@ -1,5 +1,4 @@
 /**
-\mainpage Git egylet's documentation
 \class Map
 This is the description of Map.h
 \version 1.0
