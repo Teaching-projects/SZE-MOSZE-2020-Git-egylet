@@ -25,6 +25,8 @@ Fájlok:<br />
 *	**JSON.cpp**: JSON osztály elemeinek és függvényeinek leírását tartalmazó fájl.<br />
 *	**Monster.h**: Monster osztály header fájlja.<br />
 *	**Monster.cpp**: Monster osztály elemeinek és függvényeinek leírását tartalmazó fájl.<br />
+*	**Map.cpp**: Map osztály elemeinek és függvényeinek leírását tartalmazó fájl. A pálya beolvasásáért és kezeléséért felel.<br />
+*	**Map.h**: Map osztály header fájlja. Az osztály konstruktorát, függvények deklarációit és egy exception függvényt tartalmaz.<br />
 *	**Readme.md**: Github oldal által megjelenített dokumentációt tartalmazó fájl.<br />
 *	**Blood_Raven.json**: @hegyhati által megadott karakter tulajdonságait tartalmazó fájl.<br />
 *	**Dark_Wanderer.json**: @hegyhati által megadott karakter tulajdonságait tartalmazó fájl.<br />
@@ -54,6 +56,7 @@ Fájlok:<br />
 *	**units/not_correct_units/NCPlayer_1_Mixi.json**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl, amiben az adatok sorrendje fel van cserélve.<br />
 *	**units/not_correct_units/NCPlayer_2_Spacy.json**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl, amelyben felesleges whitespacek találhatóak.<br />
 *	**units/not_correct_units/NCPlayer_3_Mixpacy.json**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl, amiben az adatok sorrendje fel van cserélve és emellett felesleges whitespacek is találhatóak benne.<br />
+*	**maps/level1.txt**: @hegyhati által megadott példa map-ot tartalmazza.<br />
 
 ---
 
@@ -62,6 +65,7 @@ Osztályok:<br />
 *	**Hero**: Hero típusú karakter objektumait és függvényeit tartalmazó osztály.<br />
 *	**Monster**: Monster típusú karakter objektumait és függvényeit tartalmazó osztály.<br />
 *	**JSON**: A .json kiterjesztésű fájlokban tárolt adatok beolvasásáért felelős osztály.<br />
+*	**Map**: A maps/ directory-n belül található map-ok beolvasásáért és kezeléséért felelős osztály.<br />
 
 Az osztályok és függvényeik működéséről részletesebb információk a doxygen segítségével létrehozott GitHub Pages dokumentációnkban érhetőek el: https://teaching-projects.github.io/SZE-MOSZE-2020-Git-egylet/index.html<br />
 

@@ -1,5 +1,6 @@
 #include "../Monster.h"
 #include "../JSON.h"
+#include "../Map.h"
 #include <gtest/gtest.h>
 
 //Player_1_Kakarott.json
@@ -195,6 +196,16 @@ TEST(Monster, fightTilDeath){
 	else test_winner = "Bad";
 
 	ASSERT_EQ(expected_winner, test_winner);
+}
+
+TEST(Map, coordinateOutOfRange){
+    Map map_test("../maps/level1.txt");
+    
+	ASSERT_THROW(map_test.get(1,200), Map::WrongIndexException);
+}
+
+TEST(Map, noSuchFile){
+	ASSERT_THROW(Map map_test("../maps/levelNoSuch.txt"), Map::WrongIndexException);
 }
 
 int main(int argc, char** argv) {
