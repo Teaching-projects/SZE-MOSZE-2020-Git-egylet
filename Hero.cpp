@@ -11,23 +11,27 @@ Hero::Hero(
 			int characterHP,
 			int characterDMG,
 			double characterACD,
+			double characterDEF,
 			int XPperlevel,
 			int HPperlevel,
 			int DMGperlevel,
-			double ACDperlevel
+			double ACDperlevel,
+			double DEFperlevel
 		) : Monster
 		(	
 			characterName,
 			characterHP,
 			characterDMG,
-			characterACD),
+			characterACD,
+			characterDEF),
 			level(1),
 			maxHP(characterHP),
 			XP(0),
 			experience_per_level(XPperlevel),
 			health_point_bonus_per_level(HPperlevel),
 			damage_bonus_per_level(DMGperlevel),
-			cooldown_multiplier_per_level(ACDperlevel)
+			cooldown_multiplier_per_level(ACDperlevel),
+			defense_bonus_per_level(DEFperlevel)
 {}
 
 
@@ -49,15 +53,18 @@ void Hero::levelup() {
 	characterDMG += damage_bonus_per_level;
 	characterHP = maxHP;
 	characterACD *= cooldown_multiplier_per_level;
+	characterDEF += defense_bonus_per_level;
 
-}
-
-void Hero::getHit(Monster* target ) {
-	characterHP-= target->getDamage(); ///< Takes one hit
-	if (characterHP < 0) characterHP = 0; ///< Restores HP to 0 if HP decreases below 0
 }
 
 //Delivers the getHit function, and calculates the amount of XP the hero is going to get
+void Hero::getHit(Monster* target ) {
+	double finaledamage = target->getDamage() - characterDEF;
+	if (finaledamage < 0) finaledamage=0;
+	characterHP -= finaledamage; ///< Takes one hit
+	if (characterHP < 0) characterHP = 0; ///< Restores HP to 0 if HP decreases below 0
+}
+
 void Hero::hit(Monster* target) {
 	int XpToAdd = 0;
 	if (target->getHealthPoints() < characterDMG)
@@ -95,11 +102,13 @@ Hero Hero::parse(const std::string& name) {
 		"base_health_points", 
 		"base_damage",
 		"base_attack_cooldown",
+		"defense",
 		
 		"experience_per_level",
 		"health_point_bonus_per_level",
 		"damage_bonus_per_level",
-		"cooldown_multiplier_per_level"
+		"cooldown_multiplier_per_level",
+		"defense_bonus_per_level"
 	};        
     
     bool load = true;
@@ -116,11 +125,13 @@ Hero Hero::parse(const std::string& name) {
 			values.get<int>("base_health_points"),
 			values.get<int>("base_damage"),
 			values.get<double>("base_attack_cooldown"),
+			values.get<double>("defense"),
 			
 			values.get<int>("experience_per_level"),
 			values.get<int>("health_point_bonus_per_level"),
 			values.get<int>("damage_bonus_per_level"),
-			values.get<double>("cooldown_multiplier_per_level")
+			values.get<double>("cooldown_multiplier_per_level"),
+			values.get<double>("defense_bonus_per_level")
         );
 	}
 	else throw JSON::ParseException("incorrect values: " + name);

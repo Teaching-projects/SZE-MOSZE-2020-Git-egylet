@@ -2,5 +2,6 @@
   "damage"  :  259,
   "health_points"   :   456,
   "attack_cooldown" : 6.9,
-  "name"    :    "Mixpacy"
+  "name"    :    "Mixpacy",
+  "defense" : 233.0
 }

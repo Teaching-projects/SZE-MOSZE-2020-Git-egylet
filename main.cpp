@@ -65,6 +65,7 @@ int main(int argc, char** argv){
                   << "   HP: "<<hero.getHealthPoints()<<"/"<<hero.getMaxHealthPoints()<<std::endl
                   << "  DMG: "<<hero.getDamage()<<std::endl
                   << "  ACD: "<<hero.getAttackCoolDown()<<std::endl
+                  << "  DEF: "<<hero.getDefense()<<std::endl
                   ;
     } catch (const JSON::ParseException& e) {bad_exit(4);}
     return 0;

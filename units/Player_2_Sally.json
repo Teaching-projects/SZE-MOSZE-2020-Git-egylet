@@ -2,5 +2,6 @@
   "name" : "Sally",
   "health_points" : 500,
   "damage" : 250,
-  "attack_cooldown" : 3.5
+  "attack_cooldown" : 3.5,
+  "defense" : 180.0
 }
