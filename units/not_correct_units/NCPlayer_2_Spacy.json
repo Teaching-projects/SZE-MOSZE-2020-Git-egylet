@@ -1,7 +1,8 @@
 {
-  "name"    :    "Spacy",
-  "health_points"   :   400,
-  "damage"  :  250,
+  "name"     :     "Spacy",
+  "health_points"    :    400,
+  "damage"   :   250,
+  "magical-damage"  :  30,
   "attack_cooldown" : 6.5,
   "defense":100.0
 }

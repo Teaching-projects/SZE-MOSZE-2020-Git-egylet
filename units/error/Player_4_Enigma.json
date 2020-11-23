@@ -2,6 +2,7 @@
   "name" : "Enigma",
   "health_points" : 3000,
   "damage" : 1w3,
+  "magical-damage" : 20,
   "attack_cooldown" : 5.0,
   "defense" : 40.0
 }
