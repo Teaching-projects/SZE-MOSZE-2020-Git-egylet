@@ -78,4 +78,4 @@ Actions - Workflows:<br />
 
 ---
 
-Readme is up to date to task "Defense (#20)". Waiting for commits...<br /> 
+Readme is up to date to task "Map, Defense (#20)". Waiting for commits...<br /> 
