@@ -36,6 +36,6 @@ Damage& operator *= (Damage& dmg1, const Damage& dmg2){
 }
 
 std::ostream& operator << (std::ostream& s, const Damage& dmg){
-    s << "Physical damage: " << dmg.physical << std::endl << "Magical damage: " << dmg.magical;
+    s << std::endl << "Physical damage: " << dmg.physical << std::endl << "Magical damage: " << dmg.magical;
     return s;
 }
