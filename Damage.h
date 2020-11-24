@@ -19,6 +19,12 @@ struct Damage {
         int magical;    ///< The magical damage
 
     public:
+        void setPhysical(int p);    ///< This is a simple setter for physical damage
+        void setMagical(int m);     ///< This is a simple getter for macial damage
+
+        int getPhysical() const;	///< This is a simple getter for physical damage
+        int getMagical() const;	///< This is a simple getter for magical damage
+        
         friend Damage operator + (const Damage& dmg, const Damage& other);
         friend Damage& operator += (Damage& dmg, const Damage& other);
         friend Damage& operator *= (Damage& dmg, const Damage& other);
