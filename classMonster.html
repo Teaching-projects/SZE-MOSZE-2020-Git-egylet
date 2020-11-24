@@ -67,7 +67,6 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="#friends">Friends</a> &#124;
 <a href="classMonster-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Monster Class Reference</div>  </div>
@@ -82,11 +81,20 @@ Inheritance diagram for Monster:</div>
 <area shape="rect" href="classHero.html" title=" " alt="" coords="16,80,69,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for Monster:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMonster__coll__graph.png" border="0" usemap="#Monster_coll__map" alt="Collaboration graph"/></div>
+<map name="Monster_coll__map" id="Monster_coll__map">
+<area shape="rect" title=" " alt="" coords="7,95,81,121"/>
+<area shape="rect" href="structDamage.html" title=" " alt="" coords="5,5,83,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a371556066f2d29e65e70ad85fd1b59b0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a371556066f2d29e65e70ad85fd1b59b0">Monster</a> (std::string name, int HP, int DMG, double ACD, double DEF)</td></tr>
-<tr class="separator:a371556066f2d29e65e70ad85fd1b59b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15e50cb03123283f88ab8b70731529fc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a15e50cb03123283f88ab8b70731529fc">Monster</a> (std::string name, int HP, <a class="el" href="structDamage.html">Damage</a> DMGS, double ACD, double DEF)</td></tr>
+<tr class="separator:a15e50cb03123283f88ab8b70731529fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28ae1112e37262ce150e3c02465b3dd5"><td class="memItemLeft" align="right" valign="top"><a id="a28ae1112e37262ce150e3c02465b3dd5"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a28ae1112e37262ce150e3c02465b3dd5">getName</a> () const</td></tr>
 <tr class="memdesc:a28ae1112e37262ce150e3c02465b3dd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a simple getter for Name. <br /></td></tr>
@@ -95,10 +103,10 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#acbfb552014439fe02d10f2492e60fe34">getHealthPoints</a> () const</td></tr>
 <tr class="memdesc:acbfb552014439fe02d10f2492e60fe34"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a simple getter for HP. <br /></td></tr>
 <tr class="separator:acbfb552014439fe02d10f2492e60fe34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5872e19f684e0a81ead15da3e82992ad"><td class="memItemLeft" align="right" valign="top"><a id="a5872e19f684e0a81ead15da3e82992ad"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a5872e19f684e0a81ead15da3e82992ad">getDamage</a> () const</td></tr>
-<tr class="memdesc:a5872e19f684e0a81ead15da3e82992ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a simple getter for DMG. <br /></td></tr>
-<tr class="separator:a5872e19f684e0a81ead15da3e82992ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefab409bb30d1fcf44ef0bf11962b4cc"><td class="memItemLeft" align="right" valign="top"><a id="aefab409bb30d1fcf44ef0bf11962b4cc"></a>
+<a class="el" href="structDamage.html">Damage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#aefab409bb30d1fcf44ef0bf11962b4cc">getDamage</a> () const</td></tr>
+<tr class="memdesc:aefab409bb30d1fcf44ef0bf11962b4cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a simple getter for DMG. <br /></td></tr>
+<tr class="separator:aefab409bb30d1fcf44ef0bf11962b4cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad84dbe06c7a2aa7f75164dd9db52daf3"><td class="memItemLeft" align="right" valign="top"><a id="ad84dbe06c7a2aa7f75164dd9db52daf3"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#ad84dbe06c7a2aa7f75164dd9db52daf3">getAttackCoolDown</a> () const</td></tr>
 <tr class="memdesc:ad84dbe06c7a2aa7f75164dd9db52daf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a simple getter for ACD. <br /></td></tr>
@@ -138,10 +146,10 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a33e9813fa774a963c20fbafa5cd4b64e">characterHP</a></td></tr>
 <tr class="memdesc:a33e9813fa774a963c20fbafa5cd4b64e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The character's health points. <br /></td></tr>
 <tr class="separator:a33e9813fa774a963c20fbafa5cd4b64e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d2e4ddb74bb0e77565c994acb45991b"><td class="memItemLeft" align="right" valign="top"><a id="a2d2e4ddb74bb0e77565c994acb45991b"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a2d2e4ddb74bb0e77565c994acb45991b">characterDMG</a></td></tr>
-<tr class="memdesc:a2d2e4ddb74bb0e77565c994acb45991b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The character's damage. <br /></td></tr>
-<tr class="separator:a2d2e4ddb74bb0e77565c994acb45991b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6614cc11c092b94f39869576fb049b67"><td class="memItemLeft" align="right" valign="top"><a id="a6614cc11c092b94f39869576fb049b67"></a>
+<a class="el" href="structDamage.html">Damage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a6614cc11c092b94f39869576fb049b67">damage</a></td></tr>
+<tr class="memdesc:a6614cc11c092b94f39869576fb049b67"><td class="mdescLeft">&#160;</td><td class="mdescRight">The character's damage. <br /></td></tr>
+<tr class="separator:a6614cc11c092b94f39869576fb049b67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26ce8b3bb6fb2301aa9c6bf8ee4941c2"><td class="memItemLeft" align="right" valign="top"><a id="a26ce8b3bb6fb2301aa9c6bf8ee4941c2"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a26ce8b3bb6fb2301aa9c6bf8ee4941c2">characterACD</a></td></tr>
 <tr class="memdesc:a26ce8b3bb6fb2301aa9c6bf8ee4941c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The character's attack cooldown. <br /></td></tr>
@@ -150,17 +158,10 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#a2c250849400e4ea65cc3ebc1387df8e6">characterDEF</a></td></tr>
 <tr class="memdesc:a2c250849400e4ea65cc3ebc1387df8e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The character's defense. <br /></td></tr>
 <tr class="separator:a2c250849400e4ea65cc3ebc1387df8e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:acbec2c73af109326766919741ffa9515"><td class="memItemLeft" align="right" valign="top"><a id="acbec2c73af109326766919741ffa9515"></a>
-std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMonster.html#acbec2c73af109326766919741ffa9515">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classMonster.html">Monster</a> &amp;obj)</td></tr>
-<tr class="memdesc:acbec2c73af109326766919741ffa9515"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an operator overwrite. <br /></td></tr>
-<tr class="separator:acbec2c73af109326766919741ffa9515"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a371556066f2d29e65e70ad85fd1b59b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a371556066f2d29e65e70ad85fd1b59b0">&#9670;&nbsp;</a></span>Monster()</h2>
+<a id="a15e50cb03123283f88ab8b70731529fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15e50cb03123283f88ab8b70731529fc">&#9670;&nbsp;</a></span>Monster()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -180,8 +181,8 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>DMG</em>, </td>
+          <td class="paramtype"><a class="el" href="structDamage.html">Damage</a>&#160;</td>
+          <td class="paramname"><em>DMGS</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -206,7 +207,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   <table class="params">
     <tr><td class="paramname">name</td><td>This is a string parameter </td></tr>
     <tr><td class="paramname">HP</td><td>This is an int parameter </td></tr>
-    <tr><td class="paramname">DMG</td><td>This is an int parameter </td></tr>
+    <tr><td class="paramname">DMGS</td><td>This is a struct parameter </td></tr>
     <tr><td class="paramname">ACD</td><td>This is a double parameter </td></tr>
     <tr><td class="paramname">DEF</td><td>This is a double parameter </td></tr>
   </table>
@@ -258,7 +259,8 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 </div><div class="memdoc">
 
 <p>This takes one hit. </p>
-<p>&lt; Takes one hit</p>
+<p>&lt; Takes one physical hit</p>
+<p>&lt; Takes one magical hit</p>
 <p>&lt; Restores HP to 0 if HP decreases below 0</p>
 
 </div>
