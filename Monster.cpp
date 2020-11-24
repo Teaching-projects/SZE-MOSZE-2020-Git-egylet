@@ -10,15 +10,15 @@ Monster::Monster
 (
 	std::string name,
 	int HP,
-	int DMG,
+	Damage DMGS,
 	double ACD,
 	double DEF
 	) : 
 	characterName(name),
 	characterHP(HP),
-	characterDMG(DMG),
+	damage(DMGS),
 	characterACD(ACD),
-	characterDEF(DEF)
+	characterDEF(DEF)	
 {}
 
 //Getters for protected parameters
@@ -30,8 +30,8 @@ int Monster::getHealthPoints() const {
     return characterHP;
 }
 
-int Monster::getDamage() const {
-    return characterDMG;
+Damage Monster::getDamage() const {
+    return damage;
 }
 
 double Monster::getAttackCoolDown() const {
@@ -48,10 +48,12 @@ bool Monster::isAlive() const {
 
 //Uses target's damage getter to lower the object's health
 void Monster::getHit(Monster* target ) {
-	double finaledamage = target->getDamage() - characterDEF;
-	if (finaledamage < 0) finaledamage=0;
-	characterHP -= finaledamage; ///< Takes one hit
-	if (characterHP < 0) characterHP = 0; ///< Restores HP to 0 if HP decreases below 0
+	Damage tmp = target->getDamage();
+	double finalphysicaldamage = tmp.getPhysical() - characterDEF;
+	if (finalphysicaldamage < 0) finalphysicaldamage=0;
+	characterHP -= finalphysicaldamage;	///< Takes one physical hit
+	characterHP -= tmp.getMagical();	///< Takes one magical hit
+	if (characterHP < 0) characterHP = 0;	///< Restores HP to 0 if HP decreases below 0
 }
 
 //Delivering getHit function on given target
@@ -93,6 +95,7 @@ Monster Monster::parse(const std::string& name) {
 		"name",
 		"health_points", 
 		"damage",
+		"magical-damage",
 		"attack_cooldown",
 		"defense"
 	};        
@@ -105,11 +108,15 @@ Monster Monster::parse(const std::string& name) {
 
 	if (load)
 	{
+		Damage monsterdamage;
+		monsterdamage.setPhysical(values.get<int>("damage"));
+		monsterdamage.setMagical(values.get<int>("magical-damage"));
+		
 		return Monster
 		(
 			values.get<std::string>("name"),
 			values.get<int>("health_points"),
-			values.get<int>("damage"),
+			monsterdamage,
 			values.get<double>("attack_cooldown"),
 			values.get<double>("defense")
         );
