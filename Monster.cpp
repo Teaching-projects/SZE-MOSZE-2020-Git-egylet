@@ -94,8 +94,6 @@ Monster Monster::parse(const std::string& name) {
 	{
 		"name",
 		"health_points", 
-		"damage",
-		"magical-damage",
 		"attack_cooldown",
 		"defense"
 	};        
@@ -109,8 +107,16 @@ Monster Monster::parse(const std::string& name) {
 	if (load)
 	{
 		Damage monsterdamage;
-		monsterdamage.setPhysical(values.get<int>("damage"));
-		monsterdamage.setMagical(values.get<int>("magical-damage"));
+		
+		if(values.count("damage")) monsterdamage.setPhysical(values.get<int>("damage"));
+	    else monsterdamage.setPhysical(0);
+	
+	    if(values.count("magical-damage")) monsterdamage.setMagical(values.get<int>("magical-damage"));
+	    else monsterdamage.setMagical(0);
+
+
+		//monsterdamage.setPhysical(values.get<int>("damage"));
+		//monsterdamage.setMagical(values.get<int>("magical-damage"));
 		
 		return Monster
 		(

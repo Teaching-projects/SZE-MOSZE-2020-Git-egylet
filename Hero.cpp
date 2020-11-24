@@ -107,10 +107,8 @@ Hero Hero::parse(const std::string& name) {
 	std::vector<std::string> find
 	{
 		"name",
-		"base_health_points", 
-		"base_damage",
+		"base_health_points",
 		"base_attack_cooldown",
-		"magical_damage",
 		"defense",
 		
 		"experience_per_level",
@@ -130,8 +128,15 @@ Hero Hero::parse(const std::string& name) {
 	if (load)
 	{
 		Damage monsterdamage;
-		monsterdamage.setPhysical(values.get<int>("damage"));
-		monsterdamage.setMagical(values.get<int>("magical-damage"));
+		
+		if(values.count("damage")) monsterdamage.setPhysical(values.get<int>("damage"));
+	    else monsterdamage.setPhysical(0);
+	
+	    if(values.count("magical-damage")) monsterdamage.setMagical(values.get<int>("magical-damage"));
+	    else monsterdamage.setMagical(0);
+
+		//monsterdamage.setPhysical(values.get<int>("damage"));
+		//monsterdamage.setMagical(values.get<int>("magical-damage"));
 		
 		return Hero
 		(
@@ -146,7 +151,7 @@ Hero Hero::parse(const std::string& name) {
 			values.get<int>("damage_bonus_per_level"),
 			values.get<double>("cooldown_multiplier_per_level"),
 			values.get<double>("defense_bonus_per_level"),
-			values.get<double>("magical_damage_bonus_per_level")
+			values.get<int>("magical_damage_bonus_per_level")
         );
 	}
 	else throw JSON::ParseException("incorrect values: " + name);
