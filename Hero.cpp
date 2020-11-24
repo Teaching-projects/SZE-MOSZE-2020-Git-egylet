@@ -9,19 +9,20 @@
 Hero::Hero(
 			const std::string characterName,
 			int characterHP,
-			int characterDMG,
+			Damage damage,
 			double characterACD,
 			double characterDEF,
 			int XPperlevel,
 			int HPperlevel,
-			int DMGperlevel,
+			int PDMGperlevel,
 			double ACDperlevel,
-			double DEFperlevel
+			double DEFperlevel,
+			int MDMGperlevel
 		) : Monster
 		(	
 			characterName,
 			characterHP,
-			characterDMG,
+			damage,
 			characterACD,
 			characterDEF),
 			level(1),
@@ -29,9 +30,10 @@ Hero::Hero(
 			XP(0),
 			experience_per_level(XPperlevel),
 			health_point_bonus_per_level(HPperlevel),
-			damage_bonus_per_level(DMGperlevel),
+			physical_damage_bonus_per_level(PDMGperlevel),
 			cooldown_multiplier_per_level(ACDperlevel),
-			defense_bonus_per_level(DEFperlevel)
+			defense_bonus_per_level(DEFperlevel),
+			magical_damage_bonus_per_level(MDMGperlevel)
 {}
 
 
@@ -47,10 +49,14 @@ int Hero::getMaxHealthPoints() {
 
 //If the hero reaches the required amount of XP, this function buffs the hero, and restore it to maximum health
 void Hero::levelup() {
+	Damage bonus;
+	bonus.setPhysical(physical_damage_bonus_per_level);
+	bonus.setMagical(magical_damage_bonus_per_level);
+	
 	level++;
 	maxHP += health_point_bonus_per_level;
 	maxHP = round(maxHP);
-	characterDMG += damage_bonus_per_level;
+	damage += bonus;
 	characterHP = maxHP;
 	characterACD *= cooldown_multiplier_per_level;
 	characterDEF += defense_bonus_per_level;
@@ -59,15 +65,17 @@ void Hero::levelup() {
 
 //Delivers the getHit function, and calculates the amount of XP the hero is going to get
 void Hero::getHit(Monster* target ) {
-	double finaledamage = target->getDamage() - characterDEF;
-	if (finaledamage < 0) finaledamage=0;
-	characterHP -= finaledamage; ///< Takes one hit
-	if (characterHP < 0) characterHP = 0; ///< Restores HP to 0 if HP decreases below 0
+	Damage tmp = target->getDamage();
+	double finalphysicaldamage = tmp.getPhysical() - characterDEF;
+	if (finalphysicaldamage < 0) finalphysicaldamage=0;
+	characterHP -= finalphysicaldamage;	///< Takes one physical hit
+	characterHP -= tmp.getMagical();	///< Takes one magical hit
+	if (characterHP < 0) characterHP = 0;	///< Restores HP to 0 if HP decreases below 0
 }
 
 void Hero::hit(Monster* target) {
 	int XpToAdd = 0;
-	if (target->getHealthPoints() < characterDMG)
+	if (target->getHealthPoints() < damage.getPhysical())
 	{
 
 		XpToAdd = target->getHealthPoints();
@@ -76,7 +84,7 @@ void Hero::hit(Monster* target) {
 	else
 	{
 
-		XpToAdd = characterDMG;
+		XpToAdd = damage.getPhysical();
 	}
 	target->getHit(this);
 	XP += XpToAdd;
@@ -102,13 +110,15 @@ Hero Hero::parse(const std::string& name) {
 		"base_health_points", 
 		"base_damage",
 		"base_attack_cooldown",
+		"magical_damage",
 		"defense",
 		
 		"experience_per_level",
 		"health_point_bonus_per_level",
 		"damage_bonus_per_level",
 		"cooldown_multiplier_per_level",
-		"defense_bonus_per_level"
+		"defense_bonus_per_level",
+		"magical_damage_bonus_per_level"
 	};        
     
     bool load = true;
@@ -119,11 +129,15 @@ Hero Hero::parse(const std::string& name) {
 	
 	if (load)
 	{
+		Damage monsterdamage;
+		monsterdamage.setPhysical(values.get<int>("damage"));
+		monsterdamage.setMagical(values.get<int>("magical-damage"));
+		
 		return Hero
 		(
 			values.get<std::string>("name"),
 			values.get<int>("base_health_points"),
-			values.get<int>("base_damage"),
+			monsterdamage,
 			values.get<double>("base_attack_cooldown"),
 			values.get<double>("defense"),
 			
@@ -131,7 +145,8 @@ Hero Hero::parse(const std::string& name) {
 			values.get<int>("health_point_bonus_per_level"),
 			values.get<int>("damage_bonus_per_level"),
 			values.get<double>("cooldown_multiplier_per_level"),
-			values.get<double>("defense_bonus_per_level")
+			values.get<double>("defense_bonus_per_level"),
+			values.get<double>("magical_damage_bonus_per_level")
         );
 	}
 	else throw JSON::ParseException("incorrect values: " + name);

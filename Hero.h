@@ -11,15 +11,16 @@ protected:
 	
 	int experience_per_level;
 	int health_point_bonus_per_level;
-	int damage_bonus_per_level;
+	int physical_damage_bonus_per_level;
 	double cooldown_multiplier_per_level;
 	double defense_bonus_per_level;
+	int magical_damage_bonus_per_level;
 	
 	void levelup();
 
 public:
 
-	Hero(const std::string, int, int, double, double, int, int, int, double, double);
+	Hero(const std::string, int, Damage, double, double, int, int, int, double, double, int);
 
 	int getLevel();
 	int getMaxHealthPoints();
