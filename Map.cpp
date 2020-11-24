@@ -16,9 +16,9 @@ Map::Map(const std::string& filename) {
 	file.close();
 }
 
-Map::type Map::get(int x, int y) const {
-	if (y >= map.size() || y < 0) throw WrongIndexException("y coordinate is out of range");
-	if (x >= map[y].length() || x < 0) throw WrongIndexException("x coorfinate is out of range");
+Map::type Map::get(unsigned int x, unsigned int y) const {
+	if (y >= map.size()) throw WrongIndexException("y coordinate is out of range");
+	if (x >= map[y].length()) throw WrongIndexException("x coorfinate is out of range");
 
 	if (map[y][x] == ' ') return Map::type::Free;
 	else return Map::type::Wall;

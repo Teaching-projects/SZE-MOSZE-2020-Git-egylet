@@ -24,7 +24,7 @@ public:
 		Free, Wall /** Map field types*/
 	};
 	
-	Map::type get(int x, int y) const; ///< Get map field type
+	Map::type get(unsigned int x, unsigned int y) const; ///< Get map field type
 	
 	///< Map class Exception function
 	class WrongIndexException : public std::runtime_error
