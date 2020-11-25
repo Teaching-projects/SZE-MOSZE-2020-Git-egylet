@@ -33,13 +33,13 @@ Damage operator + (const Damage& dmg1, const Damage& dmg2){
 Damage& operator += (Damage& dmg1, const Damage& dmg2){
     dmg1.physical += dmg2.physical;
     dmg1.magical += dmg2.magical;
-    return *dmg1;
+    return dmg1;
 }
 
 Damage& operator *= (Damage& dmg1, const Damage& dmg2){
     dmg1.physical *= dmg2.physical;
     dmg1.magical *= dmg2.magical;
-    return *dmg1;
+    return dmg1;
 }
 
 std::ostream& operator << (std::ostream& s, const Damage& dmg){
