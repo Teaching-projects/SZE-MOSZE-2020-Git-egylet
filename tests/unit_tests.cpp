@@ -224,6 +224,53 @@ TEST(Monster, fightTilDeath){
 	ASSERT_EQ(expected_winner, test_winner);
 }
 
+/* TODO in update - all HERO functions
+
+//Hero getLevel
+
+
+//Hero getMaxHealthPoints
+
+
+//Hero getHit ??
+
+
+//Hero hit
+
+
+//Hero parse
+TEST(Hero, parse){
+	Hero player_test = Hero::parse("../Dark_Wanderer.json");
+	std::string test_name = player_test.getName();
+	int test_hp = player_test.getHealthPoints();
+	Damage test_dmg = player_test.getDamage();
+	int test_pdmg = test_dmg.getPhysical();
+	int test_mdmg = test_dmg.getMagical();
+	double test_acd = player_test.getAttackCoolDown();
+	double test_def = player_test.getDefense();
+	
+	std::string expected_name = "Prince Aidan of Khanduras";
+	int expected_hp = 30;
+	int expected_pdmg = 3;
+	int expected_mdmg = 1;
+	double expected_acd = 1.1;
+	double expected_def = 0.5;
+	int expected_epl = 20;
+	int expected_hpbpl = 5;
+	int expected_pdbpl = 1;
+	double expected_cmpl = 0.9;
+	double expected_dbpl = 0.1;
+	int expected_mdbpl = 1;
+
+	ASSERT_EQ(expected_name, test_name);
+	ASSERT_EQ(expected_hp, test_hp);
+	ASSERT_EQ(expected_pdmg, test_pdmg);
+	ASSERT_EQ(expected_mdmg, test_mdmg);
+	ASSERT_DOUBLE_EQ(expected_acd, test_acd);
+	ASSERT_DOUBLE_EQ(expected_def, test_def);
+}
+*/
+
 TEST(Map, coordinateOutOfRange){
     Map map_test("../maps/level1.txt");
     
