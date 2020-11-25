@@ -13,10 +13,13 @@ build: $(OBJS)
 JSON.o: JSON.cpp JSON.h
 	$(COMPILER) $(CFLAGS) -c JSON.cpp
 
-Monster.o: Monster.cpp Monster.h JSON.h
+Damage.o: Damage.cpp Damage.h
+	$(COMPILER) $(CFLAGS) -c Damage.cpp
+
+Monster.o: Monster.cpp Monster.h JSON.h Damage.h
 	$(COMPILER) $(CFLAGS) -c Monster.cpp
 
-Hero.o: Hero.cpp Hero.h Monster.h JSON.h
+Hero.o: Hero.cpp Hero.h Monster.h JSON.h Damage.h
 	$(COMPILER) $(CFLAGS) -c Hero.cpp
 
 main.o: main.cpp Monster.h Hero.h
