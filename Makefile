@@ -1,8 +1,8 @@
-OBJS := JSON.o Monster.o Hero.o main.o
+OBJS := JSON.o Damage.o Monster.o Hero.o main.o
 CFLAGS := -std=c++17 -Wall -Wextra 
 COMPILER := g++-9
 
-CPPS := JSON.cpp Monster.cpp Hero.cpp main.cpp
+CPPS := JSON.cpp Damage.cpp Monster.cpp Hero.cpp main.cpp
 
 VFLAGS:= --leak-check=full --error-exitcode=1
 VPARAMETER:=  ./a.out scenarios/scenario1.json
