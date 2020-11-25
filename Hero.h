@@ -22,8 +22,14 @@ public:
 
 	Hero(const std::string, int, Damage, double, double, int, int, int, double, double, int);
 
-	int getLevel();
-	int getMaxHealthPoints();
+	int getLevel() const;
+	int getMaxHealthPoints() const;
+	int getExperiencePerLevel() const;
+	int getHealthPointBonusPerLevel () const;
+	int getPhysicalDamageBonusPerLevel () const;
+	double getCooldownMultiplierPerLevel () const;
+	double getDefenseBonusPerLevel () const;
+	int getMagicalDamageBonusPerLevel ()  const;
 	void getHit(Monster* target);
 	void hit(Monster* target) override;
 	static Hero parse(const std::string& name);

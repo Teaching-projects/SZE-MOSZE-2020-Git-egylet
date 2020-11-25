@@ -39,12 +39,36 @@ Hero::Hero(
 
 
 //Getters
-int Hero::getLevel() {
+int Hero::getLevel() const {
     return level;
 }
 
-int Hero::getMaxHealthPoints() {
+int Hero::getMaxHealthPoints() const {
     return maxHP;
+}
+
+int Hero::getExperiencePerLevel() const {
+    return experience_per_level;
+}
+
+int Hero::getHealthPointBonusPerLevel() const {
+    return health_point_bonus_per_level;
+}
+
+int Hero::getPhysicalDamageBonusPerLevel() const {
+    return physical_damage_bonus_per_level;
+}
+
+double Hero::getCooldownMultiplierPerLevel() const {
+    return cooldown_multiplier_per_level;
+}
+
+double Hero::getDefenseBonusPerLevel() const {
+    return defense_bonus_per_level;
+}
+
+int Hero::getMagicalDamageBonusPerLevel() const {
+    return magical_damage_bonus_per_level;
 }
 
 //If the hero reaches the required amount of XP, this function buffs the hero, and restore it to maximum health
@@ -111,7 +135,7 @@ Hero Hero::parse(const std::string& name) {
 		
 		"experience_per_level",
 		"health_point_bonus_per_level",
-		"damage_bonus_per_level",
+		"physical_damage_bonus_per_level",
 		"cooldown_multiplier_per_level",
 		"defense_bonus_per_level",
 		"magical_damage_bonus_per_level"
@@ -146,7 +170,7 @@ Hero Hero::parse(const std::string& name) {
 			
 			values.get<int>("experience_per_level"),
 			values.get<int>("health_point_bonus_per_level"),
-			values.get<int>("damage_bonus_per_level"),
+			values.get<int>("physical_damage_bonus_per_level"),
 			values.get<double>("cooldown_multiplier_per_level"),
 			values.get<double>("defense_bonus_per_level"),
 			values.get<int>("magical_damage_bonus_per_level")

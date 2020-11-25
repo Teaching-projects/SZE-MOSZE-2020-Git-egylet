@@ -232,11 +232,31 @@ TEST(Monster, fightTilDeath){
 //Hero getMaxHealthPoints
 
 
+//Hero getExperiencePerLevel
+
+
+//Hero getHealthPointBonusPerLevel
+
+
+//Hero getPhysicalDamageBonusPerLevel
+
+
+//Hero getCooldownMultiplierPerLevel
+
+
+//Hero getDefenseBonusPerLevel
+
+
+//Hero getMagicalDamageBonusPerLevel
+
+
 //Hero getHit ??
 
 
 //Hero hit
 
+
+*/
 
 //Hero parse
 TEST(Hero, parse){
@@ -248,6 +268,12 @@ TEST(Hero, parse){
 	int test_mdmg = test_dmg.getMagical();
 	double test_acd = player_test.getAttackCoolDown();
 	double test_def = player_test.getDefense();
+	int test_epl = player_test.getExperiencePerLevel();;
+	int test_hpbpl = player_test.getHealthPointBonusPerLevel();;
+	int test_pdbpl = player_test.getPhysicalDamageBonusPerLevel();;
+	double test_cmpl = player_test.getCooldownMultiplierPerLevel();
+	double test_dbpl = player_test.getDefenseBonusPerLevel();;
+	int test_mdbpl = player_test.getMagicalDamageBonusPerLevel();;
 	
 	std::string expected_name = "Prince Aidan of Khanduras";
 	int expected_hp = 30;
@@ -268,8 +294,14 @@ TEST(Hero, parse){
 	ASSERT_EQ(expected_mdmg, test_mdmg);
 	ASSERT_DOUBLE_EQ(expected_acd, test_acd);
 	ASSERT_DOUBLE_EQ(expected_def, test_def);
+	ASSERT_EQ(expected_epl, test_epl);
+	ASSERT_EQ(expected_hpbpl, test_hpbpl);
+	ASSERT_EQ(expected_pdbpl, test_pdbpl);
+	ASSERT_DOUBLE_EQ(expected_cmpl, test_cmpl);
+	ASSERT_DOUBLE_EQ(expected_dbpl, test_dbpl);
+	ASSERT_EQ(expected_mdbpl, test_mdbpl);
 }
-*/
+
 
 TEST(Map, coordinateOutOfRange){
     Map map_test("../maps/level1.txt");
