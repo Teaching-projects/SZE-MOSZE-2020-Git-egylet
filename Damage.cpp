@@ -1,5 +1,16 @@
 #include "Damage.h"
 
+Damage::Damage () {}
+
+Damage::Damage
+(
+	int p,
+    int m
+	) : 
+	physical(p),
+    magical(m)	
+{}
+
 void Damage::setPhysical(int p) {
     physical = p;
 }
@@ -17,9 +28,7 @@ int Damage::getMagical() const {
 }
 
 Damage operator + (const Damage& dmg1, const Damage& dmg2){
-    Damage dmgToReturn;
-    dmgToReturn.physical = dmg1.physical + dmg2.physical;
-    dmgToReturn.magical = dmg1.magical + dmg2.magical;
+    Damage dmgToReturn ((dmg1.physical + dmg2.physical), (dmg1.magical + dmg2.magical));
     return dmgToReturn;
 }
 
