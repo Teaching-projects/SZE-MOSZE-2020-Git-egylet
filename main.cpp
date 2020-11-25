@@ -10,9 +10,7 @@
 #include "JSON.h"
 #include "Hero.h"
 #include "Monster.h"
-
-
-
+#include "Damage.h"
 
 const std::map<int,std::string> error_messages = {
     { 1 , "Bad number of arguments. Only a single scenario file should be provided." },
