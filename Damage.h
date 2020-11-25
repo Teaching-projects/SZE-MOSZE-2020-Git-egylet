@@ -19,7 +19,6 @@ struct Damage {
         int magical;    ///< The magical damage
 
     public:
-        Damage ();
         Damage (int p, int m);  ///< Damage constructor
 
         void setPhysical(int p);    ///< This is a simple setter for physical damage

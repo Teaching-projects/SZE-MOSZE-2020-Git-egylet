@@ -49,9 +49,7 @@ int Hero::getMaxHealthPoints() {
 
 //If the hero reaches the required amount of XP, this function buffs the hero, and restore it to maximum health
 void Hero::levelup() {
-	Damage bonus;
-	bonus.setPhysical(physical_damage_bonus_per_level);
-	bonus.setMagical(magical_damage_bonus_per_level);
+	Damage bonus (physical_damage_bonus_per_level, magical_damage_bonus_per_level);
 	
 	level++;
 	maxHP += health_point_bonus_per_level;
@@ -127,7 +125,7 @@ Hero Hero::parse(const std::string& name) {
 	
 	if (load)
 	{
-		Damage monsterdamage;
+		Damage monsterdamage (0,0);
 		
 		if(values.count("damage")) monsterdamage.setPhysical(values.get<int>("damage"));
 	    else monsterdamage.setPhysical(0);

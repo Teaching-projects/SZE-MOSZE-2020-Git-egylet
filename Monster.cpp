@@ -106,7 +106,7 @@ Monster Monster::parse(const std::string& name) {
 
 	if (load)
 	{
-		Damage monsterdamage;
+		Damage monsterdamage (0,0);
 		
 		if(values.count("damage")) monsterdamage.setPhysical(values.get<int>("damage"));
 	    else monsterdamage.setPhysical(0);
