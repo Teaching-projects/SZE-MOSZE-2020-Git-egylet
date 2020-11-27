@@ -1,5 +1,6 @@
 {
   "damage" : 140,
+  "magical-damage" : 100,
   "health_points" : 320,
   "name" : "Mixi",
   "attack_cooldown" : 5.3,

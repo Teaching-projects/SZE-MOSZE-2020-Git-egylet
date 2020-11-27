@@ -2,6 +2,7 @@
   "name" : "Maple",
   "health_points" : 700,
   "damage" : 100,
+  "magical-damage" : 20,
   "attack_cooldown" : 4.5,
   "defense" : 120.0
 }

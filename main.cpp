@@ -10,9 +10,7 @@
 #include "JSON.h"
 #include "Hero.h"
 #include "Monster.h"
-
-
-
+#include "Damage.h"
 
 const std::map<int,std::string> error_messages = {
     { 1 , "Bad number of arguments. Only a single scenario file should be provided." },
@@ -62,10 +60,10 @@ int main(int argc, char** argv){
         }
         std::cout << (hero.isAlive() ? "The hero won." : "The hero died.") << std::endl;
         std::cout << hero.getName() << ": LVL" << hero.getLevel() << std::endl
-                  << "   HP: "<<hero.getHealthPoints()<<"/"<<hero.getMaxHealthPoints()<<std::endl
-                  << "  DMG: "<<hero.getDamage()<<std::endl
-                  << "  ACD: "<<hero.getAttackCoolDown()<<std::endl
-                  << "  DEF: "<<hero.getDefense()<<std::endl
+                  << "     HP: "<<hero.getHealthPoints()<<"/"<<hero.getMaxHealthPoints()<<std::endl
+                  << hero.getDamage() << std::endl
+                  << "    ACD: "<<hero.getAttackCoolDown()<<std::endl
+                  << "    DEF: "<<hero.getDefense()<<std::endl
                   ;
     } catch (const JSON::ParseException& e) {bad_exit(4);}
     return 0;
