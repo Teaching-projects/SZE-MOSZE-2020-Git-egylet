@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['parse_68',['parse',['../classMonster.html#a204b0e1759a752e9ceb44944cf5dff02',1,'Monster']]]
+  ['setmagical_69',['setMagical',['../structDamage.html#afb7aa4f6bb321baa76f4eff6c1c2b706',1,'Damage']]],
+  ['setphysical_70',['setPhysical',['../structDamage.html#ae80330178d423e67b8fa0a14037ce0ce',1,'Damage']]]
 ];

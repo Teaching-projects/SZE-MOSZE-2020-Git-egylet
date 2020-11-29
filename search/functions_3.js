@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['horizontalget_64',['horizontalget',['../classMap.html#acd4c46c29fc477adec7ab47845a770aa',1,'Map']]]
+  ['isalive_65',['isAlive',['../classMonster.html#a77ad18c44b3fb2df92b30ece4dc7847b',1,'Monster']]]
 ];
