@@ -23,3 +23,5 @@ Map::type Map::get(unsigned int x, unsigned int y) const {
 	if (map[y][x] == ' ') return Map::type::Free;
 	else return Map::type::Wall;
 }
+
+}

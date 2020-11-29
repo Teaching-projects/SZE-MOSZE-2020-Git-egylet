@@ -7,6 +7,7 @@ This is the description of Map.h
 Created on: 2020/11/20 10:56
 */
 
+#pragma once
 #include <string>
 #include <fstream>
 #include <vector>
@@ -25,7 +26,6 @@ public:
 	};
 	
 	Map::type get(unsigned int x, unsigned int y) const; ///< Get map field type
-	
 	///< Map class Exception function
 	class WrongIndexException : public std::runtime_error
     {
