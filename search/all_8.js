@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['parse_23',['parse',['../classMonster.html#a204b0e1759a752e9ceb44944cf5dff02',1,'Monster']]],
-  ['parseexception_24',['ParseException',['../classJSON_1_1ParseException.html',1,'JSON']]],
-  ['physical_25',['physical',['../structDamage.html#aee70c6c924eac810d02f61efbc90c719',1,'Damage']]]
+  ['magical_24',['magical',['../structDamage.html#a496876891f196c2b4ac9afe9f31b77b4',1,'Damage']]],
+  ['map_25',['Map',['../classMap.html',1,'Map'],['../classMap.html#a871049c7b391e75039ccba5a4d757dae',1,'Map::Map()']]],
+  ['monster_26',['Monster',['../classMonster.html',1,'Monster'],['../classMonster.html#a15e50cb03123283f88ab8b70731529fc',1,'Monster::Monster()']]]
 ];

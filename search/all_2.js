@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fighttildeath_6',['fightTilDeath',['../classMonster.html#aea343d825f0173512165dedf7a254cb1',1,'Monster']]]
+  ['damage_7',['Damage',['../structDamage.html',1,'Damage'],['../classMonster.html#a6614cc11c092b94f39869576fb049b67',1,'Monster::damage()'],['../structDamage.html#a5471bf01e46a5755bb528086b0c3af9e',1,'Damage::Damage()']]]
 ];
