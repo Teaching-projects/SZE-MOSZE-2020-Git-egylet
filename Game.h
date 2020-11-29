@@ -17,10 +17,12 @@ private:
 	
 	
 public:
+	Game();
 	Game(std::string mapfilename);
 	void setMap(Map maptoset);
 	void putHero(Hero hero, int x, int y);
 	void putMonster(Monster monster, int x, int y);
+	void moveHero(const std::string direction);
 	void run();
 	void printMap() ;
 

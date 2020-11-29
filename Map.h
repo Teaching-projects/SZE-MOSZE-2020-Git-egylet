@@ -18,6 +18,7 @@ private:
 	std::vector<std::string> map; ///< The map data array
 	
 public:
+	Map() {}
 	Map(const std::string& filename); ///< Map class constructor, which reads map from file
 	
 	enum type
