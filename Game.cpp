@@ -25,7 +25,34 @@ void Game::putMonster(Monster monster, int x, int y)
 	}
 }
 
+void Game::printMap() 
+{
+	int MaxWidth = map.horizontalget();
+	std::cout << "╔";
+	for (int i = 0; i < MaxWidth; i++) std::cout << "║";
+	std::cout << "╗";
 
+	for (int i = 0; i < map.getmapsize(); i++)
+	{
+		std::cout << "═";
+		for (int j = 0; j < map.getwidth(i); j++)
+		{
+			switch (map.get(i,j)) {
+				case Map::type::Free:
+					std::cout << "░";
+					break;
+				case Map::type::Wall:
+					std::cout << "█";
+					break;
+				case hero_position:
+					std::cout << "┣┫";
+					break;
+
+			}
+		}
+	}
+
+}
 
 
 

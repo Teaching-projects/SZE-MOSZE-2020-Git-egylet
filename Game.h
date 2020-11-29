@@ -22,19 +22,7 @@ public:
 	void putHero(Hero hero, int x, int y);
 	void putMonster(Monster monster, int x, int y);
 	void run();
-	void printMap() const;
-
-	const std::string TOP_LEFT = "╔";
-	const std::string TOP_RIGHT = "╗";
-	const std::string BOTTOM_LEFT = "╚";
-	const std::string BOTTOM_RIGHT = "╝";
-	const std::string VERTICAL = "═";
-	const std::string HORIZONTAL = "║";
-	const std::string FREE_BLOCK = "░";
-	const std::string WALL_BLOCK = "█";
-	const std::string HERO_BLOCK = "┣┫";
-	const std::string ONEMONSTER_BLOCK = "M";
-	const std::string MOREMONSTERS_BLOCK = "MM";
+	void printMap() ;
 
 	class OccupiedException : virtual public std::runtime_error{
 	public:

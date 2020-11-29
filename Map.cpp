@@ -36,3 +36,13 @@ int Map::horizontalget() const
 	}
 	return length;
 }
+
+int Map::getmapsize()
+{
+	return map.size();
+}
+
+int Map::getwidth(int i)
+{
+	return map[i].length();
+}
