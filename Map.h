@@ -26,6 +26,7 @@ public:
 	};
 	
 	Map::type get(unsigned int x, unsigned int y) const; ///< Get map field type
+	int horizontalget() const;
 	///< Map class Exception function
 	class WrongIndexException : public std::runtime_error
     {

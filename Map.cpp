@@ -23,3 +23,16 @@ Map::type Map::get(unsigned int x, unsigned int y) const {
 	if (map[y][x] == ' ') return Map::type::Free;
 	else return Map::type::Wall;
 }
+
+int Map::horizontalget() const
+{
+	unsigned int length = 0;
+	for (unsigned int i = 0; i < map.size(); i++)
+	{
+		if (map[i].length() > length)
+		{
+			length = map[i].length();
+		}
+	}
+	return length;
+}
