@@ -46,7 +46,6 @@ class Monster
         bool isAlive() const;	///< This shows if the player is alive or not
         void getHit(Monster* target);	///< This takes one hit
         void fightTilDeath(Monster& target);	///< This is controlling the whole battle
-        //friend std::ostream& operator<<(std::ostream& os, const Monster& obj);	///< This is an operator overwrite
 };
 
 #endif

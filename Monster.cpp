@@ -113,10 +113,6 @@ Monster Monster::parse(const std::string& name) {
 	
 	    if(values.count("magical-damage")) monsterdamage.setMagical(values.get<int>("magical-damage"));
 	    else monsterdamage.setMagical(0);
-
-
-		//monsterdamage.setPhysical(values.get<int>("damage"));
-		//monsterdamage.setMagical(values.get<int>("magical-damage"));
 		
 		return Monster
 		(
