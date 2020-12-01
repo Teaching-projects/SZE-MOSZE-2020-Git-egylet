@@ -43,6 +43,10 @@ int Hero::getLevel() const {
     return level;
 }
 
+int Hero::getExperience() const {
+    return XP;
+}
+
 int Hero::getMaxHealthPoints() const {
     return maxHP;
 }
@@ -157,9 +161,6 @@ Hero Hero::parse(const std::string& name) {
 	    if(values.count("magical-damage")) monsterdamage.setMagical(values.get<int>("magical-damage"));
 	    else monsterdamage.setMagical(0);
 
-		//monsterdamage.setPhysical(values.get<int>("damage"));
-		//monsterdamage.setMagical(values.get<int>("magical-damage"));
-		
 		return Hero
 		(
 			values.get<std::string>("name"),

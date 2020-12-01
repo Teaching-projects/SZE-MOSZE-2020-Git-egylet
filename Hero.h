@@ -33,6 +33,7 @@ public:
 	Hero(const std::string, int, Damage, double, double, int, int, int, double, double, int);	///< This is a Hero constructor
 
 	int getLevel() const;	///< This is a simple getter for level
+	int getExperience() const;	///< This is a simple getter for experience
 	int getMaxHealthPoints() const;	///< This is a simple getter for maxHP
 	int getExperiencePerLevel() const;	///< This is a simple getter for experience_per_level
 	int getHealthPointBonusPerLevel () const;	///< This is a simple getter for health_point_bonus_per_level
