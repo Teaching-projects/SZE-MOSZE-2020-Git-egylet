@@ -26,8 +26,7 @@ protected:
 	int magical_damage_bonus_per_level;	///< The hero's magical damage bonus per level
 	
 	void levelup(); ///< Controlling levelup
-	void hit(Monster* target) override;	///< Protected hit function
-
+	
 public:
 
 	Hero(const std::string, int, Damage, double, double, int, int, int, double, double, int);	///< This is a Hero constructor
@@ -42,5 +41,6 @@ public:
 	double getDefenseBonusPerLevel () const;	///< This is a simple getter for defense_bonus_per_level
 	int getMagicalDamageBonusPerLevel ()  const;	///< This is a simple getter for magical_damage_bonus_per_level
 	void getHit(Monster* target);	///< This takes one hit
+	void hit(Monster* target) override;	///< Hero hit function
 	static Hero parse(const std::string& name);	///< This reads in the hero data from file
 };
