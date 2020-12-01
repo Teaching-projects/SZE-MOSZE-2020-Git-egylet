@@ -139,7 +139,7 @@ Hero Hero::parse(const std::string& name) {
 		"cooldown_multiplier_per_level",
 		"defense_bonus_per_level",
 		"magical_damage_bonus_per_level"
-	};        
+	};	///< Set keywords
     
     bool load = true;
 	for (auto k : find)
@@ -147,7 +147,7 @@ Hero Hero::parse(const std::string& name) {
 		if(!values.count(k)) load = false;
 	}
 	
-	if (load)
+	if (load)	///< Load data from file
 	{
 		Damage monsterdamage (0,0);
 		
