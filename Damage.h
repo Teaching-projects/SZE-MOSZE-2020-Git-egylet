@@ -27,10 +27,10 @@ struct Damage {
         int getPhysical() const;	///< This is a simple getter for physical damage
         int getMagical() const;	///< This is a simple getter for magical damage
         
-        friend Damage operator + (const Damage& dmg, const Damage& other);
-        friend Damage& operator += (Damage& dmg, const Damage& other);
-        friend Damage& operator *= (Damage& dmg, const Damage& other);
-        friend std::ostream& operator << (std::ostream& s, const Damage& dmg);
+        friend Damage operator + (const Damage& dmg, const Damage& other);  ///< Operator overwrite
+        friend Damage& operator += (Damage& dmg, const Damage& other);  ///< Operator overwrite
+        friend Damage& operator *= (Damage& dmg, const Damage& other);  ///< Operator overwrite
+        friend std::ostream& operator << (std::ostream& s, const Damage& dmg);  ///< Operator overwrite
 };
 
 #endif //DAMAGE_H
