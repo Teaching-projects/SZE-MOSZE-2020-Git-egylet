@@ -24,6 +24,8 @@ class Monster
         Damage damage;  ///< The monster's damage
         double characterACD;	///< The monster's attack cooldown
         double characterDEF;    ///< The monster's defense
+
+        virtual void hit(Monster* target);
         
     public:
         Monster
@@ -43,7 +45,6 @@ class Monster
         double getDefense() const;	///< This is a simple getter for DEF
         bool isAlive() const;	///< This shows if the player is alive or not
         void getHit(Monster* target);	///< This takes one hit
-        virtual void hit(Monster* target);
         void fightTilDeath(Monster& target);	///< This is controlling the whole battle
         //friend std::ostream& operator<<(std::ostream& os, const Monster& obj);	///< This is an operator overwrite
 };
