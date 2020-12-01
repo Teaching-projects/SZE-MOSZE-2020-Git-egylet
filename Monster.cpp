@@ -96,15 +96,15 @@ Monster Monster::parse(const std::string& name) {
 		"health_points", 
 		"attack_cooldown",
 		"defense"
-	};        
-    
+	};	///< Set keywords
+
     bool load = true;
 	for (auto k : find)
 	{
 		if(!values.count(k)) load = false;
 	}
 
-	if (load)
+	if (load) ///< Load data from file
 	{
 		Damage monsterdamage (0,0);
 		
@@ -125,7 +125,7 @@ Monster Monster::parse(const std::string& name) {
 			monsterdamage,
 			values.get<double>("attack_cooldown"),
 			values.get<double>("defense")
-        );
+        );	///< Build and return a Monster
 	}
 	else throw JSON::ParseException("incorrect values:" + name);
 }
