@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['level_34',['level',['../classHero.html#a42f1236a8e4a3f8c7e47193e544ee01f',1,'Hero']]],
-  ['levelup_35',['levelup',['../classHero.html#a0fe5b6710e307afc14deff752ce54706',1,'Hero']]]
+  ['magical_25',['magical',['../structDamage.html#a496876891f196c2b4ac9afe9f31b77b4',1,'Damage']]],
+  ['map_26',['Map',['../classMap.html',1,'Map'],['../classMap.html#a871049c7b391e75039ccba5a4d757dae',1,'Map::Map()']]],
+  ['monster_27',['Monster',['../classMonster.html',1,'Monster'],['../classMonster.html#a15e50cb03123283f88ab8b70731529fc',1,'Monster::Monster()']]]
 ];
