@@ -13,7 +13,7 @@ private:
 	Map map;
 	Hero* hero;
 	std::pair<int, int> hero_position;
-	std::list<std::pair<Monster, std::pair<int, int>>> monster_positions;
+	std::pair<int,int> monster_position;
 	
 	
 public:
@@ -23,6 +23,7 @@ public:
 	void putHero(Hero hero, int x, int y);
 	void putMonster(Monster monster, int x, int y);
 	void moveHero(const std::string direction);
+	bool mapCleared();
 	void run();
 	void printMap() ;
 

@@ -16,39 +16,45 @@ void Game::putHero(Hero hero, int x, int y)
 		hero_position = std::make_pair(x, y);
 		this->hero = new Hero(hero);
 	}
-	else throw Game::OccupiedException("Location unavailable! \n");
+	else throw OccupiedException("Location unavailable! \n");
 }
 
 void Game::putMonster(Monster monster, int x, int y)
 {
-	if (map.get(x, y) == Map::type::Free)
+	if (map.get(x, y) == Map::type::Wall && std::make_pair(x, y) != hero_position)
 	{
-		monster_positions.push_back(std::make_pair(monster, std::make_pair(x, y)));
+		monster_position = std::make_pair(x, y);
 	}
+	else throw OccupiedException("Location unavailable! \n");
 }
 
 void Game::moveHero(const std::string direction) {
 	if (direction == "north") hero_position.second++;
-	if (direction == "south") hero.second--;
+	if (direction == "south") hero_position.second--;
 	if (direction == "east") hero_position.first++;
-	if (direction == "west") hero.first--;
+	if (direction == "west") hero_position.first--;
 }
+
+bool Game::mapCleared() {}
+
 
 void Game::printMap() 
 {
 	int MaxWidth = map.horizontalget();
 	std::cout << "╔";
-	for (int i = 0; i < MaxWidth; i++) std::cout << "║";
+	for (int i = 0; i < MaxWidth; i++) std::cout << "═";
 	std::cout << "╗";
 
 	for (int i = 0; i < map.getmapsize(); i++)
 	{
-		std::cout << "═";
+		std::cout << "║";
 		for (int j = 0; j < map.getwidth(i); j++)
 		{
 			if (map.get(i, j) == Map::type::Free) std::cout << "░░";
 			else if (map.get(i, j) == Map::type::Wall) std::cout << "██";
-			else if (hero_position.first==i&&hero_position.second==j) std::cout << "┣┫";
+			else if (std::make_pair(i, j) == hero_position) std::cout << "┣┫";
+			else if (std::make_pair(i, j) == monster_position) std::cout << "M";
+			else std::cout << "MM";
 			
 		}
 	}
