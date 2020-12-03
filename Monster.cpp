@@ -66,8 +66,8 @@ void Monster::fightTilDeath(Monster& target) {
 	double time2 = 0;	///< Second player's time counter
 
 	///Both players hits at the same time, the first is who started the attack
-	this->hit(&target /**This is a player parameter*/);
-	target.hit(this /**This is a player parameter*/);
+	this->hit(&target);
+	target.hit(this);
 
 	//The fight goes on until one of the participants die
 	while (this->isAlive() && target.isAlive()) {
@@ -96,15 +96,15 @@ Monster Monster::parse(const std::string& name) {
 		"health_points", 
 		"attack_cooldown",
 		"defense"
-	};        
-    
+	};	///< Set keywords
+
     bool load = true;
 	for (auto k : find)
 	{
 		if(!values.count(k)) load = false;
 	}
 
-	if (load)
+	if (load) ///< Load data from file
 	{
 		Damage monsterdamage (0,0);
 		
@@ -113,10 +113,6 @@ Monster Monster::parse(const std::string& name) {
 	
 	    if(values.count("magical-damage")) monsterdamage.setMagical(values.get<int>("magical-damage"));
 	    else monsterdamage.setMagical(0);
-
-
-		//monsterdamage.setPhysical(values.get<int>("damage"));
-		//monsterdamage.setMagical(values.get<int>("magical-damage"));
 		
 		return Monster
 		(
@@ -125,7 +121,7 @@ Monster Monster::parse(const std::string& name) {
 			monsterdamage,
 			values.get<double>("attack_cooldown"),
 			values.get<double>("defense")
-        );
+        );	///< Build and return a Monster
 	}
 	else throw JSON::ParseException("incorrect values:" + name);
 }

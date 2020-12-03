@@ -1,3 +1,12 @@
+/**
+\class JSON
+This is the description of JSON.h
+\version 1.0
+\author kokohun
+\date 2020/10/30 18:56
+Created on: 2020/10/30 18:56
+*/
+
 #include <map>
 #include <regex>
 #include <iostream>
@@ -19,9 +28,9 @@ public:
 
 	JSON(std::map<std::string, std::variant<std::string, int, double>> data) : pdata(data){};
 	
-    static JSON jsonParser(std::istream& file);
-    static JSON parseFromString(std::string str);
-    static JSON parseFromFile(std::string filename);
+    static JSON jsonParser(std::istream& file);	///< Parse from file with source file
+    static JSON parseFromString(std::string str);	///< Parse from file with source string
+    static JSON parseFromFile(std::string filename);	///< Parse from file with source filename
     
     int count(std::string key){
 		if (pdata.find(key) != pdata.end()) return 1; else return 0;
