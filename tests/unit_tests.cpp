@@ -293,6 +293,17 @@ TEST(Hero, getMaxHealthPoints){
 	ASSERT_EQ(expected_mhp, test_mhp);
 }
 
+TEST(Hero, getLightRadius){
+	Damage tmp (3, 1);
+	Hero player_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 2, 20, 5, 1, 0.9, 0.1, 1, 1);
+	
+	int test_lr = player_test.getLightRadius();
+	
+	int expected_lr = 2;
+	
+	ASSERT_EQ(expected_lr, test_lr);
+}
+
 TEST(Hero, getExperiencePerLevel){
 	Damage tmp (3, 1);
 	Hero player_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 20, 5, 1, 0.9, 0.1, 1);
@@ -357,6 +368,17 @@ TEST(Hero, getMagicalDamageBonusPerLevel){
 	int expected_mdbpl = 1;
 	
 	ASSERT_EQ(expected_mdbpl, test_mdbpl);
+}
+
+TEST(Hero, getLightRadiusBonusPerLevel){
+	Damage tmp (3, 1);
+	Hero player_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 2, 20, 5, 1, 0.9, 0.1, 1, 1);
+	
+	int test_lrbpl = player_test.getLightRadiusBonusPerLevel();
+	
+	int expected_lrbpl = 1;
+	
+	ASSERT_EQ(expected_lrbpl, test_lrbpl);
 }
 
 TEST(Hero, hit_wo_levelup){
