@@ -55,6 +55,10 @@ int Hero::getMaxHealthPoints() const {
     return maxHP;
 }
 
+int Hero::getLightRadius() const {
+    return light_radius;
+}
+
 int Hero::getExperiencePerLevel() const {
     return experience_per_level;
 }
@@ -77,6 +81,10 @@ double Hero::getDefenseBonusPerLevel() const {
 
 int Hero::getMagicalDamageBonusPerLevel() const {
     return magical_damage_bonus_per_level;
+}
+
+int Hero::getLightRadiusBonusPerLevel() const {
+    return light_radius_bonus_per_level;
 }
 
 //If the hero reaches the required amount of XP, this function buffs the hero, and restore it to maximum health

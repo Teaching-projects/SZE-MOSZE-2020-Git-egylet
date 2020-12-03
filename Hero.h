@@ -36,12 +36,14 @@ public:
 	int getLevel() const;	///< This is a simple getter for level
 	int getExperience() const; ///< This is a simple getter for experience
 	int getMaxHealthPoints() const;	///< This is a simple getter for maxHP
+	int getLightRadius() const; ///< This is a simple getter for light_radius
 	int getExperiencePerLevel() const;	///< This is a simple getter for experience_per_level
 	int getHealthPointBonusPerLevel() const;	///< This is a simple getter for health_point_bonus_per_level
 	int getPhysicalDamageBonusPerLevel() const;	///< This is a simple getter for physical_damage_bonus_per_level
 	double getCooldownMultiplierPerLevel() const;	///< This is a simple getter for cooldown_multiplier_per_level
 	double getDefenseBonusPerLevel() const;	///< This is a simple getter for defense_bonus_per_level
 	int getMagicalDamageBonusPerLevel()  const;	///< This is a simple getter for magical_damage_bonus_per_level
+	int getLightRadiusBonusPerLevel() const; ///< This is a simple getter for light_radius_bonus_per_level
 	void getHit(Monster* target);	///< This takes one hit
 	void hit(Monster* target) override;	///< Hero hit function
 	static Hero parse(const std::string& name);	///< This reads in the hero data from file
