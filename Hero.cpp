@@ -12,12 +12,14 @@ Hero::Hero(
 			Damage damage,
 			double characterACD,
 			double characterDEF,
+			int characterLR,
 			int XPperlevel,
 			int HPperlevel,
 			int PDMGperlevel,
 			double ACDperlevel,
 			double DEFperlevel,
-			int MDMGperlevel
+			int MDMGperlevel,
+			int LRperlevel
 		) : Monster
 		(	
 			characterName,
@@ -28,12 +30,14 @@ Hero::Hero(
 			level(1),
 			maxHP(characterHP),
 			XP(0),
+			light_radius(characterLR),
 			experience_per_level(XPperlevel),
 			health_point_bonus_per_level(HPperlevel),
 			physical_damage_bonus_per_level(PDMGperlevel),
 			cooldown_multiplier_per_level(ACDperlevel),
 			defense_bonus_per_level(DEFperlevel),
-			magical_damage_bonus_per_level(MDMGperlevel)
+			magical_damage_bonus_per_level(MDMGperlevel),
+			light_radius_bonus_per_level(LRperlevel)
 {}
 
 
