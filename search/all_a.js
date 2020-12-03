@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['name_41',['name',['../classHero.html#abf1f2203c2cd11e1daf8b2abd82369cd',1,'Hero']]]
+  ['occupiedexception_29',['OccupiedException',['../classGame_1_1OccupiedException.html',1,'Game']]]
 ];
