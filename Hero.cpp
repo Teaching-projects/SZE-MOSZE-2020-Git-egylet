@@ -98,6 +98,7 @@ void Hero::levelup() {
 	characterHP = maxHP;
 	characterACD *= cooldown_multiplier_per_level;
 	characterDEF += defense_bonus_per_level;
+	light_radius += light_radius_bonus_per_level;
 
 }
 
