@@ -149,6 +149,7 @@ Hero Hero::parse(const std::string& name) {
 		"base_health_points",
 		"base_attack_cooldown",
 		"defense",
+		"light_radius",
 		
 		"experience_per_level",
 		"health_point_bonus_per_level",
@@ -174,6 +175,9 @@ Hero Hero::parse(const std::string& name) {
 	    if(values.count("magical-damage")) monsterdamage.setMagical(values.get<int>("magical-damage"));
 	    else monsterdamage.setMagical(0);
 
+		int tmp_lrbpl = 1;
+		if(values.count("light_radius_bonus_per_level")) tmp_lrbpl = values.get<int>("light_radius_bonus_per_level");
+
 		return Hero
 		(
 			values.get<std::string>("name"),
@@ -181,13 +185,15 @@ Hero Hero::parse(const std::string& name) {
 			monsterdamage,
 			values.get<double>("base_attack_cooldown"),
 			values.get<double>("defense"),
+			values.get<int>("light_radius"),
 			
 			values.get<int>("experience_per_level"),
 			values.get<int>("health_point_bonus_per_level"),
 			values.get<int>("physical_damage_bonus_per_level"),
 			values.get<double>("cooldown_multiplier_per_level"),
 			values.get<double>("defense_bonus_per_level"),
-			values.get<int>("magical_damage_bonus_per_level")
+			values.get<int>("magical_damage_bonus_per_level"),
+			tmp_lrbpl
         );
 	}
 	else throw JSON::ParseException("incorrect values: " + name);

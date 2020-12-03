@@ -25,7 +25,7 @@ protected:
 	double cooldown_multiplier_per_level;	///< The hero's cooldown multiplier per level
 	double defense_bonus_per_level;	///< The hero's defense bonus per level
 	int magical_damage_bonus_per_level;	///< The hero's magical damage bonus per level
-	int light_radius_bonus_per_level = 1;	///< The hero's light radius bonus per level
+	int light_radius_bonus_per_level;	///< The hero's light radius bonus per level
 	
 	void levelup(); ///< Controlling levelup
 	
