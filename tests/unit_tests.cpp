@@ -400,7 +400,7 @@ TEST(Hero, hit_wo_levelup){
 
 TEST(Hero, hit_w_levelup){
 	Damage tmp (3, 1);
-	Hero hero_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 1, 2, 5, 1, 0.9, 0.1, 1, 1);
+	Hero hero_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 2, 2, 5, 1, 0.9, 0.1, 1, 1);
 	Monster monster_test ("Kakarott", 30, tmp, 2.5, 1);
 	
 	hero_test.hit(&monster_test);
@@ -416,6 +416,7 @@ TEST(Hero, hit_w_levelup){
 	double test_hero_acd = hero_test.getAttackCoolDown();
 	double test_hero_def = hero_test.getDefense();
 	int test_hero_xp = hero_test.getExperience();
+	int test_lr = hero_test.getLightRadius();
 
 	int expected_monster_hp = 27;
 	int expected_hero_level = 2;
@@ -426,6 +427,7 @@ TEST(Hero, hit_w_levelup){
 	double expected_hero_acd = 1.1*0.9;
 	double expected_hero_def = 0.6;
 	int expected_hero_xp = 1;
+	int expected_lr = 3;
 
 	ASSERT_EQ(expected_monster_hp, test_monster_hp);
 	ASSERT_EQ(expected_hero_level, test_hero_level);
@@ -435,11 +437,12 @@ TEST(Hero, hit_w_levelup){
 	ASSERT_EQ(expected_hero_acd, test_hero_acd);
 	ASSERT_EQ(expected_hero_def, test_hero_def);
 	ASSERT_EQ(expected_hero_xp, test_hero_xp);
+	ASSERT_EQ(expected_lr, test_lr);
 }
 
 TEST(Hero, getHit){
 	Damage tmp (3, 1);
-	Hero player_test_1 ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 1, 20, 5, 1, 0.9, 0.1, 1, 1);
+	Hero player_test_1 ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 2, 20, 5, 1, 0.9, 0.1, 1, 1);
 	Monster player_test_2("Kakarott", 30, tmp, 2.5, 1);
 	
 	player_test_2.getHit(&player_test_2);
