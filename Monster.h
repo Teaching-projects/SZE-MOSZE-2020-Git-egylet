@@ -1,6 +1,6 @@
 /**
 \mainpage Git egylet's documentation
-\class Monstter
+\class Monster
 This is the description of Monster.h
 \version 1.1
 \author mrpig2000
