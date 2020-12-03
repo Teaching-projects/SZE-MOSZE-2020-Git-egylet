@@ -262,7 +262,7 @@ TEST(Monster, fightTilDeath){
 
 TEST(Hero, getLevel){
 	Damage tmp (3, 1);
-	Hero player_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 20, 5, 1, 0.9, 0.1, 1);
+	Hero player_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 2, 20, 5, 1, 0.9, 0.1, 1, 1);
 	
 	int test_level = player_test.getLevel();
 	
@@ -273,7 +273,7 @@ TEST(Hero, getLevel){
 
 TEST(Hero, getExperience){
 	Damage tmp (3, 1);
-	Hero player_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 20, 5, 1, 0.9, 0.1, 1);
+	Hero player_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 2, 20, 5, 1, 0.9, 0.1, 1, 1);
 	
 	int test_xp = player_test.getExperience();
 	
@@ -284,7 +284,7 @@ TEST(Hero, getExperience){
 
 TEST(Hero, getMaxHealthPoints){
 	Damage tmp (3, 1);
-	Hero player_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 20, 5, 1, 0.9, 0.1, 1);
+	Hero player_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 2, 20, 5, 1, 0.9, 0.1, 1, 1);
 	
 	int test_mhp = player_test.getMaxHealthPoints();
 	
@@ -306,7 +306,7 @@ TEST(Hero, getLightRadius){
 
 TEST(Hero, getExperiencePerLevel){
 	Damage tmp (3, 1);
-	Hero player_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 20, 5, 1, 0.9, 0.1, 1);
+	Hero player_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 2, 20, 5, 1, 0.9, 0.1, 1, 1);
 	
 	int test_epl = player_test.getExperiencePerLevel();
 	
@@ -317,7 +317,7 @@ TEST(Hero, getExperiencePerLevel){
 
 TEST(Hero, getHealthPointBonusPerLevel){
 	Damage tmp (3, 1);
-	Hero player_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 20, 5, 1, 0.9, 0.1, 1);
+	Hero player_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 2, 20, 5, 1, 0.9, 0.1, 1, 1);
 	
 	int test_hpbpl = player_test.getHealthPointBonusPerLevel();
 	
@@ -328,7 +328,7 @@ TEST(Hero, getHealthPointBonusPerLevel){
 
 TEST(Hero, getPhysicalDamageBonusPerLevel){
 	Damage tmp (3, 1);
-	Hero player_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 20, 5, 1, 0.9, 0.1, 1);
+	Hero player_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 2, 20, 5, 1, 0.9, 0.1, 1, 1);
 	
 	int test_pdbpl = player_test.getPhysicalDamageBonusPerLevel();
 	
@@ -339,7 +339,7 @@ TEST(Hero, getPhysicalDamageBonusPerLevel){
 
 TEST(Hero, getCooldownMultiplierPerLevel){
 	Damage tmp (3, 1);
-	Hero player_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 20, 5, 1, 0.9, 0.1, 1);
+	Hero player_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 2, 20, 5, 1, 0.9, 0.1, 1, 1);
 	
 	int test_cmpl = player_test.getCooldownMultiplierPerLevel();
 	
@@ -350,7 +350,7 @@ TEST(Hero, getCooldownMultiplierPerLevel){
 
 TEST(Hero, getDefenseBonusPerLevel){
 	Damage tmp (3, 1);
-	Hero player_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 20, 5, 1, 0.9, 0.1, 1);
+	Hero player_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 2, 20, 5, 1, 0.9, 0.1, 1, 1);
 	
 	int test_dbpl = player_test.getDefenseBonusPerLevel();
 	
@@ -361,7 +361,7 @@ TEST(Hero, getDefenseBonusPerLevel){
 
 TEST(Hero, getMagicalDamageBonusPerLevel){
 	Damage tmp (3, 1);
-	Hero player_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 20, 5, 1, 0.9, 0.1, 1);
+	Hero player_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 2, 20, 5, 1, 0.9, 0.1, 1, 1);
 	
 	int test_mdbpl = player_test.getMagicalDamageBonusPerLevel();
 	
@@ -383,7 +383,7 @@ TEST(Hero, getLightRadiusBonusPerLevel){
 
 TEST(Hero, hit_wo_levelup){
 	Damage tmp (3, 1);
-	Hero player_test_1 ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 20, 5, 1, 0.9, 0.1, 1);
+	Hero player_test_1 ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 2, 20, 5, 1, 0.9, 0.1, 1, 1);
 	Monster player_test_2("Kakarott", 30, tmp, 2.5, 1);
 	
 	player_test_1.hit(&player_test_2);
@@ -400,7 +400,7 @@ TEST(Hero, hit_wo_levelup){
 
 TEST(Hero, hit_w_levelup){
 	Damage tmp (3, 1);
-	Hero hero_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 2, 5, 1, 0.9, 0.1, 1);
+	Hero hero_test ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 1, 2, 5, 1, 0.9, 0.1, 1, 1);
 	Monster monster_test ("Kakarott", 30, tmp, 2.5, 1);
 	
 	hero_test.hit(&monster_test);
@@ -439,7 +439,7 @@ TEST(Hero, hit_w_levelup){
 
 TEST(Hero, getHit){
 	Damage tmp (3, 1);
-	Hero player_test_1 ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 20, 5, 1, 0.9, 0.1, 1);
+	Hero player_test_1 ("Prince Aidan of Khanduras", 30, tmp, 1.1, 0.5, 1, 20, 5, 1, 0.9, 0.1, 1, 1);
 	Monster player_test_2("Kakarott", 30, tmp, 2.5, 1);
 	
 	player_test_2.getHit(&player_test_2);
