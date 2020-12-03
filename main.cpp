@@ -64,6 +64,7 @@ int main(int argc, char** argv){
                   << hero.getDamage() << std::endl
                   << "    ACD: "<<hero.getAttackCoolDown()<<std::endl
                   << "    DEF: "<<hero.getDefense()<<std::endl
+                  << "     LR: "<<hero.getLightRadius()<<std::endl
                   ;
     } catch (const JSON::ParseException& e) {bad_exit(4);}
     return 0;
