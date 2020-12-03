@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hero_45',['Hero',['../classHero.html',1,'']]]
+  ['parseexception_64',['ParseException',['../classJSON_1_1ParseException.html',1,'JSON']]]
 ];

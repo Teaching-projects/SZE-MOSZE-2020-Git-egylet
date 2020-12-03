@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['type_36',['type',['../classMap.html#a41697b848ea9a5aad1910714e0196b7b',1,'Map']]]
+  ['setmagical_53',['setMagical',['../structDamage.html#afb7aa4f6bb321baa76f4eff6c1c2b706',1,'Damage']]],
+  ['setphysical_54',['setPhysical',['../structDamage.html#ae80330178d423e67b8fa0a14037ce0ce',1,'Damage']]]
 ];
