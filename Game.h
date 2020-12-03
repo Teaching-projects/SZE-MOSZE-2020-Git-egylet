@@ -23,7 +23,11 @@ public:
 	void putHero(Hero hero, int x, int y);
 	void putMonster(Monster monster, int x, int y);
 	void moveHero(const std::string direction);
+	bool validateMove(const std::string dir );
 	bool mapCleared();
+	bool mapIsSet();
+	bool gameHasStarted();
+	bool heroIsSet();
 	void run();
 	void printMap() ;
 

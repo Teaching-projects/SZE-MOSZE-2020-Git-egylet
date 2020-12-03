@@ -28,6 +28,17 @@ void Game::putMonster(Monster monster, int x, int y)
 	else throw OccupiedException("Location unavailable! \n");
 }
 
+
+bool Game::validateMove(const std::string dir)
+{
+	if (dir == "north") return (map.get(hero_position.first, hero_position.second - 1) != Map::type::Wall);
+	else if (dir == "south") return (map.get(hero_position.first, hero_position.second + 1) != Map::type::Wall);
+	else if (dir== "east") return (map.get(hero_position.first + 1, hero_position.second) != Map::type::Wall );
+	else if (dir == "west") return (map.get(hero_position.first - 1, hero_position.second) != Map::type::Wall);
+	
+}
+
+
 void Game::moveHero(const std::string direction) {
 	if (direction == "north") hero_position.second++;
 	if (direction == "south") hero_position.second--;
@@ -36,6 +47,9 @@ void Game::moveHero(const std::string direction) {
 }
 
 bool Game::mapCleared() {}
+bool Game::heroIsSet() {}
+bool Game::mapIsSet() {}
+bool Game::gameHasStarted() {}
 
 
 void Game::printMap() 
@@ -67,6 +81,28 @@ void Game::printMap()
 	std::cout << "╝" << std::endl;
 
 }
+
+
+void Game::run()
+{
+
+	if (heroIsSet() && mapIsSet()&&!gameHasStarted())
+	{
+		while (hero->isAlive() && !mapCleared())
+		{
+			printMap();
+			
+
+		}
+
+	}
+
+
+
+
+
+}
+
 
 
 
