@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['magical_25',['magical',['../structDamage.html#a496876891f196c2b4ac9afe9f31b77b4',1,'Damage']]],
-  ['map_26',['Map',['../classMap.html',1,'Map'],['../classMap.html#a871049c7b391e75039ccba5a4d757dae',1,'Map::Map()']]],
-  ['monster_27',['Monster',['../classMonster.html',1,'Monster'],['../classMonster.html#a15e50cb03123283f88ab8b70731529fc',1,'Monster::Monster()']]]
+  ['level_36',['level',['../classHero.html#a42f1236a8e4a3f8c7e47193e544ee01f',1,'Hero']]],
+  ['levelup_37',['levelup',['../classHero.html#a0fe5b6710e307afc14deff752ce54706',1,'Hero']]],
+  ['light_5fradius_38',['light_radius',['../classHero.html#a231440da19b0061c76e9ffd441573568',1,'Hero']]],
+  ['light_5fradius_5fbonus_5fper_5flevel_39',['light_radius_bonus_per_level',['../classHero.html#ad2dc3ef3e6664b4a2614e9b012e57704',1,'Hero']]]
 ];
