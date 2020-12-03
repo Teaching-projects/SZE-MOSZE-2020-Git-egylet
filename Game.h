@@ -13,7 +13,7 @@ private:
 	Map map;
 	Hero* hero;
 	std::pair<int, int> hero_position;
-	std::pair<int,int> monster_position;
+	std::list<std::pair<Monster, std::pair<int, int>>> monster_position;
 	
 	
 public:
@@ -24,7 +24,7 @@ public:
 	void putMonster(Monster monster, int x, int y);
 	void moveHero(const std::string direction);
 	bool validateMove(const std::string dir );
-	bool mapCleared();
+	int getMonsterCount(int x, int y);
 	bool mapIsSet();
 	bool gameHasStarted();
 	bool heroIsSet();

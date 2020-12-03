@@ -22,32 +22,44 @@ void Game::putHero(Hero hero, int x, int y)
 void Game::putMonster(Monster monster, int x, int y)
 {
 	if (map.get(x, y) == Map::type::Wall && std::make_pair(x, y) != hero_position)
-	{
-		monster_position = std::make_pair(x, y);
-	}
+		monster_position.push_back(std::make_pair(monster, std::make_pair(x, y)));
+	
 	else throw OccupiedException("Location unavailable! \n");
 }
 
 
 bool Game::validateMove(const std::string dir)
 {
-	if (dir == "north") return (map.get(hero_position.first, hero_position.second - 1) != Map::type::Wall);
+	if (dir == "north") return (map.get(hero_position.first, hero_position.second -1 ) != Map::type::Wall);
 	else if (dir == "south") return (map.get(hero_position.first, hero_position.second + 1) != Map::type::Wall);
-	else if (dir== "east") return (map.get(hero_position.first + 1, hero_position.second) != Map::type::Wall );
+	else if (dir == "east") return (map.get(hero_position.first + 1, hero_position.second) != Map::type::Wall);
 	else if (dir == "west") return (map.get(hero_position.first - 1, hero_position.second) != Map::type::Wall);
-	
+	else return false;
 }
 
 
 void Game::moveHero(const std::string direction) {
-	if (direction == "north") hero_position.second++;
-	if (direction == "south") hero_position.second--;
+	if (direction == "north") hero_position.second--;
+	if (direction == "south") hero_position.second++;
 	if (direction == "east") hero_position.first++;
 	if (direction == "west") hero_position.first--;
 }
 
-bool Game::mapCleared() {}
-bool Game::heroIsSet() {}
+int Game::getMonsterCount(int x, int y)
+{
+	int monstercount = 0;
+	for (auto i = monster_position.begin(); i != monster_position.end(); i++)
+	{
+		if (i->second.first == x && i->second.second == y) monstercount++;
+	}
+	return monstercount;
+}
+
+
+bool Game::heroIsSet()
+{
+
+}
 bool Game::mapIsSet() {}
 bool Game::gameHasStarted() {}
 
@@ -67,8 +79,8 @@ void Game::printMap()
 			if (map.get(i, j) == Map::type::Free) std::cout << "░░";
 			else if (map.get(i, j) == Map::type::Wall) std::cout << "██";
 			else if (std::make_pair(i, j) == hero_position) std::cout << "┣┫";
-			else if (std::make_pair(i, j) == monster_position) std::cout << "M";
-			else std::cout << "MM";
+			else if (getMonsterCount(i, j) == 1) std::cout << "M";
+			else if (getMonsterCount(i, j) > 1) std::cout << "MM";
 			
 		}
 	}
@@ -86,16 +98,18 @@ void Game::printMap()
 void Game::run()
 {
 
-	if (heroIsSet() && mapIsSet()&&!gameHasStarted())
+	if (!heroIsSet() && !mapIsSet() && !gameHasStarted())
 	{
-		while (hero->isAlive() && !mapCleared())
+		while (hero->isAlive() && !monster_position.empty())
 		{
 			printMap();
-			
+
 
 		}
 
 	}
+	else if (heroIsSet()) throw AlreadyHasHeroException("There is a hero already!");
+	else if (mapIsSet()) throw NotInitializedException("xd");
 
 
 
