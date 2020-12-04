@@ -1,3 +1,5 @@
+#ifndef HERO_H
+#define HERO_H
 #include "Monster.h"
 
 class Hero : public Monster
@@ -34,3 +36,4 @@ public:
 	void hit(Monster* target) override;
 	static Hero parse(const std::string& name);
 };
+#endif

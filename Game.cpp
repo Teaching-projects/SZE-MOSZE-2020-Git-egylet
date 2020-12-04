@@ -95,25 +95,41 @@ void Game::printMap()
 
 void Game::run()
 {
-
+	std::string direction;
+	std::list<std::string> inputs = { "north","south","west","east" };
+	auto index = monster_position.begin();
 	if (heroset && mapIsSet && !game_is_running)
 	{
 		game_is_running = true;
-		while (hero->isAlive() && !monster_position.empty())
+		if (hero->isAlive() && !monster_position.empty())
 		{
 			printMap();
-
-
+			std::cout << "Choose the direction! (north/south/west/east)"<<std::endl;
+			std::cin >> direction;
+			if ((std::find(inputs.begin(), inputs.end(), direction)!=inputs.end()) && validateMove(direction)) {
+				moveHero(direction);
+			}
+			while (!monster_position.empty() && index != monster_position.end())
+			{
+				if (index->second.first == hero_position.first && index->second.first == hero_position.second)
+				{
+					hero->fightTilDeath(index->first);
+				}
+			}
+			
+			
+			std::cout << (hero->isAlive()? "The hero cleared the map." : "The hero died.") << std::endl;
+			std::cout << hero->getName() << ": LVL" << hero->getLevel() << std::endl
+				<< "     HP: " << hero->getHealthPoints() << "/" << hero->getMaxHealthPoints() << std::endl
+				<< "    DMG: " <<hero->getDamage() << std::endl
+				<< "    ACD: " << hero->getAttackCoolDown() << std::endl
+				<< "    DEF: " << hero->getDefense() << std::endl;
+	
+			game_is_running=false;
 		}
-
 	}
 	else if (!heroset) throw AlreadyHasHeroException("There is a hero already!");
 	else if (!mapIsSet) throw Map::WrongIndexException("Map was not set!");
-
-
-
-
-
 }
 
 

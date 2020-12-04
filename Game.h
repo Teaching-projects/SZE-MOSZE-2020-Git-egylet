@@ -1,9 +1,12 @@
-﻿#include <iostream>
+﻿#ifndef GAME_H
+#define GAME_H
+#include <iostream>
 #include <string>
 #include <list>
 #include "Map.h"
 #include "Monster.h"
 #include "Hero.h"
+#include <algorithm>
 
 
 class Game {
@@ -55,3 +58,4 @@ public:
 		GameAlreadyStartedException(const std::string &err) : std::runtime_error(err) {}
 	};
 };
+#endif
