@@ -7,12 +7,17 @@ Game::Game(std::string mapfilename) : map(mapfilename) {}
 
 void Game::setMap(Map maptoset)
 {
-	map = maptoset;
-	mapIsSet = true;
+	if (!mapIsSet) throw Map::WrongIndexException("Map was not set!");
+	if (heroset || !monster_position.empty()) throw AlreadyHasUnitsException("There are units on the map already!");
+	else {
+		map = maptoset;
+		mapIsSet = true;
+	}
 }
 
 void Game::putHero(Hero hero, int x, int y)
 {
+	if (heroset) throw AlreadyHasHeroException("There is a hero already!");
 	if (map.get(x, y) == Map::type::Free) {
 		hero_position = std::make_pair(x, y);
 		heroset = true;
@@ -91,7 +96,7 @@ void Game::printMap()
 void Game::run()
 {
 
-	if (!heroset && !mapIsSet && !game_is_running)
+	if (heroset && mapIsSet && !game_is_running)
 	{
 		game_is_running = true;
 		while (hero->isAlive() && !monster_position.empty())
@@ -102,8 +107,8 @@ void Game::run()
 		}
 
 	}
-	else if (heroset) throw AlreadyHasHeroException("There is a hero already!");
-	else if (mapIsSet) throw NotInitializedException("xd");
+	else if (!heroset) throw AlreadyHasHeroException("There is a hero already!");
+	else if (!mapIsSet) throw Map::WrongIndexException("Map was not set!");
 
 
 
