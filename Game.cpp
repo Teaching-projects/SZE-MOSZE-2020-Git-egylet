@@ -7,7 +7,7 @@ Game::Game(std::string mapfilename) : map(mapfilename) {}
 
 void Game::setMap(Map maptoset)
 {
-	if (!mapIsSet) throw Map::WrongIndexException("Map was not set!");
+	if (mapIsSet) throw Map::WrongIndexException("Map was not set!");
 	if (heroset || !monster_position.empty()) throw AlreadyHasUnitsException("There are units on the map already!");
 	else {
 		map = maptoset;
@@ -119,17 +119,12 @@ void Game::run()
 			
 			
 			std::cout << (hero->isAlive()? "The hero cleared the map." : "The hero died.") << std::endl;
-			std::cout << hero->getName() << ": LVL" << hero->getLevel() << std::endl
-				<< "     HP: " << hero->getHealthPoints() << "/" << hero->getMaxHealthPoints() << std::endl
-				<< "    DMG: " <<hero->getDamage() << std::endl
-				<< "    ACD: " << hero->getAttackCoolDown() << std::endl
-				<< "    DEF: " << hero->getDefense() << std::endl;
-	
+		
 			game_is_running=false;
 		}
 	}
-	else if (!heroset) throw AlreadyHasHeroException("There is a hero already!");
-	else if (!mapIsSet) throw Map::WrongIndexException("Map was not set!");
+	//else if (!heroset) throw AlreadyHasHeroException("There is a hero already!");
+	//else if (!mapIsSet) throw Map::WrongIndexException("Map was not set!");
 }
 
 

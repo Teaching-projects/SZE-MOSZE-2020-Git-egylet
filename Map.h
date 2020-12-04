@@ -27,7 +27,7 @@ public:
 	};
 	
 	Map::type get(unsigned int x, unsigned int y) const; ///< Get map field type
-	int horizontalget() const;
+	int horizontalget();
 	int getmapsize();
 	int getwidth(int);
 	///< Map class Exception function

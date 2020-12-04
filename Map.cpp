@@ -23,14 +23,14 @@ Map::type Map::get(unsigned int x, unsigned int y) const {
 	else return type(map[x][y]);
 }
 
-int Map::horizontalget() const
+int Map::horizontalget()
 {
-	unsigned int length = 0;
-	for (unsigned int i = 0; i < map.size(); i++)
+	 int length = 0;
+	for ( int i = 0; i < (int)map.size(); i++)
 	{
-		if (map[i].length() > length)
+		if ((int)map[i].length() > length)
 		{
-			length = map[i].length();
+			length = (int)map[i].length();
 		}
 	}
 	return length;

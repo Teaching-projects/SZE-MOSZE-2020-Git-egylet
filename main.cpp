@@ -43,13 +43,20 @@ int main(int argc, char** argv){
                 monster_files.push_back(std::get<std::string>(monster_file));
         }
     } catch (const JSON::ParseException& e) {bad_exit(4);}
-
+    
     try { 
-        Game game;
+          std::list<std::string> monster_files;
+        Game game = Game("maps/level1.txt");
         Hero hero{Hero::parse(hero_file)};
         std::list<Monster> monsters;
         for (const auto& monster_file : monster_files)
-            monsters.push_back(Monster::parse(monster_file));        
+            monsters.push_back(Monster::parse(monster_file));   
+
+        game.putHero(hero, 2, 5);
+        for (const auto& monster : monsters)
+        {
+            game.putMonster(monster, 3, 5);
+        }
 
         game.run();
     } catch (const JSON::ParseException& e) {bad_exit(4);}
