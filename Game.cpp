@@ -8,12 +8,14 @@ Game::Game(std::string mapfilename) : map(mapfilename) {}
 void Game::setMap(Map maptoset)
 {
 	map = maptoset;
+	mapIsSet = true;
 }
 
 void Game::putHero(Hero hero, int x, int y)
 {
 	if (map.get(x, y) == Map::type::Free) {
 		hero_position = std::make_pair(x, y);
+		heroset = true;
 		this->hero = new Hero(hero);
 	}
 	else throw OccupiedException("Location unavailable! \n");
@@ -55,15 +57,6 @@ int Game::getMonsterCount(int x, int y)
 	return monstercount;
 }
 
-
-bool Game::heroIsSet()
-{
-
-}
-bool Game::mapIsSet() {}
-bool Game::gameHasStarted() {}
-
-
 void Game::printMap() 
 {
 	int MaxWidth = map.horizontalget();
@@ -98,8 +91,9 @@ void Game::printMap()
 void Game::run()
 {
 
-	if (!heroIsSet() && !mapIsSet() && !gameHasStarted())
+	if (!heroset && !mapIsSet && !game_is_running)
 	{
+		game_is_running = true;
 		while (hero->isAlive() && !monster_position.empty())
 		{
 			printMap();
@@ -108,8 +102,8 @@ void Game::run()
 		}
 
 	}
-	else if (heroIsSet()) throw AlreadyHasHeroException("There is a hero already!");
-	else if (mapIsSet()) throw NotInitializedException("xd");
+	else if (heroset) throw AlreadyHasHeroException("There is a hero already!");
+	else if (mapIsSet) throw NotInitializedException("xd");
 
 
 

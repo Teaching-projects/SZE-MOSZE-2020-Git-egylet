@@ -9,7 +9,9 @@
 class Game {
 
 private:
-	bool game_is_running;
+	bool game_is_running=false;
+	bool mapIsSet=false;
+	bool heroset = false;
 	Map map;
 	Hero* hero;
 	std::pair<int, int> hero_position;
@@ -25,9 +27,6 @@ public:
 	void moveHero(const std::string direction);
 	bool validateMove(const std::string dir );
 	int getMonsterCount(int x, int y);
-	bool mapIsSet();
-	bool gameHasStarted();
-	bool heroIsSet();
 	void run();
 	void printMap() ;
 
