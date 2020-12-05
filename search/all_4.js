@@ -11,6 +11,6 @@ var searchData=
   ['getmagical_17',['getMagical',['../structDamage.html#a00049354c5f45403c304a40069e12860',1,'Damage']]],
   ['getname_18',['getName',['../classMonster.html#a28ae1112e37262ce150e3c02465b3dd5',1,'Monster']]],
   ['getphysical_19',['getPhysical',['../structDamage.html#a5f008f248143680f4972a7ea54415797',1,'Damage']]],
-  ['getwidth_20',['getwidth',['../classMap.html#a4d80856215af4652a03d66aae104296f',1,'Map']]],
+  ['getwidth_20',['getwidth',['../classMap.html#a04d455372f154db9c59ec436ff55321d',1,'Map']]],
   ['git_20egylet_27s_20documentation_21',['Git egylet&apos;s documentation',['../index.html',1,'']]]
 ];
