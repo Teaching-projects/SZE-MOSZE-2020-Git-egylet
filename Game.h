@@ -12,18 +12,18 @@
 class Game {
 
 private:
-	bool game_is_running=false;
-	bool mapIsSet=false;
-	bool heroset = false;
 	Map map;
+	bool game_is_running;
+	bool mapIsSet;
+	bool heroset;
 	Hero* hero;
 	std::pair<int, int> hero_position;
 	std::list<std::pair<Monster, std::pair<int, int>>> monster_position;
 	
-	
 public:
-	Game();
-	Game(std::string mapfilename);
+	Game() : map(Map()), game_is_running(false), mapIsSet(false), heroset(false) {};
+	Game(const std::string& mapfilename) : map(Map(mapfilename)), game_is_running(false), mapIsSet(true), heroset(false) {};
+	//virtual ~Game() { delete this->hero;};
 	void setMap(Map maptoset);
 	void putHero(Hero hero, int x, int y);
 	void putMonster(Monster monster, int x, int y);

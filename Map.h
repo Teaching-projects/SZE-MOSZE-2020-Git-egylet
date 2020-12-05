@@ -29,7 +29,7 @@ public:
 	Map::type get(unsigned int x, unsigned int y) const; ///< Get map field type
 	int horizontalget();
 	int getmapsize();
-	int getwidth(int);
+	int getwidth(int y);
 	///< Map class Exception function
 	class WrongIndexException : public std::runtime_error
     {

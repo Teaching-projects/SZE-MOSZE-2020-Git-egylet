@@ -1,37 +1,40 @@
 ﻿#include "Map.h"
 #include "Game.h"
 
-
-Game::Game() : map() {}
-Game::Game(std::string mapfilename) : map(mapfilename) {}
-
 void Game::setMap(Map maptoset)
 {
-	if (mapIsSet) throw Map::WrongIndexException("Map was not set!");
-	if (heroset || !monster_position.empty()) throw AlreadyHasUnitsException("There are units on the map already!");
-	else {
-		map = maptoset;
+	/*if (!game_is_running) {
+		if (heroset || !monster_position.empty()) throw AlreadyHasUnitsException("There are units on the map already!");
+		else {
+			map = maptoset;
+			mapIsSet = true;
+		}
+	}*/
+	if (!mapIsSet)
+	{
+		this->map = maptoset;
 		mapIsSet = true;
 	}
+	else Map::WrongIndexException("Map already set!");
 }
 
 void Game::putHero(Hero hero, int x, int y)
 {
-	if (heroset) throw AlreadyHasHeroException("There is a hero already!");
+	//if (heroset) throw AlreadyHasHeroException("There is a hero already!");
 	if (map.get(x, y) == Map::type::Free) {
 		hero_position = std::make_pair(x, y);
 		heroset = true;
 		this->hero = new Hero(hero);
 	}
-	else throw OccupiedException("Location unavailable! \n");
+	else throw OccupiedException("Location unavailable1! \n");
 }
 
 void Game::putMonster(Monster monster, int x, int y)
 {
-	if (map.get(x, y) == Map::type::Wall && std::make_pair(x, y) != hero_position)
+	if (map.get(x, y) != Map::type::Wall)
 		monster_position.push_back(std::make_pair(monster, std::make_pair(x, y)));
 	
-	else throw OccupiedException("Location unavailable! \n");
+	else throw OccupiedException("Location unavailable2! \n");
 }
 
 
@@ -66,28 +69,42 @@ void Game::printMap()
 {
 	int MaxWidth = map.horizontalget();
 	std::cout << "╔";
-	for (int i = 0; i < MaxWidth; i++) std::cout << "═";
-	std::cout << "╗";
+	for (int i = 0; i < MaxWidth; i++)
+	{
+		std::cout << "══";
+	}
+
+	std::cout << "╗" << std::endl;;
 
 	for (int i = 0; i < map.getmapsize(); i++)
 	{
 		std::cout << "║";
+
 		for (int j = 0; j < map.getwidth(i); j++)
 		{
-			if (map.get(i, j) == Map::type::Free) std::cout << "░░";
-			else if (map.get(i, j) == Map::type::Wall) std::cout << "██";
-			else if (std::make_pair(i, j) == hero_position) std::cout << "┣┫";
-			else if (getMonsterCount(i, j) == 1) std::cout << "M";
-			else if (getMonsterCount(i, j) > 1) std::cout << "MM";
+			
+			if (map.get(j, i) == Map::type::Free) std::cout << "░░";
+			else if (map.get(j, i) == Map::type::Wall) std::cout << "██";
+			else if (std::make_pair(j, i) == hero_position) std::cout << "┣┫";
+			else if (getMonsterCount(j, i) == 1) std::cout << "M";
+			else if (getMonsterCount(j, i) > 1) std::cout << "MM";
 			
 		}
+		if (map.getwidth(i) < MaxWidth)
+			for (int k = 0; k < (MaxWidth - map.getwidth(i)); k++)
+			{
+				std::cout << "██";
+			}
+		std::cout << "║" << std::endl;
+
 	}
 
 	std::cout << "╚";
 
 	for (int i = 0; i < MaxWidth; i++)
-		std::cout << "═";
-
+	{
+		std::cout << "══";
+	}
 	std::cout << "╝" << std::endl;
 
 }
@@ -95,11 +112,12 @@ void Game::printMap()
 
 void Game::run()
 {
+
 	std::string direction;
 	std::list<std::string> inputs = { "north","south","west","east" };
-	auto index = monster_position.begin();
 	if (heroset && mapIsSet && !game_is_running)
 	{
+		auto index = monster_position.begin();
 		game_is_running = true;
 		if (hero->isAlive() && !monster_position.empty())
 		{
@@ -111,7 +129,7 @@ void Game::run()
 			}
 			while (!monster_position.empty() && index != monster_position.end())
 			{
-				if (index->second.first == hero_position.first && index->second.first == hero_position.second)
+				if (index->second.first == hero_position.first && index->second.second == hero_position.second)
 				{
 					hero->fightTilDeath(index->first);
 				}
@@ -123,8 +141,7 @@ void Game::run()
 			game_is_running=false;
 		}
 	}
-	//else if (!heroset) throw AlreadyHasHeroException("There is a hero already!");
-	//else if (!mapIsSet) throw Map::WrongIndexException("Map was not set!");
+	else if (!mapIsSet) throw Map::WrongIndexException("Map was not set!");
 }
 
 
