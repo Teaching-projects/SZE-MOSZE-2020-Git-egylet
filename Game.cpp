@@ -118,9 +118,9 @@ void Game::run()
 	std::list<std::string> inputs = { "north","south","west","east" };
 	if (heroset && mapIsSet && !game_is_running)
 	{
-		auto index = monster_position.begin();
+	
 		game_is_running = true;
-		while (hero->isAlive() || !monster_position.empty())
+		while (hero->isAlive() && !monster_position.empty())
 		{
 			printMap();
 
@@ -135,20 +135,23 @@ void Game::run()
 			moveHero(direction);
 			
 
-			while (index->second.first == hero_position.first && index->second.second == hero_position.second)
+			
+			if(monster_position.front().second.first==hero_position.first&&monster_position.front().second.second==hero_position.second)
 			{
-				hero->fightTilDeath(index->first);
-				if (!index->first.isAlive())
-				{
-					monster_position.pop_front();
-				}
+				 while (hero->isAlive()&&!monster_position.empty()) {
+					 
+					 hero->fightTilDeath(monster_position.front().first);
+
+					 if (!monster_position.front().first.isAlive())
+					 {
+						 monster_position.pop_front();
+					 }
+				 }
 			}
 		
 		}
-		//std::cout << (hero->isAlive() ? "The hero cleared the map." : "The hero died.") << std::endl;
-		if (hero->isAlive())
-			std::cout << std::endl << hero->getName() << " cleared the map." << std::endl;
-		else std::cout << "The hero died";
+		std::cout << (hero->isAlive() ? "The hero cleared the map." : "The hero died.") << std::endl;
+	
 	}
 	else if (!mapIsSet) throw Map::WrongIndexException("Map was not set!");
 }
