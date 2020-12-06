@@ -6,7 +6,7 @@
 #include <algorithm>
 #include <iterator>
 #include <list>
-
+#include "Damage.h"
 #include "JSON.h"
 #include "Hero.h"
 #include "Monster.h"
@@ -52,13 +52,11 @@ int main(int argc, char** argv){
             monsters.push_back(Monster::parse(monster_file));        
 
         Game game = Game("maps/level1.txt");
-
-        game.putHero(hero, 1, 2);
-        game.putMonster(monsters.front(), 1, 3);
-      // for (const auto& monster : monsters)
-       //{
-         //   game.putMonster(monster, 1, 3);
-        //}
+        game.putHero(hero, 2, 5);
+       for (const auto& monster : monsters)
+       {
+            game.putMonster(monster, 3, 5);
+        }
         game.run();
     } catch (const JSON::ParseException& e) {bad_exit(4);}
     return 0;

@@ -19,7 +19,7 @@ private:
 	Hero* hero;
 	std::pair<int, int> hero_position;
 	std::list<std::pair<Monster, std::pair<int, int>>> monster_position;
-	
+
 public:
 	Game() : map(Map()), game_is_running(false), mapIsSet(false), heroset(false) {};
 	Game(const std::string& mapfilename) : map(Map(mapfilename)), game_is_running(false), mapIsSet(true), heroset(false) {};

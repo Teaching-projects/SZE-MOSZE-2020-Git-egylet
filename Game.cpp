@@ -20,11 +20,12 @@ void Game::setMap(Map maptoset)
 
 void Game::putHero(Hero hero, int x, int y)
 {
-	//if (heroset) throw AlreadyHasHeroException("There is a hero already!");
+	if (heroset) throw AlreadyHasHeroException("There is a hero already!");
 	if (map.get(x, y) == Map::type::Free) {
 		hero_position = std::make_pair(x, y);
 		heroset = true;
 		this->hero = new Hero(hero);
+		
 	}
 	else throw OccupiedException("Location unavailable1! \n");
 }
@@ -82,12 +83,12 @@ void Game::printMap()
 
 		for (int j = 0; j < map.getwidth(i); j++)
 		{
-			
-			if (map.get(j, i) == Map::type::Free) std::cout << "░░";
-			else if (map.get(j, i) == Map::type::Wall) std::cout << "██";
-			else if (std::make_pair(j, i) == hero_position) std::cout << "┣┫";
-			else if (getMonsterCount(j, i) == 1) std::cout << "M";
+			if (std::make_pair(j,i)==hero_position) std::cout << "┣┫";
+			else if (getMonsterCount(j, i) == 1) std::cout << "M░";
 			else if (getMonsterCount(j, i) > 1) std::cout << "MM";
+			else if (map.get(j, i) == Map::type::Free) std::cout << "░░";
+			else if (map.get(j, i) == Map::type::Wall) std::cout << "██";
+			
 			
 		}
 		if (map.getwidth(i) < MaxWidth)
@@ -119,27 +120,29 @@ void Game::run()
 	{
 		auto index = monster_position.begin();
 		game_is_running = true;
-		if (hero->isAlive() && !monster_position.empty())
+		while (hero->isAlive() && !monster_position.empty())
 		{
 			printMap();
-			std::cout << "Choose the direction! (north/south/west/east)"<<std::endl;
-			std::cin >> direction;
-			if ((std::find(inputs.begin(), inputs.end(), direction)!=inputs.end()) && validateMove(direction)) {
-				moveHero(direction);
+
+			while (std::find(inputs.begin(), inputs.end(), direction) == inputs.end() || !validateMove(direction)) {
+				std::cout << "Choose the direction! (north/south/west/east)" << std::endl;
+				getline(std::cin, direction);
 			}
-			while (!monster_position.empty() && index != monster_position.end())
+			
+			moveHero(direction);
+
+			if (index->second.first == hero_position.first && index->second.second == hero_position.second)
 			{
-				if (index->second.first == hero_position.first && index->second.second == hero_position.second)
+				hero->fightTilDeath(index->first);
+				std::cout << "fight";
+				if (!index->first.isAlive())
 				{
-					hero->fightTilDeath(index->first);
+					monster_position.pop_front();
 				}
 			}
-			
-			
-			std::cout << (hero->isAlive()? "The hero cleared the map." : "The hero died.") << std::endl;
 		
-			game_is_running=false;
 		}
+		std::cout << (hero->isAlive() ? "The hero cleared the map." : "The hero died.") << std::endl;
 	}
 	else if (!mapIsSet) throw Map::WrongIndexException("Map was not set!");
 }
