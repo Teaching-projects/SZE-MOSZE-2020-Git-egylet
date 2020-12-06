@@ -50,10 +50,10 @@ bool Game::validateMove(const std::string dir)
 
 
 void Game::moveHero(const std::string direction) {
-	if (direction == "north") hero_position.second--;
-	if (direction == "south") hero_position.second++;
-	if (direction == "east") hero_position.first++;
-	if (direction == "west") hero_position.first--;
+	if (direction == "north") hero_position.second-=1;
+	if (direction == "south") hero_position.second+=1;
+	if (direction == "east") hero_position.first+=1;
+	if (direction == "west") hero_position.first-=1;
 }
 
 int Game::getMonsterCount(int x, int y)
@@ -120,21 +120,24 @@ void Game::run()
 	{
 		auto index = monster_position.begin();
 		game_is_running = true;
-		while (hero->isAlive() && !monster_position.empty())
+		while (hero->isAlive() || !monster_position.empty())
 		{
 			printMap();
 
-			while (std::find(inputs.begin(), inputs.end(), direction) == inputs.end() || !validateMove(direction)) {
+			do
+			{
 				std::cout << "Choose the direction! (north/south/west/east)" << std::endl;
-				getline(std::cin, direction);
+				std::cin >> direction;
 			}
+			while (std::find(inputs.begin(), inputs.end(), direction) == inputs.end() || !validateMove(direction));
 			
-			moveHero(direction);
 
-			if (index->second.first == hero_position.first && index->second.second == hero_position.second)
+			moveHero(direction);
+			
+
+			while (index->second.first == hero_position.first && index->second.second == hero_position.second)
 			{
 				hero->fightTilDeath(index->first);
-				std::cout << "fight";
 				if (!index->first.isAlive())
 				{
 					monster_position.pop_front();
@@ -142,7 +145,10 @@ void Game::run()
 			}
 		
 		}
-		std::cout << (hero->isAlive() ? "The hero cleared the map." : "The hero died.") << std::endl;
+		//std::cout << (hero->isAlive() ? "The hero cleared the map." : "The hero died.") << std::endl;
+		if (hero->isAlive())
+			std::cout << std::endl << hero->getName() << " cleared the map." << std::endl;
+		else std::cout << "The hero died";
 	}
 	else if (!mapIsSet) throw Map::WrongIndexException("Map was not set!");
 }
