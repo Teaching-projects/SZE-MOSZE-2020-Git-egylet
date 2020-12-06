@@ -23,7 +23,7 @@ private:
 public:
 	Game() : map(Map()), game_is_running(false), mapIsSet(false), heroset(false) {};
 	Game(const std::string& mapfilename) : map(Map(mapfilename)), game_is_running(false), mapIsSet(true), heroset(false) {};
-	//virtual ~Game() { delete this->hero;};
+	virtual ~Game() { delete this->hero; }
 	void setMap(Map maptoset);
 	void putHero(Hero hero, int x, int y);
 	void putMonster(Monster monster, int x, int y);

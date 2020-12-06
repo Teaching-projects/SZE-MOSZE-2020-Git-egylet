@@ -34,7 +34,7 @@ class Monster
             double ACD /** This is a double parameter*/,
             double DEF /** This is a double parameter*/        
         );
-
+        virtual ~Monster() {}
         static Monster parse(const std::string& name);	///< This reads in the player data from file
         std::string getName() const;	///< This is a simple getter for Name
         int getHealthPoints() const;	///< This is a simple getter for HP

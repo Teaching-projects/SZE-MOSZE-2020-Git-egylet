@@ -3,39 +3,44 @@
 
 void Game::setMap(Map maptoset)
 {
-	/*if (!game_is_running) {
-		if (heroset || !monster_position.empty()) throw AlreadyHasUnitsException("There are units on the map already!");
-		else {
-			map = maptoset;
-			mapIsSet = true;
-		}
-	}*/
-	if (!mapIsSet)
+	if (!mapIsSet && !game_is_running && monster_position.empty() && hero == nullptr)
 	{
 		this->map = maptoset;
 		mapIsSet = true;
 	}
-	else Map::WrongIndexException("Map already set!");
+	else if (mapIsSet)Map::WrongIndexException("Map already set!");
+	else if (game_is_running) GameAlreadyStartedException("Game already started!");
+	else if (!monster_position.empty()) AlreadyHasUnitsException("There are units on the map!");
+	else if (hero != nullptr) AlreadyHasHeroException("There is a hero already");
 }
 
 void Game::putHero(Hero hero, int x, int y)
 {
-	if (heroset) throw AlreadyHasHeroException("There is a hero already!");
-	if (map.get(x, y) == Map::type::Free) {
-		hero_position = std::make_pair(x, y);
-		heroset = true;
-		this->hero = new Hero(hero);
-		
+	if (!game_is_running) {
+		if (heroset) throw AlreadyHasHeroException("There is a hero already!");
+		else {
+			if (mapIsSet) {
+				if (map.get(x, y) == Map::type::Free) {
+					hero_position = std::make_pair(x, y);
+					heroset = true;
+					this->hero = new Hero(hero);
+
+				}
+				else throw OccupiedException("Location unavailable! \n");
+			}
+			else throw Map::WrongIndexException("Map was not set!");
+		}
 	}
-	else throw OccupiedException("Location unavailable1! \n");
+	else throw GameAlreadyStartedException("Game is already running!");
 }
 
 void Game::putMonster(Monster monster, int x, int y)
 {
-	if (map.get(x, y) != Map::type::Wall)
-		monster_position.push_back(std::make_pair(monster, std::make_pair(x, y)));
-	
-	else throw OccupiedException("Location unavailable2! \n");
+	if (mapIsSet) {
+		if (map.get(x, y) != Map::type::Wall)
+			monster_position.push_back(std::make_pair(monster, std::make_pair(x, y)));
+	}
+	else throw Map::WrongIndexException("Map was not set!");
 }
 
 
@@ -153,7 +158,7 @@ void Game::run()
 		std::cout << (hero->isAlive() ? "The hero cleared the map." : "The hero died.") << std::endl;
 	
 	}
-	else if (!mapIsSet) throw Map::WrongIndexException("Map was not set!");
+	else throw NotInitializedException("Bad initialization!");
 }
 
 
