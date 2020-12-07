@@ -9,7 +9,7 @@ jobs:
       - name: Build monster tests
         run: make build_monster_unittest
       - name: Run monster tests
-        run: make run_monster_unittest
+        run: make run_monster_unittest,
        - name: Build damage tests
         run: make build_damage_unittest
       - name: Run damage tests
