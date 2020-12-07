@@ -14,7 +14,7 @@ Created on: 2020/11/20 10:56
 
 class Map {
 	
-private:
+protected:
 	std::vector<std::string> map; ///< The map data array
 	
 public:

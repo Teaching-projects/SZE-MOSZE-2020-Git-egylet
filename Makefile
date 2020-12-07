@@ -4,9 +4,6 @@ COMPILER := g++-9
 
 CPPS := JSON.cpp Damage.cpp Monster.cpp Hero.cpp Map.cpp Game.cpp main.cpp 
 
-VFLAGS:= --leak-check=full --error-exitcode=1
-VPARAMETER:=  ./a.out scenarios/scenario1.json
-
 build: $(OBJS)
 	$(COMPILER) $(CFLAGS) -o a.out $(OBJS)
 
@@ -44,10 +41,10 @@ static_code_analysis:
 	cppcheck $(CPPS) --output-file=cppcheck_output.txt && chmod +x tests/warningcheck.sh && ./tests/warningcheck.sh && chmod +x tests/errorcheck.sh && ./tests/errorcheck.sh
 
 leakcheck:
-	valgrind $(VFLAGS) $(VPARAMETER)
+	valgrind $(VFLAGS) $(VPARAMETER) ./tests/directions.sh
 
 io-diff-tests:
-	chmod +x tests/task4_inout.sh && ./tests/task4_inout.sh
+	chmod +x tests/final_inout.sh && ./tests/final_inout.sh
 
 doc:
 	doxygen doxconf
