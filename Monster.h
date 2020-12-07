@@ -34,6 +34,8 @@ class Monster
             double ACD,
             double DEF       
         );  ///< This is a Monster constructor
+        
+        virtual ~Monster() {}; ///< This is a virtual Monster empty destructor
 
         static Monster parse(const std::string& name);	///< This reads in the monster data from file
         std::string getName() const;	///< This is a simple getter for Name
