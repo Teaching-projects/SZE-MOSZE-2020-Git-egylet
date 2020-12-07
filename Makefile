@@ -38,13 +38,13 @@ install_googletest_and_cmake:
 	sudo apt install libgtest-dev && sudo apt install cmake && cd /usr/src/gtest && sudo cmake . && sudo make && sudo cp *.a /usr/lib && sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
 
 static_code_analysis:
-	cppcheck $(CPPS) --output-file=cppcheck_output.txt && chmod +x tests/warningcheck.sh && ./tests/warningcheck.sh && chmod +x tests/errorcheck.sh && ./tests/errorcheck.sh && echo east
+	cppcheck $(CPPS) --output-file=cppcheck_output.txt && chmod +x tests/warningcheck.sh && ./tests/warningcheck.sh && chmod +x tests/errorcheck.sh && ./tests/errorcheck.sh
 
 leakcheck:
 	valgrind $(VFLAGS) $(VPARAMETER) ./tests/directions.sh
 
 io-diff-tests:
-	chmod +x tests/task4_inout.sh && ./tests/task4_inout.sh
+	chmod +x tests/final_inout.sh && ./tests/final_inout.sh
 
 doc:
 	doxygen doxconf
