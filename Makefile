@@ -4,9 +4,6 @@ COMPILER := g++-9
 
 CPPS := JSON.cpp Damage.cpp Monster.cpp Hero.cpp Map.cpp Game.cpp main.cpp 
 
-VFLAGS:= --leak-check=full --error-exitcode=1
-VPARAMETER:=  ./a.out scenarios/scenario1.json
-
 build: $(OBJS)
 	$(COMPILER) $(CFLAGS) -o a.out $(OBJS)
 
