@@ -75,9 +75,3 @@ build_hero_unittest:
 
 run_hero_unittest:
 	cd tests/hero_tests && ./runTests
-
-build_game_unittest:
-	cd tests/game_tests && cmake CMakeLists.txt && make
-
-run_game_unittest:
-	cd tests/game_tests && ./runTests
