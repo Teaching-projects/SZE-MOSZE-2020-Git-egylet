@@ -1,4 +1,4 @@
-OBJS := JSON.o Damage.o Monster.o Hero.o Map.o Game.o main.o 
+OBJS := JSON.o Map.o Damage.o Monster.o Hero.o Game.o main.o 
 CFLAGS := -std=c++17 -Wall -Wextra 
 COMPILER := g++-9
 
@@ -21,9 +21,6 @@ Monster.o: Monster.cpp Monster.h JSON.h Damage.h
 
 Hero.o: Hero.cpp Hero.h Monster.h JSON.h Damage.h
 	$(COMPILER) $(CFLAGS) -c Hero.cpp
-
-Map.o: Map.cpp
-	$(COMPILER) $(CFLAGS) -c Map.cpp
 
 Game.o: Game.cpp Monster.h Hero.h Map.h
 	$(COMPILER) $(CFLAGS) -c Game.cpp
