@@ -30,7 +30,7 @@ public:
 	int horizontalget();
 	int getmapsize();
 	int getwidth(int y);
-
+	std::string getMapLine(int i) const; ///< Get one line of the map
 	///< Map class Exception function
 	class WrongIndexException : public std::runtime_error
     {

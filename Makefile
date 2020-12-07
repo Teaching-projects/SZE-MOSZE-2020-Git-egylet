@@ -1,4 +1,4 @@
-OBJS := JSON.o Damage.o Monster.o Hero.o Map.o Game.o main.o 
+OBJS := JSON.o Map.o Damage.o Monster.o Hero.o Game.o main.o 
 CFLAGS := -std=c++17 -Wall -Wextra 
 COMPILER := g++-9
 
@@ -21,9 +21,6 @@ Monster.o: Monster.cpp Monster.h JSON.h Damage.h
 
 Hero.o: Hero.cpp Hero.h Monster.h JSON.h Damage.h
 	$(COMPILER) $(CFLAGS) -c Hero.cpp
-
-Map.o: Map.cpp
-	$(COMPILER) $(CFLAGS) -c Map.cpp
 
 Game.o: Game.cpp Monster.h Hero.h Map.h
 	$(COMPILER) $(CFLAGS) -c Game.cpp
@@ -49,8 +46,38 @@ io-diff-tests:
 doc:
 	doxygen doxconf
 
-build_unittest:
-	cd tests && cmake CMakeLists.txt && make
+build_monster_unittest:
+	cd tests/monster_tests && cmake CMakeLists.txt && make
 
-run_unittest:
-	cd tests && ./runTests
+run_monster_unittest:
+	cd tests/monster_tests && ./runTests
+
+build_damage_unittest:
+	cd tests/damage_tests && cmake CMakeLists.txt && make
+
+run_damage_unittest:
+	cd tests/damage_tests && ./runTests
+
+build_map_unittest:
+	cd tests/map_tests && cmake CMakeLists.txt && make
+
+run_map_unittest:
+	cd tests/map_tests && ./runTests
+
+build_json_unittest:
+	cd tests/json_tests && cmake CMakeLists.txt && make
+
+run_json_unittest:
+	cd tests/json_tests && ./runTests
+
+build_hero_unittest:
+	cd tests/hero_tests && cmake CMakeLists.txt && make
+
+run_hero_unittest:
+	cd tests/hero_tests && ./runTests
+
+build_game_unittest:
+	cd tests/game_tests && cmake CMakeLists.txt && make
+
+run_game_unittest:
+	cd tests/game_tests && ./runTests

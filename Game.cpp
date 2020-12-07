@@ -115,6 +115,10 @@ void Game::printMap()
 
 }
 
+Map Game::getMap() const 
+{
+	return map;
+}
 
 void Game::run()
 {
