@@ -30,6 +30,7 @@ public:
 	void moveHero(const std::string direction);
 	bool validateMove(const std::string dir );
 	int getMonsterCount(int x, int y);
+	Map getMap() const;
 	void run();
 	void printMap() ;
 
