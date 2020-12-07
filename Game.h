@@ -12,26 +12,26 @@
 class Game {
 
 private:
-	Map map;
-	bool game_is_running;
+	Map map; ///< The game map
+	bool game_is_running; ///< The game is running or not running
 	bool mapIsSet;
 	bool heroset;
-	Hero* hero;
-	std::pair<int, int> hero_position;
-	std::list<std::pair<Monster, std::pair<int, int>>> monster_position;
+	Hero* hero; ///< Hero type pointer
+	std::pair<int, int> hero_position; ///< The hero x-y position storage
+	std::list<std::pair<Monster, std::pair<int, int>>> monster_position; ///< The monster x-y position storage
 
 public:
-	Game() : map(Map()), game_is_running(false), mapIsSet(false), heroset(false) {};
-	Game(const std::string& mapfilename) : map(Map(mapfilename)), game_is_running(false), mapIsSet(true), heroset(false) {};
-	virtual ~Game() { delete this->hero; }
-	void setMap(Map maptoset);
-	void putHero(Hero hero, int x, int y);
-	void putMonster(Monster monster, int x, int y);
-	void moveHero(const std::string direction);
-	bool validateMove(const std::string dir );
-	int getMonsterCount(int x, int y);
-	void run();
-	void printMap() ;
+	Game() : map(Map()), game_is_running(false), mapIsSet(false), heroset(false) {}; ///< The Game default constructor
+	Game(const std::string& mapfilename) : map(Map(mapfilename)), game_is_running(false), mapIsSet(true), heroset(false) {}; ///< The Game constructor according to the map
+	virtual ~Game() { delete this->hero; } ///< The Game default destructor
+	void setMap(Map maptoset); ///< Configure the map 
+	void putHero(Hero hero, int x, int y); ///< Put the Hero to the map
+	void putMonster(Monster monster, int x, int y); ///< Out the Monster to the map
+	void moveHero(const std::string direction); ///< Player character control
+	bool validateMove(const std::string dir ); ///< Player character control manipulation
+	int getMonsterCount(int x, int y); ///< Get Monster number of pieces
+	void run(); ///< Manipulation the full game structure
+	void printMap() ; ///< Drawing the map
 
 	class OccupiedException : virtual public std::runtime_error{
 	public:
