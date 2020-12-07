@@ -44,7 +44,7 @@ install_googletest_and_cmake:
 	sudo apt install libgtest-dev && sudo apt install cmake && cd /usr/src/gtest && sudo cmake . && sudo make && sudo cp *.a /usr/lib && sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
 
 static_code_analysis:
-	cppcheck $(CPPS) --output-file=cppcheck_output.txt && chmod +x tests/warningcheck.sh && ./tests/warningcheck.sh && chmod +x tests/errorcheck.sh && ./tests/errorcheck.sh && chmod +x tests/directions.sh && ./tests/directions.sh
+	cppcheck $(CPPS) --output-file=cppcheck_output.txt && chmod +x tests/warningcheck.sh && ./tests/warningcheck.sh && chmod +x tests/errorcheck.sh && ./tests/errorcheck.sh && g++-9 -Wall -Wextra -std=c++17 *.cpp && chmod +x tests/directions.sh && ./tests/directions.sh
 
 leakcheck:
 	valgrind $(VFLAGS) $(VPARAMETER)
