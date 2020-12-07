@@ -13,6 +13,9 @@ build: $(OBJS)
 JSON.o: JSON.cpp JSON.h
 	$(COMPILER) $(CFLAGS) -c JSON.cpp
 
+Map.o: Map.cpp Map.h
+	$(COMPILER) $(CFLAGS) -c Map.cpp
+
 Damage.o: Damage.cpp Damage.h
 	$(COMPILER) $(CFLAGS) -c Damage.cpp
 
