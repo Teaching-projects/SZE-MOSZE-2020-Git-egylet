@@ -26,6 +26,7 @@ class Monster
         double characterDEF;    ///< The monster's defense
        
     public:
+        virtual ~Monster() {}
         Monster
         (
             std::string name,
