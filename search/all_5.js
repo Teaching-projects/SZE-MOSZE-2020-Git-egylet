@@ -16,11 +16,12 @@ var searchData=
   ['getlevel_24',['getLevel',['../classHero.html#a17e77f3769e62aeb4e1807bbfc720f47',1,'Hero']]],
   ['getmagical_25',['getMagical',['../structDamage.html#a00049354c5f45403c304a40069e12860',1,'Damage']]],
   ['getmagicaldamagebonusperlevel_26',['getMagicalDamageBonusPerLevel',['../classHero.html#adcf2b354e2b28074e7918b41c036addd',1,'Hero']]],
-  ['getmapline_27',['getMapLine',['../classMap.html#af6cbcb974589cc875d91fcb6da34f115',1,'Map']]],
-  ['getmaxhealthpoints_28',['getMaxHealthPoints',['../classHero.html#ac6a7deeb6e390a23536d622042f4c48e',1,'Hero']]],
-  ['getmonstercount_29',['getMonsterCount',['../classGame.html#a0fcdbf939152bd168063b62127d97ec1',1,'Game']]],
-  ['getname_30',['getName',['../classMonster.html#a28ae1112e37262ce150e3c02465b3dd5',1,'Monster']]],
-  ['getphysical_31',['getPhysical',['../structDamage.html#a5f008f248143680f4972a7ea54415797',1,'Damage']]],
-  ['getphysicaldamagebonusperlevel_32',['getPhysicalDamageBonusPerLevel',['../classHero.html#a4309cb20194f045c031014605b97e8b6',1,'Hero']]],
-  ['git_20egylet_27s_20documentation_33',['Git egylet&apos;s documentation',['../index.html',1,'']]]
+  ['getmap_27',['getMap',['../classGame.html#ae85fbbee31a858735355b7873e128af6',1,'Game']]],
+  ['getmapline_28',['getMapLine',['../classMap.html#af6cbcb974589cc875d91fcb6da34f115',1,'Map']]],
+  ['getmaxhealthpoints_29',['getMaxHealthPoints',['../classHero.html#ac6a7deeb6e390a23536d622042f4c48e',1,'Hero']]],
+  ['getmonstercount_30',['getMonsterCount',['../classGame.html#a0fcdbf939152bd168063b62127d97ec1',1,'Game']]],
+  ['getname_31',['getName',['../classMonster.html#a28ae1112e37262ce150e3c02465b3dd5',1,'Monster']]],
+  ['getphysical_32',['getPhysical',['../structDamage.html#a5f008f248143680f4972a7ea54415797',1,'Damage']]],
+  ['getphysicaldamagebonusperlevel_33',['getPhysicalDamageBonusPerLevel',['../classHero.html#a4309cb20194f045c031014605b97e8b6',1,'Hero']]],
+  ['git_20egylet_27s_20documentation_34',['Git egylet&apos;s documentation',['../index.html',1,'']]]
 ];
