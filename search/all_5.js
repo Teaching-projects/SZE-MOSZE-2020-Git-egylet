@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['game_11',['Game',['../classGame.html',1,'']]],
+  ['game_11',['Game',['../classGame.html',1,'Game'],['../classGame.html#a77dfcde1a12c4d13e6e6e38a149fdb2c',1,'Game::Game()']]],
   ['gamealreadystartedexception_12',['GameAlreadyStartedException',['../classGame_1_1GameAlreadyStartedException.html',1,'Game']]],
   ['get_13',['get',['../classMap.html#af3d2f71301bb5bdafcef6099a65ae7e0',1,'Map']]],
   ['getattackcooldown_14',['getAttackCoolDown',['../classMonster.html#ad84dbe06c7a2aa7f75164dd9db52daf3',1,'Monster']]],
@@ -18,8 +18,9 @@ var searchData=
   ['getmagicaldamagebonusperlevel_26',['getMagicalDamageBonusPerLevel',['../classHero.html#adcf2b354e2b28074e7918b41c036addd',1,'Hero']]],
   ['getmapline_27',['getMapLine',['../classMap.html#af6cbcb974589cc875d91fcb6da34f115',1,'Map']]],
   ['getmaxhealthpoints_28',['getMaxHealthPoints',['../classHero.html#ac6a7deeb6e390a23536d622042f4c48e',1,'Hero']]],
-  ['getname_29',['getName',['../classMonster.html#a28ae1112e37262ce150e3c02465b3dd5',1,'Monster']]],
-  ['getphysical_30',['getPhysical',['../structDamage.html#a5f008f248143680f4972a7ea54415797',1,'Damage']]],
-  ['getphysicaldamagebonusperlevel_31',['getPhysicalDamageBonusPerLevel',['../classHero.html#a4309cb20194f045c031014605b97e8b6',1,'Hero']]],
-  ['git_20egylet_27s_20documentation_32',['Git egylet&apos;s documentation',['../index.html',1,'']]]
+  ['getmonstercount_29',['getMonsterCount',['../classGame.html#a0fcdbf939152bd168063b62127d97ec1',1,'Game']]],
+  ['getname_30',['getName',['../classMonster.html#a28ae1112e37262ce150e3c02465b3dd5',1,'Monster']]],
+  ['getphysical_31',['getPhysical',['../structDamage.html#a5f008f248143680f4972a7ea54415797',1,'Damage']]],
+  ['getphysicaldamagebonusperlevel_32',['getPhysicalDamageBonusPerLevel',['../classHero.html#a4309cb20194f045c031014605b97e8b6',1,'Hero']]],
+  ['git_20egylet_27s_20documentation_33',['Git egylet&apos;s documentation',['../index.html',1,'']]]
 ];

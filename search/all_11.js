@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['wall_63',['Wall',['../classMap.html#a41697b848ea9a5aad1910714e0196b7ba874474147b8fcfcec145b20926fc83bf',1,'Map']]],
-  ['wrongindexexception_64',['WrongIndexException',['../classMap_1_1WrongIndexException.html',1,'Map']]]
+  ['validatemove_70',['validateMove',['../classGame.html#a3502ba48ae0f2d583c04c1e6776824d7',1,'Game']]]
 ];
