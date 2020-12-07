@@ -6,26 +6,8 @@ jobs:
     container: vasbeton/unittest_image:latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build monster tests
-        run: make build_monster_unittest
-      - name: Run monster tests
-        run: make run_monster_unittest,
-       - name: Build damage tests
-        run: make build_damage_unittest
-      - name: Run damage tests
-        run: make run_damage_unittest
-      - name: Build map tests
-        run: make build_map_unittest
-      - name: Run map tests
-        run: make run_map_unittest
-       - name: Build json tests
-        run: make build_json_unittest
-      - name: Run json tests
-        run: make run_json_unittest
-       - name: Build hero tests
-        run: make build_hero_unittest
-      - name: Run hero tests
-        run: make run_hero_unittest
+      - name: Run unit tests
+        run: chmod +x tests/unit_tests_make.sh && ./tests/unit_tests_make.sh
   
 
   
