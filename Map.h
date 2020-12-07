@@ -26,8 +26,6 @@ public:
 		Free, Wall /** Map field types*/
 	};
 	
-	Map::type get(int x, int y) const; ///< Get map field type
-	
 	Map::type get(unsigned int x, unsigned int y) const; ///< Get map field type
 	int horizontalget();
 	int getmapsize();
