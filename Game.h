@@ -32,6 +32,7 @@ public:
 	int getMonsterCount(int x, int y); ///< Get Monster number of pieces
 	void run(); ///< Manipulation the full game structure
 	void printMap() ; ///< Drawing the map
+	Map getMap() const; ///< Get map in map type
 
 	class OccupiedException : virtual public std::runtime_error{
 	public:
