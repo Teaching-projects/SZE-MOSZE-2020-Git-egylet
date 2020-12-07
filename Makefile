@@ -44,7 +44,7 @@ static_code_analysis:
 	cppcheck $(CPPS) --output-file=cppcheck_output.txt && chmod +x tests/warningcheck.sh && ./tests/warningcheck.sh && chmod +x tests/errorcheck.sh && ./tests/errorcheck.sh && echo east
 
 leakcheck:
-	valgrind $(VFLAGS) $(VPARAMETER)
+	valgrind $(VFLAGS) $(VPARAMETER) && echo east
 
 io-diff-tests:
 	chmod +x tests/task4_inout.sh && ./tests/task4_inout.sh
