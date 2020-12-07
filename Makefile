@@ -52,8 +52,8 @@ io-diff-tests:
 doc:
 	doxygen doxconf
 
-build_unittest:
-	cd tests && cmake CMakeLists.txt && make
+build_monster_unittest:
+	cd tests/monster_tests && cmake CMakeLists.txt && make
 
-run_unittest:
-	cd tests && ./runTests
+run_monster_unittest:
+	cd tests/monster_tests && ./runTests

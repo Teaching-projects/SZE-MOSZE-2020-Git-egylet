@@ -6,10 +6,10 @@ jobs:
     container: vasbeton/unittest_image:latest
     steps:
       - uses: actions/checkout@v2
-      - name: cmake
-        run: make build_unittest
-      - name: Run unit test
-        run: make run_unittest
+      - name: Build monster tests
+        run: make build_monster_unittest
+      - name: Run monster tests
+        run: make run_monster_unittest
  
 
   
