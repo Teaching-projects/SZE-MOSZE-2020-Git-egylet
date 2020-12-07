@@ -54,3 +54,27 @@ build_monster_unittest:
 
 run_monster_unittest:
 	cd tests/monster_tests && ./runTests
+
+build_damage_unittest:
+	cd tests/damage_tests && cmake CMakeLists.txt && make
+
+run_damage_unittest:
+	cd tests/damage_tests && ./runTests
+
+build_map_unittest:
+	cd tests/map_tests && cmake CMakeLists.txt && make
+
+run_map_unittest:
+	cd tests/map_tests && ./runTests
+
+build_json_unittest:
+	cd tests/json_tests && cmake CMakeLists.txt && make
+
+run_json_unittest:
+	cd tests/json_tests && ./runTests
+
+build_hero_unittest:
+	cd tests/hero_tests && cmake CMakeLists.txt && make
+
+run_hero_unittest:
+	cd tests/hero_tests && ./runTests
