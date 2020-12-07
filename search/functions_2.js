@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['get_81',['get',['../classMap.html#a74d5010209ad0da6b05595a33f36fc76',1,'Map::get(int x, int y) const'],['../classMap.html#af3d2f71301bb5bdafcef6099a65ae7e0',1,'Map::get(unsigned int x, unsigned int y) const']]],
+  ['get_81',['get',['../classMap.html#af3d2f71301bb5bdafcef6099a65ae7e0',1,'Map']]],
   ['getattackcooldown_82',['getAttackCoolDown',['../classMonster.html#ad84dbe06c7a2aa7f75164dd9db52daf3',1,'Monster']]],
   ['getcooldownmultiplierperlevel_83',['getCooldownMultiplierPerLevel',['../classHero.html#a03fd0a248bd647199f94628c397e4473',1,'Hero']]],
   ['getdamage_84',['getDamage',['../classMonster.html#aefab409bb30d1fcf44ef0bf11962b4cc',1,'Monster']]],
