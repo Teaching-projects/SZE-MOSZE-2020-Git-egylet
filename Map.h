@@ -13,7 +13,7 @@ Created on: 2020/11/20 10:56
 
 class Map {
 	
-private:
+protected:
 	std::vector<std::string> map; ///< The map data array
 	
 public:
@@ -24,7 +24,7 @@ public:
 		Free, Wall /** Map field types*/
 	};
 	
-	Map::type get(unsigned int x, unsigned int y) const; ///< Get map field type
+	Map::type get(int x, int y) const; ///< Get map field type
 	
 	///< Map class Exception function
 	class WrongIndexException : public std::runtime_error
