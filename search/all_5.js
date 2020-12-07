@@ -16,10 +16,10 @@ var searchData=
   ['getlevel_24',['getLevel',['../classHero.html#a17e77f3769e62aeb4e1807bbfc720f47',1,'Hero']]],
   ['getmagical_25',['getMagical',['../structDamage.html#a00049354c5f45403c304a40069e12860',1,'Damage']]],
   ['getmagicaldamagebonusperlevel_26',['getMagicalDamageBonusPerLevel',['../classHero.html#adcf2b354e2b28074e7918b41c036addd',1,'Hero']]],
-  ['getmaxhealthpoints_27',['getMaxHealthPoints',['../classHero.html#ac6a7deeb6e390a23536d622042f4c48e',1,'Hero']]],
-  ['getname_28',['getName',['../classMonster.html#a28ae1112e37262ce150e3c02465b3dd5',1,'Monster']]],
-  ['getphysical_29',['getPhysical',['../structDamage.html#a5f008f248143680f4972a7ea54415797',1,'Damage']]],
-  ['getphysicaldamagebonusperlevel_30',['getPhysicalDamageBonusPerLevel',['../classHero.html#a4309cb20194f045c031014605b97e8b6',1,'Hero']]],
-  ['getwidth_31',['getwidth',['../classMap.html#a04d455372f154db9c59ec436ff55321d',1,'Map']]],
+  ['getmapline_27',['getMapLine',['../classMap.html#af6cbcb974589cc875d91fcb6da34f115',1,'Map']]],
+  ['getmaxhealthpoints_28',['getMaxHealthPoints',['../classHero.html#ac6a7deeb6e390a23536d622042f4c48e',1,'Hero']]],
+  ['getname_29',['getName',['../classMonster.html#a28ae1112e37262ce150e3c02465b3dd5',1,'Monster']]],
+  ['getphysical_30',['getPhysical',['../structDamage.html#a5f008f248143680f4972a7ea54415797',1,'Damage']]],
+  ['getphysicaldamagebonusperlevel_31',['getPhysicalDamageBonusPerLevel',['../classHero.html#a4309cb20194f045c031014605b97e8b6',1,'Hero']]],
   ['git_20egylet_27s_20documentation_32',['Git egylet&apos;s documentation',['../index.html',1,'']]]
 ];
