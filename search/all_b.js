@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['parse_30',['parse',['../classMonster.html#a204b0e1759a752e9ceb44944cf5dff02',1,'Monster']]],
-  ['parseexception_31',['ParseException',['../classJSON_1_1ParseException.html',1,'JSON']]],
-  ['physical_32',['physical',['../structDamage.html#aee70c6c924eac810d02f61efbc90c719',1,'Damage']]]
+  ['name_46',['name',['../classHero.html#abf1f2203c2cd11e1daf8b2abd82369cd',1,'Hero']]],
+  ['notinitializedexception_47',['NotInitializedException',['../classGame_1_1NotInitializedException.html',1,'Game']]]
 ];

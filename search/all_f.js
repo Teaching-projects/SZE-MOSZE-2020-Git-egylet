@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['wall_37',['Wall',['../classMap.html#a41697b848ea9a5aad1910714e0196b7ba874474147b8fcfcec145b20926fc83bf',1,'Map']]],
-  ['wrongindexexception_38',['WrongIndexException',['../classMap_1_1WrongIndexException.html',1,'Map']]]
+  ['setmagical_60',['setMagical',['../structDamage.html#afb7aa4f6bb321baa76f4eff6c1c2b706',1,'Damage']]],
+  ['setphysical_61',['setPhysical',['../structDamage.html#ae80330178d423e67b8fa0a14037ce0ce',1,'Damage']]]
 ];
