@@ -28,8 +28,8 @@ public:
 	
 	Map::type get(unsigned int x, unsigned int y) const; ///< Get map field type
 	int horizontalget();
-	int getmapsize();
-	int getwidth(int y);
+	int getmapsize() const;
+	int getwidth(int y) const;
 	std::string getMapLine(int i) const; ///< Get one line of the map
 	///< Map class Exception function
 	class WrongIndexException : public std::runtime_error

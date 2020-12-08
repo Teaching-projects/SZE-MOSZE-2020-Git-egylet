@@ -10,9 +10,9 @@ MarkedMap::MarkedMap(
 {}
 
 coordinates MarkedMap::getHeroPosition() const {
-	for (int i = 0; i < map.size(); i++)
+	for (int i = 0; i < getmapsize(); i++)
 	{
-		for (int j = 0; j < map[i].length(); j++)
+		for (int j = 0; j < getwidth(i); j++)
 		{
 			if (map[i][j] == 'H') return coordinates(i, j);
 		}
@@ -23,9 +23,9 @@ coordinates MarkedMap::getHeroPosition() const {
 std::vector<coordinates> MarkedMap::getMonsterPositions(char c) const {
 	std::vector<coordinates> toReturn;
 	
-	for (int i = 0; i < map.size(); i++)
+	for (int i = 0; i < getmapsize(); i++)
 	{
-		for (int j = 0; j < map[i].length(); j++)
+		for (int j = 0; j < getwidth(i); j++)
 		{
 			if (map[i][j] == c)
 			{
