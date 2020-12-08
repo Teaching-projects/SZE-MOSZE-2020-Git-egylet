@@ -1,4 +1,13 @@
-﻿#ifndef GAME_H
+﻿/**
+\class Game
+This is the description of Game.h
+\version 1.0
+\author destrike00
+\date 2020/12/08 10:36
+Created on: 2020/12/08 10:36
+*/
+
+#ifndef GAME_H
 #define GAME_H
 #include <iostream>
 #include <string>
