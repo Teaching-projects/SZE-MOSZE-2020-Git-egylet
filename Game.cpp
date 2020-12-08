@@ -115,6 +115,64 @@ void Game::printMap()
 
 }
 
+void Game::printLightRadiusMap() 
+{
+	int lr = hero->getLightRadius(); // Hero's light radius
+	int flr = 2*lr + 1; // Full light radius
+	
+	int heroxstart = hero_position.first - lr;
+	if (hero_position.first - lr < 0) while(heroxstart < 0) heroxstart++;
+
+	int heroxend = hero_position.first + lr;
+	if (hero_position.first + lr > map.horizontalget()) while(heroxend > map.horizontalget()) heroxend--;
+
+	int heroystart = hero_position.second - lr;
+	if (hero_position.second - lr < 0) while(heroystart < 0) heroystart++;
+
+	int heroyend = hero_position.second + lr;
+	if (hero_position.second + lr > map.getmapsize()) while(heroyend > map.getmapsize()) heroyend--;
+
+	std::cout << "╔";
+	for (int i = heroxstart; i <= heroxend; i++)
+	{
+		std::cout << "══";
+	}
+
+	std::cout << "╗" << std::endl;
+
+	for (int i = heroystart; i < heroyend; i++)
+	{
+		std::cout << "║";
+
+		for (int j = heroxstart; j <= heroxend; j++)
+		{
+			if (std::make_pair(j,i)==hero_position) std::cout << "┣┫";
+			else if (getMonsterCount(j, i) == 1) std::cout << "M░";
+			else if (getMonsterCount(j, i) > 1) std::cout << "MM";
+			else if (map.get(j, i) == Map::type::Free) std::cout << "░░";
+			else if (map.get(j, i) == Map::type::Wall) std::cout << "██";
+			
+			
+		}
+		if (map.getwidth(i) < flr)
+			for (int k = 0; k < (flr - map.getwidth(i)); k++)
+			{
+				std::cout << "██";
+			}
+		std::cout << "║" << std::endl;
+
+	}
+
+	std::cout << "╚";
+
+	for (int i = heroxstart; i <= heroxend; i++)
+	{
+		std::cout << "══";
+	}
+	std::cout << "╝" << std::endl;
+
+}
+
 Map Game::getMap() const 
 {
 	return map;
@@ -132,6 +190,7 @@ void Game::run()
 		while (hero->isAlive() && !monster_position.empty())
 		{
 			printMap();
+			printLightRadiusMap();
 
 			do
 			{
