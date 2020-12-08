@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['json_34',['JSON',['../classJSON.html',1,'']]],
-  ['jsonparser_35',['jsonParser',['../classJSON.html#ad63d7dd42b1b6725b17669f487f362e4',1,'JSON']]]
+  ['isalive_39',['isAlive',['../classMonster.html#a77ad18c44b3fb2df92b30ece4dc7847b',1,'Monster']]]
 ];

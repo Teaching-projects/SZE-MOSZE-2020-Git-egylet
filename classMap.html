@@ -67,6 +67,7 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classMap-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Map Class Reference</div>  </div>
@@ -74,6 +75,15 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="Map_8h_source.html">Map.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Map:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMap__inherit__graph.png" border="0" usemap="#Map_inherit__map" alt="Inheritance graph"/></div>
+<map name="Map_inherit__map" id="Map_inherit__map">
+<area shape="rect" title=" " alt="" coords="29,5,80,32"/>
+<area shape="rect" href="classMarkedMap.html" title=" " alt="" coords="5,80,104,107"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -93,9 +103,29 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a871049c7b391e75039ccba5a4d757dae">Map</a> (const std::string &amp;filename)</td></tr>
 <tr class="memdesc:a871049c7b391e75039ccba5a4d757dae"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMap.html">Map</a> class constructor, which reads map from file. <br /></td></tr>
 <tr class="separator:a871049c7b391e75039ccba5a4d757dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3d2f71301bb5bdafcef6099a65ae7e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMap.html#a41697b848ea9a5aad1910714e0196b7b">Map::type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#af3d2f71301bb5bdafcef6099a65ae7e0">get</a> (unsigned int x, unsigned int y) const</td></tr>
-<tr class="memdesc:af3d2f71301bb5bdafcef6099a65ae7e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get map field type.  <a href="classMap.html#af3d2f71301bb5bdafcef6099a65ae7e0">More...</a><br /></td></tr>
+<tr class="memitem:af3d2f71301bb5bdafcef6099a65ae7e0"><td class="memItemLeft" align="right" valign="top"><a id="af3d2f71301bb5bdafcef6099a65ae7e0"></a>
+<a class="el" href="classMap.html#a41697b848ea9a5aad1910714e0196b7b">Map::type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#af3d2f71301bb5bdafcef6099a65ae7e0">get</a> (unsigned int x, unsigned int y) const</td></tr>
+<tr class="memdesc:af3d2f71301bb5bdafcef6099a65ae7e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get map field type. <br /></td></tr>
 <tr class="separator:af3d2f71301bb5bdafcef6099a65ae7e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a744f56c2b59b6b727d5b663113c7cad6"><td class="memItemLeft" align="right" valign="top"><a id="a744f56c2b59b6b727d5b663113c7cad6"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>horizontalget</b> ()</td></tr>
+<tr class="separator:a744f56c2b59b6b727d5b663113c7cad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ab8282cd752fe877042c18839cac5ad"><td class="memItemLeft" align="right" valign="top"><a id="a4ab8282cd752fe877042c18839cac5ad"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getmapsize</b> ()</td></tr>
+<tr class="separator:a4ab8282cd752fe877042c18839cac5ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04d455372f154db9c59ec436ff55321d"><td class="memItemLeft" align="right" valign="top"><a id="a04d455372f154db9c59ec436ff55321d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getwidth</b> (int y)</td></tr>
+<tr class="separator:a04d455372f154db9c59ec436ff55321d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6cbcb974589cc875d91fcb6da34f115"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#af6cbcb974589cc875d91fcb6da34f115">getMapLine</a> (int i) const</td></tr>
+<tr class="memdesc:af6cbcb974589cc875d91fcb6da34f115"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMap.html">Map</a> class Exception function.  <a href="classMap.html#af6cbcb974589cc875d91fcb6da34f115">More...</a><br /></td></tr>
+<tr class="separator:af6cbcb974589cc875d91fcb6da34f115"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:acfd48b449ebeaa742732028840a5dc0c"><td class="memItemLeft" align="right" valign="top"><a id="acfd48b449ebeaa742732028840a5dc0c"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#acfd48b449ebeaa742732028840a5dc0c">map</a></td></tr>
+<tr class="memdesc:acfd48b449ebeaa742732028840a5dc0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The map data array. <br /></td></tr>
+<tr class="separator:acfd48b449ebeaa742732028840a5dc0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This is the description of <a class="el" href="Map_8h_source.html">Map.h</a> </p><dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
@@ -121,34 +151,24 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="af3d2f71301bb5bdafcef6099a65ae7e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3d2f71301bb5bdafcef6099a65ae7e0">&#9670;&nbsp;</a></span>get()</h2>
+<a id="af6cbcb974589cc875d91fcb6da34f115"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6cbcb974589cc875d91fcb6da34f115">&#9670;&nbsp;</a></span>getMapLine()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classMap.html#a41697b848ea9a5aad1910714e0196b7b">Map::type</a> Map::get </td>
+          <td class="memname">std::string Map::getMapLine </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get map field type. </p>
-<p><a class="el" href="classMap.html">Map</a> class Exception function </p>
+<p><a class="el" href="classMap.html">Map</a> class Exception function. </p>
+<p>Get one line of the map </p>
 
 </div>
 </div>

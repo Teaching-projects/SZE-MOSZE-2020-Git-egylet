@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hero_64',['Hero',['../classHero.html',1,'']]]
+  ['coordinates_80',['coordinates',['../structcoordinates.html',1,'']]]
 ];

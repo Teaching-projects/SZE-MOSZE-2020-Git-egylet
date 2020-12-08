@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['setmagical_57',['setMagical',['../structDamage.html#afb7aa4f6bb321baa76f4eff6c1c2b706',1,'Damage']]],
-  ['setphysical_58',['setPhysical',['../structDamage.html#ae80330178d423e67b8fa0a14037ce0ce',1,'Damage']]]
+  ['readme_68',['Readme',['../md_Readme.html',1,'']]],
+  ['run_69',['run',['../classGame.html#a1ab78f5ed0d5ea879157357cf2fb2afa',1,'Game']]]
 ];

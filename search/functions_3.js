@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['hero_92',['Hero',['../classHero.html#a587198d3a2b00c694ed211bf11ede75f',1,'Hero']]],
-  ['hit_93',['hit',['../classHero.html#ad4694990a6233f911292790a8a4e306c',1,'Hero::hit()'],['../classMonster.html#aa1ceed64f859fac793d5b4eed354675c',1,'Monster::hit()']]]
+  ['hero_118',['Hero',['../classHero.html#ac82606a847f7b71ae2dd6f48a2305a24',1,'Hero']]],
+  ['hit_119',['hit',['../classHero.html#ad4694990a6233f911292790a8a4e306c',1,'Hero::hit()'],['../classMonster.html#aa1ceed64f859fac793d5b4eed354675c',1,'Monster::hit()']]]
 ];

@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['damage_5',['Damage',['../structDamage.html',1,'Damage'],['../classMonster.html#a6614cc11c092b94f39869576fb049b67',1,'Monster::damage()'],['../structDamage.html#a5471bf01e46a5755bb528086b0c3af9e',1,'Damage::Damage()']]],
-  ['defense_5fbonus_5fper_5flevel_6',['defense_bonus_per_level',['../classHero.html#a2799891af4917c1c8f49611fbb9ef419',1,'Hero']]]
+  ['characteracd_2',['characterACD',['../classMonster.html#a26ce8b3bb6fb2301aa9c6bf8ee4941c2',1,'Monster']]],
+  ['characterdef_3',['characterDEF',['../classMonster.html#a2c250849400e4ea65cc3ebc1387df8e6',1,'Monster']]],
+  ['characterhp_4',['characterHP',['../classMonster.html#a33e9813fa774a963c20fbafa5cd4b64e',1,'Monster']]],
+  ['charactername_5',['characterName',['../classMonster.html#aa381e433e6f479f1a9bc219b6267ddb7',1,'Monster']]],
+  ['cooldown_5fmultiplier_5fper_5flevel_6',['cooldown_multiplier_per_level',['../classHero.html#a1c93fe2c0a2125999702e0be199066df',1,'Hero']]],
+  ['coordinates_7',['coordinates',['../structcoordinates.html',1,'']]]
 ];
