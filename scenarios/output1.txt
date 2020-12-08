@@ -13,3 +13,4 @@ Prince Aidan of Khanduras: LVL3
    MDMG: 3
     ACD: 0.891
     DEF: 0.7
+     LR: 4

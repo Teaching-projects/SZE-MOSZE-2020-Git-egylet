@@ -12,12 +12,14 @@ Hero::Hero(
 			Damage damage,
 			double characterACD,
 			double characterDEF,
+			int characterLR,
 			int XPperlevel,
 			int HPperlevel,
 			int PDMGperlevel,
 			double ACDperlevel,
 			double DEFperlevel,
-			int MDMGperlevel
+			int MDMGperlevel,
+			int LRperlevel
 		) : Monster
 		(	
 			characterName,
@@ -28,12 +30,14 @@ Hero::Hero(
 			level(1),
 			maxHP(characterHP),
 			XP(0),
+			light_radius(characterLR),
 			experience_per_level(XPperlevel),
 			health_point_bonus_per_level(HPperlevel),
 			physical_damage_bonus_per_level(PDMGperlevel),
 			cooldown_multiplier_per_level(ACDperlevel),
 			defense_bonus_per_level(DEFperlevel),
-			magical_damage_bonus_per_level(MDMGperlevel)
+			magical_damage_bonus_per_level(MDMGperlevel),
+			light_radius_bonus_per_level(LRperlevel)
 {}
 
 
@@ -49,6 +53,10 @@ int Hero::getExperience() const {
 
 int Hero::getMaxHealthPoints() const {
     return maxHP;
+}
+
+int Hero::getLightRadius() const {
+    return light_radius;
 }
 
 int Hero::getExperiencePerLevel() const {
@@ -75,6 +83,10 @@ int Hero::getMagicalDamageBonusPerLevel() const {
     return magical_damage_bonus_per_level;
 }
 
+int Hero::getLightRadiusBonusPerLevel() const {
+    return light_radius_bonus_per_level;
+}
+
 //If the hero reaches the required amount of XP, this function buffs the hero, and restore it to maximum health
 void Hero::levelup() {
 	Damage bonus (physical_damage_bonus_per_level, magical_damage_bonus_per_level);
@@ -86,6 +98,7 @@ void Hero::levelup() {
 	characterHP = maxHP;
 	characterACD *= cooldown_multiplier_per_level;
 	characterDEF += defense_bonus_per_level;
+	light_radius += light_radius_bonus_per_level;
 
 }
 
@@ -136,6 +149,7 @@ Hero Hero::parse(const std::string& name) {
 		"base_health_points",
 		"base_attack_cooldown",
 		"defense",
+		"light_radius",
 		
 		"experience_per_level",
 		"health_point_bonus_per_level",
@@ -161,6 +175,9 @@ Hero Hero::parse(const std::string& name) {
 	    if(values.count("magical-damage")) monsterdamage.setMagical(values.get<int>("magical-damage"));
 	    else monsterdamage.setMagical(0);
 
+		int tmp_lrbpl = 1;
+		if(values.count("light_radius_bonus_per_level")) tmp_lrbpl = values.get<int>("light_radius_bonus_per_level");
+
 		return Hero
 		(
 			values.get<std::string>("name"),
@@ -168,13 +185,15 @@ Hero Hero::parse(const std::string& name) {
 			monsterdamage,
 			values.get<double>("base_attack_cooldown"),
 			values.get<double>("defense"),
+			values.get<int>("light_radius"),
 			
 			values.get<int>("experience_per_level"),
 			values.get<int>("health_point_bonus_per_level"),
 			values.get<int>("physical_damage_bonus_per_level"),
 			values.get<double>("cooldown_multiplier_per_level"),
 			values.get<double>("defense_bonus_per_level"),
-			values.get<int>("magical_damage_bonus_per_level")
+			values.get<int>("magical_damage_bonus_per_level"),
+			tmp_lrbpl
         );
 	}
 	else throw JSON::ParseException("incorrect values: " + name);
