@@ -189,7 +189,7 @@ void Game::run()
 		game_is_running = true;
 		while (hero->isAlive() && !monster_position.empty())
 		{
-			printMap();
+			//printMap();
 			printLightRadiusMap();
 
 			do
