@@ -13,7 +13,7 @@ TEST(MarkedMap, getHeroValidCoordinates){
 	
 	int setX = 4;
 	int setY = 5;
-	Game game = Game("maps/level1.txt");
+	Game game = Game("../ ../maps/level1.txt");
     game.putHero(Herotest, setX, setY);
     
 	//~ ASSERT_THROW(1, 1);
