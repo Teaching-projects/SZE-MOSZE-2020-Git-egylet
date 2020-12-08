@@ -15,7 +15,7 @@ TEST(MarkedMap, getHeroValidCoordinates){
 	Game game = Game("maps/level1.txt");
     game.Herotest(hero, setX, setY);
     
-	//~ ASSERT_THROW(map_test.get(1,200), Map::WrongIndexException);
+	ASSERT_THROW(1, 1);
 }
 
 int main(int argc, char** argv) {
