@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['experience_5fper_5flevel_9',['experience_per_level',['../classHero.html#a9a474416dded6bcb39168d62305b516a',1,'Hero']]]
+  ['fighttildeath_8',['fightTilDeath',['../classMonster.html#aea343d825f0173512165dedf7a254cb1',1,'Monster']]]
 ];

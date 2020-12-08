@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['occupiedexception_51',['OccupiedException',['../classGame_1_1OccupiedException.html',1,'Game']]],
-  ['operator_2a_3d_52',['operator*=',['../structDamage.html#a9bbb0a29a32ff0bc0b4009ed8f3e8c46',1,'Damage']]],
-  ['operator_2b_53',['operator+',['../structDamage.html#a9ec158092a544f1df711c76c1b825cf8',1,'Damage']]],
-  ['operator_2b_3d_54',['operator+=',['../structDamage.html#a6e80533d56dc8b11b89849784b6977f7',1,'Damage']]],
-  ['operator_3c_3c_55',['operator&lt;&lt;',['../structDamage.html#afe6636047aaea4728297fc56b74620b2',1,'Damage']]]
+  ['parse_50',['parse',['../classHero.html#ab6b2243204aaf7023af85b15d4ba2cbb',1,'Hero::parse()'],['../classMonster.html#a204b0e1759a752e9ceb44944cf5dff02',1,'Monster::parse()']]],
+  ['parseexception_51',['ParseException',['../classJSON_1_1ParseException.html',1,'JSON']]],
+  ['parsefromfile_52',['parseFromFile',['../classJSON.html#ab194523088d11fbbc35b3a77dd575f6f',1,'JSON']]],
+  ['parsefromstring_53',['parseFromString',['../classJSON.html#af461f9d9064cc49d47e0eeb1ac87b1d8',1,'JSON']]],
+  ['physical_54',['physical',['../structDamage.html#aee70c6c924eac810d02f61efbc90c719',1,'Damage']]],
+  ['physical_5fdamage_5fbonus_5fper_5flevel_55',['physical_damage_bonus_per_level',['../classHero.html#a10742445db02ca928921f8fa0d6afb2b',1,'Hero']]]
 ];

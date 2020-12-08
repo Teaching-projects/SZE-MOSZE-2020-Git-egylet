@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['json_39',['JSON',['../classJSON.html',1,'']]],
-  ['jsonparser_40',['jsonParser',['../classJSON.html#ad63d7dd42b1b6725b17669f487f362e4',1,'JSON']]]
+  ['level_36',['level',['../classHero.html#a42f1236a8e4a3f8c7e47193e544ee01f',1,'Hero']]],
+  ['levelup_37',['levelup',['../classHero.html#a0fe5b6710e307afc14deff752ce54706',1,'Hero']]],
+  ['light_5fradius_38',['light_radius',['../classHero.html#a231440da19b0061c76e9ffd441573568',1,'Hero']]],
+  ['light_5fradius_5fbonus_5fper_5flevel_39',['light_radius_bonus_per_level',['../classHero.html#ad2dc3ef3e6664b4a2614e9b012e57704',1,'Hero']]]
 ];
