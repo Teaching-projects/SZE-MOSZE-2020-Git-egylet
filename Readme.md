@@ -81,4 +81,4 @@ Actions - Workflows:<br />
 
 ---
 
-Readme is up to date to task "Map, Defense, Damage and Game (#20)". Waiting for commits...<br /> 
+Readme is up to date to task "Light radius (#21)". Waiting for commits...<br /> 
