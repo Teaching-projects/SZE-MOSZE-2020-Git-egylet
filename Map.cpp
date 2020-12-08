@@ -23,3 +23,31 @@ Map::type Map::get(unsigned int x, unsigned int y) const {
 	if (map[y][x] == ' ') return Map::type::Free;
 	else return Map::type::Wall;
 }
+
+int Map::horizontalget()
+{
+	int length = 0;
+	for ( int i = 0; i < (int)map.size(); i++)
+	{
+		if ((int)map[i].length() > length)
+		{
+			length = (int)map[i].length();
+		}
+	}
+	return length;
+}
+
+int Map::getmapsize()
+{
+	return map.size();
+}
+
+int Map::getwidth(int i)
+{
+	return map[i].length();
+}
+
+std::string Map::getMapLine(int i) const
+{
+	return map[i-1];
+}

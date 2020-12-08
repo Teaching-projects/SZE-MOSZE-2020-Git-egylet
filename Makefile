@@ -1,11 +1,8 @@
-OBJS := JSON.o Map.o Damage.o Monster.o Hero.o main.o
+OBJS := JSON.o Map.o Damage.o Monster.o Hero.o Game.o main.o 
 CFLAGS := -std=c++17 -Wall -Wextra 
 COMPILER := g++-9
 
-CPPS := JSON.cpp Map.cpp Damage.cpp Monster.cpp Hero.cpp main.cpp
-
-VFLAGS:= --leak-check=full --error-exitcode=1
-VPARAMETER:=  ./a.out scenarios/scenario1.json
+CPPS := JSON.cpp Damage.cpp Monster.cpp Hero.cpp Map.cpp Game.cpp main.cpp 
 
 build: $(OBJS)
 	$(COMPILER) $(CFLAGS) -o a.out $(OBJS)
@@ -25,6 +22,9 @@ Monster.o: Monster.cpp Monster.h JSON.h Damage.h
 Hero.o: Hero.cpp Hero.h Monster.h JSON.h Damage.h
 	$(COMPILER) $(CFLAGS) -c Hero.cpp
 
+Game.o: Game.cpp Monster.h Hero.h Map.h
+	$(COMPILER) $(CFLAGS) -c Game.cpp
+
 main.o: main.cpp Monster.h Hero.h
 	$(COMPILER) $(CFLAGS) -c main.cpp
 
@@ -38,16 +38,40 @@ static_code_analysis:
 	cppcheck $(CPPS) --output-file=cppcheck_output.txt && chmod +x tests/warningcheck.sh && ./tests/warningcheck.sh && chmod +x tests/errorcheck.sh && ./tests/errorcheck.sh
 
 leakcheck:
-	valgrind $(VFLAGS) $(VPARAMETER)
+	valgrind $(VFLAGS) $(VPARAMETER) ./tests/directions.sh
 
 io-diff-tests:
-	chmod +x tests/task4_inout.sh && ./tests/task4_inout.sh
+	chmod +x tests/final_inout.sh && ./tests/final_inout.sh
 
 doc:
 	doxygen doxconf
 
-build_unittest:
-	cd tests && cmake CMakeLists.txt && make
+build_monster_unittest:
+	cd tests/monster_tests && cmake CMakeLists.txt && make
 
-run_unittest:
-	cd tests && ./runTests
+run_monster_unittest:
+	cd tests/monster_tests && ./runTests
+
+build_damage_unittest:
+	cd tests/damage_tests && cmake CMakeLists.txt && make
+
+run_damage_unittest:
+	cd tests/damage_tests && ./runTests
+
+build_map_unittest:
+	cd tests/map_tests && cmake CMakeLists.txt && make
+
+run_map_unittest:
+	cd tests/map_tests && ./runTests
+
+build_json_unittest:
+	cd tests/json_tests && cmake CMakeLists.txt && make
+
+run_json_unittest:
+	cd tests/json_tests && ./runTests
+
+build_hero_unittest:
+	cd tests/hero_tests && cmake CMakeLists.txt && make
+
+run_hero_unittest:
+	cd tests/hero_tests && ./runTests
