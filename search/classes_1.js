@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['damage_81',['Damage',['../structDamage.html',1,'']]]
+  ['coordinates_80',['coordinates',['../structcoordinates.html',1,'']]]
 ];
