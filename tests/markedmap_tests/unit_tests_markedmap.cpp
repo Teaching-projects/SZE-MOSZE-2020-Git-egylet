@@ -14,9 +14,9 @@ TEST(MarkedMap, getHeroValidCoordinates){
 	int setX = 4;
 	int setY = 5;
 	Game game = Game("maps/level1.txt");
-    game.Herotest(hero, setX, setY);
+    game.putHero(Herotest, setX, setY);
     
-	ASSERT_THROW(1, 1);
+	//~ ASSERT_THROW(1, 1);
 }
 
 int main(int argc, char** argv) {
