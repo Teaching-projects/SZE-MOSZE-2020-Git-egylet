@@ -14,7 +14,6 @@
 ║██████████║
 ╚══════════╝
 Choose the direction! (north/south/west/east)
-west
 ╔════════════════════════════╗
 ║████████████████████████████║
 ║██░░░░░░██░░░░████████░░░░██║
@@ -31,7 +30,6 @@ west
 ║████████║
 ╚════════╝
 Choose the direction! (north/south/west/east)
-east
 ╔════════════════════════════╗
 ║████████████████████████████║
 ║██░░░░░░██░░░░████████░░░░██║
@@ -48,5 +46,4 @@ east
 ║██████████║
 ╚══════════╝
 Choose the direction! (north/south/west/east)
-east
 The hero died.
