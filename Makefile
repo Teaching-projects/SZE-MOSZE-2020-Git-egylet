@@ -1,8 +1,8 @@
-OBJS := JSON.o Map.o Damage.o Monster.o Hero.o Game.o main.o 
+OBJS := JSON.o Map.o Damage.o Monster.o Hero.o Game.o MarkedMap.o main.o 
 CFLAGS := -std=c++17 -Wall -Wextra 
 COMPILER := g++-9
 
-CPPS := JSON.cpp Damage.cpp Monster.cpp Hero.cpp Map.cpp Game.cpp main.cpp 
+CPPS := JSON.cpp Damage.cpp Monster.cpp Hero.cpp Map.cpp Game.cpp MarkedMap.cpp main.cpp 
 
 build: $(OBJS)
 	$(COMPILER) $(CFLAGS) -o a.out $(OBJS)
@@ -24,6 +24,9 @@ Hero.o: Hero.cpp Hero.h Monster.h JSON.h Damage.h
 
 Game.o: Game.cpp Monster.h Hero.h Map.h
 	$(COMPILER) $(CFLAGS) -c Game.cpp
+
+MarkedMap.o: MarkedMap.cpp MarkedMap.h Map.h
+	$(COMPILER) $(CFLAGS) -c MarkedMap.cpp
 
 main.o: main.cpp Monster.h Hero.h
 	$(COMPILER) $(CFLAGS) -c main.cpp
@@ -75,3 +78,9 @@ build_hero_unittest:
 
 run_hero_unittest:
 	cd tests/hero_tests && ./runTests
+
+build_markedmap_unittest:
+	cd tests/markedmap_tests && cmake CMakeLists.txt && make
+
+run_markedmap_unittest:
+	cd tests/markedmap_tests && ./runTests
