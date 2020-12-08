@@ -3,6 +3,7 @@
 #include "../../Hero.h"
 #include "../../Damage.h"
 #include "../../Game.h"
+#include "../../Map.h"
 #include <gtest/gtest.h>
 
 TEST(MarkedMap, getHeroValidCoordinates){
