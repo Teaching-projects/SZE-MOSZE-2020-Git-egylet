@@ -10,3 +10,4 @@ make build_json_unittest
 make run_json_unittest
 make build_hero_unittest
 make run_hero_unittest
+make run_markedmap_unittest
