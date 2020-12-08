@@ -8,7 +8,6 @@
 #include <gtest/gtest.h>
 
 TEST(MarkedMap, getHeroValidCoordinates){
-    Map map_test("../../maps/level1.txt");
     Damage tmp (3, 1);
 	Hero Herotest("Enigma", 30, tmp, 1.1, 0.5, 20, 5, 1, 0.9, 0.1, 1);
 	
