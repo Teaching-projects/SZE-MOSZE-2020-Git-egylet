@@ -6,11 +6,9 @@ jobs:
     container: vasbeton/unittest_image:latest
     steps:
       - uses: actions/checkout@v2
-      - name: cmake
-        run: make build_unittest
-      - name: Run unit test
-        run: make run_unittest
- 
+      - name: Run unit tests
+        run: chmod +x tests/unit_tests_make.sh && ./tests/unit_tests_make.sh
+  
 
   
       

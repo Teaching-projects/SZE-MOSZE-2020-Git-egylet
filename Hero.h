@@ -7,6 +7,9 @@ This is the description of Hero.h
 Created on: 2020/10/30 14:36
 */
 
+#ifndef HERO_H
+#define HERO_H
+
 #include "Monster.h"
 
 class Hero : public Monster
@@ -44,3 +47,5 @@ public:
 	void hit(Monster* target) override;	///< Hero hit function
 	static Hero parse(const std::string& name);	///< This reads in the hero data from file
 };
+
+#endif //HERO_H
