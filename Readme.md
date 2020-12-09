@@ -29,7 +29,11 @@ Fájlok:<br />
 *	**Map.cpp**: Map osztály elemeinek és függvényeinek leírását tartalmazó fájl. A pálya beolvasásáért és kezeléséért felel.<br />
 *	**Damage.h**: Damage osztály header fájlja.<br />
 *	**Damage.cpp**: Damage osztály elemeinek és függvényeinek leírását tartalmazó fájl.<br />
+*	**Game.h**: Game osztály header fájlja.<br />
+*	**Game.cpp**: Game osztály elemeinek és függvényeinek leírását tartalmazó fájl.<br />
 *	**Readme.md**: Github oldal által megjelenített dokumentációt tartalmazó fájl.<br />
+*	**Report.md**: A félév során elvégzett feladatokról és a teljes munkákról készült jelentés.<br />
+*	**doxconf**: Doxygen dokumentáció létrehozásához szükséges konfigurációs fájl.<br />
 *	**Blood_Raven.json**: @hegyhati által megadott karakter tulajdonságait tartalmazó fájl.<br />
 *	**Dark_Wanderer.json**: @hegyhati által megadott karakter tulajdonságait tartalmazó fájl.<br />
 *	**Fallen.json**: @hegyhati által megadott karakter tulajdonságait tartalmazó fájl.<br />
@@ -64,11 +68,12 @@ Fájlok:<br />
 
 Osztályok:<br />
 
+*	**Damage**: Monster típusú karakter Damage objektumát és a hozzá tartozó függvényeket és operátorokat tartalmazó osztály.<br />
+*	**Game**: A játék levezényléséért felelős osztály.<br />
 *	**Hero**: Hero típusú karakter objektumait és függvényeit tartalmazó osztály.<br />
-*	**Monster**: Monster típusú karakter objektumait és függvényeit tartalmazó osztály.<br />
 *	**JSON**: A .json kiterjesztésű fájlokban tárolt adatok beolvasásáért felelős osztály.<br />
 *	**Map**: A maps/ directory-n belül található map-ok beolvasásáért és kezeléséért felelős osztály.<br />
-*	**Damage**: Monster típusú karakter Damage objektumát és a hozzá tartozó függvényeket és operátorokat tartalmazó osztály.<br />
+*	**Monster**: Monster típusú karakter objektumait és függvényeit tartalmazó osztály.<br />
 
 Az osztályok és függvényeik működéséről részletesebb információk a doxygen segítségével létrehozott GitHub Pages dokumentációnkban érhetőek el: https://teaching-projects.github.io/SZE-MOSZE-2020-Git-egylet/index.html<br />
 
@@ -81,4 +86,4 @@ Actions - Workflows:<br />
 
 ---
 
-Readme is up to date to task "Light radius (#21)". Waiting for commits...<br /> 
+A félév során elvégzett feladatokról és a teljes munkákról készült jelentés a [Report.md](Report.md) fájlban olvasható. <br /> 
