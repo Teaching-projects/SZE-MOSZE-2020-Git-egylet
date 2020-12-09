@@ -2,9 +2,9 @@
 
 | Név | Github azonosito  | Javasolt relatív érdemjegy | Becsült óra | Indoklás  | 
 | --- | ---- | --- | ------------------ | --------- |
-| Foo Bar | @nevergo | 0 | 15-20 | Szépen csinálta a dolgát. |
-| Leyh Zee | @nagiveyo | -2 | <10 | Sokszor Sta Hanovnak kellett megcsinálnia helyette a dolgokat. |
-| Sta Hanov | @uup | +1 | 40-50 | Mindent megcsinált, és amikor Leyh Zee helyett be kellett ugrani, elvállalta a feladadokat, valamint a másik csapatnak a bírálatok zömét Ő csinálta |
+| Adorján András Bálint | @mrpig2000 | 5 | 15-20 | mrpig2000 indoklása |
+| Kisszölgyémi Áron | @destrike00 | 5 | <10 | destrike indoklása |
+| Nátz Kornél | @kokohun | 5 | 40-50 | kokhun indoklása |
 
 
 # Videók
@@ -40,9 +40,12 @@
 
 | Osztály | Publikus metódusok száma | Unit tesztelt metódusok száma | Unit tesztek száma |
 | --- | --- | --- | --- |
-| `Unit` | 4 | 2 | 8 |
-| `Hero` | 5 | 0 | 0 | 
-| ... |
+| `Damage` | x | x | x |
+| `Game` | x | x | x | 
+| `Hero` | x | x | x | 
+| `JSON` | x | x | x | 
+| `Map` | x | x | x | 
+| `Monster` | x | x | x | 
 
 # Kód dokumentáció
 
