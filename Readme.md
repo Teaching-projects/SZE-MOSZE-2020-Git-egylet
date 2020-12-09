@@ -18,51 +18,51 @@ A programban egy hős harcol egy vagy több szörny ellen. A játékmenetek és 
 
 Fájlok:<br />
 
-*	**main.cpp**: @hegyhati által megadott, a játék egészét levezénylő fájl.<br />
-*	**Hero.h**: Hero osztály header fájlja.<br />
-*	**Hero.cpp**: Hero osztály elemeinek és függvényeinek leírását tartalmazó fájl.<br />
-*	**JSON.h**: JSON osztály header fájlja.<br />
-*	**JSON.cpp**: JSON osztály elemeinek és függvényeinek leírását tartalmazó fájl.<br />
-*	**Monster.h**: Monster osztály header fájlja.<br />
-*	**Monster.cpp**: Monster osztály elemeinek és függvényeinek leírását tartalmazó fájl.<br />
-*	**Map.h**: Map osztály header fájlja. Az osztály konstruktorát, függvények deklarációit és egy exception függvényt tartalmaz.<br />
-*	**Map.cpp**: Map osztály elemeinek és függvényeinek leírását tartalmazó fájl. A pálya beolvasásáért és kezeléséért felel.<br />
-*	**Damage.h**: Damage osztály header fájlja.<br />
-*	**Damage.cpp**: Damage osztály elemeinek és függvényeinek leírását tartalmazó fájl.<br />
-*	**Game.h**: Game osztály header fájlja.<br />
-*	**Game.cpp**: Game osztály elemeinek és függvényeinek leírását tartalmazó fájl.<br />
-*	**Readme.md**: Github oldal által megjelenített dokumentációt tartalmazó fájl.<br />
-*	**Report.md**: A félév során elvégzett feladatokról és a teljes munkákról készült jelentés.<br />
-*	**doxconf**: Doxygen dokumentáció létrehozásához szükséges konfigurációs fájl.<br />
-*	**Blood_Raven.json**: @hegyhati által megadott karakter tulajdonságait tartalmazó fájl.<br />
-*	**Dark_Wanderer.json**: @hegyhati által megadott karakter tulajdonságait tartalmazó fájl.<br />
-*	**Fallen.json**: @hegyhati által megadott karakter tulajdonságait tartalmazó fájl.<br />
-*	**Zombie.json**: @hegyhati által megadott karakter tulajdonságait tartalmazó fájl.<br />
-*	**Makefile**: A make parancsok kiadásához szükséges fájl.<br />
-*	**.github/workflows/Newtest.yml**: A "Unit tests" nevű workflow futtatási fájlja.<br />
-*	**.github/workflows/pushdocs.yml**: A "pushdocs workflow" nevű workflow futtatási fájlja.<br />
-*	**.github/workflows/Test.yml**: A "build, static code analysis, leakcheck" nevű workflow futtatási fájlja.<br />
-*	**docker/dox_docker**: Docker container létrehozásához szükséges fájl.<br />
-*	**docker/sca_docker**: Docker container létrehozásához szükséges fájl.<br />
-*	**docker/unittest_docker**: Docker container létrehozásához szükséges fájl.<br />
-*	**scenarios/output1.txt**: @hegyhati által megadott elvárt kimenetet tartalmazó fájl.<br />
-*	**scenarios/output2.txt**: @hegyhati által megadott elvárt kimenetet tartalmazó fájl.<br />
-*	**scenarios/scenario1.json**: @hegyhati által megadott játékmenetet tartalmazó fájl.<br />
-*	**scenarios/scenario2.json**: @hegyhati által megadott játékmenetet tartalmazó fájl.<br />
-*	**tests/CMakeLists.txt**: A "Unit tests" nevű workflow segédfájlja. A tesztek helyes lefutásának ellenőrzéséhez szükséges.<br />
-*	**tests/errorcheck.sh**: A "build, static code analysis, leakcheck" nevű workflow segédfájlja. Az errorok ellenőrzéséhez szükséges.<br />
-*	**tests/task4_inout.sh**: A "build, static code analysis, leakcheck" nevű workflow segédfájlja. A játék kimenetének ellenőrzéséhez szükséges.<br />
-*	**tests/unit_tests.cpp**: A "Unit tests" nevű workflow segédfájlja. Ez tartalmazza a konkrét google teszteket.<br />
-*	**tests/warningcheck.sh**: A "build, static code analysis, leakcheck" nevű workflow segédfájlja. A warningok ellenőrzéséhez szükséges.<br />
-*	**units/good_output.txt**: Csapatunk által kitalált 3 karakter egymás elleni harcainak elvárt kimenetét tartalmazó fájl.<br />
-*	**units/Player_1_Kakarott.json**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl.<br />
-*	**units/Player_2_Sally.json**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl.<br />
-*	**units/Player_3_Maple.json**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl.<br />
-*	**units/error/Player_4_Enigma.json**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl, tartalma direkt nem helyes.<br />
-*	**units/not_correct_units/NCPlayer_1_Mixi.json**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl, amiben az adatok sorrendje fel van cserélve.<br />
-*	**units/not_correct_units/NCPlayer_2_Spacy.json**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl, amelyben felesleges whitespacek találhatóak.<br />
-*	**units/not_correct_units/NCPlayer_3_Mixpacy.json**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl, amiben az adatok sorrendje fel van cserélve és emellett felesleges whitespacek is találhatóak benne.<br />
-*	**maps/level1.txt**: @hegyhati által megadott példa map-ot tartalmazza.<br />
+*	**[main.cpp](main.cpp)**: @hegyhati által megadott, a játék egészét levezénylő fájl.<br />
+*	**[Hero.h](Hero.h)**: Hero osztály header fájlja.<br />
+*	**[Hero.cpp](Hero.cpp)**: Hero osztály elemeinek és függvényeinek leírását tartalmazó fájl.<br />
+*	**[JSON.h](JSON.h)**: JSON osztály header fájlja.<br />
+*	**[JSON.cpp](JSON.cpp)**: JSON osztály elemeinek és függvényeinek leírását tartalmazó fájl.<br />
+*	**[Monster.h](Monster.h)**: Monster osztály header fájlja.<br />
+*	**[Monster.cpp](Monster.cpp)**: Monster osztály elemeinek és függvényeinek leírását tartalmazó fájl.<br />
+*	**[Map.h](Map.h)**: Map osztály header fájlja. Az osztály konstruktorát, függvények deklarációit és egy exception függvényt tartalmaz.<br />
+*	**[Map.cpp](Map.cpp)**: Map osztály elemeinek és függvényeinek leírását tartalmazó fájl. A pálya beolvasásáért és kezeléséért felel.<br />
+*	**[Damage.h](Damage.h)**: Damage osztály header fájlja.<br />
+*	**[Damage.cpp](Damage.cpp)**: Damage osztály elemeinek és függvényeinek leírását tartalmazó fájl.<br />
+*	**[Game.h](Game.h)**: Game osztály header fájlja.<br />
+*	**[Game.cpp](Game.cpp)**: Game osztály elemeinek és függvényeinek leírását tartalmazó fájl.<br />
+*	**[Readme.md](Readme.md)**: Github oldal által megjelenített dokumentációt tartalmazó fájl.<br />
+*	**[Report.md](Report.md)**: A félév során elvégzett feladatokról és a teljes munkákról készült jelentés.<br />
+*	**[doxconf](doxconf)**: Doxygen dokumentáció létrehozásához szükséges konfigurációs fájl.<br />
+*	**[Blood_Raven.json](Blood_Raven.json)**: @hegyhati által megadott karakter tulajdonságait tartalmazó fájl.<br />
+*	**[Dark_Wanderer.json](Dark_Wanderer.json)**: @hegyhati által megadott karakter tulajdonságait tartalmazó fájl.<br />
+*	**[Fallen.json](Fallen.json)**: @hegyhati által megadott karakter tulajdonságait tartalmazó fájl.<br />
+*	**[Zombie.json](Zombie.json)**: @hegyhati által megadott karakter tulajdonságait tartalmazó fájl.<br />
+*	**[Makefile](Makefile)**: A make parancsok kiadásához szükséges fájl.<br />
+*	**[Newtest.yml](.github/workflows/Newtest.yml)**: A "Unit tests" nevű workflow futtatási fájlja.<br />
+*	**[pushdocs.yml](.github/workflows/pushdocs.yml)**: A "pushdocs workflow" nevű workflow futtatási fájlja.<br />
+*	**[Test.yml](.github/workflows/Test.yml)**: A "build, static code analysis, leakcheck" nevű workflow futtatási fájlja.<br />
+*	**[dox_docker](docker/dox_docker)**: Docker container létrehozásához szükséges fájl.<br />
+*	**[sca_docker](docker/sca_docker)**: Docker container létrehozásához szükséges fájl.<br />
+*	**[unittest_docker](docker/unittest_docker)**: Docker container létrehozásához szükséges fájl.<br />
+*	**[output1.txt](scenarios/output1.txt)**: @hegyhati által megadott elvárt kimenetet tartalmazó fájl.<br />
+*	**[output2.txt](scenarios/output2.txt)**: @hegyhati által megadott elvárt kimenetet tartalmazó fájl.<br />
+*	**[scenario1.json](scenarios/scenario1.json)**: @hegyhati által megadott játékmenetet tartalmazó fájl.<br />
+*	**[scenario2.json](scenarios/scenario2.json)**: @hegyhati által megadott játékmenetet tartalmazó fájl.<br />
+*	**[CMakeLists.txt](tests/CMakeLists.txt)**: A "Unit tests" nevű workflow segédfájlja. A tesztek helyes lefutásának ellenőrzéséhez szükséges.<br />
+*	**[errorcheck.sh](tests/errorcheck.sh)**: A "build, static code analysis, leakcheck" nevű workflow segédfájlja. Az errorok ellenőrzéséhez szükséges.<br />
+*	**[task4_inout.sh](tests/task4_inout.sh)**: A "build, static code analysis, leakcheck" nevű workflow segédfájlja. A játék kimenetének ellenőrzéséhez szükséges.<br />
+*	**[unit_tests.cpp](tests/unit_tests.cpp)**: A "Unit tests" nevű workflow segédfájlja. Ez tartalmazza a konkrét google teszteket.<br />
+*	**[warningcheck.sh](tests/warningcheck.sh)**: A "build, static code analysis, leakcheck" nevű workflow segédfájlja. A warningok ellenőrzéséhez szükséges.<br />
+*	**[good_output.txt](units/good_output.txt)**: Csapatunk által kitalált 3 karakter egymás elleni harcainak elvárt kimenetét tartalmazó fájl.<br />
+*	**[Player_1_Kakarott.json](units/Player_1_Kakarott.json)**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl.<br />
+*	**[Player_2_Sally.json](units/Player_2_Sally.json)**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl.<br />
+*	**[Player_3_Maple.json](units/Player_3_Maple.json)**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl.<br />
+*	**[Player_4_Enigma.json](units/error/Player_4_Enigma.json)**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl, tartalma direkt nem helyes.<br />
+*	**[NCPlayer_1_Mixi.json](units/not_correct_units/NCPlayer_1_Mixi.json)**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl, amiben az adatok sorrendje fel van cserélve.<br />
+*	**[NCPlayer_2_Spacy.json](units/not_correct_units/NCPlayer_2_Spacy.json)**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl, amelyben felesleges whitespacek találhatóak.<br />
+*	**[NCPlayer_3_Mixpacy.json](units/not_correct_units/NCPlayer_3_Mixpacy.json)**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl, amiben az adatok sorrendje fel van cserélve és emellett felesleges whitespacek is találhatóak benne.<br />
+*	**[level1.txt](maps/level1.txt)**: @hegyhati által megadott példa map-ot tartalmazza.<br />
 
 ---
 
