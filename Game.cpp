@@ -1,5 +1,6 @@
 ﻿#include "Map.h"
 #include "Game.h"
+#include "JSON.h"
 
 void Game::setMap(Map maptoset)
 {

@@ -69,4 +69,14 @@ public:
 		GameAlreadyStartedException(const std::string &err) : std::runtime_error(err) {}
 	};
 };
+
+class PreparedGame : private Game {
+
+private:
+	Map map;
+
+public:
+	PreparedGame(const std::string& filename);
+	using Game::run;
+};
 #endif

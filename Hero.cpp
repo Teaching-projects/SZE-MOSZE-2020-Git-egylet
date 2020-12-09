@@ -175,9 +175,8 @@ Hero Hero::parse(const std::string& name) {
 	    if(values.count("magical-damage")) monsterdamage.setMagical(values.get<int>("magical-damage"));
 	    else monsterdamage.setMagical(0);
 
-		int tmp_lrbpl;
-		if (values.count("light_radius_bonus_per_level")) tmp_lrbpl = values.get<int>("light_radius_bonus_per_level");
-		else tmp_lrbpl = 1;
+		int tmp_lrbpl = 1;
+		if(values.count("light_radius_bonus_per_level")) tmp_lrbpl = values.get<int>("light_radius_bonus_per_level");
 
 		return Hero
 		(

@@ -55,7 +55,7 @@ int main(int argc, char** argv){
         game.putHero(hero, 2, 5);
        for (const auto& monster : monsters)
        {
-            game.putMonster(monster, 3, 5);
+            game.putMonster(monster, 6, 5);
         }
         game.run();
     } catch (const JSON::ParseException& e) {bad_exit(4);}
