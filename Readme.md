@@ -10,13 +10,12 @@ Ez a repository a Git egylet csapat munkáját tartalmazza.<br />
 
 ---
 
-# Leírás:<br />
-<br />
+# Leírás:
 A programban egy hős harcol egy vagy több szörny ellen. A játék, a megszokott módon, egy scenario fájlt vár paraméterként. A lehetséges scenario-kat a scenarios mappa tartalmazza. A játék helyes lefutásának előfeltétele, hogy a mainben beállítsunk egy játékteret, illetve tetszőleges módon elhelyezzük a hőst, illetve szörnyet, szörnyeket. A játék futása közben az égtájat megadva mozoghatunk a hőssel. Ha az irány nem megfelelően lett megadva, vagy fal van előttünk, új irányt kér tőlünk a játék. A map-ből mindig az aktuális light radius-nek megfelelő részt látjuk, amely szintlépés során növekszik. Ha szörnnyel találkozunk, a hősünk automatikusan megküzd vele. Ha minden szörnyet legyőztünk, a játéktól a "The hero cleared the map", ellenkező esetben a "The hero died" üzenetet kapjuk. A hős győzelme esetén azt is kiírja a játék, hogy hősünk kik ellen és milyen aktuális szinttel harcolt, majd a végső szintet, hp-t, dmg-t, acd-t és def-et.<br />
 
 ---
 
-# Fájlok:<br />
+# Fájlok:
 
 *	**[main.cpp](main.cpp)**: @hegyhati által megadott, a játék egészét levezénylő fájl.<br />
 *	**[Hero.h](Hero.h)**: Hero osztály header fájlja.<br />
