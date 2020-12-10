@@ -89,7 +89,7 @@ Az osztályok és függvényeik működéséről részletesebb információk a d
 
 ---
 
-Actions - Workflows:<br />
+# Actions - Workflows:
 *	**Unit tests**: A google tesztek futtatásáért és ellenőrzéséért felelős workflow.<br />
 *	**pushdocs workflow**: A doxygen-es GitHub Pages dokumentáció létrehozásáért felelős workflow.<br />
 *	**build, static code analysis, leakcheck**: A kód szintaktikáját és helyes futását ellenőrző workflow.<br />
