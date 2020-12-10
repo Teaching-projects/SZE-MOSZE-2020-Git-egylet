@@ -36,27 +36,6 @@
 | light radius | Merge: 12.09 | ... | @otherteam / @otherguy1,otherguy2 |
 | SVGrendering | nem készült el | ... | @otherteam / @otherguy1,otherguy2 |
 
-mosze PR hataridok es merges datumok: 
-Init - h: 09.17? - m: 09.23
-Task2 - h: 09.25? - m: 09.30
-Attackspeed - h: 10.16 - m: 10.15
-Jsonparser - h: 10.16 - m: 10.24
-Levelup - h: 10.16 - m: 10.22
-Tests - h: 11.04 - m: 11.03
-Makefile - h: 11.04 - m: 11.04
-Documentation - h: 11.04 - m: 11.04
-Refactor - h: 11.09 - m: 11.08
-Docker - h: 11.12 - m: 11.09
-Jsonpimp - m: 11.13
-Map - m: 11.23
-Damage - m: 11.27
-Defense - m: 11.23
-Game - m: 12.08
-SVG rendering
-light radius - m: 12.09
-PreparedGame
-MarkedMap
-
 # Unit tesztek
 
 | Osztály | Publikus metódusok száma | Unit tesztelt metódusok száma | Unit tesztek száma |
