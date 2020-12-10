@@ -20,10 +20,12 @@ var searchData=
   ['getmagicaldamagebonusperlevel_28',['getMagicalDamageBonusPerLevel',['../classHero.html#adcf2b354e2b28074e7918b41c036addd',1,'Hero']]],
   ['getmap_29',['getMap',['../classGame.html#ae85fbbee31a858735355b7873e128af6',1,'Game']]],
   ['getmapline_30',['getMapLine',['../classMap.html#af6cbcb974589cc875d91fcb6da34f115',1,'Map']]],
-  ['getmaxhealthpoints_31',['getMaxHealthPoints',['../classHero.html#ac6a7deeb6e390a23536d622042f4c48e',1,'Hero']]],
-  ['getmonstercount_32',['getMonsterCount',['../classGame.html#a0fcdbf939152bd168063b62127d97ec1',1,'Game']]],
-  ['getname_33',['getName',['../classMonster.html#a28ae1112e37262ce150e3c02465b3dd5',1,'Monster']]],
-  ['getphysical_34',['getPhysical',['../structDamage.html#a5f008f248143680f4972a7ea54415797',1,'Damage']]],
-  ['getphysicaldamagebonusperlevel_35',['getPhysicalDamageBonusPerLevel',['../classHero.html#a4309cb20194f045c031014605b97e8b6',1,'Hero']]],
-  ['git_20egylet_27s_20documentation_36',['Git egylet&apos;s documentation',['../index.html',1,'']]]
+  ['getmapsize_31',['getmapsize',['../classMap.html#a4ab8282cd752fe877042c18839cac5ad',1,'Map']]],
+  ['getmaxhealthpoints_32',['getMaxHealthPoints',['../classHero.html#ac6a7deeb6e390a23536d622042f4c48e',1,'Hero']]],
+  ['getmonstercount_33',['getMonsterCount',['../classGame.html#a0fcdbf939152bd168063b62127d97ec1',1,'Game']]],
+  ['getname_34',['getName',['../classMonster.html#a28ae1112e37262ce150e3c02465b3dd5',1,'Monster']]],
+  ['getphysical_35',['getPhysical',['../structDamage.html#a5f008f248143680f4972a7ea54415797',1,'Damage']]],
+  ['getphysicaldamagebonusperlevel_36',['getPhysicalDamageBonusPerLevel',['../classHero.html#a4309cb20194f045c031014605b97e8b6',1,'Hero']]],
+  ['getwidth_37',['getwidth',['../classMap.html#a04d455372f154db9c59ec436ff55321d',1,'Map']]],
+  ['git_20egylet_27s_20documentation_38',['Git egylet&apos;s documentation',['../index.html',1,'']]]
 ];
