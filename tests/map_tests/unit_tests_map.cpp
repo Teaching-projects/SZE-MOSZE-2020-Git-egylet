@@ -44,6 +44,41 @@ TEST(Map, constructor){
 	}
 }
 
+TEST(Map, MaxWidth){
+	Map map_test("../../maps/level1.txt");
+	int expected_width = 14;
+
+	ASSERT_EQ(map_test.horizontalget(), expected_width);
+}
+
+TEST(Map, getHorizontalSize){
+	Map map_test("../../maps/level1.txt");
+	int expected_width = 7;
+
+	ASSERT_EQ(map_test.getmapsize(), expected_width);
+}
+
+TEST(Map, MinWidth){
+	Map map_test("../../maps/level1.txt");
+	int expected_width = 9;
+	int out_width;
+	
+	for (int i = 0; i < map_test.getmapsize(); i++)
+	{
+		out_width = map_test.getwidth(i);
+	}
+
+	ASSERT_EQ(out_width, expected_width);
+}
+
+TEST(Map, getMapLine){
+	Map map_test("../../maps/level1.txt");
+	std::string expected_line = "#   #  ##  #";
+	int test_index = 4;
+	
+	ASSERT_EQ(map_test.getMapLine(test_index), expected_line);
+}
+
 int main(int argc, char** argv) {
 	::testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();
