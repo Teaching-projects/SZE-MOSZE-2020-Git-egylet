@@ -73,7 +73,7 @@ A programban egy hős harcol egy vagy több szörny ellen. A játék, a megszoko
 *	**[NCPlayer_3_Mixpacy.json](units/not_correct_units/NCPlayer_3_Mixpacy.json)**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl, amiben az adatok sorrendje fel van cserélve és emellett felesleges whitespacek is találhatóak benne.<br />
 *	**[level1.txt](maps/level1.txt)**: @hegyhati által megadott példa map-ot tartalmazza.<br />
 *	**[gameplay.mp4](ideos/gameplay.mp4)**: Játékunk működését bemutató videó.<br />
-*	**[codebaseddefense.mp4](videos/codebaseddefense.mp4))**: Munkák erősségeit bemutató videó.<br />
+*	**[codebaseddefense.mp4](videos/codebaseddefense.mp4)**: Munkák erősségeit bemutató videó.<br />
 
 ---
 
