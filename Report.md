@@ -2,9 +2,9 @@
 
 | Név | Github azonosito  | Javasolt relatív érdemjegy | Becsült óra | Indoklás  | 
 | --- | ---- | :---: | :------------------: | --------- |
-| Adorján András Bálint | @mrpig2000 | 5 | ... | Kimagasló teljesítményt nyújtott a unit tesztek elkészítése és a repo rendbentartása és dokumentálása terén. |
-| Kisszölgyémi Áron | @destrike00 | 5 | ... | Kimagasló teljesítményt nyújtott a c++ kódok és a docker konténer elkészítése terén. |
-| Nátz Kornél | @kokohun | 5 | ... | Kimagasló teljesítményt nyújtott a json kezelés és a bash scriptek elkészítése terén. |
+| Adorján András Bálint | @mrpig2000 | 0 | ... | Kimagasló teljesítményt nyújtott a unit tesztek elkészítése és a repo rendbentartása és dokumentálása terén. |
+| Kisszölgyémi Áron | @destrike00 | 0 | ... | Kimagasló teljesítményt nyújtott a c++ kódok és a docker konténer elkészítése terén. |
+| Nátz Kornél | @kokohun | 0 | ... | Kimagasló teljesítményt nyújtott a json kezelés és a bash scriptek elkészítése terén. |
 
 
 # Videók
@@ -15,7 +15,7 @@
 # Befejezett feladatok
 
 | Feladat | Merge ideje a határidóhöz (nap) | Change request körök | Reviewer | 
-| ------- | :-------------------------------: | :--------------------: | -------- |
+| ------- | :-----------------------------: | :------------------: | -------- |
 | Init | -6? | 2 | @hegyhati | 
 | Task2 | -5? | 1 | @hegyhati |
 | Jsonparser | -8 | 1 | @wajzy |
@@ -51,7 +51,7 @@
 
 | Teljesen dokumentált osztályok | Részben dokumentált osztályok | Nem dokumentált osztályok |
 | --- | :---: | :---: | 
-| `Damage` | - | - | 
+| `Damage` | - | - |
 | `Game` |
 | `Unit` |
 | `Hero` |
@@ -73,9 +73,10 @@
  
 # Implicit megtanult dolgok
 Olyanok, amik nem a tárgy anyaga, de muszáj/hasznos volt elsajátítani:
- - alapvető shell/python scripting
+ - alapvető shell scripting
  - `std::variant`
- - ...
+ - markdown nyelv
+ - google tesztek
 
 # Feedback (optional)
  
