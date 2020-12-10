@@ -2,9 +2,9 @@
 
 | Név | Github azonosito  | Javasolt relatív érdemjegy | Becsült óra | Indoklás  | 
 | ------ | ---- | :---: | :---: | --------- |
-| Adorján András Bálint | @mrpig2000 | 0 | ... | Kimagasló teljesítményt nyújtott a unit tesztek elkészítése és a repo rendbentartása és dokumentálása terén. |
-| Kisszölgyémi Áron | @destrike00 | 0 | ... | Kimagasló teljesítményt nyújtott a c++ kódok és a docker konténer elkészítése terén. |
-| Nátz Kornél | @kokohun | 0 | ... | Kimagasló teljesítményt nyújtott a json kezelés és a bash scriptek elkészítése terén. |
+| Adorján András Bálint | @mrpig2000 | 0 | ~50-∞ | Kimagasló teljesítményt nyújtott a unit tesztek elkészítése és a repo rendbentartása és dokumentálása terén. |
+| Kisszölgyémi Áron | @destrike00 | 0 | ~50-∞ | Kimagasló teljesítményt nyújtott a c++ kódok és a docker konténer elkészítése terén. |
+| Nátz Kornél | @kokohun | 0 | ~50-∞ | Kimagasló teljesítményt nyújtott a json kezelés és a bash scriptek elkészítése terén. |
 
 
 # Videók
@@ -31,9 +31,9 @@
 | Game | Merge: 12.08 | 0 | @Cminusminus / @bricsi0000000000000;<br />@Git-egylet / @kokohun |
 | Defense | Merge: 11.23 | 1 | @Cminusminus / @fruzsin;<br />@Git-egylet / @kokohun |
 | Damage | Merge: 11.27 | 1 | @Cminusminus / @kurucc;<br />@Git-egylet / @destrike00   |
+| Light radius | Merge: 12.09 | 1 | @Cminusminus / @bricsi0000000000000;<br />@Git-egylet / @kokohun |
 | MarkedMap | nem készült el | - | - |
 | PreparedGame | nem készült el | - | -
-| light radius | Merge: 12.09 | 1 | @Cminusminus / @bricsi0000000000000;<br />@Git-egylet / @kokohun |
 | SVGrendering | nem készült el | - | - |
 
 # Unit tesztek
@@ -52,12 +52,12 @@
 | Teljesen dokumentált osztályok | Részben dokumentált osztályok | Nem dokumentált osztályok |
 | --- | :---: | :---: | 
 | `Damage` | - | - |
-| `Game` |
-| `Unit` |
-| `Hero` |
-| `JSON` |
-| `Map` |
-| `Monster` |
+| `Game` | - | - |
+| `Unit` | - | - |
+| `Hero` | - | - |
+| `JSON` | - | - |
+| `Map` | - | - |
+| `Monster` | - | - |
 
 
 # Mindenféle számok
