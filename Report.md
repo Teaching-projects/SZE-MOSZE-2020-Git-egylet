@@ -2,9 +2,9 @@
 
 | Név | Github azonosito  | Javasolt relatív érdemjegy | Becsült óra | Indoklás  | 
 | --- | ---- | :---: | :------------------: | --------- |
-| Adorján András Bálint | @mrpig2000 | 5 | ... | Kimagasló teljesítményt nyújtott a unit tesztek elkészítése és a repo rendbentartása és dokumentálása terén. |
-| Kisszölgyémi Áron | @destrike00 | 5 | ... | Kimagasló teljesítményt nyújtott a c++ kódok és a docker konténer elkészítése terén. |
-| Nátz Kornél | @kokohun | 5 | ... | Kimagasló teljesítményt nyújtott a bash scriptek elkészítése és a json kezelés terén. |
+| Adorján András Bálint | @mrpig2000 | 5 | ... | Kimagasló teljesítményt nyújtott a unit tesztek elkészítése<br />és a repo rendbentartása és dokumentálása terén. |
+| Kisszölgyémi Áron | @destrike00 | 5 | ... | Kimagasló teljesítményt nyújtott a c++ kódok<br />és a docker konténer elkészítése terén. |
+| Nátz Kornél | @kokohun | 5 | ... | Kimagasló teljesítményt nyújtott a json kezelés<br />és a bash scriptek elkészítése terén. |
 
 
 # Videók
