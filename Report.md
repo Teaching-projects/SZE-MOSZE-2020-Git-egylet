@@ -16,25 +16,46 @@
 
 | Feladat | Merge ideje a határidóhöz (nap) | Change request körök | Reviewer | 
 | ------- | ------------------------------- | -------------------- | -------- |
-| Feladat 1 | -2 | 0 | @oliverosz | 
-| Feladat 2 | +2 | 1 | @wajzy |
-| jsonparser | ... | ... | @wajzy |
-| levelup | ... | ... | @oliverosz |
-| attackspeed | ... | ... | @vizvezetek |
-| documentation | ... | ... | @otherteam / @never |
-| unittest | ... | ... | @otherteam / @gonna, @let |
-| makefile | ... | ... | @hegyhati |
-| refactor | ... | ... | @hegyhati |
-| docker | ... | ... | @hegyhati |
-| jsonpimp | Merge: 11.12 | ... | @otherteam / @you, @down |
-| map | Merge: 11.13 | ... | @otherteam / @never, @gonna |
-| game | Merge: mm.dd | ... | @otherteam / @run, @arond |
-| defense | Merge: mm.dd | ... | @otherteam / @and, @desert |
-| damage | Merge: mm.dd | ... | @otherteam / @you  |
-| markedmap | Merge: mm.dd | ... | @otherteam / @otherguy1,otherguy2 |
-| preparedgame | nem készült el | - | -
-| light radius | Merge: mm.dd | ... | @otherteam / @otherguy1,otherguy2 |
-| rendering | Merge: mm.dd | ... | @otherteam / @otherguy1,otherguy2 |
+| Init | -6? | 2 | @hegyhati | 
+| Task2 | -5? | ... | @wajzy |
+| Jsonparser | -8 | ... | @wajzy |
+| levelup | -6 | ... | @oliverosz |
+| Attackspeed | +1 | ... | @vizvezetek |
+| Documentation | 0 | ... | @otherteam / @never |
+| Tests | +1 | ... | @otherteam / @gonna, @let |
+| Makefile | 0 | ... | @hegyhati |
+| Refactor | +1 | ... | @hegyhati |
+| Docker | -3 | ... | @hegyhati |
+| Jsonpimp | Merge: 11.13 | ... | @otherteam / @you, @down |
+| Map | Merge: 11.23 | ... | @otherteam / @never, @gonna |
+| Game | Merge: 12.08 | ... | @otherteam / @run, @arond |
+| Defense | Merge: 11.23 | ... | @otherteam / @and, @desert |
+| Damage | Merge: 11.27 | ... | @otherteam / @you  |
+| MarkedMap | nem készült el | ... | @otherteam / @otherguy1,otherguy2 |
+| PreparedGame | nem készült el | - | -
+| light radius | Merge: 12.09 | ... | @otherteam / @otherguy1,otherguy2 |
+| SVGrendering | nem készült el | ... | @otherteam / @otherguy1,otherguy2 |
+
+mosze PR hataridok es merges datumok: 
+Init - h: 09.17? - m: 09.23
+Task2 - h: 09.25? - m: 09.30
+Attackspeed - h: 10.16 - m: 10.15
+Jsonparser - h: 10.16 - m: 10.24
+Levelup - h: 10.16 - m: 10.22
+Tests - h: 11.04 - m: 11.03
+Makefile - h: 11.04 - m: 11.04
+Documentation - h: 11.04 - m: 11.04
+Refactor - h: 11.09 - m: 11.08
+Docker - h: 11.12 - m: 11.09
+Jsonpimp - m: 11.13
+Map - m: 11.23
+Damage - m: 11.27
+Defense - m: 11.23
+Game - m: 12.08
+SVG rendering
+light radius - m: 12.09
+PreparedGame
+MarkedMap
 
 # Unit tesztek
 
