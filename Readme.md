@@ -1,4 +1,5 @@
-# Ez a repository a Git egylet csapat munkáját tartalmazza.<br />
+Ez a repository a Git egylet csapat munkáját tartalmazza.<br />
+---
 # Csapattagok:
 
 	* Adorján András Bálint
@@ -13,7 +14,6 @@ A programban egy hős harcol egy vagy több szörny ellen. A játék, a megszoko
 ---
 
 # Fájlok:
-
 *	**[main.cpp](main.cpp)**: @hegyhati által megadott, a játék egészét levezénylő fájl.<br />
 *	**[Hero.h](Hero.h)**: Hero osztály header fájlja.<br />
 *	**[Hero.cpp](Hero.cpp)**: Hero osztály elemeinek és függvényeinek leírását tartalmazó fájl.<br />
