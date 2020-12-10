@@ -1,7 +1,7 @@
 # Tagok
 
 | Név | Github azonosito  | Javasolt relatív érdemjegy | Becsült óra | Indoklás  | 
-| --- | ---- | :---: | :------------------: | --------- |
+| ------ | ---- | :---: | :---: | --------- |
 | Adorján András Bálint | @mrpig2000 | 0 | ... | Kimagasló teljesítményt nyújtott a unit tesztek elkészítése és a repo rendbentartása és dokumentálása terén. |
 | Kisszölgyémi Áron | @destrike00 | 0 | ... | Kimagasló teljesítményt nyújtott a c++ kódok és a docker konténer elkészítése terén. |
 | Nátz Kornél | @kokohun | 0 | ... | Kimagasló teljesítményt nyújtott a json kezelés és a bash scriptek elkészítése terén. |
@@ -15,7 +15,7 @@
 # Befejezett feladatok
 
 | Feladat | Merge ideje a határidóhöz (nap) | Change request körök | Reviewer | 
-| ------- | :-----------------------------: | :------------------: | -------- |
+| ------- | :---: | :---: | -------- |
 | Init | -6? | 2 | @hegyhati | 
 | Task2 | -5? | 1 | @hegyhati |
 | Jsonparser | -8 | 1 | @wajzy |
@@ -27,13 +27,13 @@
 | Refactor | +1 | ? | @hegyhati |
 | Docker | -3 | 0 | @hegyhati |
 | Jsonpimp | Merge: 11.13 | 0 | @Git-egylet / @mrpig2000 |
-| Map | Merge: 11.23 | 0 | @Cminusminus / @kurucc;<br />@Git-egylet / @mrpig2000 |
+| Map | Merge: 11.23 | 1 | @Cminusminus / @kurucc;<br />@Git-egylet / @mrpig2000 |
 | Game | Merge: 12.08 | 0 | @Cminusminus / @bricsi0000000000000;<br />@Git-egylet / @kokohun |
-| Defense | Merge: 11.23 | 0 | @Cminusminus / @fruzsin;<br />@Git-egylet / @kokohun |
-| Damage | Merge: 11.27 | 0 | @Cminusminus / @kurucc;<br />@Git-egylet / @destrike00   |
+| Defense | Merge: 11.23 | 1 | @Cminusminus / @fruzsin;<br />@Git-egylet / @kokohun |
+| Damage | Merge: 11.27 | 1 | @Cminusminus / @kurucc;<br />@Git-egylet / @destrike00   |
 | MarkedMap | nem készült el | - | - |
 | PreparedGame | nem készült el | - | -
-| light radius | Merge: 12.09 | 0 | @Cminusminus / @bricsi0000000000000;<br />@Git-egylet / @kokohun |
+| light radius | Merge: 12.09 | 1 | @Cminusminus / @bricsi0000000000000;<br />@Git-egylet / @kokohun |
 | SVGrendering | nem készült el | - | - |
 
 # Unit tesztek
