@@ -62,7 +62,7 @@
 
 # Mindenféle számok
 
- - Összes cpp kódsor :
+ - Összes cpp kódsor : 1124
  - Egyéb kódsor (make,doxyfile,shellscript, ...) :
  - cppcheck
    - warning :
