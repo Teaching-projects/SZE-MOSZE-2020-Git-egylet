@@ -5,9 +5,7 @@ Ez a repository a Git egylet csapat munkáját tartalmazza.<br />
 	* Adorján András Bálint
 	* Kisszölgyémi Áron
 	* Nátz Kornél
-
----
-
+<br />
 # Leírás:
 A programban egy hős harcol egy vagy több szörny ellen. A játék, a megszokott módon, egy scenario fájlt vár paraméterként. A lehetséges scenario-kat a scenarios mappa tartalmazza. A játék helyes lefutásának előfeltétele, hogy a mainben beállítsunk egy játékteret, illetve tetszőleges módon elhelyezzük a hőst, illetve szörnyet, szörnyeket. A játék futása közben az égtájat megadva mozoghatunk a hőssel. Ha az irány nem megfelelően lett megadva, vagy fal van előttünk, új irányt kér tőlünk a játék. A map-ből mindig az aktuális light radius-nek megfelelő részt látjuk, amely szintlépés során növekszik. Ha szörnnyel találkozunk, a hősünk automatikusan megküzd vele. Ha minden szörnyet legyőztünk, a játéktól a "The hero cleared the map", ellenkező esetben a "The hero died" üzenetet kapjuk. A hős győzelme esetén azt is kiírja a játék, hogy hősünk kik ellen és milyen aktuális szinttel harcolt, majd a végső szintet, hp-t, dmg-t, acd-t és def-et.<br />
 
@@ -74,6 +72,8 @@ A programban egy hős harcol egy vagy több szörny ellen. A játék, a megszoko
 *	**[NCPlayer_2_Spacy.json](units/not_correct_units/NCPlayer_2_Spacy.json)**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl, amelyben felesleges whitespacek találhatóak.<br />
 *	**[NCPlayer_3_Mixpacy.json](units/not_correct_units/NCPlayer_3_Mixpacy.json)**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl, amiben az adatok sorrendje fel van cserélve és emellett felesleges whitespacek is találhatóak benne.<br />
 *	**[level1.txt](maps/level1.txt)**: @hegyhati által megadott példa map-ot tartalmazza.<br />
+*	**[gameplay.mp4](ideos/gameplay.mp4)**: Játékunk működését bemutató videó.<br />
+*	**[codebaseddefense.mp4](videos/codebaseddefense.mp4))**: Munkák erősségeit bemutató videó.<br />
 
 ---
 
