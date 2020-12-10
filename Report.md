@@ -4,7 +4,7 @@
 | ------ | ---- | :---: | :---: | --------- |
 | Adorján András Bálint | @mrpig2000 | 0 | ~50-∞ | Kimagasló teljesítményt nyújtott a unit tesztek elkészítése és a repo rendbentartása és dokumentálása terén. |
 | Kisszölgyémi Áron | @destrike00 | 0 | ~50-∞ | Kimagasló teljesítményt nyújtott a c++ kódok és a docker konténer elkészítése terén. |
-| Nátz Kornél | @kokohun | 0 | ~50-∞ | Kimagasló teljesítményt nyújtott a json kezelés és a bash scriptek elkészítése terén. |
+| Nátz Kornél | @kokohun | 0 | ~50-∞ | Kimagasló teljesítményt nyújtott a fájl és json kezelés, továbbá a bash scriptek elkészítése terén. |
 
 
 # Videók
