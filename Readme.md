@@ -97,3 +97,4 @@ Az osztályok és függvényeik működéséről részletesebb információk a d
 ---
 
 A félév során elvégzett feladatokról és a teljes munkákról készült jelentés a [Report.md](Report.md) fájlban olvasható. <br /> 
+---
