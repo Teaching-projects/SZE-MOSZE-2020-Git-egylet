@@ -60,6 +60,7 @@
 | `Monster` |
 
 Osztályaink teljes mértékben dokumentálva vannak.
+---
 
 # Mindenféle számok
 
@@ -70,7 +71,7 @@ Osztályaink teljes mértékben dokumentálva vannak.
    - make - 186
    - doxconf - 2580
    - docker - 19
-   - markdown - 204
+   - markdown - 200
    - yml - 57
    - json - 116
    - txt - 69
