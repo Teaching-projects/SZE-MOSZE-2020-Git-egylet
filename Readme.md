@@ -80,8 +80,7 @@ A programban egy hős harcol egy vagy több szörny ellen. A játék, a megszoko
 
 ---
 
-# Osztályok:<br />
-
+# Osztályok:
 *	**Damage**: Monster típusú karakter Damage objektumát és a hozzá tartozó függvényeket és operátorokat tartalmazó osztály.<br />
 *	**Game**: A játék levezényléséért felelős osztály.<br />
 *	**Hero**: Hero típusú karakter objektumait és függvényeit tartalmazó osztály.<br />
