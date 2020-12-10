@@ -1,10 +1,10 @@
 # Tagok
 
 | Név | Github azonosito  | Javasolt relatív érdemjegy | Becsült óra | Indoklás  | 
-| --- | ---- | --- | ------------------ | --------- |
-| Adorján András Bálint | @mrpig2000 | 5 | 15-20 | mrpig2000 indoklása |
-| Kisszölgyémi Áron | @destrike00 | 5 | <10 | destrike indoklása |
-| Nátz Kornél | @kokohun | 5 | 40-50 | kokhun indoklása |
+| --- | ----: | :---: | :------------------: | --------- |
+| Adorján András Bálint | @mrpig2000 | 5 | ... | Kimagasló teljesítményt nyújtott a unit tesztek elkészítése és a repo rendbentartása és dokumentálása terén. |
+| Kisszölgyémi Áron | @destrike00 | 5 | ... | Kimagasló teljesítményt nyújtott a c++ kódok és a docker konténer elkészítése terén. |
+| Nátz Kornél | @kokohun | 5 | ... | Kimagasló teljesítményt nyújtott a bash scriptek elkészítése és a json kezelés terén. |
 
 
 # Videók
@@ -15,7 +15,7 @@
 # Befejezett feladatok
 
 | Feladat | Merge ideje a határidóhöz (nap) | Change request körök | Reviewer | 
-| ------- | ------------------------------- | -------------------- | -------- |
+| ------- | :-------------------------------: | :--------------------: | --------: |
 | Init | -6? | 2 | @hegyhati | 
 | Task2 | -5? | 1 | @hegyhati |
 | Jsonparser | -8 | 1 | @wajzy |
