@@ -1,8 +1,8 @@
-Ez a repository a Git egylet csapat munkáját tartalmazza.<br />
+# Ez a repository a Git egylet csapat munkáját tartalmazza.<br />
 
 ---
 
-Csapattagok:<br />
+# Csapattagok:<br />
 
 	* Adorján András Bálint
 	* Kisszölgyémi Áron
@@ -10,13 +10,13 @@ Csapattagok:<br />
 
 ---
 
-Leírás:<br />
+# Leírás:<br />
 <br />
 A programban egy hős harcol egy vagy több szörny ellen. A játékmenetek és az elvárt kimenetelek a scenarios mappában vannak letárolva. A karakterek tulajdonságai a gyökér mappában, json fájlokban vannak eltárolva. A program futtatásakor parancssori argumentumként a futtatni kívánt scenario nevét kell megadni. A harc addig tart amíg a hős meg nem hal, vagy le nem győzi az összes szörnyet. A harc után a játék felsorolja, hogy a hős kik ellen és milyen aktuális szinttel harcolt, majd a végső szintet, hp-t, dmg-t és acd-t.<br />
 
 ---
 
-Fájlok:<br />
+# Fájlok:<br />
 
 *	**[main.cpp](main.cpp)**: @hegyhati által megadott, a játék egészét levezénylő fájl.<br />
 *	**[Hero.h](Hero.h)**: Hero osztály header fájlja.<br />
@@ -49,12 +49,26 @@ Fájlok:<br />
 *	**[output2.txt](scenarios/output2.txt)**: @hegyhati által megadott elvárt kimenetet tartalmazó fájl.<br />
 *	**[scenario1.json](scenarios/scenario1.json)**: @hegyhati által megadott játékmenetet tartalmazó fájl.<br />
 *	**[scenario2.json](scenarios/scenario2.json)**: @hegyhati által megadott játékmenetet tartalmazó fájl.<br />
-*	**[CMakeLists.txt](tests/CMakeLists.txt)**: A "Unit tests" nevű workflow segédfájlja. A tesztek helyes lefutásának ellenőrzéséhez szükséges.<br />
+*	**[CMakeLists.txt](tests/damage_tests/CMakeLists.txt)**: A "Unit tests" nevű workflow segédfájlja. A Damage osztály unit tesztjeinek helyes lefutásának ellenőrzéséhez szükséges.<br />
+*	**[unit_tests_damage.cpp](tests/monster_tests/unit_tests_damage.cpp)**: A "Unit tests" nevű workflow segédfájlja. A Damage osztály unit tesztjeit tartalmazza.<br />
+*	**[CMakeLists.txt](tests/game_tests/CMakeLists.txt)**: A "Unit tests" nevű workflow segédfájlja. A Game osztály unit tesztjeinek helyes lefutásának ellenőrzéséhez szükséges.<br />
+*	**[unit_tests_game.cpp](tests/monster_tests/unit_tests_game.cpp)**: A "Unit tests" nevű workflow segédfájlja. A Game osztály unit tesztjeit tartalmazza.<br />
+*	**[CMakeLists.txt](tests/hero_tests/CMakeLists.txt)**: A "Unit tests" nevű workflow segédfájlja. A Hero osztály unit tesztjeinek helyes lefutásának ellenőrzéséhez szükséges.<br />
+*	**[unit_tests_hero.cpp](tests/monster_tests/unit_tests_hero.cpp)**: A "Unit tests" nevű workflow segédfájlja. A Hero osztály unit tesztjeit tartalmazza.<br />
+*	**[CMakeLists.txt](tests/json_tests/CMakeLists.txt)**: A "Unit tests" nevű workflow segédfájlja. A JSON osztály unit tesztjeinek helyes lefutásának ellenőrzéséhez szükséges.<br />
+*	**[unit_tests_json.cpp](tests/monster_tests/unit_tests_json.cpp)**: A "Unit tests" nevű workflow segédfájlja. A JSON osztály unit tesztjeit tartalmazza.<br />
+*	**[CMakeLists.txt](tests/map_tests/CMakeLists.txt)**: A "Unit tests" nevű workflow segédfájlja. A Map osztály unit tesztjeinek helyes lefutásának ellenőrzéséhez szükséges.<br />
+*	**[unit_tests_map.cpp](tests/monster_tests/unit_tests_map.cpp)**: A "Unit tests" nevű workflow segédfájlja. A Map osztály unit tesztjeit tartalmazza.<br />
+*	**[CMakeLists.txt](tests/monster_tests/CMakeLists.txt)**: A "Unit tests" nevű workflow segédfájlja. A Monster osztály unit tesztjeinek helyes lefutásának ellenőrzéséhez szükséges.<br />
+*	**[unit_tests_monster.cpp](tests/monster_tests/unit_tests_monster.cpp)**: A "Unit tests" nevű workflow segédfájlja. A Monster osztály unit tesztjeit tartalmazza.<br />
+*	**[directions.sh](tests/directions.sh)**: A "build, static code analysis, leakcheck" nevű workflow segédfájlja. Az errorok ellenőrzéséhez szükséges.<br />
 *	**[errorcheck.sh](tests/errorcheck.sh)**: A "build, static code analysis, leakcheck" nevű workflow segédfájlja. Az errorok ellenőrzéséhez szükséges.<br />
+*	**[final_inout.sh](tests/final_inout.sh)**: A "build, static code analysis, leakcheck" nevű workflow in-out tesztekhez használt segédfájlja.<br />
 *	**[task4_inout.sh](tests/task4_inout.sh)**: A "build, static code analysis, leakcheck" nevű workflow segédfájlja. A játék kimenetének ellenőrzéséhez szükséges.<br />
-*	**[unit_tests.cpp](tests/unit_tests.cpp)**: A "Unit tests" nevű workflow segédfájlja. Ez tartalmazza a konkrét google teszteket.<br />
+*	**[unit_tests_make.sh](tests/unit_tests_make.sh)**: A "Unit tests" nevű workflow make parancsokat tartalmazó segédfájlja.<br />
 *	**[warningcheck.sh](tests/warningcheck.sh)**: A "build, static code analysis, leakcheck" nevű workflow segédfájlja. A warningok ellenőrzéséhez szükséges.<br />
 *	**[good_output.txt](units/good_output.txt)**: Csapatunk által kitalált 3 karakter egymás elleni harcainak elvárt kimenetét tartalmazó fájl.<br />
+*	**[directions.txt](units/directions.txt)**: Teszteléshez megadott irányokat tartalmazó fájl.<br />
 *	**[Player_1_Kakarott.json](units/Player_1_Kakarott.json)**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl.<br />
 *	**[Player_2_Sally.json](units/Player_2_Sally.json)**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl.<br />
 *	**[Player_3_Maple.json](units/Player_3_Maple.json)**: Csapatunk által kitalált karakter tulajdonságait tartalmazó fájl.<br />
@@ -66,7 +80,7 @@ Fájlok:<br />
 
 ---
 
-Osztályok:<br />
+# Osztályok:<br />
 
 *	**Damage**: Monster típusú karakter Damage objektumát és a hozzá tartozó függvényeket és operátorokat tartalmazó osztály.<br />
 *	**Game**: A játék levezényléséért felelős osztály.<br />
