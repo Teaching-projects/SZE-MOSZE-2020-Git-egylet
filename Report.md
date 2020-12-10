@@ -16,15 +16,15 @@
 
 | Feladat | Merge ideje a határidóhöz (nap) | Change request körök | Reviewer | 
 | ------- | :---: | :---: | -------- |
-| Init | -6? | 2 | @hegyhati | 
-| Task2 | -5? | 1 | @hegyhati |
+| Init | -6 | 2 | @hegyhati | 
+| Task2 | -5 | 1 | @hegyhati |
 | Jsonparser | -8 | 1 | @wajzy |
 | Levelup | -6 | 2 | @oliverosz |
 | Attackspeed | +1 | 2 | @vizvezetek, @hegyhati |
 | Documentation | 0 | 0 | @Cminusminus / @kurucc, @fruzsin;<br />@Git-egylet / @kokohun |
 | Tests | +1 | 1 | @Cminusminus / @kurucc, @fruzsin;<br />@Git-egylet / @kokohun |
 | Makefile | 0 | 1 | @hegyhati |
-| Refactor | +1 | ? | @hegyhati |
+| Refactor | +1 | 4 | @hegyhati |
 | Docker | -3 | 0 | @hegyhati |
 | Jsonpimp | Merge: 11.13 | 0 | @Git-egylet / @mrpig2000 |
 | Map | Merge: 11.23 | 1 | @Cminusminus / @kurucc;<br />@Git-egylet / @mrpig2000 |
@@ -33,7 +33,7 @@
 | Damage | Merge: 11.27 | 1 | @Cminusminus / @kurucc;<br />@Git-egylet / @destrike00   |
 | Light radius | Merge: 12.09 | 1 | @Cminusminus / @bricsi0000000000000;<br />@Git-egylet / @kokohun |
 | MarkedMap | nem készült el | - | - |
-| PreparedGame | nem készült el | - | -
+| PreparedGame | nem készült el | - | - |
 | SVGrendering | nem készült el | - | - |
 
 # Unit tesztek
@@ -49,41 +49,51 @@
 
 # Kód dokumentáció
 
-| Teljesen dokumentált osztályok | Részben dokumentált osztályok | Nem dokumentált osztályok |
-| --- | :---: | :---: | 
-| `Damage` | - | - |
-| `Game` | - | - |
-| `Unit` | - | - |
-| `Hero` | - | - |
-| `JSON` | - | - |
-| `Map` | - | - |
-| `Monster` | - | - |
+| Teljesen dokumentált osztályok |
+| :---: | 
+| `Damage` |
+| `Game` |
+| `Unit` |
+| `Hero` |
+| `JSON` |
+| `Map` |
+| `Monster` |
+
+Osztályaink teljes mértékben dokumentálva vannak.
 
 
 # Mindenféle számok
 
- - Összes cpp kódsor : 1124
- - Egyéb kódsor (make,doxyfile,shellscript, ...) :
+ - Összes cpp kódsor - 1124
+ - Egyéb segédfájl és kódsor:
+   - unit teszt - 709
+   - shell script - 54
+   - make - 186
+   - doxconf - 2580
+   - docker - 19
+   - markdown - 
+   - yml - 57
+   - json - 116
+   - txt - 69
  - cppcheck
-   - warning :
-   - style :
-   - performance :
-   - unusedFunction : 
-   - missingInclude : 
+   - warning - 
+   - style - 
+   - performance - 
+   - unusedFunction - 
+   - missingInclude - 
  
 # Implicit megtanult dolgok
-Olyanok, amik nem a tárgy anyaga, de muszáj/hasznos volt elsajátítani:
+
  - alapvető shell scripting
  - `std::variant`
  - markdown nyelv
- - google tesztek
+ - unit tesztek
 
-# Feedback (optional)
+# Vélemények és javaslatok
  
-Melyik részt találtátok a leghasznosabbnak, miért. Használtátok-e az itt megszerzett dolgokat esetleg közben máskor. Volt-e olyan, amit hiányoltatok a tárgyból. Utólag visszagondolva is jó volt-e az online videósdi?
-
-Ha szívesebben írnátok meg anoním módon, OHV-nál várom.
-
-# Üzenet a jövőbe (optional)
-
-Így, hogy túlvagytok rajta, mi az, aminek örültetek volna, ha első héten elmondom, avagy: jövőre mit lenne jó, ha elmondanék majd?
+Véleményünk szerint az tárgy hatékony és sikeres teljesítéséhez szükség van olyan tudásra, illetve kiegészítő ismeretekre, amelyeket előkövetelményként el kellene sajátítani. Ilyen például az objektum orientált programozási logika, a shell scriptek és a linux operációs rendszer alap szintű ismerete, a c++ nyelv beható és gyakorlott ismerete, továbbá a github kezelésének alapjai. Ha valaki kellő ismeretek és tapasztalat nélkül veszi fel a tárgyat nagyon nehéz dolga lesz és ez a többi tárgyára is kihathat. 
+Az itt megszerzett tudásunkat más tantárgyak teljesítéséhez is fel lehet használni, erre a legjobb példa az objektum orientált programozás. 
+A tárgy kredit értékéhez képest aránytalanul sok időt kellett ráfordítani, ezt jó lenne valamilyen szinten korrigálni kevesebb és könnyebben teljesíthető feladatokkal és magasabb kerditértékkel. 
+Az oktatók hozzáállásával és válaszidejével általánosan elégedettek voltunk, de sajnos itt is voltak apróbb problémák egy-két esetben. 
+A feladatok kiírása néha lehetett volna kicsit részletesebb és pontosabb is, de szerencsére pár körös egyeztetés során mindig sikerült túllendülni ezeken az akadályokon. 
+Véleményünk szerint sokkal jobb volt az online videós elméleti oktatás, mivel így, néhány apróbb technikai malőrt leszámítva, lehetett hallani és érteni rendesen az oktatókat és az anyag később is elérhető maradt, aminek köszönhetően később is vissza tudtuk nézni őket. Érdemes lenne a jövőben is ilyen formában tartani az órákat, a vírushelyzet elmúlása után is.
