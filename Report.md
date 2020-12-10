@@ -61,17 +61,16 @@
 
 Osztályaink teljes mértékben dokumentálva vannak.
 
-
 # Mindenféle számok
 
  - Összes cpp kódsor - 1124
- - Egyéb segédfájl és kódsor:
+ - Egyéb segédfájl és kódsor
    - unit teszt - 709
    - shell script - 54
    - make - 186
    - doxconf - 2580
    - docker - 19
-   - markdown - 
+   - markdown - 210
    - yml - 57
    - json - 116
    - txt - 69
@@ -85,9 +84,15 @@ Osztályaink teljes mértékben dokumentálva vannak.
 # Implicit megtanult dolgok
 
  - alapvető shell scripting
- - `std::variant`
  - markdown nyelv
- - unit tesztek
+ - `std::variant`
+ - `std::regex`
+ - `std::list`
+ - `std::pair`
+ - `std::vector`
+ - `std::map`
+ - `std::cerr`
+ - `std::filesystem`
 
 # Vélemények és javaslatok
  
