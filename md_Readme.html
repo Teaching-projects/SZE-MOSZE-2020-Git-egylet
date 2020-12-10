@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AttackspeedDoc: Ez a repository a Git egylet csapat munkáját tartalmazza.&lt;br /&gt;</title>
+<title>AttackspeedDoc: Readme</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,24 +64,25 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Ez a repository a Git egylet csapat munkáját tartalmazza.<br  />
- </div>  </div>
+<div class="title">Readme </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><hr  />
-<h1><a class="anchor" id="autotoc_md2"></a>
+<div class="textblock"><p>Ez a repository a Git egylet csapat munkáját tartalmazza.<br  />
+</p>
+<hr  />
+<h1><a class="anchor" id="autotoc_md1"></a>
 Csapattagok:&lt;br /&gt;</h1>
 <pre class="fragment">* Adorján András Bálint
 * Kisszölgyémi Áron
 * Nátz Kornél
 </pre><hr  />
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md2"></a>
 Leírás:&lt;br /&gt;</h1>
 <p><br  />
  A programban egy hős harcol egy vagy több szörny ellen. A játékmenetek és az elvárt kimenetelek a scenarios mappában vannak letárolva. A karakterek tulajdonságai a gyökér mappában, json fájlokban vannak eltárolva. A program futtatásakor parancssori argumentumként a futtatni kívánt scenario nevét kell megadni. A harc addig tart amíg a hős meg nem hal, vagy le nem győzi az összes szörnyet. A harc után a játék felsorolja, hogy a hős kik ellen és milyen aktuális szinttel harcolt, majd a végső szintet, hp-t, dmg-t és acd-t.<br  />
 </p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md5"></a>
+<h1><a class="anchor" id="autotoc_md4"></a>
 Fájlok:&lt;br /&gt;</h1>
 <ul>
 <li><b><a href="main.cpp">main.cpp</a></b>: @hegyhati által megadott, a játék egészét levezénylő fájl.<br  />
@@ -126,7 +127,7 @@ Fájlok:&lt;br /&gt;</h1>
 </li>
 <li><b>[Makefile](Makefile)</b>: A make parancsok kiadásához szükséges fájl.<br  />
 </li>
-<li><b><a href=".github/workflows/Newtest.yml">Newtest.yml</a></b>: A "Unit tests" nevű workflow futtatási fájlja.<br  />
+<li><b><a href=".github/workflows/Unit_tests.yml">Unit_tests.yml</a></b>: A "Unit tests" nevű workflow futtatási fájlja.<br  />
 </li>
 <li><b><a href=".github/workflows/pushdocs.yml">pushdocs.yml</a></b>: A "pushdocs workflow" nevű workflow futtatási fájlja.<br  />
 </li>
@@ -140,6 +141,8 @@ Fájlok:&lt;br /&gt;</h1>
 </li>
 <li><b><a href="scenarios/output1.txt">output1.txt</a></b>: @hegyhati által megadott elvárt kimenetet tartalmazó fájl.<br  />
 </li>
+<li><b><a href="scenarios/output1_final.txt">output1_final.txt</a></b>: Map-es elvárt kimenetet tartalmazó fájl.<br  />
+</li>
 <li><b><a href="scenarios/output2.txt">output2.txt</a></b>: @hegyhati által megadott elvárt kimenetet tartalmazó fájl.<br  />
 </li>
 <li><b><a href="scenarios/scenario1.json">scenario1.json</a></b>: @hegyhati által megadott játékmenetet tartalmazó fájl.<br  />
@@ -148,23 +151,23 @@ Fájlok:&lt;br /&gt;</h1>
 </li>
 <li><b><a href="tests/damage_tests/CMakeLists.txt">CMakeLists.txt</a></b>: A "Unit tests" nevű workflow segédfájlja. A <a class="el" href="structDamage.html">Damage</a> osztály unit tesztjeinek helyes lefutásának ellenőrzéséhez szükséges.<br  />
 </li>
-<li><b><a href="tests/monster_tests/unit_tests_damage.cpp">unit_tests_damage.cpp</a></b>: A "Unit tests" nevű workflow segédfájlja. A <a class="el" href="structDamage.html">Damage</a> osztály unit tesztjeit tartalmazza.<br  />
+<li><b><a href="tests/damage_tests/unit_tests_damage.cpp">unit_tests_damage.cpp</a></b>: A "Unit tests" nevű workflow segédfájlja. A <a class="el" href="structDamage.html">Damage</a> osztály unit tesztjeit tartalmazza.<br  />
 </li>
 <li><b><a href="tests/game_tests/CMakeLists.txt">CMakeLists.txt</a></b>: A "Unit tests" nevű workflow segédfájlja. A <a class="el" href="classGame.html">Game</a> osztály unit tesztjeinek helyes lefutásának ellenőrzéséhez szükséges.<br  />
 </li>
-<li><b><a href="tests/monster_tests/unit_tests_game.cpp">unit_tests_game.cpp</a></b>: A "Unit tests" nevű workflow segédfájlja. A <a class="el" href="classGame.html">Game</a> osztály unit tesztjeit tartalmazza.<br  />
+<li><b><a href="tests/game_tests/unit_tests_game.cpp">unit_tests_game.cpp</a></b>: A "Unit tests" nevű workflow segédfájlja. A <a class="el" href="classGame.html">Game</a> osztály unit tesztjeit tartalmazza.<br  />
 </li>
 <li><b><a href="tests/hero_tests/CMakeLists.txt">CMakeLists.txt</a></b>: A "Unit tests" nevű workflow segédfájlja. A <a class="el" href="classHero.html">Hero</a> osztály unit tesztjeinek helyes lefutásának ellenőrzéséhez szükséges.<br  />
 </li>
-<li><b><a href="tests/monster_tests/unit_tests_hero.cpp">unit_tests_hero.cpp</a></b>: A "Unit tests" nevű workflow segédfájlja. A <a class="el" href="classHero.html">Hero</a> osztály unit tesztjeit tartalmazza.<br  />
+<li><b><a href="tests/hero_tests/unit_tests_hero.cpp">unit_tests_hero.cpp</a></b>: A "Unit tests" nevű workflow segédfájlja. A <a class="el" href="classHero.html">Hero</a> osztály unit tesztjeit tartalmazza.<br  />
 </li>
 <li><b><a href="tests/json_tests/CMakeLists.txt">CMakeLists.txt</a></b>: A "Unit tests" nevű workflow segédfájlja. A <a class="el" href="classJSON.html">JSON</a> osztály unit tesztjeinek helyes lefutásának ellenőrzéséhez szükséges.<br  />
 </li>
-<li><b><a href="tests/monster_tests/unit_tests_json.cpp">unit_tests_json.cpp</a></b>: A "Unit tests" nevű workflow segédfájlja. A <a class="el" href="classJSON.html">JSON</a> osztály unit tesztjeit tartalmazza.<br  />
+<li><b><a href="tests/json_tests/unit_tests_json.cpp">unit_tests_json.cpp</a></b>: A "Unit tests" nevű workflow segédfájlja. A <a class="el" href="classJSON.html">JSON</a> osztály unit tesztjeit tartalmazza.<br  />
 </li>
 <li><b><a href="tests/map_tests/CMakeLists.txt">CMakeLists.txt</a></b>: A "Unit tests" nevű workflow segédfájlja. A <a class="el" href="classMap.html">Map</a> osztály unit tesztjeinek helyes lefutásának ellenőrzéséhez szükséges.<br  />
 </li>
-<li><b><a href="tests/monster_tests/unit_tests_map.cpp">unit_tests_map.cpp</a></b>: A "Unit tests" nevű workflow segédfájlja. A <a class="el" href="classMap.html">Map</a> osztály unit tesztjeit tartalmazza.<br  />
+<li><b><a href="tests/map_tests/unit_tests_map.cpp">unit_tests_map.cpp</a></b>: A "Unit tests" nevű workflow segédfájlja. A <a class="el" href="classMap.html">Map</a> osztály unit tesztjeit tartalmazza.<br  />
 </li>
 <li><b><a href="tests/monster_tests/CMakeLists.txt">CMakeLists.txt</a></b>: A "Unit tests" nevű workflow segédfájlja. A <a class="el" href="classMonster.html">Monster</a> osztály unit tesztjeinek helyes lefutásának ellenőrzéséhez szükséges.<br  />
 </li>
@@ -204,7 +207,7 @@ Fájlok:&lt;br /&gt;</h1>
 </li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md6"></a>
 Osztályok:&lt;br /&gt;</h1>
 <ul>
 <li><b><a class="el" href="structDamage.html">Damage</a></b>: <a class="el" href="classMonster.html">Monster</a> típusú karakter <a class="el" href="structDamage.html">Damage</a> objektumát és a hozzá tartozó függvényeket és operátorokat tartalmazó osztály.<br  />
