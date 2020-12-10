@@ -79,7 +79,7 @@ Csapattagok:&lt;br /&gt;</h1>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Leírás:&lt;br /&gt;</h1>
 <p><br  />
- A programban egy hős harcol egy vagy több szörny ellen. A játékmenetek és az elvárt kimenetelek a scenarios mappában vannak letárolva. A karakterek tulajdonságai a gyökér mappában, json fájlokban vannak eltárolva. A program futtatásakor parancssori argumentumként a futtatni kívánt scenario nevét kell megadni. A harc addig tart amíg a hős meg nem hal, vagy le nem győzi az összes szörnyet. A harc után a játék felsorolja, hogy a hős kik ellen és milyen aktuális szinttel harcolt, majd a végső szintet, hp-t, dmg-t és acd-t.<br  />
+ A programban egy hős harcol egy vagy több szörny ellen. A játék, a megszokott módon, egy scenario fájlt vár paraméterként. A lehetséges scenario-kat a scenarios mappa tartalmazza. A játék helyes lefutásának előfeltétele, hogy a mainben beállítsunk egy játékteret, illetve tetszőleges módon elhelyezzük a hőst, illetve szörnyet, szörnyeket. A játék futása közben az égtájat megadva mozoghatunk a hőssel. Ha az irány nem megfelelően lett megadva, vagy fal van előttünk, új irányt kér tőlünk a játék. A map-ből mindig az aktuális light radius-nek megfelelő részt látjuk, amely szintlépés során növekszik. Ha szörnnyel találkozunk, a hősünk automatikusan megküzd vele. Ha minden szörnyet legyőztünk, a játéktól a "The hero cleared the map", ellenkező esetben a "The hero died" üzenetet kapjuk. A hős győzelme esetén azt is kiírja a játék, hogy hősünk kik ellen és milyen aktuális szinttel harcolt, majd a végső szintet, hp-t, dmg-t, acd-t és def-et.<br  />
 </p>
 <hr  />
 <h1><a class="anchor" id="autotoc_md4"></a>
