@@ -2,9 +2,9 @@
 
 | Név | Github azonosito  | Javasolt relatív érdemjegy | Becsült óra | Indoklás  | 
 | --- | ---- | :---: | :------------------: | --------- |
-| Adorján András Bálint | @mrpig2000 | 5 | ... | Kimagasló teljesítményt nyújtott a unit tesztek elkészítése<br />és a repo rendbentartása és dokumentálása terén. |
-| Kisszölgyémi Áron | @destrike00 | 5 | ... | Kimagasló teljesítményt nyújtott a c++ kódok<br />és a docker konténer elkészítése terén. |
-| Nátz Kornél | @kokohun | 5 | ... | Kimagasló teljesítményt nyújtott a json kezelés<br />és a bash scriptek elkészítése terén. |
+| Adorján András Bálint | @mrpig2000 | 5 | ... | Kimagasló teljesítményt nyújtott a unit tesztek elkészítése és a repo rendbentartása és dokumentálása terén. |
+| Kisszölgyémi Áron | @destrike00 | 5 | ... | Kimagasló teljesítményt nyújtott a c++ kódok és a docker konténer elkészítése terén. |
+| Nátz Kornél | @kokohun | 5 | ... | Kimagasló teljesítményt nyújtott a json kezelés és a bash scriptek elkészítése terén. |
 
 
 # Videók
@@ -39,7 +39,7 @@
 # Unit tesztek
 
 | Osztály | Publikus metódusok száma | Unit tesztelt metódusok száma | Unit tesztek száma |
-| --- | --- | --- | --- |
+| --- | :---: | :---: | :---: |
 | `Damage` | x | x | x |
 | `Game` | x | x | x | 
 | `Hero` | x | x | x | 
@@ -50,10 +50,14 @@
 # Kód dokumentáció
 
 | Teljesen dokumentált osztályok | Részben dokumentált osztályok | Nem dokumentált osztályok |
-| --- | --- | --- | 
-| `Unit` | `Game` | `JSON` | 
-| `Hero` | ... | ... |  
-| ... |
+| --- | :---: | ---: | 
+| `Damage` | - | - | 
+| `Game` |
+| `Unit` |
+| `Hero` |
+| `JSON` |
+| `Map` |
+| `Monster` |
 
 
 # Mindenféle számok
