@@ -40,17 +40,17 @@
 
 | Osztály | Publikus metódusok száma | Unit tesztelt metódusok száma | Unit tesztek száma |
 | --- | :---: | :---: | :---: |
-| `Damage` | x | x | x |
-| `Game` | x | x | x | 
-| `Hero` | x | x | x | 
-| `JSON` | x | x | x | 
-| `Map` | x | x | x | 
-| `Monster` | x | x | x | 
+| `Damage` | 5 | 4 | 7 |
+| `Game` | 13 | 0 | 0 | 
+| `Hero` | 15 | 14 | 15 | 
+| `JSON` | 3 | 3 | 7 | 
+| `Map` | 7 | 3 | 3 | 
+| `Monster` | 12 | 10 | 10 | 
 
 # Kód dokumentáció
 
 | Teljesen dokumentált osztályok | Részben dokumentált osztályok | Nem dokumentált osztályok |
-| --- | :---: | ---: | 
+| --- | :---: | :---: | 
 | `Damage` | - | - | 
 | `Game` |
 | `Unit` |
