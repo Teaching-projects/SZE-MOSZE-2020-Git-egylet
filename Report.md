@@ -21,19 +21,26 @@
 | Jsonparser | -8 | 1 | @wajzy |
 | Levelup | -6 | 2 | @oliverosz |
 | Attackspeed | +1 | 2 | @vizvezetek, @hegyhati |
-| Documentation | 0 | 0 | @Cminusminus / @kurucc, @fruzsin; @Git-egylet / @kokohun |
-| Tests | +1 | 1 | @Cminusminus / @kurucc, @fruzsin; @Git-egylet / @kokohun |
+| Documentation | 0 | 0 | @Cminusminus / @kurucc, @fruzsin; 
+@Git-egylet / @kokohun |
+| Tests | +1 | 1 | @Cminusminus / @kurucc, @fruzsin; 
+@Git-egylet / @kokohun |
 | Makefile | 0 | 1 | @hegyhati |
 | Refactor | +1 | ? | @hegyhati |
 | Docker | -3 | 0 | @hegyhati |
 | Jsonpimp | Merge: 11.13 | 0 | @Git-egylet / @mrpig2000 |
-| Map | Merge: 11.23 | 0 | @Cminusminus / @kurucc; @Git-egylet / @mrpig2000 |
-| Game | Merge: 12.08 | 0 | @Cminusminus / @bricsi0000000000000; @Git-egylet / @kokohun |
-| Defense | Merge: 11.23 | 0 | @Cminusminus / @fruzsin; @Git-egylet / @kokohun |
-| Damage | Merge: 11.27 | 0 | @Cminusminus / @kurucc; @Git-egylet / @destrike00   |
+| Map | Merge: 11.23 | 0 | @Cminusminus / @kurucc; 
+@Git-egylet / @mrpig2000 |
+| Game | Merge: 12.08 | 0 | @Cminusminus / @bricsi0000000000000; 
+@Git-egylet / @kokohun |
+| Defense | Merge: 11.23 | 0 | @Cminusminus / @fruzsin; 
+@Git-egylet / @kokohun |
+| Damage | Merge: 11.27 | 0 | @Cminusminus / @kurucc; 
+@Git-egylet / @destrike00   |
 | MarkedMap | nem készült el | - | - |
 | PreparedGame | nem készült el | - | -
-| light radius | Merge: 12.09 | 0 | @Cminusminus / @bricsi0000000000000; @Git-egylet / @kokohun |
+| light radius | Merge: 12.09 | 0 | @Cminusminus / @bricsi0000000000000; 
+@Git-egylet / @kokohun |
 | SVGrendering | nem készült el | - | - |
 
 # Unit tesztek
