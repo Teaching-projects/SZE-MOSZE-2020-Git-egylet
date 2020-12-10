@@ -1,7 +1,5 @@
 Ez a repository a Git egylet csapat munkáját tartalmazza.<br />
-
 ---
-
 # Csapattagok:
 
 	* Adorján András Bálint
