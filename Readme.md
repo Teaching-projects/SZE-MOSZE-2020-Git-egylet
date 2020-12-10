@@ -62,7 +62,7 @@ A programban egy hős harcol egy vagy több szörny ellen. A játékmenetek és 
 *	**[unit_tests_map.cpp](tests/map_tests/unit_tests_map.cpp)**: A "Unit tests" nevű workflow segédfájlja. A Map osztály unit tesztjeit tartalmazza.<br />
 *	**[CMakeLists.txt](tests/monster_tests/CMakeLists.txt)**: A "Unit tests" nevű workflow segédfájlja. A Monster osztály unit tesztjeinek helyes lefutásának ellenőrzéséhez szükséges.<br />
 *	**[unit_tests_monster.cpp](tests/monster_tests/unit_tests_monster.cpp)**: A "Unit tests" nevű workflow segédfájlja. A Monster osztály unit tesztjeit tartalmazza.<br />
-*	**[directions.sh](tests/directions.sh)**: A "build, static code analysis, leakcheck" nevű workflow segédfájlja. Az errorok ellenőrzéséhez szükséges.<br />
+*	**[directions.sh](tests/directions.sh)**: Az irányok lefuttatásához szükséges segédfájlja.<br />
 *	**[errorcheck.sh](tests/errorcheck.sh)**: A "build, static code analysis, leakcheck" nevű workflow segédfájlja. Az errorok ellenőrzéséhez szükséges.<br />
 *	**[final_inout.sh](tests/final_inout.sh)**: A "build, static code analysis, leakcheck" nevű workflow in-out tesztekhez használt segédfájlja.<br />
 *	**[task4_inout.sh](tests/task4_inout.sh)**: A "build, static code analysis, leakcheck" nevű workflow segédfájlja. A játék kimenetének ellenőrzéséhez szükséges.<br />
