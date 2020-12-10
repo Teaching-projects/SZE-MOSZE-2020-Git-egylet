@@ -70,16 +70,10 @@ Osztályaink teljes mértékben dokumentálva vannak.
    - make - 186
    - doxconf - 2580
    - docker - 19
-   - markdown - 210
+   - markdown - 204
    - yml - 57
    - json - 116
    - txt - 69
- - cppcheck
-   - warning - 
-   - style - 
-   - performance - 
-   - unusedFunction - 
-   - missingInclude - 
  
 # Implicit megtanult dolgok
 
