@@ -1,8 +1,6 @@
 Ez a repository a Git egylet csapat munkáját tartalmazza.<br />
-
 ---
-
-# Csapattagok:<br />
+# Csapattagok:
 
 	* Adorján András Bálint
 	* Kisszölgyémi Áron
@@ -10,14 +8,12 @@ Ez a repository a Git egylet csapat munkáját tartalmazza.<br />
 
 ---
 
-# Leírás:<br />
-<br />
-A programban egy hős harcol egy vagy több szörny ellen. A játékmenetek és az elvárt kimenetelek a scenarios mappában vannak letárolva. A karakterek tulajdonságai a gyökér mappában, json fájlokban vannak eltárolva. A program futtatásakor parancssori argumentumként a futtatni kívánt scenario nevét kell megadni. A harc addig tart amíg a hős meg nem hal, vagy le nem győzi az összes szörnyet. A harc után a játék felsorolja, hogy a hős kik ellen és milyen aktuális szinttel harcolt, majd a végső szintet, hp-t, dmg-t és acd-t.<br />
+# Leírás:
+A programban egy hős harcol egy vagy több szörny ellen. A játék, a megszokott módon, egy scenario fájlt vár paraméterként. A lehetséges scenario-kat a scenarios mappa tartalmazza. A játék helyes lefutásának előfeltétele, hogy a mainben beállítsunk egy játékteret, illetve tetszőleges módon elhelyezzük a hőst, illetve szörnyet, szörnyeket. A játék futása közben az égtájat megadva mozoghatunk a hőssel. Ha az irány nem megfelelően lett megadva, vagy fal van előttünk, új irányt kér tőlünk a játék. A map-ből mindig az aktuális light radius-nek megfelelő részt látjuk, amely szintlépés során növekszik. Ha szörnnyel találkozunk, a hősünk automatikusan megküzd vele. Ha minden szörnyet legyőztünk, a játéktól a "The hero cleared the map", ellenkező esetben a "The hero died" üzenetet kapjuk. A hős győzelme esetén azt is kiírja a játék, hogy hősünk kik ellen és milyen aktuális szinttel harcolt, majd a végső szintet, hp-t, dmg-t, acd-t és def-et.<br />
 
 ---
 
-# Fájlok:<br />
-
+# Fájlok:
 *	**[main.cpp](main.cpp)**: @hegyhati által megadott, a játék egészét levezénylő fájl.<br />
 *	**[Hero.h](Hero.h)**: Hero osztály header fájlja.<br />
 *	**[Hero.cpp](Hero.cpp)**: Hero osztály elemeinek és függvényeinek leírását tartalmazó fájl.<br />
@@ -81,8 +77,7 @@ A programban egy hős harcol egy vagy több szörny ellen. A játékmenetek és 
 
 ---
 
-# Osztályok:<br />
-
+# Osztályok:
 *	**Damage**: Monster típusú karakter Damage objektumát és a hozzá tartozó függvényeket és operátorokat tartalmazó osztály.<br />
 *	**Game**: A játék levezényléséért felelős osztály.<br />
 *	**Hero**: Hero típusú karakter objektumait és függvényeit tartalmazó osztály.<br />
@@ -94,7 +89,7 @@ Az osztályok és függvényeik működéséről részletesebb információk a d
 
 ---
 
-Actions - Workflows:<br />
+# Actions - Workflows:
 *	**Unit tests**: A google tesztek futtatásáért és ellenőrzéséért felelős workflow.<br />
 *	**pushdocs workflow**: A doxygen-es GitHub Pages dokumentáció létrehozásáért felelős workflow.<br />
 *	**build, static code analysis, leakcheck**: A kód szintaktikáját és helyes futását ellenőrző workflow.<br />
@@ -102,3 +97,4 @@ Actions - Workflows:<br />
 ---
 
 A félév során elvégzett feladatokról és a teljes munkákról készült jelentés a [Report.md](Report.md) fájlban olvasható. <br /> 
+---

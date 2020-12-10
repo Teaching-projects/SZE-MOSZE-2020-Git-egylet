@@ -4,7 +4,7 @@
 | ------ | ---- | :---: | :---: | --------- |
 | Adorján András Bálint | @mrpig2000 | 0 | ~50-∞ | Kimagasló teljesítményt nyújtott a unit tesztek elkészítése és a repo rendbentartása és dokumentálása terén. |
 | Kisszölgyémi Áron | @destrike00 | 0 | ~50-∞ | Kimagasló teljesítményt nyújtott a c++ kódok és a docker konténer elkészítése terén. |
-| Nátz Kornél | @kokohun | 0 | ~50-∞ | Kimagasló teljesítményt nyújtott a json kezelés és a bash scriptek elkészítése terén. |
+| Nátz Kornél | @kokohun | 0 | ~50-∞ | Kimagasló teljesítményt nyújtott a fájl és json kezelés, továbbá a bash scriptek elkészítése terén. |
 
 
 # Videók
@@ -44,7 +44,7 @@
 | `Game` | 13 | 0 | 0 | 
 | `Hero` | 15 | 14 | 15 | 
 | `JSON` | 3 | 3 | 7 | 
-| `Map` | 7 | 3 | 3 | 
+| `Map` | 7 | 7 | 7 | 
 | `Monster` | 12 | 10 | 10 | 
 
 # Kód dokumentáció
@@ -60,34 +60,34 @@
 | `Monster` |
 
 Osztályaink teljes mértékben dokumentálva vannak.
-
+---
 
 # Mindenféle számok
 
  - Összes cpp kódsor - 1124
- - Egyéb segédfájl és kódsor:
+ - Egyéb segédfájl és kódsor
    - unit teszt - 709
    - shell script - 54
    - make - 186
    - doxconf - 2580
    - docker - 19
-   - markdown - 
+   - markdown - 200
    - yml - 57
    - json - 116
    - txt - 69
- - cppcheck
-   - warning - 
-   - style - 
-   - performance - 
-   - unusedFunction - 
-   - missingInclude - 
  
 # Implicit megtanult dolgok
 
  - alapvető shell scripting
- - `std::variant`
  - markdown nyelv
- - unit tesztek
+ - `std::variant`
+ - `std::regex`
+ - `std::list`
+ - `std::pair`
+ - `std::vector`
+ - `std::map`
+ - `std::cerr`
+ - `std::filesystem`
 
 # Vélemények és javaslatok
  
